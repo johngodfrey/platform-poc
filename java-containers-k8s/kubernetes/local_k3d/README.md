@@ -1,5 +1,23 @@
 # Platform PoC Java containers in a local k3d kubernetes cluster
 
+## Prerequisites
+
+Install Fish, k3d, kubectl, Maven, and JDK 17, and start a Docker-compatible runtime.
+On macOS with Homebrew:
+
+```fish
+brew install fish k3d kubectl maven openjdk@17
+set -gx JAVA_HOME (brew --prefix openjdk@17)/libexec/openjdk.jdk/Contents/Home
+mvn -version
+docker info
+```
+
+Cluster creation stops if a prerequisite or creation command fails. A connection
+refused error from `kubectl` after failed creation refers to an existing kubeconfig
+endpoint; it does not mean a new cluster was created.
+
+## Run
+
 1. Create the cluster with a registry
 
    ```fish
@@ -23,7 +41,7 @@
 1. Build the platform-poc application, and push to local registry
 
    ```fish
-    ./build.sh
+    ./build.fish
    ```
 
 1. Install the platform-poc application

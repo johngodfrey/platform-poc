@@ -22,4 +22,4 @@ function stop
 end
 
 section "undeploying platform-poc"
-kubectl delete -k $SCRIPT_DIR/../manifests/overlays/local
+kubectl --context k3d-platform-poc --namespace default delete -k $SCRIPT_DIR/../manifests/overlays/local

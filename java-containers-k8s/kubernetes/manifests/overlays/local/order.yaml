@@ -8,3 +8,6 @@ spec:
       containers:
         - name: order-service
           image: k3d-platform-poc.localhost:5001/platform-poc-java/order-service:0.1.0
+          env:
+            - name: SPRING_JPA_HIBERNATE_DDL_AUTO
+              value: update
