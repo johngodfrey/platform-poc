@@ -11,7 +11,7 @@ function stop
     if test -f {$name}.pid
         set -l PID (cat {$name}.pid)
         rm -f {$name}.pid {$name}.out
-        if test -n "$PID"
+        if test -n "$PID"; and string match --quiet '*kubectl*--namespace wasm port-forward*' (ps -p $PID -o command=)
             echo "Killing $name with PID $PID"
             kill $PID
         end
@@ -19,17 +19,12 @@ function stop
     popd
 end
 
-section "stopping redis"
-brew services stop redis
+# Stop optional NATS forwarding and any legacy HTTP forwarding.
+# Do not stop shared PostgreSQL, Redis, or Java's NATS server.
+section "stopping Wasm HTTP forwarding"
+stop platform-poc-wasm-http
 
-section "stopping postgresql@15"
-brew services stop postgresql@15
+section "stopping Wasm NATS forwarding"
+stop platform-poc-wasm-nats
 
-section "stopping forwarding http"
-stop http
-
-section "stopping forwarding nats"
-stop nats
-
-section "stopping wash-ui"
-stop wash-ui
+echo 'Persistent HTTP ingress remains active. Use undeploy.fish to remove the application and its ingress.'

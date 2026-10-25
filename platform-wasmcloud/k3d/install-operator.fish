@@ -1,36 +1,24 @@
 #!/usr/bin/env fish
 
 set --local SCRIPT_DIR (dirname (realpath (status -f)))
-
-function section
-    echo
-    string pad --right --char=— -w$COLUMNS "———— $argv ————"
+for dependency in helm kubectl
+    if not command -sq $dependency
+        printf 'Required command not found: %s\n' $dependency >&2
+        exit 1
+    end
 end
 
-section "installing wasmcloud-operator"
-helm upgrade --install \
-    wasmcloud-platform \
-    --values https://raw.githubusercontent.com/wasmCloud/wasmcloud/main/charts/wasmcloud-platform/values.yaml \
+# Pin the chart that supports this repo's wasmCloud 1.x/OAM manifests.
+helm upgrade --install wasmcloud-platform \
     oci://ghcr.io/wasmcloud/charts/wasmcloud-platform \
-    --dependency-update
+    --version 0.1.2 \
+    --kube-context k3d-platform-poc \
+    --namespace wasm --create-namespace \
+    --values $SCRIPT_DIR/platform-values.yaml \
+    --wait --timeout 10m
+or exit $status
 
-section "waiting for NATS to be available"
-kubectl rollout status deploy,sts -l app.kubernetes.io/name=nats
-
-section "waiting for wadm to be available"
-kubectl wait --for=condition=available --timeout=600s deploy -l app.kubernetes.io/name=wadm
-
-section "waiting for wasmcloud-operator to be available"
-kubectl wait --for=condition=available --timeout=600s deploy -l app.kubernetes.io/name=wasmcloud-operator
-
-section "apply wasmcloud-host config"
-kubectl apply -f $SCRIPT_DIR/wasmcloud-host.yaml
-
-helm upgrade --install \
-    wasmcloud-platform \
-    --values https://raw.githubusercontent.com/wasmCloud/wasmcloud/main/charts/wasmcloud-platform/values.yaml \
-    oci://ghcr.io/wasmcloud/charts/wasmcloud-platform \
-    --dependency-update \
-    --set "hostConfig.enabled=true"
-
-kubectl describe wasmcloudhostconfig wasmcloud-host
+# Keep the host in a standalone manifest; do not also enable Helm hostConfig.
+fish $SCRIPT_DIR/configure-host.fish
+or exit $status
+kubectl --context k3d-platform-poc --namespace wasm get wasmcloudhostconfig wasmcloud-host

@@ -2,8 +2,9 @@ apiVersion: core.oam.dev/v1beta1
 kind: Application
 metadata:
   name: platform-poc
+  namespace: wasm
   annotations:
-    version: v0.0.1
+    version: v0.0.8
     description: "A PoC for Wasm Components"
 spec:
   components:
@@ -29,9 +30,9 @@ spec:
                   properties:
                     POSTGRES_HOST: host.docker.internal
                     POSTGRES_PORT: "5432"
-                    POSTGRES_USERNAME: postgres
-                    POSTGRES_PASSWORD: postgres
-                    POSTGRES_DATABASE: postgres
+                    POSTGRES_USERNAME: ${POSTGRES_USERNAME}
+                    POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+                    POSTGRES_DATABASE: ${POSTGRES_DATABASE}
                     POSTGRES_TLS_REQUIRED: "false"
         - type: link
           properties:
@@ -43,17 +44,17 @@ spec:
               config:
                 - name: data-init-redis
                   properties:
-                    url: "redis://host.docker.internal:6379"
+                    url: "redis://host.docker.internal:6379/1"
 
     - name: http-controller
       type: component
       properties:
-        image: host.docker.internal:5001/v2/platform-poc/http_controller:0.1.0
+        image: host.docker.internal:5001/v2/platform-poc/http_controller:0.1.3
         id: http-controller
       traits:
         - type: spreadscaler
           properties:
-            instances: 200
+            instances: 10
         - type: link
           properties:
             namespace: platform-poc
@@ -91,7 +92,7 @@ spec:
       traits:
         - type: spreadscaler
           properties:
-            instances: 200
+            instances: 1
         - type: link
           properties:
             namespace: wasi
@@ -102,7 +103,7 @@ spec:
               config:
                 - name: products-redis
                   properties:
-                    url: "redis://host.docker.internal:6379"
+                    url: "redis://host.docker.internal:6379/1"
 
     - name: inventory-service
       type: component
@@ -112,7 +113,7 @@ spec:
       traits:
         - type: spreadscaler
           properties:
-            instances: 200
+            instances: 10
         - type: link
           properties:
             namespace: wasmcloud
@@ -125,9 +126,9 @@ spec:
                   properties:
                     POSTGRES_HOST: host.docker.internal
                     POSTGRES_PORT: "5432"
-                    POSTGRES_USERNAME: postgres
-                    POSTGRES_PASSWORD: postgres
-                    POSTGRES_DATABASE: postgres
+                    POSTGRES_USERNAME: ${POSTGRES_USERNAME}
+                    POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+                    POSTGRES_DATABASE: ${POSTGRES_DATABASE}
                     POSTGRES_TLS_REQUIRED: "false"
 
     - name: notification-service
@@ -138,7 +139,7 @@ spec:
       traits:
         - type: spreadscaler
           properties:
-            instances: 200
+            instances: 1
 
     - name: orders-service
       type: component
@@ -148,7 +149,7 @@ spec:
       traits:
         - type: spreadscaler
           properties:
-            instances: 200
+            instances: 10
         - type: link
           properties:
             namespace: wasmcloud
@@ -161,9 +162,9 @@ spec:
                   properties:
                     POSTGRES_HOST: host.docker.internal
                     POSTGRES_PORT: "5432"
-                    POSTGRES_USERNAME: postgres
-                    POSTGRES_PASSWORD: postgres
-                    POSTGRES_DATABASE: postgres
+                    POSTGRES_USERNAME: ${POSTGRES_USERNAME}
+                    POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+                    POSTGRES_DATABASE: ${POSTGRES_DATABASE}
                     POSTGRES_TLS_REQUIRED: "false"
         - type: link
           properties:
@@ -188,6 +189,9 @@ spec:
         image: ghcr.io/wasmcloud/http-server:0.25.0
         id: http-server
       traits:
+        - type: daemonscaler
+          properties:
+            instances: 1
         - type: link
           properties:
             namespace: wasi
@@ -206,12 +210,20 @@ spec:
       properties:
         image: ghcr.io/wasmcloud/keyvalue-redis:0.28.2
         id: kv-redis
+      traits:
+        - type: daemonscaler
+          properties:
+            instances: 1
 
     - name: sqldb-postgres
       type: capability
       properties:
         image: ghcr.io/wasmcloud/sqldb-postgres:0.7.2
         id: sqldb-postgres
+      traits:
+        - type: daemonscaler
+          properties:
+            instances: 1
 
     - name: nats
       type: capability
@@ -219,6 +231,9 @@ spec:
         image: ghcr.io/wasmcloud/messaging-nats:0.24.0
         id: nats
       traits:
+        - type: daemonscaler
+          properties:
+            instances: 1
         - type: link
           properties:
             namespace: wasmcloud

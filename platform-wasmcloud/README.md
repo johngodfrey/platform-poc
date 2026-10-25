@@ -4,6 +4,12 @@ _Wasm components linked at runtime (via wRPC) and running in wasmCloud._
 
 ![deployed to wasmCloud](./platform-poc.webp)
 
+### Deploy alongside Java in Kubernetes
+
+Use [the k3d setup](./k3d/README.md) for the comparison. It deploys into the
+`wasm` namespace alongside Java in `java`. Both use persistent ingress: Wasm uses `localhost:8080` for `/products`,
+`/inventory`, `/orders`, and `/data-init`; Java uses `localhost:8081/api/...`. The local scripts below run a standalone host.
+
 ### Deploy locally
 
 ## Setup

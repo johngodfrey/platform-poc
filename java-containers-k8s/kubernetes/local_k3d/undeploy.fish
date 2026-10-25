@@ -22,4 +22,9 @@ function stop
 end
 
 section "undeploying platform-poc"
-kubectl --context k3d-platform-poc --namespace default delete -k $SCRIPT_DIR/../manifests/overlays/local
+# Preserve the namespace; remove only this application's resources.
+kubectl --context k3d-platform-poc --namespace java delete deployment,service,ingress inventory-service order-service product-service --ignore-not-found
+or exit $status
+kubectl --context k3d-platform-poc --namespace java delete deployment notification-service --ignore-not-found
+or exit $status
+kubectl --context k3d-platform-poc --namespace java delete secret -l app.kubernetes.io/part-of=platform-poc-java

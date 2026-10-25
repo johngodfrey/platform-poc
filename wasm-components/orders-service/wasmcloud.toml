@@ -4,8 +4,8 @@ language = "rust"
 type = "component"
 
 [component]
-wit_world = "orders-service"
-wasm_target = "wasm32-wasi"
+wit_world = "service"
+wasm_target = "wasm32-wasip1"
 
 [[registry.pull.sources]]
 target = "platform-poc:inventory"

@@ -5,6 +5,7 @@ wit_bindgen::generate!({
 
 use routefinder::Router;
 use serde::{Deserialize, Serialize};
+use sha2::{Digest, Sha256};
 use uuid::Uuid;
 use waki::{handler, ErrorCode, Method, Request, Response};
 use wasi::logging::logging::{log, Level};
@@ -34,6 +35,12 @@ fn handler(request: Request) -> Result<Response, ErrorCode> {
     let mut router = Router::new();
 
     router
+        .add("/constant-response", Handlers::ConstantResponse)
+        .expect("adding route");
+    router
+        .add("/body-check", Handlers::BodyCheck)
+        .expect("adding route");
+    router
         .add("/data-init/:action", Handlers::DataInit)
         .expect("adding route");
     router
@@ -51,6 +58,8 @@ fn handler(request: Request) -> Result<Response, ErrorCode> {
     };
 
     match m.handler() {
+        Handlers::ConstantResponse => Handlers::constant_response(request),
+        Handlers::BodyCheck => Handlers::body_check(request),
         Handlers::DataInit => {
             let captures = m.captures();
             let Ok(schema) = captures.get("action").try_into() else {
@@ -86,6 +95,8 @@ impl TryFrom<Option<&str>> for Schema {
 }
 
 enum Handlers {
+    ConstantResponse,
+    BodyCheck,
     DataInit,
     Inventory,
     Orders,
@@ -93,6 +104,35 @@ enum Handlers {
 }
 
 impl Handlers {
+    fn constant_response(request: Request) -> Result<Response, ErrorCode> {
+        if !matches!(request.method(), Method::Post) {
+            return response::method_not_allowed();
+        }
+
+        // Deliberately leave the request body unread to isolate HTTP invocation.
+        response::ok()
+    }
+
+    fn body_check(request: Request) -> Result<Response, ErrorCode> {
+        if !matches!(request.method(), Method::Post) {
+            return response::method_not_allowed();
+        }
+
+        // Read the same stream as /orders, without parsing or invoking services.
+        let body = match request.body() {
+            Ok(body) => body,
+            Err(err) => {
+                log(Level::Error, MODULE, &format!("BODY_CHECK_READ_FAILED: {err:#}"));
+                return response::server_error("failed to read body-check request body");
+            }
+        };
+
+        response::ok_with_json(&BodyCheck {
+            bytes: body.len(),
+            sha256: format!("{:x}", Sha256::digest(&body)),
+        })
+    }
+
     fn data_init(schema: Schema, request: Request) -> Result<Response, ErrorCode> {
         match request.method() {
             Method::Get => match schema {
@@ -168,8 +208,22 @@ impl Handlers {
                 Err(e) => response::server_error(&format!("failed to get orders: {e}")),
             },
             Method::Post => {
-                let Ok(items) = request.json::<Vec<SerializableLineItem>>() else {
-                    return response::bad_request();
+                let body = match request.body() {
+                    Ok(body) => body,
+                    Err(err) => {
+                        log(Level::Error, MODULE, &format!("ORDER_BODY_READ_FAILED: {err:#}"));
+                        return response::server_error("failed to read order request body");
+                    }
+                };
+                let items = match serde_json::from_slice::<Vec<SerializableLineItem>>(&body) {
+                    Ok(items) => items,
+                    Err(err) => {
+                        log(Level::Warn, MODULE, &format!(
+                            "ORDER_JSON_INVALID: bytes={} category={:?} line={} column={} error={err}",
+                            body.len(), err.classify(), err.line(), err.column()
+                        ));
+                        return response::bad_request();
+                    }
                 };
 
                 let items: Vec<LineItem> = items.iter().map(Into::into).collect();
@@ -277,6 +331,12 @@ mod response {
 struct SerializableAvailability {
     sku: String,
     is_in_stock: bool,
+}
+
+#[derive(Serialize)]
+struct BodyCheck {
+    bytes: usize,
+    sha256: String,
 }
 
 impl From<&Availability> for SerializableAvailability {

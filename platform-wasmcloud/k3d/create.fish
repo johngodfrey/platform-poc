@@ -13,7 +13,8 @@ k3d cluster create platform-poc \
     --agents 2 \
     --registry-use k3d-platform-poc.localhost:5001 \
     --api-port 6550 \
-    -p "8081:80@loadbalancer"
+    -p "8081:80@loadbalancer" \
+    -p "8080:80@loadbalancer"
 
 section configuration
 kubectl cluster-info

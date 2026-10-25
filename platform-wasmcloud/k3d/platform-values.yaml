@@ -1,0 +1,22 @@
+# wasmcloud-platform chart 0.1.2; isolated control plane for the Wasm namespace.
+hostConfig:
+  enabled: false
+host:
+  enabled: false
+nats:
+  config:
+    cluster:
+      enabled: false
+    jetstream:
+      fileStore:
+        pvc:
+          size: 1Gi
+  natsBox:
+    enabled: false
+wadm:
+  wadm:
+    image:
+      tag: v0.19.0
+    config:
+      nats:
+        server: nats://nats-headless.wasm.svc.cluster.local:4222

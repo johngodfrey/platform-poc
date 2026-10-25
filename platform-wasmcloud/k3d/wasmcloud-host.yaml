@@ -2,9 +2,12 @@ apiVersion: k8s.wasmcloud.dev/v1alpha1
 kind: WasmCloudHostConfig
 metadata:
   name: wasmcloud-host
+  namespace: wasm
 spec:
   lattice: default
-  version: 1.5.1
+  version: 1.9.2
   hostReplicas: 1
+  # Operator 0.3.x appends client/leaf ports (4222/7422); omit the port here.
+  natsAddress: nats://nats-headless.wasm.svc.cluster.local
   allowedInsecure:
     - "host.docker.internal:5001"

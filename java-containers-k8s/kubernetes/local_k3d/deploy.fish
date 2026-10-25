@@ -8,4 +8,4 @@ function section
 end
 
 section "deploying platform-poc"
-kubectl --context k3d-platform-poc --namespace default apply -k $SCRIPT_DIR/../manifests/overlays/local
+kubectl --context k3d-platform-poc --namespace java apply -k $SCRIPT_DIR/../manifests/overlays/local

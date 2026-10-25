@@ -4,5 +4,5 @@ language = "rust"
 type = "component"
 
 [component]
-wit_world = "data-init"
-wasm_target = "wasm32-wasi"
+wit_world = "data-init-service"
+wasm_target = "wasm32-wasip1"

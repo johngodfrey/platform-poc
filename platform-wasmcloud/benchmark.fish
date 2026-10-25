@@ -1,6 +1,11 @@
 #!/usr/bin/env fish
 
-oha 'http://localhost:8080/orders' \
+set --local endpoint http://localhost:8080
+if set --query PLATFORM_POC_ENDPOINT
+    set endpoint $PLATFORM_POC_ENDPOINT
+end
+
+oha "$endpoint/orders" \
     -c 100 \
     -n 10000 \
     -m POST \
@@ -8,13 +13,13 @@ oha 'http://localhost:8080/orders' \
     -d '
     [
       {
-        "sku": "WND-WPR-AW",
-        "price": 1000,
+        "sku": "ENG-V8-500",
+        "price": 8500,
         "quantity": 1
       },
       {
-        "sku": "TIR-SET-AS",
-        "price": 20000,
+        "sku": "BRK-PD-HP",
+        "price": 150,
         "quantity": 3
       }
     ]'
