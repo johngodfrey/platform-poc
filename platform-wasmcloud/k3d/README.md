@@ -11,7 +11,8 @@ unless another working directory is specified. The shell examples use zsh.
 
 ## Build prerequisites
 
-Install Rust, Fish, Python 3, Helm, kubectl and the **wasmCloud 1.x wash CLI**.
+Install Docker/BuildKit, Rust, Fish, Python 3.11.8 or newer, curl, patch, k3d,
+Helm, kubectl and the **wasmCloud 1.x wash CLI**.
 The repo uses wash 0.38.0 with wasmCloud 1.9.2; newer 2.x tools use a different
 application model. One way to install the pinned CLI is:
 
@@ -36,13 +37,18 @@ components. Keep the generated signing keys for subsequent rebuilds.
 ## Build and push
 
 ```zsh
-../build_and_push.fish
+# Build the patched native host and HTTP provider (first build can take many minutes).
+sh ../experiments/transport-registration/build.sh
+# Build/publish the application components. The registry must already be running.
+fish ../build_and_push.fish
+fish ./publish-transport.fish
 ```
 
 This builds and pushes all six signed components, stopping at the first failure.
 It pushes to `localhost:5001/v2/platform-poc/<component>:0.1.0` (HTTP controller
 uses `0.1.3` for request-body diagnostics and diagnostic endpoints); Kubernetes pulls
-those same repository paths through `host.docker.internal:5001`. No extra
+those same repository paths through `host.docker.internal:5001`. The patched
+HTTP provider is also published by `deploy.fish`. The native host image is imported into every k3d node by `configure-host.fish`. No extra
 registry or cluster is needed. PostgreSQL credentials are not needed to build.
 
 ## Configure Wasm data
@@ -80,10 +86,10 @@ with this machine's container runtime.
 kubectl --context k3d-platform-poc -n wasm get pods,applications,services
 ```
 
-The installer pins `wasmcloud-platform` chart 0.1.2, overrides wadm to 0.19.0,
-sets both platform NATS addresses to the `wasm` namespace, and creates one
-wasmCloud 1.9.2 host. There is one NATS server with JetStream, rather than the
-chart's three-server default. The host is managed by the standalone
+The installer pins `wasmcloud-platform` chart 0.1.2 and operator 0.4.0, overrides
+wadm to 0.19.0, sets both platform NATS addresses to the `wasm` namespace, and creates one
+patched wasmCloud 1.9.2 host (`platform-poc/wasmcloud:1.9.2-regack.2`). There is
+one NATS server with JetStream, rather than the chart's three-server default. The host is managed by the standalone
 `wasmcloud-host.yaml`, not duplicated by Helm's `hostConfig` option.
 
 The host's `natsAddress` must omit the port: this operator appends client port
@@ -96,10 +102,12 @@ and 1.9.2, but not 1.8.0. The test setup sets
 `WASMCLOUD_MAX_EXECUTION_TIME_MS=5000` (five seconds per executing invocation).
 This does not bound time spent waiting in a queue or guarantee HTTP recovery.
 
-The installed operator 0.3.x cannot configure host environment variables through
-its CRD, so `configure-host.fish` updates the generated Deployment after applying
-the host configuration. `install-operator.fish` calls it automatically. After
-any operator reconciliation that regenerates the Deployment, rerun:
+Operator 0.4.0 cannot configure host environment variables through its CRD.
+The patched host image therefore carries the five-second execution limit and
+four-second RPC timeout as image defaults, preserving them through operator
+rollouts. `configure-host.fish` also sets them explicitly on the Deployment,
+and imports the host image. `install-operator.fish` calls it automatically. To
+reapply the configuration:
 
 ```zsh
 fish ./configure-host.fish
@@ -310,7 +318,7 @@ acknowledgement after installation. The caller waits before publishing its
 handshake; the callee waits before publishing its handshake response. Other
 transport and HTTP interface versions remain pinned to their release lockfiles.
 
-From the repository root, on a machine with an ARM64 Docker engine:
+From the repository root, using an ARM64 or AMD64 Docker engine:
 
 ```zsh
 cd platform-wasmcloud/experiments/transport-registration
@@ -320,9 +328,11 @@ python3 test.py --control
 
 The build verifies upstream archive checksums, applies local Cargo overrides,
 and builds with `--locked`. It produces the local Docker image
-`platform-poc/wasmcloud:1.9.2-regack.1` and signed provider archive
-`.build/artifacts/http-server-0.25.0-regack.1.par.gz`. The archive uses separate
-experiment signing keys under `.build/keys`. Generated sources and artifacts
+`platform-poc/wasmcloud:1.9.2-regack.2` and signed provider archive
+`.build/artifacts/http-server-0.25.0-regack.1.par.gz`. The build selects the
+native Docker architecture for both artifacts; it does not build a multi-architecture provider archive. ARM64 is integration-tested;
+the AMD64 build path is provided but has not been integration-tested here.
+The archive uses separate experiment signing keys under `.build/keys`. Generated sources and artifacts
 are ignored by Git; source checksums are recorded in `.build/provenance.json`.
 Artifact IDs and checksums are recorded in `.build/artifacts/build.json`.
 
@@ -347,14 +357,18 @@ failures or dropped iterations. The final five-minute orders run completed
 iterations, so it failed the full-load gate. The initial orders run similarly
 had zero failures and 34 drops. A separate repeat interrupted by macOS sleep
 was excluded. Neither valid log capture recorded runtime warnings or errors.
-This supports the transport patch, while sustaining the requested arrival
-rate at the fixed VU ceiling remains unresolved.
+These historical runs used only 100 k6 VUs. Subsequent tests with 250 VUs
+completed 30,001 orders with zero failures or dropped iterations through the
+persistent ingress after correcting its stale backend routing.
 
 Results are retained under
 `../experiments/transport-registration/.build/results/gated-xrnog3fu/report.json`.
-The patched host/provider remain deployed in `wasm`; the checked-in default
-artifact references remain stock. The host uses an explicit
-`WasmCloudHostConfig.spec.image` override, which takes precedence over `version`.
+The checked-in Kubernetes defaults now select the patched host and provider.
+Host image revision `regack.2` uses the same transport patches as `regack.1`
+and additionally carries the execution/RPC timeouts as image defaults. The host
+uses an explicit `WasmCloudHostConfig.spec.image`, which takes precedence over
+`version`. Raw local result files are ignored by Git and are not shipped with a
+fresh clone; rerun the benchmarks to generate measurements on your machine.
 The temporary port-forwards, log followers and sleep inhibitor were removed.
 
 ## Inspect and remove

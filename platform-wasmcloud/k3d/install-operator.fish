@@ -1,11 +1,15 @@
 #!/usr/bin/env fish
 
 set --local SCRIPT_DIR (dirname (realpath (status -f)))
-for dependency in helm kubectl
+for dependency in helm kubectl docker k3d
     if not command -sq $dependency
         printf 'Required command not found: %s\n' $dependency >&2
         exit 1
     end
+end
+if not docker image inspect platform-poc/wasmcloud:1.9.2-regack.2 >/dev/null 2>&1
+    echo 'Build the patched transport before installing the platform. See k3d/README.md.' >&2
+    exit 1
 end
 
 # Pin the chart that supports this repo's wasmCloud 1.x/OAM manifests.

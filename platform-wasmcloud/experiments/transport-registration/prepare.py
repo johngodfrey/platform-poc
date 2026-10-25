@@ -6,7 +6,6 @@ from pathlib import Path
 import shutil
 import subprocess
 import tarfile
-import urllib.request
 
 ROOT = Path(__file__).resolve().parent
 BUILD = ROOT / ".build"
@@ -36,8 +35,10 @@ def extract(name, destination):
     archive.parent.mkdir(parents=True, exist_ok=True)
     if not archive.exists():
         print(f"Downloading {name}", flush=True)
-        with urllib.request.urlopen(url, timeout=120) as source, archive.open("wb") as out:
-            shutil.copyfileobj(source, out)
+        partial = archive.with_suffix('.part')
+        subprocess.run(['curl', '--fail', '--location', '--silent', '--show-error',
+                        '--retry', '3', '--max-time', '120', '--output', str(partial), url], check=True)
+        partial.replace(archive)
     if hashlib.sha256(archive.read_bytes()).hexdigest() != checksum:
         raise RuntimeError(f"Checksum mismatch: {archive}")
     destination.mkdir(parents=True)

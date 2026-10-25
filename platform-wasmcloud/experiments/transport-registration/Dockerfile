@@ -26,5 +26,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends ca-certificates
     && rm -rf /var/lib/apt/lists/*
 COPY --from=builder /out/wasmcloud /usr/local/bin/wasmcloud
 LABEL org.opencontainers.image.title="wasmCloud registration acknowledgement experiment" \
-      org.opencontainers.image.version="1.9.2-regack.1"
+      org.opencontainers.image.version="1.9.2-regack.2"
+# Keep execution bounds across operator-created Deployment replacements.
+ENV WASMCLOUD_MAX_EXECUTION_TIME_MS=5000 WASMCLOUD_RPC_TIMEOUT_MS=4000
 ENTRYPOINT ["/usr/local/bin/wasmcloud"]

@@ -4,7 +4,7 @@ metadata:
   name: platform-poc
   namespace: wasm
   annotations:
-    version: v0.0.8
+    version: v0.0.10-regack.2
     description: "A PoC for Wasm Components"
 spec:
   components:
@@ -186,7 +186,7 @@ spec:
     - name: http-server
       type: capability
       properties:
-        image: ghcr.io/wasmcloud/http-server:0.25.0
+        image: host.docker.internal:5001/v2/platform-poc/http-server:0.25.0-regack.1
         id: http-server
       traits:
         - type: daemonscaler

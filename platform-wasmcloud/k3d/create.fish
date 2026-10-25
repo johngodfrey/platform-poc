@@ -10,6 +10,7 @@ k3d registry create platform-poc.localhost --port 5001
 
 section "starting platform-poc cluster"
 k3d cluster create platform-poc \
+    --image rancher/k3s:v1.36.4-k3s1 \
     --agents 2 \
     --registry-use k3d-platform-poc.localhost:5001 \
     --api-port 6550 \
