@@ -147,7 +147,11 @@ phase markers and a live CPU-seconds-per-1,000-accepted-orders ratio. The
 implementation and Run selectors filter load-test results; resource charts
 always show both live deployments. The p95/mean latency gauges are cumulative
 statistics for each run, not percentiles calculated over the visible time range.
-The live CPU-per-order ratio is useful during steady load, not phase boundaries.
+The live CPU-per-order ratio retains each Run ID and uses matching 30-second
+CPU/throughput windows. It is shown only after a full window in the load phase;
+startup and recovery are excluded. This prevents recovery-phase division by
+near-zero throughput from creating misleading peaks. It includes background
+application CPU and is not a cumulative cost or an idle-subtracted measurement.
 Counter rates use a 20-second window and will smooth the start/end of load.
 
 Application totals include the four Java service containers, or the Wasm host

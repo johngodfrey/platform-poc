@@ -939,15 +939,15 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "poc_app_cpu_cores / on (implementation) (sum by (implementation) (sum by (implementation,testid) (rate(k6_demo_orders_accepted_total{testid=~\"$run\",implementation=~\"$implementation\"}[20s]))) > 0) * 1000",
-          "legendFormat": "{{implementation}}",
+          "expr": "(poc_app_cpu_cores / on (implementation) group_right () (sum by (implementation,testid) (rate(k6_demo_orders_accepted_total{testid=~\"$run\",implementation=~\"$implementation\"}[30s])) > 0) * 1000) and on (implementation,testid) (max by (implementation,testid) (min_over_time(k6_demo_phase{testid=~\"$run\",implementation=~\"$implementation\"}[30s])) == 1) and on (implementation,testid) (max by (implementation,testid) (max_over_time(k6_demo_phase{testid=~\"$run\",implementation=~\"$implementation\"}[30s])) == 1)",
+          "legendFormat": "{{implementation}} {{testid}}",
           "datasource": {
             "type": "prometheus",
             "uid": "footprint-prometheus"
           }
         }
       ],
-      "description": "Live ratio of application CPU rate to accepted order rate; meaningful during steady load, not idle or transitions.",
+      "description": "Run-specific live ratio, not cumulative CPU cost. Both CPU and throughput use 30-second windows. Only shown after a full window in the load phase; startup and recovery are excluded to avoid dividing lingering CPU usage by nearly zero throughput. Includes application idle/background CPU; run one test per implementation at a time.",
       "fieldConfig": {
         "defaults": {
           "unit": "s",
