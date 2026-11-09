@@ -25,6 +25,13 @@ HTTP port 8080 for `/products`, `/inventory`, `/orders`, and `/data-init`. Both
 ports map persistently to Traefik; Java keeps its `/api/...` routes on port 8081.
 See [the Wasm instructions](../../../platform-wasmcloud/k3d/README.md).
 
+Inventory uses Hibernate `create-drop` and the local overlay sets its Deployment
+strategy to `Recreate`. Old pods must finish shutting down before the replacement
+creates its tables; a rolling update can otherwise drop `t_inventory` after the
+new pod becomes ready. Keep this demo inventory deployment at one replica.
+The budget runner checks this strategy and performs a functional inventory/order
+check before starting load and after restoring resources.
+
 If the application is already in `default`, run this once from this directory:
 
 ```zsh

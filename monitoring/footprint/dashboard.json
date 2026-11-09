@@ -186,7 +186,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "sum by (implementation,testid) (rate(k6_demo_orders_accepted_total{testid=~\"$run\",implementation=~\"$implementation\"}[20s]))",
+          "expr": "sum by (implementation,testid) (rate(k6_demo_orders_accepted_total{testid=~\"$run\",implementation=~\"$implementation\",testid!~\"budget-.*|density-.*|capacity-.*|scaleout-.*\"}[20s]))",
           "legendFormat": "{{implementation}} {{testid}}",
           "datasource": {
             "type": "prometheus",
@@ -588,8 +588,8 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "sum by (implementation,testid) (rate(k6_demo_orders_accepted_total{testid=~\"$run\",implementation=~\"$implementation\"}[20s]))",
-          "legendFormat": "{{implementation}} accepted",
+          "expr": "sum by (implementation,testid) (rate(k6_demo_orders_accepted_total{testid=~\"$run\",implementation=~\"$implementation\",testid!~\"budget-.*|density-.*|capacity-.*|scaleout-.*\"}[20s]))",
+          "legendFormat": "{{implementation}} {{testid}} accepted",
           "datasource": {
             "type": "prometheus",
             "uid": "footprint-prometheus"
@@ -597,15 +597,15 @@
         },
         {
           "refId": "B",
-          "expr": "max by (implementation,testid) (k6_demo_target_rps{testid=~\"$run\",implementation=~\"$implementation\"})",
-          "legendFormat": "{{implementation}} offered",
+          "expr": "max by (implementation,testid) (k6_demo_target_rps{testid=~\"$run\",implementation=~\"$implementation\",testid!~\"budget-.*|density-.*|capacity-.*|scaleout-.*\"})",
+          "legendFormat": "{{implementation}} {{testid}} offered",
           "datasource": {
             "type": "prometheus",
             "uid": "footprint-prometheus"
           }
         }
       ],
-      "description": "Accepted rate uses a 20-second window. Only footprint demo runs emit these custom metrics.",
+      "description": "Accepted rate uses a 20-second window. Metrics are emitted by the benchmark runners.",
       "fieldConfig": {
         "defaults": {
           "unit": "ops",
@@ -678,7 +678,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "k6_http_req_duration_p95{testid=~\"$run\",implementation=~\"$implementation\",scenario=\"orders\"}",
+          "expr": "k6_http_req_duration_p95{testid=~\"$run\",implementation=~\"$implementation\",testid!~\"budget-.*|density-.*|capacity-.*|scaleout-.*\",scenario=\"orders\"}",
           "legendFormat": "{{implementation}} p95",
           "datasource": {
             "type": "prometheus",
@@ -687,7 +687,7 @@
         },
         {
           "refId": "B",
-          "expr": "k6_http_req_duration_avg{testid=~\"$run\",implementation=~\"$implementation\",scenario=\"orders\"}",
+          "expr": "k6_http_req_duration_avg{testid=~\"$run\",implementation=~\"$implementation\",testid!~\"budget-.*|density-.*|capacity-.*|scaleout-.*\",scenario=\"orders\"}",
           "legendFormat": "{{implementation}} average",
           "datasource": {
             "type": "prometheus",
@@ -768,7 +768,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "sum by (implementation,testid) (rate(k6_demo_order_failures_total{testid=~\"$run\",implementation=~\"$implementation\"}[20s]))",
+          "expr": "sum by (implementation,testid) (rate(k6_demo_order_failures_total{testid=~\"$run\",implementation=~\"$implementation\",testid!~\"budget-.*|density-.*|capacity-.*|scaleout-.*\"}[20s]))",
           "legendFormat": "{{implementation}} failed",
           "datasource": {
             "type": "prometheus",
@@ -777,7 +777,7 @@
         },
         {
           "refId": "B",
-          "expr": "sum by (implementation,testid) (rate(k6_dropped_iterations_total{testid=~\"$run\",implementation=~\"$implementation\"}[20s]))",
+          "expr": "sum by (implementation,testid) (rate(k6_dropped_iterations_total{testid=~\"$run\",implementation=~\"$implementation\",testid!~\"budget-.*|density-.*|capacity-.*|scaleout-.*\"}[20s]))",
           "legendFormat": "{{implementation}} dropped",
           "datasource": {
             "type": "prometheus",
@@ -858,7 +858,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "max by (implementation,testid) (k6_demo_phase{testid=~\"$run\",implementation=~\"$implementation\"})",
+          "expr": "max by (implementation,testid) (k6_demo_phase{testid=~\"$run\",implementation=~\"$implementation\",testid!~\"budget-.*|density-.*|capacity-.*|scaleout-.*\"})",
           "legendFormat": "{{implementation}} {{testid}}",
           "datasource": {
             "type": "prometheus",
@@ -939,7 +939,7 @@
       "targets": [
         {
           "refId": "A",
-          "expr": "(poc_app_cpu_cores / on (implementation) group_right () (sum by (implementation,testid) (rate(k6_demo_orders_accepted_total{testid=~\"$run\",implementation=~\"$implementation\"}[30s])) > 0) * 1000) and on (implementation,testid) (max by (implementation,testid) (min_over_time(k6_demo_phase{testid=~\"$run\",implementation=~\"$implementation\"}[30s])) == 1) and on (implementation,testid) (max by (implementation,testid) (max_over_time(k6_demo_phase{testid=~\"$run\",implementation=~\"$implementation\"}[30s])) == 1)",
+          "expr": "(poc_app_cpu_cores / on (implementation) group_right () (sum by (implementation,testid) (rate(k6_demo_orders_accepted_total{testid=~\"$run\",implementation=~\"$implementation\",testid!~\"budget-.*|density-.*|capacity-.*|scaleout-.*\"}[30s])) > 0) * 1000) and on (implementation,testid) (max by (implementation,testid) (min_over_time(k6_demo_phase{testid=~\"$run\",implementation=~\"$implementation\",testid!~\"budget-.*|density-.*|capacity-.*|scaleout-.*\"}[30s])) == 1) and on (implementation,testid) (max by (implementation,testid) (max_over_time(k6_demo_phase{testid=~\"$run\",implementation=~\"$implementation\",testid!~\"budget-.*|density-.*|capacity-.*|scaleout-.*\"}[30s])) == 1)",
           "legendFormat": "{{implementation}} {{testid}}",
           "datasource": {
             "type": "prometheus",
@@ -1123,7 +1123,7 @@
           "uid": "footprint-prometheus"
         },
         "query": {
-          "query": "label_values(k6_demo_phase, testid)",
+          "query": "label_values(k6_demo_phase{testid!~\"budget-.*|density-.*|capacity-.*|scaleout-.*\"}, testid)",
           "refId": "runs"
         },
         "refresh": 2,
@@ -1136,5 +1136,31 @@
         }
       }
     ]
-  }
+  },
+  "links": [
+    {
+      "title": "Java vs Wasm \u2014 fixed-budget density",
+      "type": "link",
+      "url": "/grafana/d/java-wasm-budget",
+      "keepTime": true
+    },
+    {
+      "title": "Java vs Wasm \u2014 memory density",
+      "type": "link",
+      "url": "/grafana/d/java-wasm-memory-density",
+      "keepTime": true
+    },
+    {
+      "title": "Java vs Wasm \u2014 order-rate saturation",
+      "type": "link",
+      "url": "/grafana/d/java-wasm-capacity",
+      "keepTime": true
+    },
+    {
+      "title": "Java vs Wasm \u2014 scale-out",
+      "type": "link",
+      "url": "/grafana/d/java-wasm-scaleout",
+      "keepTime": true
+    }
+  ]
 }

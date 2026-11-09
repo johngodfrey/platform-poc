@@ -1,0 +1,14 @@
+{
+  "description": "Application-container limits; shared databases, host NATS, Wasm sidecar and control plane are outside this budget.",
+  "cpu_millicores": 2000,
+  "memory_mib": 4096,
+  "java": [
+    {"deployment": "inventory-service", "container": "inventory-service", "cpu_millicores": 500, "memory_mib": 1024},
+    {"deployment": "notification-service", "container": "notification-service", "cpu_millicores": 500, "memory_mib": 1024},
+    {"deployment": "order-service", "container": "order-service", "cpu_millicores": 500, "memory_mib": 1024},
+    {"deployment": "product-service", "container": "product-service", "cpu_millicores": 500, "memory_mib": 1024}
+  ],
+  "wasm": [
+    {"deployment": "wasmcloud-host", "container": "wasmcloud-host", "cpu_millicores": 2000, "memory_mib": 4096}
+  ]
+}

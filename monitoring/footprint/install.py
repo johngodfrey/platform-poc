@@ -28,5 +28,10 @@ for name in ['footprint-prometheus', 'footprint-grafana']:
     # Provisioned subPath mounts need a restart when their ConfigMap changes.
     run(K + ['-n', 'monitoring', 'rollout', 'restart', 'deployment/' + name])
     run(K + ['-n', 'monitoring', 'rollout', 'status', 'deployment/' + name, '--timeout=240s'])
-print('\nDashboard: http://localhost:8080/grafana/d/java-wasm-footprint')
+print('\nFootprint dashboard: http://localhost:8080/grafana/d/java-wasm-footprint')
 print('Read-only dashboard access requires no login. Prometheus: http://localhost:8080/prometheus/')
+print('Budget dashboard: http://localhost:8080/grafana/d/java-wasm-budget')
+print('Memory-density dashboard: http://localhost:8080/grafana/d/java-wasm-memory-density')
+print('Capacity dashboard: http://localhost:8080/grafana/d/java-wasm-capacity')
+print('Scale-out dashboard: http://localhost:8080/grafana/d/java-wasm-scaleout')
+print('Automatic-scaling dashboard: http://localhost:8080/grafana/d/java-wasm-autoscale')

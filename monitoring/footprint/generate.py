@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Generate the provisioned dashboard and Kubernetes resources (no third-party modules)."""
 import json
+import runpy
+from copy import deepcopy
 from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 NS = 'monitoring'
@@ -35,6 +37,13 @@ config = {
   ],
  }],
 }
+node_scrape = deepcopy(config['scrape_configs'][0])
+node_scrape['job_name'] = 'density-node'
+node_scrape['metric_relabel_configs'] = [
+ {'source_labels': ['__name__', 'id'], 'separator': ';',
+  'regex': 'container_cpu_usage_seconds_total;/|machine_cpu_cores;', 'action': 'keep'},
+]
+config['scrape_configs'].append(node_scrape)
 rules = []
 for implementation in ['java', 'wasm']:
     selector = f'namespace="{implementation}",job="kubelet-cadvisor"'
@@ -54,7 +63,9 @@ def panel(title, queries, unit, x, y, w=12, h=8, kind='timeseries', description=
         {'matcher': {'id': 'byRegexp', 'options': '^wasm.*'}, 'properties': [{'id': 'color', 'value': {'mode': 'fixed', 'fixedColor': '#73BF69'}}]},
     ]
     panels.append(p)
-filt = 'testid=~"$run",implementation=~"$implementation"'
+footprint_scope = 'testid!~"budget-.*|density-.*|capacity-.*|scaleout-.*"'
+budget_scope = 'testid=~"budget-.*"'
+filt = 'testid=~"$run",implementation=~"$implementation",' + footprint_scope
 # k6 labels each scenario separately. Sum counters before presenting the run totals.
 accepted = f'sum by (implementation,testid) (rate(k6_demo_orders_accepted_total{{{filt}}}[20s]))'
 failures = f'sum by (implementation,testid) (rate(k6_demo_order_failures_total{{{filt}}}[20s]))'
@@ -65,7 +76,7 @@ panel('Application memory', [('poc_app_memory_bytes', '{{implementation}}')], 'b
 panel('Application CPU', [('poc_app_cpu_cores', '{{implementation}}')], 'cores', 12, 4, description='30-second CPU rate; 1 core = 1,000 millicores. Monitoring overhead is separate.')
 panel('Kubernetes namespace memory', [('poc_namespace_memory_bytes', '{{implementation}}')], 'bytes', 0, 12, description='All Java/Wasm containers, including Wasm sidecar, NATS, operator and wadm. EXCLUDES host Java NATS and shared Postgres/Redis; not a complete deployment total.')
 panel('Kubernetes namespace CPU', [('poc_namespace_cpu_cores', '{{implementation}}')], 'cores', 12, 12)
-panel('Delivered versus offered orders / second', [(accepted, '{{implementation}} accepted'), (f'max by (implementation,testid) (k6_demo_target_rps{{{filt}}})', '{{implementation}} offered')], 'ops', 0, 20, description='Accepted rate uses a 20-second window. Only footprint demo runs emit these custom metrics.')
+panel('Delivered versus offered orders / second', [(accepted, '{{implementation}} {{testid}} accepted'), (f'max by (implementation,testid) (k6_demo_target_rps{{{filt}}})', '{{implementation}} {{testid}} offered')], 'ops', 0, 20, description='Accepted rate uses a 20-second window. Metrics are emitted by the benchmark runners.')
 panel('Order latency (cumulative run statistics)', [(f'k6_http_req_duration_p95{{{filt},scenario="orders"}}', '{{implementation}} p95'), (f'k6_http_req_duration_avg{{{filt},scenario="orders"}}', '{{implementation}} average')], 's', 12, 20, description='k6 trend gauges are statistics accumulated during each run, not percentiles over the visible dashboard time range. Do not average percentiles across runs.')
 panel('Failures and dropped orders / second', [(failures, '{{implementation}} failed'), (f'sum by (implementation,testid) (rate(k6_dropped_iterations_total{{{filt}}}[20s]))', '{{implementation}} dropped')], 'ops', 0, 28)
 panel('Demo phase: 0 idle / 1 load / 2 recovery', [(f'max by (implementation,testid) (k6_demo_phase{{{filt}}})', '{{implementation}} {{testid}}')], 'short', 12, 28)
@@ -82,13 +93,49 @@ panel('Monitoring footprint (excluded from application totals)', [('sum(containe
 panels.append({'id': 99, 'title': 'How to present this demo', 'type': 'text', 'gridPos': {'x': 0, 'y': 44, 'w': 24, 'h': 5}, 'options': {'mode': 'markdown', 'content': 'Run Java and Wasm sequentially: **30s idle → 120s at 100 orders/s → 30s recovery**. Both use 250 order workers plus one marker worker. Charts refresh every 5s; CPU is smoothed over 30s. Resource charts show both live deployments, while the implementation/run selectors filter load-test results. Memory is working set. **Shared host databases and Java’s host NATS are excluded.** Monitoring runs in its own namespace. No cold-start claims: start warmed. k3d CPU and memory do not include all VM/macOS overhead. Run IDs separate repeated tests; missing test data means no run has been received, not zero load.'}})
 dashboard = {'uid': 'java-wasm-footprint', 'title': 'Java vs Wasm — live footprint', 'schemaVersion': 39, 'version': 1, 'refresh': '5s', 'time': {'from': 'now-15m', 'to': 'now'}, 'tags': ['platform-poc', 'footprint'], 'panels': panels, 'templating': {'list': [
  {'name': 'implementation', 'type': 'custom', 'query': 'java,wasm', 'includeAll': True, 'allValue': '.*', 'multi': True, 'current': {'text': 'All', 'value': '$__all'}},
- {'name': 'run', 'label': 'Run', 'type': 'query', 'datasource': {'type': 'prometheus', 'uid': 'footprint-prometheus'}, 'query': {'query': 'label_values(k6_demo_phase, testid)', 'refId': 'runs'}, 'refresh': 2, 'includeAll': True, 'allValue': '.*', 'multi': True, 'current': {'text': 'All', 'value': '$__all'}},
+ {'name': 'run', 'label': 'Run', 'type': 'query', 'datasource': {'type': 'prometheus', 'uid': 'footprint-prometheus'}, 'query': {'query': 'label_values(k6_demo_phase{' + footprint_scope + '}, testid)', 'refId': 'runs'}, 'refresh': 2, 'includeAll': True, 'allValue': '.*', 'multi': True, 'current': {'text': 'All', 'value': '$__all'}},
 ]}}
+dashboard['links'] = [{'title': 'Budget tests', 'type': 'link', 'url': '/grafana/d/java-wasm-budget', 'keepTime': True}]
+# Scope every test query as well as the dropdown: selecting All must never mix
+# budget stages into footprint results (or footprint runs into budget results).
+budget_dashboard = deepcopy(dashboard)
+for budget_panel in budget_dashboard['panels']:
+    for target in budget_panel.get('targets', []):
+        target['expr'] = target['expr'].replace(footprint_scope, budget_scope)
+run_variable = budget_dashboard['templating']['list'][1]
+run_variable['query']['query'] = run_variable['query']['query'].replace(footprint_scope, budget_scope)
+budget_dashboard.update(uid='java-wasm-budget', title='Java vs Wasm — fixed-budget density', tags=['platform-poc', 'budget'], time={'from': 'now-30m', 'to': 'now'})
+budget_dashboard['links'] = [{'title': 'Footprint tests', 'type': 'link', 'url': '/grafana/d/java-wasm-footprint', 'keepTime': True}]
+budget_dashboard['panels'][-1].update(title='How to read the budget test', options={'mode': 'markdown', 'content': 'Run **`python3 monitoring/budget/run.py run both`**. Only **budget-…** stages appear in the Run selector and load-test charts, including warmup. Compare offered/accepted throughput, failures, dropped work and latency as the rate increases. Resource charts show both live deployments, including rollouts and restoration; they are not filtered by Run. CPU cost needs 30 seconds of continuous load. The runner’s **report.html** records the configured budget, pass/fail gates and highest passing tested rate; this dashboard does not calculate those verdicts. Shared host databases and Java’s host NATS are excluded. Run one benchmark at a time.'})
+density_dashboard = runpy.run_path(str(ROOT.parent/'density/dashboard.py'))['build'](dashboard)
+capacity_dashboard = deepcopy(dashboard)
+capacity_dashboard.update(uid='java-wasm-capacity', title='Java vs Wasm — order-rate saturation', tags=['platform-poc','capacity'], time={'from':'now-30m','to':'now'})
+for capacity_panel in capacity_dashboard['panels']:
+    for target in capacity_panel.get('targets', []):
+        target['expr'] = target['expr'].replace(footprint_scope, 'testid=~"capacity-.*"')
+capacity_dashboard['templating']['list'][1]['query']['query'] = 'label_values(k6_demo_phase{testid=~"capacity-.*"}, testid)'
+capacity_dashboard['panels'][-1]['options']['content'] = 'Run **`python3 monitoring/capacity/run.py both`**. Current application resources are preserved. Warm at 100 orders/s, then increase offered load using equal worker limits and durations. Default gates: p95 below 500 ms, zero failed orders and zero dropped work. Stop at the first failing step. Dropped work can indicate load-generator exhaustion and is inconclusive about application capacity. See report.html for highest passing tested rate. Shared databases, ingress, messaging, VM and load generator are part of the observed request path. A passing final step is a lower bound, not a maximum.'
+(ROOT.parent/'capacity/dashboard.json').write_text(json.dumps(capacity_dashboard, indent=2)+'\n')
+scaleout_dashboard = runpy.run_path(str(ROOT.parent/'scaleout/dashboard.py'))['build'](dashboard)
+(ROOT.parent/'scaleout/dashboard.json').write_text(json.dumps(scaleout_dashboard, indent=2)+'\n')
+autoscale_dashboard = runpy.run_path(str(ROOT.parent/'autoscale/dashboard.py'))['build'](dashboard)
+(ROOT.parent/'autoscale/dashboard.json').write_text(json.dumps(autoscale_dashboard, indent=2)+'\n')
+all_dashboards = [dashboard, budget_dashboard, density_dashboard, capacity_dashboard, scaleout_dashboard]
+for view in all_dashboards:
+    view['links'] = [{'title': other['title'], 'type': 'link', 'url': '/grafana/d/'+other['uid'], 'keepTime': True}
+                     for other in all_dashboards if other is not view]
+(ROOT.parent/'density/dashboard.json').write_text(json.dumps(density_dashboard, indent=2)+'\n')
 (ROOT/'dashboard.json').write_text(json.dumps(dashboard, indent=2)+'\n')
+(ROOT.parent/'budget'/'dashboard.json').write_text(json.dumps(budget_dashboard, indent=2)+'\n')
 resource('ConfigMap', 'footprint-grafana', data={
  'datasource.yaml': json.dumps({'apiVersion': 1, 'datasources': [{'name': 'Footprint Prometheus', 'uid': 'footprint-prometheus', 'type': 'prometheus', 'access': 'proxy', 'url': 'http://footprint-prometheus:9090/prometheus', 'isDefault': True, 'jsonData': {'timeInterval': '5s'}}]}),
  'provider.yaml': json.dumps({'apiVersion': 1, 'providers': [{'name': 'footprint', 'type': 'file', 'disableDeletion': False, 'updateIntervalSeconds': 10, 'options': {'path': '/var/lib/grafana/dashboards'}}]}),
  'dashboard.json': json.dumps(dashboard),
+ 'budget-dashboard.json': json.dumps(budget_dashboard),
+ 'density-dashboard.json': json.dumps(density_dashboard),
+ 'capacity-dashboard.json': json.dumps(capacity_dashboard),
+ 'scaleout-dashboard.json': json.dumps(scaleout_dashboard),
+ 'autoscale-dashboard.json': json.dumps(autoscale_dashboard),
 })
 for name, size in [('footprint-prometheus', '2Gi'), ('footprint-grafana', '1Gi')]:
  resource('PersistentVolumeClaim', name, spec={'accessModes': ['ReadWriteOnce'], 'resources': {'requests': {'storage': size}}})
@@ -111,11 +158,11 @@ env.update({'GF_DATABASE_WAL':'true', 'GF_DATABASE_MAX_OPEN_CONN':'1',
 deployment('footprint-grafana', {
  'name':'grafana','image':'grafana/grafana:13.2.4','env':[{'name':k,'value':v} for k,v in env.items()], 'ports':[{'containerPort':3000}],
  'resources':{'requests':{'cpu':'200m','memory':'256Mi'},'limits':{'cpu':'1','memory':'1Gi'}},'readinessProbe':probe('/api/health',3000),
- 'volumeMounts':[{'name':'data','mountPath':'/var/lib/grafana'},{'name':'config','mountPath':'/etc/grafana/provisioning/datasources/datasource.yaml','subPath':'datasource.yaml','readOnly':True},{'name':'config','mountPath':'/etc/grafana/provisioning/dashboards/provider.yaml','subPath':'provider.yaml','readOnly':True},{'name':'config','mountPath':'/var/lib/grafana/dashboards/dashboard.json','subPath':'dashboard.json','readOnly':True},{'name':'admin','mountPath':'/etc/grafana/admin','readOnly':True}],
+ 'volumeMounts':[{'name':'data','mountPath':'/var/lib/grafana'},{'name':'config','mountPath':'/etc/grafana/provisioning/datasources/datasource.yaml','subPath':'datasource.yaml','readOnly':True},{'name':'config','mountPath':'/etc/grafana/provisioning/dashboards/provider.yaml','subPath':'provider.yaml','readOnly':True},{'name':'config','mountPath':'/var/lib/grafana/dashboards/dashboard.json','subPath':'dashboard.json','readOnly':True},{'name':'config','mountPath':'/var/lib/grafana/dashboards/budget-dashboard.json','subPath':'budget-dashboard.json','readOnly':True},{'name':'config','mountPath':'/var/lib/grafana/dashboards/density-dashboard.json','subPath':'density-dashboard.json','readOnly':True},{'name':'config','mountPath':'/var/lib/grafana/dashboards/capacity-dashboard.json','subPath':'capacity-dashboard.json','readOnly':True},{'name':'config','mountPath':'/var/lib/grafana/dashboards/scaleout-dashboard.json','subPath':'scaleout-dashboard.json','readOnly':True},{'name':'config','mountPath':'/var/lib/grafana/dashboards/autoscale-dashboard.json','subPath':'autoscale-dashboard.json','readOnly':True},{'name':'admin','mountPath':'/etc/grafana/admin','readOnly':True}],
 },[{'name':'config','configMap':{'name':'footprint-grafana'}},{'name':'data','persistentVolumeClaim':{'claimName':'footprint-grafana'}},{'name':'admin','secret':{'secretName':'footprint-grafana-admin','defaultMode':288}}],uid=472)
 for name, port in [('footprint-prometheus',9090),('footprint-grafana',3000)]:
  resource('Service',name,spec={'selector':{'app':name},'ports':[{'port':port,'targetPort':port,'name':'http'}]})
 ing=resource('Ingress','footprint',spec={'ingressClassName':'traefik','rules':[{'http':{'paths':[{'path':path,'pathType':'Prefix','backend':{'service':{'name':svc,'port':{'number':port}}}} for path,svc,port in [('/grafana','footprint-grafana',3000),('/prometheus','footprint-prometheus',9090)]]}}]})
 ing['apiVersion']='networking.k8s.io/v1'
 (ROOT/'resources.json').write_text(json.dumps({'apiVersion':'v1','kind':'List','items':items},indent=2)+'\n')
-print('Generated dashboard.json and resources.json')
+print('Generated footprint, budget, memory-density, capacity, scale-out and automatic-scaling dashboards and resources.json')

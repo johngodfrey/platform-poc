@@ -3,6 +3,10 @@ kind: Deployment
 metadata:
   name: inventory-service
 spec:
+  # create-drop must finish in the old JVM before its replacement creates tables.
+  strategy:
+    type: Recreate
+    rollingUpdate: null
   template:
     spec:
       containers:
