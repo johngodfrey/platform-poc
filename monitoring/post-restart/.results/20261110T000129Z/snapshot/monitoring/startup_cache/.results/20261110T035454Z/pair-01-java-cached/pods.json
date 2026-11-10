@@ -1,0 +1,35 @@
+{
+  "pods": {
+    "d05e4758-3c9e-406c-9ad5-fcf7c060a45e": {
+      "name": "inventory-service-7776865f5-zk8lp",
+      "deployment": "inventory-service",
+      "created_seconds": 1.0177345000010973,
+      "currently_ready": true,
+      "ready_seconds": 14.146738499999628
+    },
+    "df8e290a-9cf9-419b-8663-4626b00dfec5": {
+      "name": "notification-service-68966fcd48-ddkvc",
+      "deployment": "notification-service",
+      "created_seconds": 1.0303811669982679,
+      "currently_ready": true,
+      "ready_seconds": 14.154680416999327
+    },
+    "bf195f8c-a42b-44ae-9272-a62ad130b3cc": {
+      "name": "order-service-974fc6dbd-87fhd",
+      "deployment": "order-service",
+      "created_seconds": 1.0420407919991703,
+      "currently_ready": true,
+      "ready_seconds": 14.158698082999763
+    },
+    "463af314-115f-420c-a856-ec40579509c3": {
+      "name": "product-service-547d6dc75b-84hjw",
+      "deployment": "product-service",
+      "created_seconds": 1.0449866669987387,
+      "currently_ready": true,
+      "ready_seconds": 14.162734917001217
+    }
+  },
+  "errors": [],
+  "all_ready_seconds": 14.162753332999273,
+  "currently_all_ready": true
+}

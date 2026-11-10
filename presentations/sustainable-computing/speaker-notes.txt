@@ -1,0 +1,71 @@
+1. Can Wasm help us run fewer servers?
+The question is useful work per physical machine while meeting a service target. This deck evaluates evidence for consolidation, not a universal runtime ranking. Measurements are from this repository on a local MacBook setup, through 8 November 2026.
+Evidence: monitoring/validation/RESULTS.md; monitoring/capacity/VALIDATION_RESULTS.md
+
+2. The result is a trade-off, not a winner
+Retiring capacity is the proposed sustainability mechanism, not an observed outcome. No electrical energy, carbon emissions, or production server counts were measured.
+Evidence: monitoring/validation/RESULTS.md; monitoring/capacity/VALIDATION_RESULTS.md
+
+3. What we actually compared
+One 16 GiB MacBook Pro; three k3d nodes share a single ten-core Docker VM. Java totals include four application containers. Wasm totals include host and provider child processes. Wasm NATS sidecar, shared databases/messaging, operator, ingress, monitoring, and generator are outside application totals. This is not a whole-system resource or energy inventory. API shapes and architectures differ; accepted HTTP orders do not establish identical downstream work or notification completion.
+Evidence: monitoring/validation/RESULTS.md; monitoring/capacity/VALIDATION_RESULTS.md
+
+4. How much evidence do we have?
+Frozen validation retained 65 historical runs and 1,095 files unchanged. Frozen footprint trials reused processes rather than five independent fresh starts. Capacity repetitions used fresh pods and alternating implementation order. The thirty-minute runs were one per version. Cross-study profiles differ and are not pooled.
+Evidence: monitoring/validation/RESULTS.md; monitoring/capacity/VALIDATION_RESULTS.md
+
+5. Idle memory is the clearest opportunity
+Loaded values are medians of separate runs; paired median ratios show about 88% lower RAM. These are working-set observations, not required limits or whole-server RAM. Wasm working set increased from 278 to 347 MiB over repeated runs; it was not stationary.
+Evidence: monitoring/validation/RESULTS.md
+
+6. The CPU cost moves in the opposite direction
+Idle CPU medians were Java .0198 and Wasm .00283 cores. Loaded p95 run ranges: Java 20.94–22.92 ms, Wasm 30.03–50.94 ms. Java had lower p95 in every pair. CPU time is not a direct measure of electricity or carbon; no conversion is made.
+Evidence: monitoring/validation/RESULTS.md
+
+7. Memory density: a strong, bounded result
+Java 2 GiB passed all three; next 1 GiB suffered observed OOMs under equal service splits. This is not an optimized JVM minimum. Wasm 512 MiB passed all; 384 MiB passed two, third inconclusive for insufficient CPU telemetry, not proven saturation. At 256 MiB two OOMs. The 4-versus-16 projection divides an application-only 8 GiB pool by passing caps. It excludes shared platform overhead and concurrent interactions. Do not apply these short 25/s caps to long-lived 350/s workloads.
+Evidence: monitoring/validation/RESULTS.md
+
+8. The machine profile can reverse the answer
+Arithmetic illustration only, using rounded footprint medians: Java 2739 MiB/.275 cores and Wasm 323 MiB/.511 cores at 100/s each. floor(min(memory/RAM, CPU/cores)). 4 GiB gives Java1/Wasm7;32 GiB givesJava11/Wasm7. Pools are already assumed net of infrastructure reservations; additional safety headroom and peaks reduce counts. No such concurrent packing trial was run. Mean working sets are not safe resource limits. Wasm growth, databases, network contention, SLA and shared runtime scaling can invalidate linear extrapolation. These numbers demonstrate bottleneck reversal, not a sales forecast.
+Evidence: monitoring/validation/RESULTS.md
+
+9. Startup: Wasm served the first order sooner
+Median first accepted order, fresh owned worker then same-worker restart. Java cold22.65–25.28s,cached14.80–25.66; Wasm cold13.34–17.36,cached5.35–9.20. Image-cold is not whole-machine cold boot; databases remain warm. Wasm component/provider caches are new on both starts. Potential reduction in idle reserve was not measured as energy or fleet savings.
+Evidence: monitoring/validation/RESULTS.md
+
+10. Faster startup did not guarantee faster scale-out
+Medians computed directly from the five-pair series.json. New-pod first-order median Java16.43/Wasm7.34seconds; capacity-ready Java18.04/Wasm23.33seconds. The harness event includes runtime/control-loop readiness, not a universal scale-ready definition. Java was already healthy under the target in at least some trials; this is not equal pre-scale overload. Prior automatic-scaling experiments were sensitive to triggers, placement, telemetry and workload. These exploratory profiles are separate from the later frozen footprint/startup studies and optimized capacity trials.
+Evidence: monitoring/scaleout/.results/repeated-20261103T234859Z/series.json
+
+11. Tune allocation before declaring a capacity gap
+On this slide both bars are Java: original equal500m per four services vs orders1200m,inventory600m,notifications150m,products50m. Memory1GiB per service unchanged. Matched200/s short-step p95 fell56.72→15.36ms. This allocation is orders-specific and made product startup several minutes; not recommended blindly for mixed traffic. Earlier apparent Wasm capacity advantage was confounded by CPU allocation. Bar legend is overridden to original/alternative below.
+Evidence: monitoring/capacity/VALIDATION_RESULTS.md
+
+12. At sustained 350/s, both accepted every issued order
+Dropped arrivals were never issued; these are not HTTP failures. Both pods remained ready/unchanged. Each long trial started fresh with3min25/s priming and3min100/s warmup, no preceding upper-rate probe. Wasm long run was a separately declared addendum; failed450/400confirmations are retained. Three paired short350/s trials passed each version. Exact throughput maxima unresolved; 400/s varied, and finite generator workers/shared-machine stalls can cause drops. One long run each does not establish universal reliability.
+Evidence: monitoring/capacity/VALIDATION_RESULTS.md
+
+13. Sustained load confirms the resource trade-off
+CPU90s smoothed rates sampled15s; complete current-container coverage100%. Java .6617cores,Wasm1.1778. RAM1249.32/322.52MiB. These means do not measure hardware energy or establish safe CPU/memory limits. Do not compare absolute RAM directly with unlimited100/s footprints as if configurations matched.
+Evidence: monitoring/capacity/VALIDATION_RESULTS.md
+
+14. The unresolved issue: Wasm memory kept growing
+First/last values are window means, not endpoints or a fitted linear trend. Wasm maximum468MiB;mean322.5. Could be pools,caches,allocator behavior or leak; cause unknown. Do not linearly extrapolate growth. Ending-window RAM still65%belowJava, but advantage narrowed. The512MiB25/s density cap is not validated for long-lived350/s operation.
+Evidence: monitoring/capacity/VALIDATION_RESULTS.md
+
+15. Sustainability: what we can—and cannot—claim
+The proposed mechanism is consolidation of a memory-bound fleet. A system using more CPU may still enable a smaller fleet, or may instead hit a CPU bottleneck. Which outcome dominates requires real hosts, workload mixes, reservations and energy measurements. No emission factors, cloud prices or energy-per-core conversion have been assumed.
+Evidence: monitoring/validation/RESULTS.md; monitoring/capacity/VALIDATION_RESULTS.md
+
+16. A practical replacement decision
+These are recommendations inferred from measured trade-offs, not additional tests. Wasm reliability required a locally patched host and HTTP provider; the operational burden and maintenance of that patch must be part of adoption planning. Java allocation optimization must be retained in a fair production comparison.
+Evidence: monitoring/validation/RESULTS.md; monitoring/capacity/VALIDATION_RESULTS.md
+
+17. The next proof should be fewer real machines
+Proposed future acceptance test, not an executed result. Include databases, brokers, operators, sidecars, storage, ingress and monitoring. Measure service completion if accepted orders are asynchronous. Use several trials and a long enough soak to resolve growth; do not aim for100%CPU if it breaks latency/headroom requirements. Measure actual host energy at equal delivered load instead of inferring it from utilization.
+Evidence: monitoring/capacity/VALIDATION_RESULTS.md; monitoring/validation/RESULTS.md
+
+18. Evidence and reproducibility
+Frozen runtime: wasmCloud1.9.2-regack.1 and HTTP provider0.25.0-regack.1. Subscriber registration acknowledgement patches in both host/provider transports. Execution limit5s,RPC4s. Same frozen artifacts throughout validation; earlier transport failures and setup failures retained, not silently discarded. Protocol, source and artifact hashes, failed probes, restoration checks and trial reports are in the linked local evidence. Ignored .results files must be exported separately if distributing this repository; the deck itself is self-contained.
+Evidence: monitoring/validation/RESULTS.md; monitoring/capacity/VALIDATION_RESULTS.md

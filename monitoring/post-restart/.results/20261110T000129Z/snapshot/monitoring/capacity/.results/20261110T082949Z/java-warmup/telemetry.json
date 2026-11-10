@@ -1,0 +1,646 @@
+{
+  "before": {
+    "time": 1794300158.431146,
+    "samples": [
+      {
+        "node": "k3d-platform-poc-agent-0",
+        "line": "container_cpu_cfs_burst_periods_total{container=\"notification-service\",id=\"/kubepods/pod44f87832-b498-4280-9e54-3c7310d551a4/be9c6b0632e3f33397845a87d4d1e1fa98cb0da360d21f5bb0ac236ef4070067\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/notification-service:0.1.0\",name=\"be9c6b0632e3f33397845a87d4d1e1fa98cb0da360d21f5bb0ac236ef4070067\",namespace=\"java\",pod=\"notification-service-75d76cc98d-pjr9t\"} 0 1794300143973"
+      },
+      {
+        "node": "k3d-platform-poc-agent-0",
+        "line": "container_cpu_cfs_burst_periods_total{container=\"product-service\",id=\"/kubepods/pod4d79223b-680c-41ef-bfa7-8894c15e1002/e9d7835542a4df2dee3d7b5237450b4783595a54715c5b6c6e03c7452a5c86e4\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/product-service:0.1.0\",name=\"e9d7835542a4df2dee3d7b5237450b4783595a54715c5b6c6e03c7452a5c86e4\",namespace=\"java\",pod=\"product-service-746674ddbd-lmstg\"} 0 1794300143388"
+      },
+      {
+        "node": "k3d-platform-poc-agent-0",
+        "line": "container_cpu_cfs_burst_seconds_total{container=\"notification-service\",id=\"/kubepods/pod44f87832-b498-4280-9e54-3c7310d551a4/be9c6b0632e3f33397845a87d4d1e1fa98cb0da360d21f5bb0ac236ef4070067\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/notification-service:0.1.0\",name=\"be9c6b0632e3f33397845a87d4d1e1fa98cb0da360d21f5bb0ac236ef4070067\",namespace=\"java\",pod=\"notification-service-75d76cc98d-pjr9t\"} 0 1794300143973"
+      },
+      {
+        "node": "k3d-platform-poc-agent-0",
+        "line": "container_cpu_cfs_burst_seconds_total{container=\"product-service\",id=\"/kubepods/pod4d79223b-680c-41ef-bfa7-8894c15e1002/e9d7835542a4df2dee3d7b5237450b4783595a54715c5b6c6e03c7452a5c86e4\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/product-service:0.1.0\",name=\"e9d7835542a4df2dee3d7b5237450b4783595a54715c5b6c6e03c7452a5c86e4\",namespace=\"java\",pod=\"product-service-746674ddbd-lmstg\"} 0 1794300143388"
+      },
+      {
+        "node": "k3d-platform-poc-agent-0",
+        "line": "container_cpu_cfs_periods_total{container=\"notification-service\",id=\"/kubepods/pod44f87832-b498-4280-9e54-3c7310d551a4/be9c6b0632e3f33397845a87d4d1e1fa98cb0da360d21f5bb0ac236ef4070067\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/notification-service:0.1.0\",name=\"be9c6b0632e3f33397845a87d4d1e1fa98cb0da360d21f5bb0ac236ef4070067\",namespace=\"java\",pod=\"notification-service-75d76cc98d-pjr9t\"} 4159 1794300143973"
+      },
+      {
+        "node": "k3d-platform-poc-agent-0",
+        "line": "container_cpu_cfs_periods_total{container=\"product-service\",id=\"/kubepods/pod4d79223b-680c-41ef-bfa7-8894c15e1002/e9d7835542a4df2dee3d7b5237450b4783595a54715c5b6c6e03c7452a5c86e4\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/product-service:0.1.0\",name=\"e9d7835542a4df2dee3d7b5237450b4783595a54715c5b6c6e03c7452a5c86e4\",namespace=\"java\",pod=\"product-service-746674ddbd-lmstg\"} 6209 1794300143388"
+      },
+      {
+        "node": "k3d-platform-poc-agent-0",
+        "line": "container_cpu_cfs_throttled_periods_total{container=\"notification-service\",id=\"/kubepods/pod44f87832-b498-4280-9e54-3c7310d551a4/be9c6b0632e3f33397845a87d4d1e1fa98cb0da360d21f5bb0ac236ef4070067\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/notification-service:0.1.0\",name=\"be9c6b0632e3f33397845a87d4d1e1fa98cb0da360d21f5bb0ac236ef4070067\",namespace=\"java\",pod=\"notification-service-75d76cc98d-pjr9t\"} 941 1794300143973"
+      },
+      {
+        "node": "k3d-platform-poc-agent-0",
+        "line": "container_cpu_cfs_throttled_periods_total{container=\"product-service\",id=\"/kubepods/pod4d79223b-680c-41ef-bfa7-8894c15e1002/e9d7835542a4df2dee3d7b5237450b4783595a54715c5b6c6e03c7452a5c86e4\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/product-service:0.1.0\",name=\"e9d7835542a4df2dee3d7b5237450b4783595a54715c5b6c6e03c7452a5c86e4\",namespace=\"java\",pod=\"product-service-746674ddbd-lmstg\"} 5652 1794300143388"
+      },
+      {
+        "node": "k3d-platform-poc-agent-0",
+        "line": "container_cpu_cfs_throttled_seconds_total{container=\"notification-service\",id=\"/kubepods/pod44f87832-b498-4280-9e54-3c7310d551a4/be9c6b0632e3f33397845a87d4d1e1fa98cb0da360d21f5bb0ac236ef4070067\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/notification-service:0.1.0\",name=\"be9c6b0632e3f33397845a87d4d1e1fa98cb0da360d21f5bb0ac236ef4070067\",namespace=\"java\",pod=\"notification-service-75d76cc98d-pjr9t\"} 156.163067 1794300143973"
+      },
+      {
+        "node": "k3d-platform-poc-agent-0",
+        "line": "container_cpu_cfs_throttled_seconds_total{container=\"product-service\",id=\"/kubepods/pod4d79223b-680c-41ef-bfa7-8894c15e1002/e9d7835542a4df2dee3d7b5237450b4783595a54715c5b6c6e03c7452a5c86e4\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/product-service:0.1.0\",name=\"e9d7835542a4df2dee3d7b5237450b4783595a54715c5b6c6e03c7452a5c86e4\",namespace=\"java\",pod=\"product-service-746674ddbd-lmstg\"} 977.455485 1794300143388"
+      },
+      {
+        "node": "k3d-platform-poc-agent-1",
+        "line": "container_cpu_cfs_burst_periods_total{container=\"order-service\",id=\"/kubepods/pod4f2ee700-a489-4748-9b96-8784bd04aa94/fd6cb301308b5de6cc79b7e427678b8c1ba4487b4882e1f7b2a8ef5ab3ddc3e1\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/order-service:0.1.0\",name=\"fd6cb301308b5de6cc79b7e427678b8c1ba4487b4882e1f7b2a8ef5ab3ddc3e1\",namespace=\"java\",pod=\"order-service-7fc65f7fb-7vqp5\"} 0 1794300147596"
+      },
+      {
+        "node": "k3d-platform-poc-agent-1",
+        "line": "container_cpu_cfs_burst_seconds_total{container=\"order-service\",id=\"/kubepods/pod4f2ee700-a489-4748-9b96-8784bd04aa94/fd6cb301308b5de6cc79b7e427678b8c1ba4487b4882e1f7b2a8ef5ab3ddc3e1\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/order-service:0.1.0\",name=\"fd6cb301308b5de6cc79b7e427678b8c1ba4487b4882e1f7b2a8ef5ab3ddc3e1\",namespace=\"java\",pod=\"order-service-7fc65f7fb-7vqp5\"} 0 1794300147596"
+      },
+      {
+        "node": "k3d-platform-poc-agent-1",
+        "line": "container_cpu_cfs_periods_total{container=\"order-service\",id=\"/kubepods/pod4f2ee700-a489-4748-9b96-8784bd04aa94/fd6cb301308b5de6cc79b7e427678b8c1ba4487b4882e1f7b2a8ef5ab3ddc3e1\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/order-service:0.1.0\",name=\"fd6cb301308b5de6cc79b7e427678b8c1ba4487b4882e1f7b2a8ef5ab3ddc3e1\",namespace=\"java\",pod=\"order-service-7fc65f7fb-7vqp5\"} 3650 1794300147596"
+      },
+      {
+        "node": "k3d-platform-poc-agent-1",
+        "line": "container_cpu_cfs_throttled_periods_total{container=\"order-service\",id=\"/kubepods/pod4f2ee700-a489-4748-9b96-8784bd04aa94/fd6cb301308b5de6cc79b7e427678b8c1ba4487b4882e1f7b2a8ef5ab3ddc3e1\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/order-service:0.1.0\",name=\"fd6cb301308b5de6cc79b7e427678b8c1ba4487b4882e1f7b2a8ef5ab3ddc3e1\",namespace=\"java\",pod=\"order-service-7fc65f7fb-7vqp5\"} 78 1794300147596"
+      },
+      {
+        "node": "k3d-platform-poc-agent-1",
+        "line": "container_cpu_cfs_throttled_seconds_total{container=\"order-service\",id=\"/kubepods/pod4f2ee700-a489-4748-9b96-8784bd04aa94/fd6cb301308b5de6cc79b7e427678b8c1ba4487b4882e1f7b2a8ef5ab3ddc3e1\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/order-service:0.1.0\",name=\"fd6cb301308b5de6cc79b7e427678b8c1ba4487b4882e1f7b2a8ef5ab3ddc3e1\",namespace=\"java\",pod=\"order-service-7fc65f7fb-7vqp5\"} 6.745991 1794300147596"
+      },
+      {
+        "node": "k3d-platform-poc-server-0",
+        "line": "container_cpu_cfs_burst_periods_total{container=\"inventory-service\",id=\"/kubepods/pod5558d445-9416-448a-879b-d7f8c4e5bc16/90e7a86d4df620e80d0e57a9555161ce508e3df37dd80624af0d20ee2d69d0f1\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/inventory-service:0.1.0\",name=\"90e7a86d4df620e80d0e57a9555161ce508e3df37dd80624af0d20ee2d69d0f1\",namespace=\"java\",pod=\"inventory-service-864d7445f5-nxrvc\"} 0 1794300145064"
+      },
+      {
+        "node": "k3d-platform-poc-server-0",
+        "line": "container_cpu_cfs_burst_seconds_total{container=\"inventory-service\",id=\"/kubepods/pod5558d445-9416-448a-879b-d7f8c4e5bc16/90e7a86d4df620e80d0e57a9555161ce508e3df37dd80624af0d20ee2d69d0f1\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/inventory-service:0.1.0\",name=\"90e7a86d4df620e80d0e57a9555161ce508e3df37dd80624af0d20ee2d69d0f1\",namespace=\"java\",pod=\"inventory-service-864d7445f5-nxrvc\"} 0 1794300145064"
+      },
+      {
+        "node": "k3d-platform-poc-server-0",
+        "line": "container_cpu_cfs_periods_total{container=\"inventory-service\",id=\"/kubepods/pod5558d445-9416-448a-879b-d7f8c4e5bc16/90e7a86d4df620e80d0e57a9555161ce508e3df37dd80624af0d20ee2d69d0f1\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/inventory-service:0.1.0\",name=\"90e7a86d4df620e80d0e57a9555161ce508e3df37dd80624af0d20ee2d69d0f1\",namespace=\"java\",pod=\"inventory-service-864d7445f5-nxrvc\"} 3681 1794300145064"
+      },
+      {
+        "node": "k3d-platform-poc-server-0",
+        "line": "container_cpu_cfs_throttled_periods_total{container=\"inventory-service\",id=\"/kubepods/pod5558d445-9416-448a-879b-d7f8c4e5bc16/90e7a86d4df620e80d0e57a9555161ce508e3df37dd80624af0d20ee2d69d0f1\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/inventory-service:0.1.0\",name=\"90e7a86d4df620e80d0e57a9555161ce508e3df37dd80624af0d20ee2d69d0f1\",namespace=\"java\",pod=\"inventory-service-864d7445f5-nxrvc\"} 155 1794300145064"
+      },
+      {
+        "node": "k3d-platform-poc-server-0",
+        "line": "container_cpu_cfs_throttled_seconds_total{container=\"inventory-service\",id=\"/kubepods/pod5558d445-9416-448a-879b-d7f8c4e5bc16/90e7a86d4df620e80d0e57a9555161ce508e3df37dd80624af0d20ee2d69d0f1\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/inventory-service:0.1.0\",name=\"90e7a86d4df620e80d0e57a9555161ce508e3df37dd80624af0d20ee2d69d0f1\",namespace=\"java\",pod=\"inventory-service-864d7445f5-nxrvc\"} 4.877023 1794300145064"
+      }
+    ]
+  },
+  "after": {
+    "time": 1794300357.9718132,
+    "samples": [
+      {
+        "node": "k3d-platform-poc-agent-0",
+        "line": "container_cpu_cfs_burst_periods_total{container=\"notification-service\",id=\"/kubepods/pod44f87832-b498-4280-9e54-3c7310d551a4/be9c6b0632e3f33397845a87d4d1e1fa98cb0da360d21f5bb0ac236ef4070067\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/notification-service:0.1.0\",name=\"be9c6b0632e3f33397845a87d4d1e1fa98cb0da360d21f5bb0ac236ef4070067\",namespace=\"java\",pod=\"notification-service-75d76cc98d-pjr9t\"} 0 1794300355116"
+      },
+      {
+        "node": "k3d-platform-poc-agent-0",
+        "line": "container_cpu_cfs_burst_periods_total{container=\"product-service\",id=\"/kubepods/pod4d79223b-680c-41ef-bfa7-8894c15e1002/e9d7835542a4df2dee3d7b5237450b4783595a54715c5b6c6e03c7452a5c86e4\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/product-service:0.1.0\",name=\"e9d7835542a4df2dee3d7b5237450b4783595a54715c5b6c6e03c7452a5c86e4\",namespace=\"java\",pod=\"product-service-746674ddbd-lmstg\"} 0 1794300344890"
+      },
+      {
+        "node": "k3d-platform-poc-agent-0",
+        "line": "container_cpu_cfs_burst_seconds_total{container=\"notification-service\",id=\"/kubepods/pod44f87832-b498-4280-9e54-3c7310d551a4/be9c6b0632e3f33397845a87d4d1e1fa98cb0da360d21f5bb0ac236ef4070067\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/notification-service:0.1.0\",name=\"be9c6b0632e3f33397845a87d4d1e1fa98cb0da360d21f5bb0ac236ef4070067\",namespace=\"java\",pod=\"notification-service-75d76cc98d-pjr9t\"} 0 1794300355116"
+      },
+      {
+        "node": "k3d-platform-poc-agent-0",
+        "line": "container_cpu_cfs_burst_seconds_total{container=\"product-service\",id=\"/kubepods/pod4d79223b-680c-41ef-bfa7-8894c15e1002/e9d7835542a4df2dee3d7b5237450b4783595a54715c5b6c6e03c7452a5c86e4\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/product-service:0.1.0\",name=\"e9d7835542a4df2dee3d7b5237450b4783595a54715c5b6c6e03c7452a5c86e4\",namespace=\"java\",pod=\"product-service-746674ddbd-lmstg\"} 0 1794300344890"
+      },
+      {
+        "node": "k3d-platform-poc-agent-0",
+        "line": "container_cpu_cfs_periods_total{container=\"notification-service\",id=\"/kubepods/pod44f87832-b498-4280-9e54-3c7310d551a4/be9c6b0632e3f33397845a87d4d1e1fa98cb0da360d21f5bb0ac236ef4070067\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/notification-service:0.1.0\",name=\"be9c6b0632e3f33397845a87d4d1e1fa98cb0da360d21f5bb0ac236ef4070067\",namespace=\"java\",pod=\"notification-service-75d76cc98d-pjr9t\"} 6046 1794300355116"
+      },
+      {
+        "node": "k3d-platform-poc-agent-0",
+        "line": "container_cpu_cfs_periods_total{container=\"product-service\",id=\"/kubepods/pod4d79223b-680c-41ef-bfa7-8894c15e1002/e9d7835542a4df2dee3d7b5237450b4783595a54715c5b6c6e03c7452a5c86e4\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/product-service:0.1.0\",name=\"e9d7835542a4df2dee3d7b5237450b4783595a54715c5b6c6e03c7452a5c86e4\",namespace=\"java\",pod=\"product-service-746674ddbd-lmstg\"} 6759 1794300344890"
+      },
+      {
+        "node": "k3d-platform-poc-agent-0",
+        "line": "container_cpu_cfs_throttled_periods_total{container=\"notification-service\",id=\"/kubepods/pod44f87832-b498-4280-9e54-3c7310d551a4/be9c6b0632e3f33397845a87d4d1e1fa98cb0da360d21f5bb0ac236ef4070067\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/notification-service:0.1.0\",name=\"be9c6b0632e3f33397845a87d4d1e1fa98cb0da360d21f5bb0ac236ef4070067\",namespace=\"java\",pod=\"notification-service-75d76cc98d-pjr9t\"} 981 1794300355116"
+      },
+      {
+        "node": "k3d-platform-poc-agent-0",
+        "line": "container_cpu_cfs_throttled_periods_total{container=\"product-service\",id=\"/kubepods/pod4d79223b-680c-41ef-bfa7-8894c15e1002/e9d7835542a4df2dee3d7b5237450b4783595a54715c5b6c6e03c7452a5c86e4\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/product-service:0.1.0\",name=\"e9d7835542a4df2dee3d7b5237450b4783595a54715c5b6c6e03c7452a5c86e4\",namespace=\"java\",pod=\"product-service-746674ddbd-lmstg\"} 5740 1794300344890"
+      },
+      {
+        "node": "k3d-platform-poc-agent-0",
+        "line": "container_cpu_cfs_throttled_seconds_total{container=\"notification-service\",id=\"/kubepods/pod44f87832-b498-4280-9e54-3c7310d551a4/be9c6b0632e3f33397845a87d4d1e1fa98cb0da360d21f5bb0ac236ef4070067\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/notification-service:0.1.0\",name=\"be9c6b0632e3f33397845a87d4d1e1fa98cb0da360d21f5bb0ac236ef4070067\",namespace=\"java\",pod=\"notification-service-75d76cc98d-pjr9t\"} 159.37819 1794300355116"
+      },
+      {
+        "node": "k3d-platform-poc-agent-0",
+        "line": "container_cpu_cfs_throttled_seconds_total{container=\"product-service\",id=\"/kubepods/pod4d79223b-680c-41ef-bfa7-8894c15e1002/e9d7835542a4df2dee3d7b5237450b4783595a54715c5b6c6e03c7452a5c86e4\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/product-service:0.1.0\",name=\"e9d7835542a4df2dee3d7b5237450b4783595a54715c5b6c6e03c7452a5c86e4\",namespace=\"java\",pod=\"product-service-746674ddbd-lmstg\"} 982.962832 1794300344890"
+      },
+      {
+        "node": "k3d-platform-poc-agent-1",
+        "line": "container_cpu_cfs_burst_periods_total{container=\"order-service\",id=\"/kubepods/pod4f2ee700-a489-4748-9b96-8784bd04aa94/fd6cb301308b5de6cc79b7e427678b8c1ba4487b4882e1f7b2a8ef5ab3ddc3e1\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/order-service:0.1.0\",name=\"fd6cb301308b5de6cc79b7e427678b8c1ba4487b4882e1f7b2a8ef5ab3ddc3e1\",namespace=\"java\",pod=\"order-service-7fc65f7fb-7vqp5\"} 0 1794300356239"
+      },
+      {
+        "node": "k3d-platform-poc-agent-1",
+        "line": "container_cpu_cfs_burst_seconds_total{container=\"order-service\",id=\"/kubepods/pod4f2ee700-a489-4748-9b96-8784bd04aa94/fd6cb301308b5de6cc79b7e427678b8c1ba4487b4882e1f7b2a8ef5ab3ddc3e1\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/order-service:0.1.0\",name=\"fd6cb301308b5de6cc79b7e427678b8c1ba4487b4882e1f7b2a8ef5ab3ddc3e1\",namespace=\"java\",pod=\"order-service-7fc65f7fb-7vqp5\"} 0 1794300356239"
+      },
+      {
+        "node": "k3d-platform-poc-agent-1",
+        "line": "container_cpu_cfs_periods_total{container=\"order-service\",id=\"/kubepods/pod4f2ee700-a489-4748-9b96-8784bd04aa94/fd6cb301308b5de6cc79b7e427678b8c1ba4487b4882e1f7b2a8ef5ab3ddc3e1\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/order-service:0.1.0\",name=\"fd6cb301308b5de6cc79b7e427678b8c1ba4487b4882e1f7b2a8ef5ab3ddc3e1\",namespace=\"java\",pod=\"order-service-7fc65f7fb-7vqp5\"} 5535 1794300356239"
+      },
+      {
+        "node": "k3d-platform-poc-agent-1",
+        "line": "container_cpu_cfs_throttled_periods_total{container=\"order-service\",id=\"/kubepods/pod4f2ee700-a489-4748-9b96-8784bd04aa94/fd6cb301308b5de6cc79b7e427678b8c1ba4487b4882e1f7b2a8ef5ab3ddc3e1\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/order-service:0.1.0\",name=\"fd6cb301308b5de6cc79b7e427678b8c1ba4487b4882e1f7b2a8ef5ab3ddc3e1\",namespace=\"java\",pod=\"order-service-7fc65f7fb-7vqp5\"} 82 1794300356239"
+      },
+      {
+        "node": "k3d-platform-poc-agent-1",
+        "line": "container_cpu_cfs_throttled_seconds_total{container=\"order-service\",id=\"/kubepods/pod4f2ee700-a489-4748-9b96-8784bd04aa94/fd6cb301308b5de6cc79b7e427678b8c1ba4487b4882e1f7b2a8ef5ab3ddc3e1\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/order-service:0.1.0\",name=\"fd6cb301308b5de6cc79b7e427678b8c1ba4487b4882e1f7b2a8ef5ab3ddc3e1\",namespace=\"java\",pod=\"order-service-7fc65f7fb-7vqp5\"} 6.757596 1794300356239"
+      },
+      {
+        "node": "k3d-platform-poc-server-0",
+        "line": "container_cpu_cfs_burst_periods_total{container=\"inventory-service\",id=\"/kubepods/pod5558d445-9416-448a-879b-d7f8c4e5bc16/90e7a86d4df620e80d0e57a9555161ce508e3df37dd80624af0d20ee2d69d0f1\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/inventory-service:0.1.0\",name=\"90e7a86d4df620e80d0e57a9555161ce508e3df37dd80624af0d20ee2d69d0f1\",namespace=\"java\",pod=\"inventory-service-864d7445f5-nxrvc\"} 0 1794300356191"
+      },
+      {
+        "node": "k3d-platform-poc-server-0",
+        "line": "container_cpu_cfs_burst_seconds_total{container=\"inventory-service\",id=\"/kubepods/pod5558d445-9416-448a-879b-d7f8c4e5bc16/90e7a86d4df620e80d0e57a9555161ce508e3df37dd80624af0d20ee2d69d0f1\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/inventory-service:0.1.0\",name=\"90e7a86d4df620e80d0e57a9555161ce508e3df37dd80624af0d20ee2d69d0f1\",namespace=\"java\",pod=\"inventory-service-864d7445f5-nxrvc\"} 0 1794300356191"
+      },
+      {
+        "node": "k3d-platform-poc-server-0",
+        "line": "container_cpu_cfs_periods_total{container=\"inventory-service\",id=\"/kubepods/pod5558d445-9416-448a-879b-d7f8c4e5bc16/90e7a86d4df620e80d0e57a9555161ce508e3df37dd80624af0d20ee2d69d0f1\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/inventory-service:0.1.0\",name=\"90e7a86d4df620e80d0e57a9555161ce508e3df37dd80624af0d20ee2d69d0f1\",namespace=\"java\",pod=\"inventory-service-864d7445f5-nxrvc\"} 5567 1794300356191"
+      },
+      {
+        "node": "k3d-platform-poc-server-0",
+        "line": "container_cpu_cfs_throttled_periods_total{container=\"inventory-service\",id=\"/kubepods/pod5558d445-9416-448a-879b-d7f8c4e5bc16/90e7a86d4df620e80d0e57a9555161ce508e3df37dd80624af0d20ee2d69d0f1\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/inventory-service:0.1.0\",name=\"90e7a86d4df620e80d0e57a9555161ce508e3df37dd80624af0d20ee2d69d0f1\",namespace=\"java\",pod=\"inventory-service-864d7445f5-nxrvc\"} 215 1794300356191"
+      },
+      {
+        "node": "k3d-platform-poc-server-0",
+        "line": "container_cpu_cfs_throttled_seconds_total{container=\"inventory-service\",id=\"/kubepods/pod5558d445-9416-448a-879b-d7f8c4e5bc16/90e7a86d4df620e80d0e57a9555161ce508e3df37dd80624af0d20ee2d69d0f1\",image=\"k3d-platform-poc.localhost:5001/platform-poc-java/inventory-service:0.1.0\",name=\"90e7a86d4df620e80d0e57a9555161ce508e3df37dd80624af0d20ee2d69d0f1\",namespace=\"java\",pod=\"inventory-service-864d7445f5-nxrvc\"} 6.194385 1794300356191"
+      }
+    ]
+  },
+  "load_start": 1794300164.921,
+  "load_end": 1794300344.921,
+  "current_pods": [
+    "inventory-service-864d7445f5-nxrvc",
+    "notification-service-75d76cc98d-pjr9t",
+    "order-service-7fc65f7fb-7vqp5",
+    "product-service-746674ddbd-lmstg"
+  ],
+  "queries": {
+    "cpu": {
+      "status": "success",
+      "data": {
+        "resultType": "matrix",
+        "result": [
+          {
+            "metric": {
+              "container": "inventory-service",
+              "pod": "inventory-service-864d7445f5-nxrvc"
+            },
+            "values": [
+              [
+                1794300164.921,
+                "0.004338208510403364"
+              ],
+              [
+                1794300179.921,
+                "0.21317799256505598"
+              ],
+              [
+                1794300194.921,
+                "0.13621556061332032"
+              ],
+              [
+                1794300239.921,
+                "0.12358664821860944"
+              ],
+              [
+                1794300254.921,
+                "0.08047752718633659"
+              ],
+              [
+                1794300284.921,
+                "0.12348940705335253"
+              ],
+              [
+                1794300299.921,
+                "0.09216370461610629"
+              ],
+              [
+                1794300314.921,
+                "0.09249388001813326"
+              ],
+              [
+                1794300329.921,
+                "0.09118078658020903"
+              ],
+              [
+                1794300344.921,
+                "0.0751689405847215"
+              ]
+            ]
+          },
+          {
+            "metric": {
+              "container": "notification-service",
+              "pod": "notification-service-75d76cc98d-pjr9t"
+            },
+            "values": [
+              [
+                1794300164.921,
+                "0.005196892922768482"
+              ],
+              [
+                1794300179.921,
+                "0.03647616015846057"
+              ],
+              [
+                1794300194.921,
+                "0.031916330576252615"
+              ],
+              [
+                1794300209.921,
+                "0.019849565642970725"
+              ],
+              [
+                1794300224.921,
+                "0.01208675339309443"
+              ],
+              [
+                1794300239.921,
+                "0.017453858705505563"
+              ],
+              [
+                1794300254.921,
+                "0.017033647189144147"
+              ],
+              [
+                1794300269.921,
+                "0.016797698465643825"
+              ],
+              [
+                1794300284.921,
+                "0.016732748184019514"
+              ],
+              [
+                1794300299.921,
+                "0.01404478666289907"
+              ],
+              [
+                1794300314.921,
+                "0.015833138466677672"
+              ],
+              [
+                1794300329.921,
+                "0.016110435288517515"
+              ],
+              [
+                1794300344.921,
+                "0.01571504120879123"
+              ]
+            ]
+          },
+          {
+            "metric": {
+              "container": "order-service",
+              "pod": "order-service-7fc65f7fb-7vqp5"
+            },
+            "values": [
+              [
+                1794300164.921,
+                "0.02870919104369792"
+              ],
+              [
+                1794300179.921,
+                "0.1424917362412675"
+              ],
+              [
+                1794300194.921,
+                "0.3720321103510658"
+              ],
+              [
+                1794300209.921,
+                "0.21944465419392067"
+              ],
+              [
+                1794300224.921,
+                "0.20800910621842428"
+              ],
+              [
+                1794300239.921,
+                "0.18537555730396055"
+              ],
+              [
+                1794300254.921,
+                "0.18620203269520277"
+              ],
+              [
+                1794300269.921,
+                "0.18746587502882228"
+              ],
+              [
+                1794300299.921,
+                "0.12622616848906063"
+              ],
+              [
+                1794300314.921,
+                "0.1859947440870977"
+              ],
+              [
+                1794300329.921,
+                "0.18633013734128032"
+              ],
+              [
+                1794300344.921,
+                "0.1807653061224487"
+              ]
+            ]
+          },
+          {
+            "metric": {
+              "container": "product-service",
+              "pod": "product-service-746674ddbd-lmstg"
+            },
+            "values": [
+              [
+                1794300164.921,
+                "0.006573651452282242"
+              ],
+              [
+                1794300209.921,
+                "0.006484758643728114"
+              ],
+              [
+                1794300224.921,
+                "0.006713599999999963"
+              ],
+              [
+                1794300254.921,
+                "0.004332563373608108"
+              ],
+              [
+                1794300269.921,
+                "0.002145723910602367"
+              ],
+              [
+                1794300284.921,
+                "0.0017578895149409789"
+              ],
+              [
+                1794300314.921,
+                "0.0027081144649157255"
+              ],
+              [
+                1794300329.921,
+                "0.002372739064639225"
+              ],
+              [
+                1794300344.921,
+                "0.006330568002906816"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    "memory": {
+      "status": "success",
+      "data": {
+        "resultType": "matrix",
+        "result": [
+          {
+            "metric": {
+              "container": "inventory-service",
+              "pod": "inventory-service-864d7445f5-nxrvc"
+            },
+            "values": [
+              [
+                1794300164.921,
+                "315793408"
+              ],
+              [
+                1794300179.921,
+                "312188928"
+              ],
+              [
+                1794300194.921,
+                "311717888"
+              ],
+              [
+                1794300209.921,
+                "311717888"
+              ],
+              [
+                1794300224.921,
+                "312725504"
+              ],
+              [
+                1794300239.921,
+                "312889344"
+              ],
+              [
+                1794300254.921,
+                "312889344"
+              ],
+              [
+                1794300269.921,
+                "313024512"
+              ],
+              [
+                1794300284.921,
+                "311644160"
+              ],
+              [
+                1794300299.921,
+                "312385536"
+              ],
+              [
+                1794300314.921,
+                "312442880"
+              ],
+              [
+                1794300329.921,
+                "312774656"
+              ],
+              [
+                1794300344.921,
+                "312623104"
+              ]
+            ]
+          },
+          {
+            "metric": {
+              "container": "notification-service",
+              "pod": "notification-service-75d76cc98d-pjr9t"
+            },
+            "values": [
+              [
+                1794300164.921,
+                "218324992"
+              ],
+              [
+                1794300179.921,
+                "220938240"
+              ],
+              [
+                1794300194.921,
+                "225107968"
+              ],
+              [
+                1794300209.921,
+                "225447936"
+              ],
+              [
+                1794300224.921,
+                "225628160"
+              ],
+              [
+                1794300239.921,
+                "225587200"
+              ],
+              [
+                1794300254.921,
+                "225669120"
+              ],
+              [
+                1794300269.921,
+                "225316864"
+              ],
+              [
+                1794300284.921,
+                "225366016"
+              ],
+              [
+                1794300299.921,
+                "225431552"
+              ],
+              [
+                1794300314.921,
+                "225800192"
+              ],
+              [
+                1794300329.921,
+                "225800192"
+              ],
+              [
+                1794300344.921,
+                "225865728"
+              ]
+            ]
+          },
+          {
+            "metric": {
+              "container": "order-service",
+              "pod": "order-service-7fc65f7fb-7vqp5"
+            },
+            "values": [
+              [
+                1794300164.921,
+                "376352768"
+              ],
+              [
+                1794300179.921,
+                "386572288"
+              ],
+              [
+                1794300194.921,
+                "404951040"
+              ],
+              [
+                1794300209.921,
+                "402202624"
+              ],
+              [
+                1794300224.921,
+                "401653760"
+              ],
+              [
+                1794300239.921,
+                "401936384"
+              ],
+              [
+                1794300254.921,
+                "403419136"
+              ],
+              [
+                1794300269.921,
+                "397742080"
+              ],
+              [
+                1794300284.921,
+                "397742080"
+              ],
+              [
+                1794300299.921,
+                "397963264"
+              ],
+              [
+                1794300314.921,
+                "404656128"
+              ],
+              [
+                1794300329.921,
+                "403697664"
+              ],
+              [
+                1794300344.921,
+                "403496960"
+              ]
+            ]
+          },
+          {
+            "metric": {
+              "container": "product-service",
+              "pod": "product-service-746674ddbd-lmstg"
+            },
+            "values": [
+              [
+                1794300164.921,
+                "269197312"
+              ],
+              [
+                1794300179.921,
+                "269197312"
+              ],
+              [
+                1794300194.921,
+                "269185024"
+              ],
+              [
+                1794300209.921,
+                "271282176"
+              ],
+              [
+                1794300224.921,
+                "271282176"
+              ],
+              [
+                1794300239.921,
+                "271323136"
+              ],
+              [
+                1794300254.921,
+                "271323136"
+              ],
+              [
+                1794300269.921,
+                "271327232"
+              ],
+              [
+                1794300284.921,
+                "271327232"
+              ],
+              [
+                1794300299.921,
+                "271343616"
+              ],
+              [
+                1794300314.921,
+                "271314944"
+              ],
+              [
+                1794300329.921,
+                "271323136"
+              ],
+              [
+                1794300344.921,
+                "271323136"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

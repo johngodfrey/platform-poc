@@ -1,0 +1,42 @@
+Dashboard: http://localhost:8080/grafana/d/java-wasm-memory-density
+Resource backup: /Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/density/.results/20261110T025248Z/state.json
+Memory changes restart applications; inventory demo tables are recreated.
+Waiting for deployment "inventory-service" rollout to finish: 0 out of 1 new replicas have been updated...
+Waiting for deployment "inventory-service" rollout to finish: 0 out of 1 new replicas have been updated...
+Waiting for deployment "inventory-service" rollout to finish: 0 of 1 updated replicas are available...
+deployment "inventory-service" successfully rolled out
+deployment "notification-service" successfully rolled out
+deployment "order-service" successfully rolled out
+deployment "product-service" successfully rolled out
+java functional preflight: order accepted
+java 4096 warmup {"rate": 25, "requests": 3001, "accepted": 3001, "failures": 0, "dropped": 0, "p95_ms": 18.852, "achieved_orders_per_second": 25.008333333333333, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0, "cpu": {"complete": true, "max_fraction": 0.1540896183586927, "coverage": {"k3d-platform-poc-agent-0": 25, "k3d-platform-poc-agent-1": 25, "k3d-platform-poc-server-0": 25}, "query": "(max by (node) (sum by (node) (rate(container_cpu_usage_seconds_total{job=\"density-node\",id=\"/\"}[30s])) / on (node) max by (node) (machine_cpu_cores{job=\"density-node\"}))) and on (node) (min by (node) (min_over_time(up{job=\"density-node\"}[30s])) == 1)", "expected_nodes": ["k3d-platform-poc-agent-0", "k3d-platform-poc-agent-1", "k3d-platform-poc-server-0"]}, "cpu_headroom": true, "status": "pass", "peak_application_memory_mib": 2696.2109375}
+java 4096 repeat-1 {"rate": 25, "requests": 1500, "accepted": 1500, "failures": 0, "dropped": 0, "p95_ms": 19.42625, "achieved_orders_per_second": 25.0, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0, "cpu": {"complete": true, "max_fraction": 0.028267274452992354, "coverage": {"k3d-platform-poc-agent-0": 13, "k3d-platform-poc-agent-1": 13, "k3d-platform-poc-server-0": 13}, "query": "(max by (node) (sum by (node) (rate(container_cpu_usage_seconds_total{job=\"density-node\",id=\"/\"}[30s])) / on (node) max by (node) (machine_cpu_cores{job=\"density-node\"}))) and on (node) (min by (node) (min_over_time(up{job=\"density-node\"}[30s])) == 1)", "expected_nodes": ["k3d-platform-poc-agent-0", "k3d-platform-poc-agent-1", "k3d-platform-poc-server-0"]}, "cpu_headroom": true, "status": "pass", "peak_application_memory_mib": 2733.37890625}
+java 4096 repeat-2 {"rate": 25, "requests": 1501, "accepted": 1501, "failures": 0, "dropped": 0, "p95_ms": 17.739, "achieved_orders_per_second": 25.016666666666666, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0, "cpu": {"complete": true, "max_fraction": 0.0326104390390087, "coverage": {"k3d-platform-poc-agent-0": 13, "k3d-platform-poc-agent-1": 13, "k3d-platform-poc-server-0": 13}, "query": "(max by (node) (sum by (node) (rate(container_cpu_usage_seconds_total{job=\"density-node\",id=\"/\"}[30s])) / on (node) max by (node) (machine_cpu_cores{job=\"density-node\"}))) and on (node) (min by (node) (min_over_time(up{job=\"density-node\"}[30s])) == 1)", "expected_nodes": ["k3d-platform-poc-agent-0", "k3d-platform-poc-agent-1", "k3d-platform-poc-server-0"]}, "cpu_headroom": true, "status": "pass", "peak_application_memory_mib": 2756.71875}
+Waiting for deployment "inventory-service" rollout to finish: 0 of 1 updated replicas are available...
+deployment "inventory-service" successfully rolled out
+deployment "notification-service" successfully rolled out
+deployment "order-service" successfully rolled out
+deployment "product-service" successfully rolled out
+java functional preflight: order accepted
+java 2048 warmup {"rate": 25, "requests": 3000, "accepted": 3000, "failures": 0, "dropped": 0, "p95_ms": 19.27805, "achieved_orders_per_second": 25.0, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0, "cpu": {"complete": true, "max_fraction": 0.12062785075670587, "coverage": {"k3d-platform-poc-agent-0": 25, "k3d-platform-poc-agent-1": 25, "k3d-platform-poc-server-0": 25}, "query": "(max by (node) (sum by (node) (rate(container_cpu_usage_seconds_total{job=\"density-node\",id=\"/\"}[30s])) / on (node) max by (node) (machine_cpu_cores{job=\"density-node\"}))) and on (node) (min by (node) (min_over_time(up{job=\"density-node\"}[30s])) == 1)", "expected_nodes": ["k3d-platform-poc-agent-0", "k3d-platform-poc-agent-1", "k3d-platform-poc-server-0"]}, "cpu_headroom": true, "status": "pass", "peak_application_memory_mib": 2402.109375}
+java 2048 repeat-1 {"rate": 25, "requests": 1501, "accepted": 1501, "failures": 0, "dropped": 0, "p95_ms": 19.31, "achieved_orders_per_second": 25.016666666666666, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0, "cpu": {"complete": true, "max_fraction": 0.021085548006794536, "coverage": {"k3d-platform-poc-agent-0": 13, "k3d-platform-poc-agent-1": 13, "k3d-platform-poc-server-0": 13}, "query": "(max by (node) (sum by (node) (rate(container_cpu_usage_seconds_total{job=\"density-node\",id=\"/\"}[30s])) / on (node) max by (node) (machine_cpu_cores{job=\"density-node\"}))) and on (node) (min by (node) (min_over_time(up{job=\"density-node\"}[30s])) == 1)", "expected_nodes": ["k3d-platform-poc-agent-0", "k3d-platform-poc-agent-1", "k3d-platform-poc-server-0"]}, "cpu_headroom": true, "status": "pass", "peak_application_memory_mib": 2419.08984375}
+java 2048 repeat-2 {"rate": 25, "requests": 1501, "accepted": 1501, "failures": 0, "dropped": 0, "p95_ms": 18.639, "achieved_orders_per_second": 25.016666666666666, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0, "cpu": {"complete": true, "max_fraction": 0.021902702297702678, "coverage": {"k3d-platform-poc-agent-0": 13, "k3d-platform-poc-agent-1": 13, "k3d-platform-poc-server-0": 13}, "query": "(max by (node) (sum by (node) (rate(container_cpu_usage_seconds_total{job=\"density-node\",id=\"/\"}[30s])) / on (node) max by (node) (machine_cpu_cores{job=\"density-node\"}))) and on (node) (min by (node) (min_over_time(up{job=\"density-node\"}[30s])) == 1)", "expected_nodes": ["k3d-platform-poc-agent-0", "k3d-platform-poc-agent-1", "k3d-platform-poc-server-0"]}, "cpu_headroom": true, "status": "pass", "peak_application_memory_mib": 2435.3671875}
+Waiting for deployment "inventory-service" rollout to finish: 0 out of 1 new replicas have been updated...
+Waiting for deployment "inventory-service" rollout to finish: 0 of 1 updated replicas are available...
+deployment "inventory-service" successfully rolled out
+deployment "notification-service" successfully rolled out
+Waiting for deployment "order-service" rollout to finish: 1 old replicas are pending termination...
+error: timed out waiting for the condition
+Waiting for deployment "inventory-service" rollout to finish: 0 of 1 updated replicas are available...
+deployment "inventory-service" successfully rolled out
+deployment "notification-service" successfully rolled out
+deployment "order-service" successfully rolled out
+deployment "product-service" successfully rolled out
+java functional preflight: order accepted
+deployment "inventory-service" successfully rolled out
+deployment "notification-service" successfully rolled out
+deployment "order-service" successfully rolled out
+deployment "product-service" successfully rolled out
+java functional preflight: order accepted
+Report: /Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/density/.results/20261110T025248Z/report.html
+Recovery: python3 monitoring/density/run.py restore /Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/density/.results/20261110T025248Z/state.json

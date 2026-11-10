@@ -1,0 +1,32 @@
+Report: /Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/capacity/.results/20261110T080307Z/report.html
+Dashboard: http://localhost:8080/grafana/d/java-wasm-capacity
+Waiting for deployment "inventory-service" rollout to finish: 0 out of 1 new replicas have been updated...
+Waiting for deployment "inventory-service" rollout to finish: 0 of 1 updated replicas are available...
+deployment "inventory-service" successfully rolled out
+deployment "notification-service" successfully rolled out
+Waiting for deployment "order-service" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "order-service" rollout to finish: 1 old replicas are pending termination...
+deployment "order-service" successfully rolled out
+deployment "product-service" successfully rolled out
+java functional preflight: order accepted
+{"implementation": "java", "warmup": true, "rate": 25, "requests": 4501, "accepted": 4501, "failures": 0, "dropped": 0, "p95_ms": 24.178, "achieved_orders_per_second": 25.005555555555556, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "java", "warmup": true, "rate": 100, "requests": 18001, "accepted": 18001, "failures": 0, "dropped": 0, "p95_ms": 28.009, "achieved_orders_per_second": 100.00555555555556, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "java", "warmup": false, "rate": 100, "requests": 12001, "accepted": 12001, "failures": 0, "dropped": 0, "p95_ms": 9.824, "achieved_orders_per_second": 100.00833333333334, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "java", "warmup": false, "rate": 200, "requests": 24001, "accepted": 24001, "failures": 0, "dropped": 0, "p95_ms": 7.934, "achieved_orders_per_second": 200.00833333333333, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "java", "warmup": false, "rate": 250, "requests": 30001, "accepted": 30001, "failures": 0, "dropped": 0, "p95_ms": 10.973, "achieved_orders_per_second": 250.00833333333333, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "java", "warmup": false, "rate": 300, "requests": 36001, "accepted": 36001, "failures": 0, "dropped": 0, "p95_ms": 11.105, "achieved_orders_per_second": 300.0083333333333, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "java", "warmup": false, "rate": 350, "requests": 42000, "accepted": 42000, "failures": 0, "dropped": 0, "p95_ms": 14.879449999999983, "achieved_orders_per_second": 350.0, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "java", "warmup": false, "rate": 400, "requests": 48001, "accepted": 48001, "failures": 0, "dropped": 0, "p95_ms": 103.805, "achieved_orders_per_second": 400.0083333333333, "passed": false, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 99}
+{"implementation": "java", "warmup": false, "rate": 350, "requests": 105001, "accepted": 105001, "failures": 0, "dropped": 0, "p95_ms": 15.409, "achieved_orders_per_second": 350.00333333333333, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+java functional preflight: order accepted
+Waiting for deployment "inventory-service" rollout to finish: 0 out of 1 new replicas have been updated...
+Waiting for deployment "inventory-service" rollout to finish: 0 out of 1 new replicas have been updated...
+Waiting for deployment "inventory-service" rollout to finish: 0 of 1 updated replicas are available...
+deployment "inventory-service" successfully rolled out
+Waiting for deployment "notification-service" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "notification-service" rollout to finish: 1 old replicas are pending termination...
+deployment "notification-service" successfully rolled out
+deployment "order-service" successfully rolled out
+deployment "product-service" successfully rolled out
+java functional preflight: order accepted
+Report: /Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/capacity/.results/20261110T080307Z/report.html

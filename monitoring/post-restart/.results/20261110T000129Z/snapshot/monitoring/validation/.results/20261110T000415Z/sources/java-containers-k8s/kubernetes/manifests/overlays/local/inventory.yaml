@@ -1,0 +1,14 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: inventory-service
+spec:
+  # create-drop must finish in the old JVM before its replacement creates tables.
+  strategy:
+    type: Recreate
+    rollingUpdate: null
+  template:
+    spec:
+      containers:
+        - name: inventory-service
+          image: k3d-platform-poc.localhost:5001/platform-poc-java/inventory-service:0.1.0

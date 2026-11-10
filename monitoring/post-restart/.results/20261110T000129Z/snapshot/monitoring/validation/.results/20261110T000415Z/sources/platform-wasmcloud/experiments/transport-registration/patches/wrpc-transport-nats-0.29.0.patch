@@ -1,0 +1,63 @@
+--- a/src/lib.rs
++++ b/src/lib.rs
+@@ -207,7 +207,21 @@
+ enum Command {
+     Subscribe(Subject, mpsc::Sender<Message>),
+     Unsubscribe(Subject),
+-    Batch(Box<[Command]>),
++    Batch(Box<[Command]>, oneshot::Sender<()>),
++}
++
++// Queueing registration is insufficient: a peer can reply before the dispatcher
++// processes that command. Wait for local routing readiness before either handshake.
++async fn register_subscriptions(
++    commands: &mpsc::Sender<Command>,
++    subscriptions: Vec<Command>,
++) -> anyhow::Result<()> {
++    let (registered, ready) = oneshot::channel();
++    commands
++        .send(Command::Batch(subscriptions.into_boxed_slice(), registered))
++        .await
++        .context("failed to queue subscription registration")?;
++    ready.await.context("subscription dispatcher stopped before registration")
+ }
+ 
+ /// Subset of [`async_nats::Message`](async_nats::Message) used by this crate
+@@ -257,10 +271,12 @@
+                         Command::Unsubscribe(s) => {
+                             subs.remove(s.as_str());
+                         }
+-                        Command::Batch(cmds) => {
++                        Command::Batch(cmds, registered) => {
+                             for cmd in cmds {
+                                 handle_command(subs, cmd);
+                             }
++                            // Acknowledge only after all routes exist in the local dispatcher.
++                            let _ = registered.send(());
+                         }
+                     }
+                 }
+@@ -1100,10 +1116,7 @@
+             "failed to construct subscription tree"
+         );
+ 
+-        self.commands
+-            .send(Command::Batch(cmds.into_boxed_slice()))
+-            .await
+-            .context("failed to subscribe")?;
++        register_subscriptions(&self.commands, cmds).await?;
+ 
+         let ServerInfo {
+             mut max_payload, ..
+@@ -1216,10 +1229,7 @@
+         "failed to construct subscription tree"
+     );
+ 
+-    commands
+-        .send(Command::Batch(cmds.into_boxed_slice()))
+-        .await
+-        .context("failed to subscribe")?;
++    register_subscriptions(&commands, cmds).await?;
+ 
+     trace!("publishing handshake response");
+     nats.publish_with_reply(tx.clone(), rx, Bytes::default())

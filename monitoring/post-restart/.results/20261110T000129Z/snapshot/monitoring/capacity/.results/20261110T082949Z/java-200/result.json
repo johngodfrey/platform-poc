@@ -1,0 +1,14 @@
+{
+  "rate": 200,
+  "requests": 24000,
+  "accepted": 24000,
+  "failures": 0,
+  "dropped": 0,
+  "p95_ms": 9.778,
+  "achieved_orders_per_second": 200.0,
+  "passed": true,
+  "budget_and_pods_unchanged": true,
+  "readiness_lost": false,
+  "http_failure_rate": 0,
+  "exit_code": 0
+}

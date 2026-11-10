@@ -1,0 +1,525 @@
+{
+  "records": [
+    {
+      "namespace": "java",
+      "name": "inventory-service",
+      "uid": "67d70f45-7618-4d59-8bf8-e894ba1f8cae",
+      "original_replicas": 1,
+      "template": {
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/restartedAt": "2026-10-26T00:08:20Z"
+          },
+          "labels": {
+            "service": "inventory"
+          }
+        },
+        "spec": {
+          "containers": [
+            {
+              "env": [
+                {
+                  "name": "DATABASE_URL",
+                  "valueFrom": {
+                    "secretKeyRef": {
+                      "key": "db_url_inventory_service",
+                      "name": "platform-poc-secrets-dmkkc7ct75"
+                    }
+                  }
+                },
+                {
+                  "name": "DATABASE_USERNAME",
+                  "valueFrom": {
+                    "secretKeyRef": {
+                      "key": "db_usr_inventory_service",
+                      "name": "platform-poc-secrets-dmkkc7ct75"
+                    }
+                  }
+                },
+                {
+                  "name": "DATABASE_PASSWORD",
+                  "valueFrom": {
+                    "secretKeyRef": {
+                      "key": "db_pwd_inventory_service",
+                      "name": "platform-poc-secrets-dmkkc7ct75"
+                    }
+                  }
+                }
+              ],
+              "image": "k3d-platform-poc.localhost:5001/platform-poc-java/inventory-service:0.1.0",
+              "imagePullPolicy": "Always",
+              "name": "inventory-service",
+              "ports": [
+                {
+                  "containerPort": 80,
+                  "name": "http",
+                  "protocol": "TCP"
+                }
+              ],
+              "readinessProbe": {
+                "failureThreshold": 3,
+                "httpGet": {
+                  "path": "/actuator/health",
+                  "port": 80,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 10,
+                "periodSeconds": 10,
+                "successThreshold": 1,
+                "timeoutSeconds": 1
+              },
+              "resources": {},
+              "terminationMessagePath": "/dev/termination-log",
+              "terminationMessagePolicy": "File"
+            }
+          ],
+          "dnsPolicy": "ClusterFirst",
+          "restartPolicy": "Always",
+          "schedulerName": "default-scheduler",
+          "securityContext": {},
+          "terminationGracePeriodSeconds": 30
+        }
+      },
+      "template_hash": "69308c02de3f6917de96e5e0f6143ed49363b7222f2dd65899675630f38686f1",
+      "selector": {
+        "service": "inventory"
+      },
+      "images": {
+        "inventory-service": "k3d-platform-poc.localhost:5001/platform-poc-java/inventory-service@sha256:5d5881d87dfa7f0b30cc66bfedf448561b5606ced23076f82ee75fddc31414e8"
+      }
+    },
+    {
+      "namespace": "java",
+      "name": "notification-service",
+      "uid": "d421d6ea-a8a0-4108-ba28-6a7043e769d8",
+      "original_replicas": 1,
+      "template": {
+        "metadata": {
+          "labels": {
+            "service": "notification"
+          }
+        },
+        "spec": {
+          "containers": [
+            {
+              "env": [
+                {
+                  "name": "NATS_URL",
+                  "valueFrom": {
+                    "secretKeyRef": {
+                      "key": "nats_url",
+                      "name": "platform-poc-secrets-dmkkc7ct75"
+                    }
+                  }
+                }
+              ],
+              "image": "k3d-platform-poc.localhost:5001/platform-poc-java/notification-service:0.1.0",
+              "imagePullPolicy": "Always",
+              "name": "notification-service",
+              "ports": [
+                {
+                  "containerPort": 80,
+                  "name": "http",
+                  "protocol": "TCP"
+                }
+              ],
+              "readinessProbe": {
+                "failureThreshold": 3,
+                "httpGet": {
+                  "path": "/actuator/health",
+                  "port": 80,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 10,
+                "periodSeconds": 10,
+                "successThreshold": 1,
+                "timeoutSeconds": 1
+              },
+              "resources": {},
+              "terminationMessagePath": "/dev/termination-log",
+              "terminationMessagePolicy": "File"
+            }
+          ],
+          "dnsPolicy": "ClusterFirst",
+          "restartPolicy": "Always",
+          "schedulerName": "default-scheduler",
+          "securityContext": {},
+          "terminationGracePeriodSeconds": 30
+        }
+      },
+      "template_hash": "cd9f84cd8ae2c5829815ff19e8ebb6164b77c3329bb4fb7ae49c5c0405b6fa4f",
+      "selector": {
+        "service": "notification"
+      },
+      "images": {
+        "notification-service": "k3d-platform-poc.localhost:5001/platform-poc-java/notification-service@sha256:ea762fcbfd7551ef8b2d0f8d2c387c56d6e300e2eb1123c1a6864c9cdf10eb30"
+      }
+    },
+    {
+      "namespace": "java",
+      "name": "order-service",
+      "uid": "2371863a-c026-4023-8b73-542b37d2beb5",
+      "original_replicas": 1,
+      "template": {
+        "metadata": {
+          "labels": {
+            "service": "order"
+          }
+        },
+        "spec": {
+          "containers": [
+            {
+              "env": [
+                {
+                  "name": "INVENTORY_URL",
+                  "value": "http://inventory-service.java.svc.cluster.local:8080/api/inventory"
+                },
+                {
+                  "name": "SPRING_JPA_HIBERNATE_DDL_AUTO",
+                  "value": "update"
+                },
+                {
+                  "name": "DATABASE_URL",
+                  "valueFrom": {
+                    "secretKeyRef": {
+                      "key": "db_url_order_service",
+                      "name": "platform-poc-secrets-dmkkc7ct75"
+                    }
+                  }
+                },
+                {
+                  "name": "DATABASE_USERNAME",
+                  "valueFrom": {
+                    "secretKeyRef": {
+                      "key": "db_usr_order_service",
+                      "name": "platform-poc-secrets-dmkkc7ct75"
+                    }
+                  }
+                },
+                {
+                  "name": "DATABASE_PASSWORD",
+                  "valueFrom": {
+                    "secretKeyRef": {
+                      "key": "db_pwd_order_service",
+                      "name": "platform-poc-secrets-dmkkc7ct75"
+                    }
+                  }
+                },
+                {
+                  "name": "NATS_URL",
+                  "valueFrom": {
+                    "secretKeyRef": {
+                      "key": "nats_url",
+                      "name": "platform-poc-secrets-dmkkc7ct75"
+                    }
+                  }
+                }
+              ],
+              "image": "k3d-platform-poc.localhost:5001/platform-poc-java/order-service:0.1.0",
+              "imagePullPolicy": "Always",
+              "name": "order-service",
+              "ports": [
+                {
+                  "containerPort": 80,
+                  "name": "http",
+                  "protocol": "TCP"
+                }
+              ],
+              "readinessProbe": {
+                "failureThreshold": 3,
+                "httpGet": {
+                  "path": "/actuator/health",
+                  "port": 80,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 10,
+                "periodSeconds": 10,
+                "successThreshold": 1,
+                "timeoutSeconds": 1
+              },
+              "resources": {},
+              "terminationMessagePath": "/dev/termination-log",
+              "terminationMessagePolicy": "File"
+            }
+          ],
+          "dnsPolicy": "ClusterFirst",
+          "restartPolicy": "Always",
+          "schedulerName": "default-scheduler",
+          "securityContext": {},
+          "terminationGracePeriodSeconds": 30
+        }
+      },
+      "template_hash": "5cae0bc8af71b26fa5af1546f3791cc5ce8612a12f6c5d56e900762d77352ce7",
+      "selector": {
+        "service": "order"
+      },
+      "images": {
+        "order-service": "k3d-platform-poc.localhost:5001/platform-poc-java/order-service@sha256:8b559e640cef3aecaf69920404617394ee573c50ece3f4ca943b8baa88f74110"
+      }
+    },
+    {
+      "namespace": "java",
+      "name": "product-service",
+      "uid": "ea963967-6311-4eb6-a38c-d6ee8a2cd708",
+      "original_replicas": 1,
+      "template": {
+        "metadata": {
+          "labels": {
+            "service": "product"
+          }
+        },
+        "spec": {
+          "containers": [
+            {
+              "env": [
+                {
+                  "name": "REDIS_HOST",
+                  "valueFrom": {
+                    "secretKeyRef": {
+                      "key": "redis_host",
+                      "name": "platform-poc-secrets-dmkkc7ct75"
+                    }
+                  }
+                },
+                {
+                  "name": "REDIS_PORT",
+                  "valueFrom": {
+                    "secretKeyRef": {
+                      "key": "redis_port",
+                      "name": "platform-poc-secrets-dmkkc7ct75"
+                    }
+                  }
+                }
+              ],
+              "image": "k3d-platform-poc.localhost:5001/platform-poc-java/product-service:0.1.0",
+              "imagePullPolicy": "Always",
+              "name": "product-service",
+              "ports": [
+                {
+                  "containerPort": 80,
+                  "name": "http",
+                  "protocol": "TCP"
+                }
+              ],
+              "readinessProbe": {
+                "failureThreshold": 3,
+                "httpGet": {
+                  "path": "/actuator/health",
+                  "port": 80,
+                  "scheme": "HTTP"
+                },
+                "initialDelaySeconds": 10,
+                "periodSeconds": 10,
+                "successThreshold": 1,
+                "timeoutSeconds": 1
+              },
+              "resources": {},
+              "terminationMessagePath": "/dev/termination-log",
+              "terminationMessagePolicy": "File"
+            }
+          ],
+          "dnsPolicy": "ClusterFirst",
+          "restartPolicy": "Always",
+          "schedulerName": "default-scheduler",
+          "securityContext": {},
+          "terminationGracePeriodSeconds": 30
+        }
+      },
+      "template_hash": "4ea1864cc60e85f9a36636481cb77aafb2b2d074fd517919d1ee1cca819a186d",
+      "selector": {
+        "service": "product"
+      },
+      "images": {
+        "product-service": "k3d-platform-poc.localhost:5001/platform-poc-java/product-service@sha256:c5302fa0aef01bfe70614d5e373ac848e564f60bdbf1d8e8b6dfcb617a89bbae"
+      }
+    },
+    {
+      "namespace": "wasm",
+      "name": "wasmcloud-host",
+      "uid": "8f943c2b-4316-4495-8dc9-a05981d6dabf",
+      "original_replicas": 1,
+      "template": {
+        "metadata": {
+          "annotations": {
+            "kubectl.kubernetes.io/restartedAt": "2026-10-08T13:10:22+01:00"
+          },
+          "labels": {
+            "app.kubernetes.io/instance": "wasmcloud-host",
+            "app.kubernetes.io/managed-by": "wasmcloud-operator",
+            "app.kubernetes.io/name": "wasmcloud"
+          }
+        },
+        "spec": {
+          "containers": [
+            {
+              "args": [
+                "-js",
+                "--config",
+                "/nats/nats.conf"
+              ],
+              "image": "nats:2.10-alpine",
+              "imagePullPolicy": "IfNotPresent",
+              "lifecycle": {
+                "preStop": {
+                  "exec": {
+                    "command": [
+                      "sleep",
+                      "10"
+                    ]
+                  }
+                }
+              },
+              "name": "nats-leaf",
+              "ports": [
+                {
+                  "containerPort": 4222,
+                  "protocol": "TCP"
+                }
+              ],
+              "resources": {},
+              "terminationMessagePath": "/dev/termination-log",
+              "terminationMessagePolicy": "File",
+              "volumeMounts": [
+                {
+                  "mountPath": "/nats/nats.conf",
+                  "name": "nats-config",
+                  "readOnly": true,
+                  "subPath": "nats.conf"
+                }
+              ]
+            },
+            {
+              "command": [
+                "wasmcloud"
+              ],
+              "env": [
+                {
+                  "name": "WASMCLOUD_STRUCTURED_LOGGING_ENABLED",
+                  "value": "true"
+                },
+                {
+                  "name": "WASMCLOUD_LOG_LEVEL",
+                  "value": "INFO"
+                },
+                {
+                  "name": "WASMCLOUD_JS_DOMAIN",
+                  "value": "default"
+                },
+                {
+                  "name": "WASMCLOUD_LATTICE",
+                  "value": "default"
+                },
+                {
+                  "name": "WASMCLOUD_LATTICE_PREFIX",
+                  "value": "default"
+                },
+                {
+                  "name": "WASMCLOUD_NATS_HOST",
+                  "value": "127.0.0.1"
+                },
+                {
+                  "name": "WASMCLOUD_NATS_PORT",
+                  "value": "4222"
+                },
+                {
+                  "name": "WASMCLOUD_RPC_TIMEOUT_MS",
+                  "value": "4000"
+                },
+                {
+                  "name": "WASMCLOUD_LABEL_kubernetes",
+                  "value": "true"
+                },
+                {
+                  "name": "WASMCLOUD_OCI_ALLOWED_INSECURE",
+                  "value": "host.docker.internal:5001"
+                },
+                {
+                  "name": "WASMCLOUD_MAX_EXECUTION_TIME_MS",
+                  "value": "5000"
+                }
+              ],
+              "image": "platform-poc/wasmcloud:1.9.2-regack.1",
+              "imagePullPolicy": "IfNotPresent",
+              "name": "wasmcloud-host",
+              "resources": {},
+              "terminationMessagePath": "/dev/termination-log",
+              "terminationMessagePolicy": "File"
+            }
+          ],
+          "dnsPolicy": "ClusterFirst",
+          "restartPolicy": "Always",
+          "schedulerName": "default-scheduler",
+          "securityContext": {},
+          "serviceAccount": "wasmcloud-host",
+          "serviceAccountName": "wasmcloud-host",
+          "terminationGracePeriodSeconds": 30,
+          "volumes": [
+            {
+              "configMap": {
+                "defaultMode": 420,
+                "name": "wasmcloud-host"
+              },
+              "name": "nats-config"
+            }
+          ]
+        }
+      },
+      "template_hash": "d13c27faf0bb0d38c32858e0d362dd3342f1ce8c91de1bb601d08a70b9e95306",
+      "selector": {
+        "app.kubernetes.io/instance": "wasmcloud-host",
+        "app.kubernetes.io/name": "wasmcloud"
+      },
+      "images": {
+        "nats-leaf": "docker.io/library/nats@sha256:b83efabe3e7def1e0a4a31ec6e078999bb17c80363f881df35edc70fcb6bb927",
+        "wasmcloud-host": "sha256:a22906face539085647ef862bed734e95c05ba6882d870528b92ea4af1b79ea6"
+      }
+    }
+  ],
+  "hostconfig": {
+    "uid": "283bd98d-012a-481d-af0c-6acc194ab476",
+    "spec": {
+      "allowLatest": false,
+      "allowedInsecure": [
+        "host.docker.internal:5001"
+      ],
+      "configServiceEnabled": false,
+      "hostReplicas": 1,
+      "image": "platform-poc/wasmcloud:1.9.2-regack.1",
+      "jetstreamDomain": "default",
+      "lattice": "default",
+      "leafNodeDomain": "leaf",
+      "logLevel": "INFO",
+      "natsAddress": "nats://nats-headless.wasm.svc.cluster.local",
+      "natsClientPort": 4222,
+      "natsLeafnodePort": 7422,
+      "version": "1.9.2"
+    }
+  },
+  "application_version": "v0.0.9-regack.1",
+  "inventory_fixture": [
+    {
+      "id": 1,
+      "sku_code": "iphone_13",
+      "quantity": 100
+    },
+    {
+      "id": 2,
+      "sku_code": "iphone_13_red",
+      "quantity": 0
+    }
+  ],
+  "component_counts": {
+    "data-init": 1,
+    "products-service": 1,
+    "orders-service": 10,
+    "notification-service": 1,
+    "inventory-service": 10,
+    "http-controller": 10
+  },
+  "providers": [
+    "kv-redis",
+    "nats",
+    "http-server",
+    "sqldb-postgres"
+  ]
+}

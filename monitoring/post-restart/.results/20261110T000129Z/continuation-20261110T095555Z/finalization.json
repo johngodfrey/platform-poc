@@ -1,0 +1,23 @@
+{
+  "checked": 1794317516.10653,
+  "classification": "finalization_after_bookkeeping_error",
+  "original_error_retained": "KeyError: 'source_report_sha256'",
+  "cause": "The retained-job list was also the growing execution list; its final hash check incorrectly required retained-source metadata on newly executed jobs.",
+  "retained_reports_checked": 4,
+  "retained_reports_unchanged": true,
+  "historical_files_unchanged": true,
+  "restoration_verified_by_runner": {
+    "checked": 1794311711.121512,
+    "restored": true,
+    "applications_healthy": true
+  },
+  "all_executed_jobs_completed": true,
+  "skipped": [
+    "Java stability: no common qualifying rate"
+  ],
+  "qualification_gaps": [
+    "No Wasm rate passed all three repetitions. The350/s long run is diagnostic, not confirmed sustainable capacity."
+  ],
+  "measurements_rerun_for_this_fix": false,
+  "state": "finished-with-skipped-study-and-performance-failures"
+}

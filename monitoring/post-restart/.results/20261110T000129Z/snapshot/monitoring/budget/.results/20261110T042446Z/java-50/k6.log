@@ -1,0 +1,49 @@
+time="2026-11-10T04:41:01Z" level=info msg="{\"event\":\"demo_started\",\"start_ms\":1794285661255}" source=console
+
+
+  █ THRESHOLDS 
+
+    demo_order_failures
+    ✓ 'count==0' count=0
+
+    dropped_iterations
+    ✓ 'count==0' count=0
+
+    http_req_duration{scenario:orders}
+    ✓ 'p(95)<100' p(95)=14.02ms
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 3001    39.969728/s
+    checks_succeeded...: 100.00% 3001 out of 3001
+    checks_failed......: 0.00%   0 out of 3001
+
+    ✓ order accepted
+
+    CUSTOM
+    demo_order_failures............: 0      0/s
+    demo_orders_accepted...........: 3001   39.969728/s
+    demo_phase.....................: 2      min=0         max=2  
+    demo_target_rps................: 0      min=0         max=50 
+
+    HTTP
+    http_req_duration..............: avg=8.88ms  min=3.7ms  med=7.77ms max=119.38ms p(90)=11.99ms p(95)=14.02ms
+      { expected_response:true }...: avg=8.88ms  min=3.7ms  med=7.77ms max=119.38ms p(90)=11.99ms p(95)=14.02ms
+      { scenario:orders }..........: avg=8.88ms  min=3.7ms  med=7.77ms max=119.38ms p(90)=11.99ms p(95)=14.02ms
+    http_req_failed................: 0.00%  0 out of 3001
+    http_reqs......................: 3001   39.969728/s
+
+    EXECUTION
+    dropped_iterations.............: 0      0/s
+    iteration_duration.............: avg=33.48ms min=3.91ms med=8.23ms max=1s       p(90)=13.16ms p(95)=18.52ms
+    iterations.....................: 3076   40.968638/s
+    vus............................: 1      min=1         max=3  
+    vus_max........................: 251    min=251       max=251
+
+    NETWORK
+    data_received..................: 570 kB 7.6 kB/s
+    data_sent......................: 624 kB 8.3 kB/s
+
+
+

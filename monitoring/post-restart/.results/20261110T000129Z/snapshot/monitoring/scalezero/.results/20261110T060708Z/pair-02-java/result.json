@@ -1,0 +1,223 @@
+{
+  "implementation": "java",
+  "pair": 2,
+  "start_time": 1794290954.409606,
+  "scale_ack_seconds": 0.40801320799801033,
+  "first_order_seconds": 14.65284170799714,
+  "all_pods_ready_seconds": 15.3411548749973,
+  "stable_serving_seconds": 24.585070582998014,
+  "probe_attempts": [
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.0030251669995777775,
+      "start_seconds": 0.4080160829980741,
+      "end_seconds": 0.4110783749965776
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.005151250003109453,
+      "start_seconds": 1.412214749998384,
+      "end_seconds": 1.4174582499981625
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.005875416001799749,
+      "start_seconds": 2.413926540997636,
+      "end_seconds": 2.4198564999969676
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.006612334000237752,
+      "start_seconds": 3.4150196659975336,
+      "end_seconds": 3.4216953329996613
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.006908167000801768,
+      "start_seconds": 4.422993165997468,
+      "end_seconds": 4.429949499997747
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.005046791000495432,
+      "start_seconds": 5.433023207999213,
+      "end_seconds": 5.43813712499832
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.006246707998798229,
+      "start_seconds": 6.4403369999999995,
+      "end_seconds": 6.4466621249994205
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.00673208299849648,
+      "start_seconds": 7.446855165999295,
+      "end_seconds": 7.4536523329988995
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.004276750001736218,
+      "start_seconds": 8.45623216599779,
+      "end_seconds": 8.460553124998114
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.008157167001627386,
+      "start_seconds": 9.457214624999324,
+      "end_seconds": 9.465493415998935
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.012676166999881389,
+      "start_seconds": 10.458303457999136,
+      "end_seconds": 10.47110516599787
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.006185207999806153,
+      "start_seconds": 11.460935166000127,
+      "end_seconds": 11.467207624998991
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.0232732920012495,
+      "start_seconds": 12.463816790997953,
+      "end_seconds": 12.487463374996878
+    },
+    {
+      "status": 500,
+      "accepted": false,
+      "duration_seconds": 0.3349222920005559,
+      "start_seconds": 13.47297449999678,
+      "end_seconds": 13.807972749997134
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.17775358299695654,
+      "start_seconds": 14.475070540996967,
+      "end_seconds": 14.65284170799714
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.06551583300097263,
+      "start_seconds": 15.479127165999671,
+      "end_seconds": 15.544688040998153
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.029225709000456845,
+      "start_seconds": 16.47972054099955,
+      "end_seconds": 16.50896129099783
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.047283624997362494,
+      "start_seconds": 17.483695707996958,
+      "end_seconds": 17.53102304099957
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.02664304199788603,
+      "start_seconds": 18.488200624997262,
+      "end_seconds": 18.514861374998873
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.027407290999690304,
+      "start_seconds": 19.49702516599791,
+      "end_seconds": 19.524454665999656
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.05800812499728636,
+      "start_seconds": 20.50617487499767,
+      "end_seconds": 20.564198749998468
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.025916833998053335,
+      "start_seconds": 21.514729457998328,
+      "end_seconds": 21.540653457999724
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.05697712500113994,
+      "start_seconds": 22.517907082998136,
+      "end_seconds": 22.574919749997207
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.056707875002757646,
+      "start_seconds": 23.52586912499828,
+      "end_seconds": 23.58262349999859
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.0559216670008027,
+      "start_seconds": 24.529110790997947,
+      "end_seconds": 24.585070582998014
+    }
+  ],
+  "pods": {
+    "pods": {
+      "03f23749-07f6-4c2b-bb0e-55ead562ed82": {
+        "name": "order-service-59b7b5cb76-wdtnk",
+        "deployment": "order-service",
+        "created_seconds": 1.3380880829972739,
+        "currently_ready": true,
+        "ready_seconds": 13.386551457999303
+      },
+      "55e703e1-7d7e-485d-8dc2-52a4fe7b0882": {
+        "name": "product-service-77b664576d-5cvnt",
+        "deployment": "product-service",
+        "created_seconds": 1.3487107079999987,
+        "currently_ready": true,
+        "ready_seconds": 14.378285249997134
+      },
+      "f57a41c0-c454-4c7f-8ab4-21f67c9d23a4": {
+        "name": "inventory-service-76587d759-2v2c8",
+        "deployment": "inventory-service",
+        "created_seconds": 2.089182082996558,
+        "currently_ready": true,
+        "ready_seconds": 15.326599707997957
+      },
+      "c269d801-f3d3-47b4-af52-15beffcdea16": {
+        "name": "notification-service-55d4c787b4-r8xtw",
+        "deployment": "notification-service",
+        "created_seconds": 2.091963290997228,
+        "currently_ready": true,
+        "ready_seconds": 14.330927290997352
+      }
+    },
+    "errors": [],
+    "all_ready_seconds": 15.3411548749973,
+    "currently_all_ready": true
+  },
+  "valid": true,
+  "verified_zero": true
+}

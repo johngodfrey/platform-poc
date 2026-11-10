@@ -1,0 +1,31 @@
+Report: /Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/capacity/.results/20261110T094853Z/report.html
+Dashboard: http://localhost:8080/grafana/d/java-wasm-capacity
+Waiting for deployment "wasmcloud-host" rollout to finish: 0 out of 1 new replicas have been updated...
+Waiting for deployment "wasmcloud-host" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "wasmcloud-host" rollout to finish: 1 old replicas are pending termination...
+deployment "wasmcloud-host" successfully rolled out
+wasm functional preflight: order accepted
+Waiting for deployment "wasmcloud-host" rollout to finish: 0 out of 1 new replicas have been updated...
+Waiting for deployment "wasmcloud-host" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "wasmcloud-host" rollout to finish: 1 old replicas are pending termination...
+deployment "wasmcloud-host" successfully rolled out
+wasm functional preflight: order accepted
+Report: /Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/capacity/.results/20261110T094853Z/report.html
+Traceback (most recent call last):
+  File "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/capacity/validate.py", line 234, in <module>
+    if len(sys.argv)>1 and sys.argv[1]=='child':instrumented_child(sys.argv[2:])
+                                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/capacity/validate.py", line 92, in instrumented_child
+    driver.main()
+  File "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/capacity/run.py", line 141, in main
+    data['warmup']=b.step(args,impl,args.warmup_rate,directory/(impl+'-warmup'),selected,warmup=True)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/capacity/validate.py", line 85, in step
+    priming=observed(args,implementation,25,output.with_name(implementation+'-priming'),records,True)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/capacity/validate.py", line 65, in observed
+    result=original(args,implementation,rate,output,records,warmup)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/budget/run.py", line 241, in step
+    time.sleep(5)
+KeyboardInterrupt

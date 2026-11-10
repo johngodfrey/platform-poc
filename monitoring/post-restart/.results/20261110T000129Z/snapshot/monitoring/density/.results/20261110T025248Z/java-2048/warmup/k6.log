@@ -1,0 +1,52 @@
+time="2026-11-10T02:58:09Z" level=info msg="{\"event\":\"demo_started\",\"start_ms\":1794279489182}" source=console
+
+
+  █ THRESHOLDS 
+
+    demo_order_failures
+    ✓ 'count==0' count=0
+
+    dropped_iterations
+    ✓ 'count==0' count=0
+
+    http_req_duration{scenario:orders}
+    ✓ 'p(95)<1000000' p(95)=19.27ms
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 3000    23.050366/s
+    checks_succeeded...: 100.00% 3000 out of 3000
+    checks_failed......: 0.00%   0 out of 3000
+
+    ✓ order accepted
+
+    CUSTOM
+    demo_order_failures.............: 0          0/s
+    demo_orders_accepted............: 3000       23.050366/s
+    demo_phase......................: 2          min=0          max=2         
+    demo_target_rps.................: 0          min=0          max=25        
+    density_max_node_cpu_fraction...: 0.6        min=0.6        max=0.6       
+    density_memory_limit_bytes......: 2147483648 min=2147483648 max=2147483648
+    density_projected_slots.........: 4          min=4          max=4         
+
+    HTTP
+    http_req_duration...............: avg=12.35ms min=6.47ms med=11.3ms max=57.23ms p(90)=17.47ms p(95)=19.27ms
+      { expected_response:true }....: avg=12.35ms min=6.47ms med=11.3ms max=57.23ms p(90)=17.47ms p(95)=19.27ms
+      { scenario:orders }...........: avg=12.35ms min=6.47ms med=11.3ms max=57.23ms p(90)=17.47ms p(95)=19.27ms
+    http_req_failed.................: 0.00%      0 out of 3000
+    http_reqs.......................: 3000       23.050366/s
+
+    EXECUTION
+    dropped_iterations..............: 0          0/s
+    iteration_duration..............: avg=53.78ms min=6.81ms med=11.8ms max=1s      p(90)=19.47ms p(95)=24.85ms
+    iterations......................: 3130       24.049215/s
+    vus.............................: 1          min=1          max=2         
+    vus_max.........................: 251        min=251        max=251       
+
+    NETWORK
+    data_received...................: 570 kB     4.4 kB/s
+    data_sent.......................: 624 kB     4.8 kB/s
+
+
+

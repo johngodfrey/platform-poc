@@ -1,0 +1,8 @@
+{
+  "protocol": "new-pod-direct-order-v1",
+  "poll_seconds": 2,
+  "order_timeout_seconds": 10,
+  "pods": {},
+  "errors": [],
+  "baseline_changed": false
+}

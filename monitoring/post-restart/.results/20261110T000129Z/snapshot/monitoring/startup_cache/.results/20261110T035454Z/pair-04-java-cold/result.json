@@ -1,0 +1,337 @@
+{
+  "implementation": "java",
+  "pair": 4,
+  "start_time": 1794283733.3360262,
+  "scale_ack_seconds": 0.339131417000317,
+  "first_order_seconds": 20.939995500000805,
+  "all_pods_ready_seconds": 20.485332500000368,
+  "stable_serving_seconds": 30.55174820799948,
+  "probe_attempts": [
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.0033023340001818724,
+      "start_seconds": 0.339135250000254,
+      "end_seconds": 0.34247091699944576
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.006819791000452824,
+      "start_seconds": 1.3491964169988933,
+      "end_seconds": 1.356075667001278
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.0035560420001274906,
+      "start_seconds": 2.355978416999278,
+      "end_seconds": 2.3595864580020134
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.00245845800236566,
+      "start_seconds": 3.3566074170012143,
+      "end_seconds": 3.3590995830018073
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.002753124997980194,
+      "start_seconds": 4.366623000001709,
+      "end_seconds": 4.3694079170018085
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.0023491249994549435,
+      "start_seconds": 5.372303332998854,
+      "end_seconds": 5.374677333002182
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.009033541999087902,
+      "start_seconds": 6.382358124999882,
+      "end_seconds": 6.391440041999886
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.017208290999406017,
+      "start_seconds": 7.384901875000651,
+      "end_seconds": 7.402160583002114
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.009939665997080738,
+      "start_seconds": 8.386150166999869,
+      "end_seconds": 8.396144624999579
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.005233208001300227,
+      "start_seconds": 9.38726674999998,
+      "end_seconds": 9.392566208000062
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.004883042001893045,
+      "start_seconds": 10.39732875000118,
+      "end_seconds": 10.402273916999548
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.005205000001296867,
+      "start_seconds": 11.40739124999891,
+      "end_seconds": 11.41269829200246
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.005644374999974389,
+      "start_seconds": 12.409738082998956,
+      "end_seconds": 12.415423833001114
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.013091834000078961,
+      "start_seconds": 13.417025667000416,
+      "end_seconds": 13.430186125002365
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.011623040998529177,
+      "start_seconds": 14.41844808300084,
+      "end_seconds": 14.430123333000665
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.00562004200037336,
+      "start_seconds": 15.42561966699941,
+      "end_seconds": 15.431305083002371
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.008100291001028381,
+      "start_seconds": 16.433485458001087,
+      "end_seconds": 16.441718917001708
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.014744374999281717,
+      "start_seconds": 17.436109458001738,
+      "end_seconds": 17.45094083300137
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.009390874998643994,
+      "start_seconds": 18.439071417000378,
+      "end_seconds": 18.44859145800001
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.0048614580009598285,
+      "start_seconds": 19.441708250000374,
+      "end_seconds": 19.446665250001388
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.49562341699856916,
+      "start_seconds": 20.4443480000009,
+      "end_seconds": 20.939995500000805
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.03746541699729278,
+      "start_seconds": 21.448118708001857,
+      "end_seconds": 21.485599874999025
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.04016212499846006,
+      "start_seconds": 22.45779400000174,
+      "end_seconds": 22.497964541998954
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.03464000000167289,
+      "start_seconds": 23.462010916999134,
+      "end_seconds": 23.49666900000011
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.03698929199890699,
+      "start_seconds": 24.467142333000083,
+      "end_seconds": 24.504154082998866
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.03315700000166544,
+      "start_seconds": 25.470772167001996,
+      "end_seconds": 25.503948292000132
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.052162708998366725,
+      "start_seconds": 26.477105833000678,
+      "end_seconds": 26.529311667
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.05164804199739592,
+      "start_seconds": 27.47819920799884,
+      "end_seconds": 27.529878249999456
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.050884832999145146,
+      "start_seconds": 28.485533750001196,
+      "end_seconds": 28.53645483299988
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.038434209000115516,
+      "start_seconds": 29.495049749999453,
+      "end_seconds": 29.533517042000312
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.04629841699716053,
+      "start_seconds": 30.50541449999946,
+      "end_seconds": 30.55174820799948
+    }
+  ],
+  "pods": {
+    "pods": {
+      "d8d4f233-c235-4bf6-a0a5-07fdc28070a7": {
+        "name": "inventory-service-6474dcc566-79tts",
+        "deployment": "inventory-service",
+        "created_seconds": 1.0118482500001846,
+        "currently_ready": true,
+        "ready_seconds": 20.47459275000074
+      },
+      "1ba20e69-b530-494b-96ab-d3a7541d40b0": {
+        "name": "notification-service-69c5cb48fc-n8p95",
+        "deployment": "notification-service",
+        "created_seconds": 1.0178469999991648,
+        "currently_ready": true,
+        "ready_seconds": 19.52634612499969
+      },
+      "9ec86ee5-6966-46ab-9e60-ebb5e93380db": {
+        "name": "order-service-5d989d7cc-q6ws2",
+        "deployment": "order-service",
+        "created_seconds": 1.0241918329993496,
+        "currently_ready": true,
+        "ready_seconds": 19.528781542001525
+      },
+      "b3e598fe-f220-43f9-96b6-a6199439db81": {
+        "name": "product-service-7f8d799f6f-x4hnj",
+        "deployment": "product-service",
+        "created_seconds": 1.0297013750023325,
+        "currently_ready": true,
+        "ready_seconds": 19.530801542001427
+      }
+    },
+    "errors": [],
+    "all_ready_seconds": 20.485332500000368,
+    "currently_all_ready": true
+  },
+  "valid": true,
+  "verified_zero": true,
+  "cache_mode": "cold",
+  "node": "k3d-startup-1110035454-java-4-0",
+  "cache_before": {
+    "node": "k3d-startup-1110035454-java-4-0",
+    "cold": true,
+    "images": [],
+    "required_images": [
+      "k3d-platform-poc.localhost:5001/platform-poc-java/inventory-service:0.1.0",
+      "k3d-platform-poc.localhost:5001/platform-poc-java/notification-service:0.1.0",
+      "k3d-platform-poc.localhost:5001/platform-poc-java/order-service:0.1.0",
+      "k3d-platform-poc.localhost:5001/platform-poc-java/product-service:0.1.0"
+    ],
+    "time": 1794283728.516407
+  },
+  "image_events": [
+    {
+      "reason": "Pulling",
+      "message": "Pulling image \"k3d-platform-poc.localhost:5001/platform-poc-java/inventory-service:0.1.0\"",
+      "first_timestamp": "2026-11-10T04:08:57Z",
+      "last_timestamp": "2026-11-10T04:08:57Z",
+      "pod": "inventory-service-6474dcc566-79tts"
+    },
+    {
+      "reason": "Pulled",
+      "message": "Successfully pulled image \"k3d-platform-poc.localhost:5001/platform-poc-java/inventory-service:0.1.0\" in 4.021s (4.021s including waiting). Image size: 159345115 bytes.",
+      "first_timestamp": "2026-11-10T04:09:01Z",
+      "last_timestamp": "2026-11-10T04:09:01Z",
+      "pod": "inventory-service-6474dcc566-79tts"
+    },
+    {
+      "reason": "Pulling",
+      "message": "Pulling image \"k3d-platform-poc.localhost:5001/platform-poc-java/notification-service:0.1.0\"",
+      "first_timestamp": "2026-11-10T04:08:57Z",
+      "last_timestamp": "2026-11-10T04:08:57Z",
+      "pod": "notification-service-69c5cb48fc-n8p95"
+    },
+    {
+      "reason": "Pulled",
+      "message": "Successfully pulled image \"k3d-platform-poc.localhost:5001/platform-poc-java/notification-service:0.1.0\" in 3.267s (3.267s including waiting). Image size: 145444542 bytes.",
+      "first_timestamp": "2026-11-10T04:09:00Z",
+      "last_timestamp": "2026-11-10T04:09:00Z",
+      "pod": "notification-service-69c5cb48fc-n8p95"
+    },
+    {
+      "reason": "Pulling",
+      "message": "Pulling image \"k3d-platform-poc.localhost:5001/platform-poc-java/order-service:0.1.0\"",
+      "first_timestamp": "2026-11-10T04:08:57Z",
+      "last_timestamp": "2026-11-10T04:08:57Z",
+      "pod": "order-service-5d989d7cc-q6ws2"
+    },
+    {
+      "reason": "Pulled",
+      "message": "Successfully pulled image \"k3d-platform-poc.localhost:5001/platform-poc-java/order-service:0.1.0\" in 4.201s (4.201s including waiting). Image size: 175515378 bytes.",
+      "first_timestamp": "2026-11-10T04:09:01Z",
+      "last_timestamp": "2026-11-10T04:09:01Z",
+      "pod": "order-service-5d989d7cc-q6ws2"
+    },
+    {
+      "reason": "Pulling",
+      "message": "Pulling image \"k3d-platform-poc.localhost:5001/platform-poc-java/product-service:0.1.0\"",
+      "first_timestamp": "2026-11-10T04:08:57Z",
+      "last_timestamp": "2026-11-10T04:08:57Z",
+      "pod": "product-service-7f8d799f6f-x4hnj"
+    },
+    {
+      "reason": "Pulled",
+      "message": "Successfully pulled image \"k3d-platform-poc.localhost:5001/platform-poc-java/product-service:0.1.0\" in 3.13s (3.13s including waiting). Image size: 141801174 bytes.",
+      "first_timestamp": "2026-11-10T04:09:00Z",
+      "last_timestamp": "2026-11-10T04:09:00Z",
+      "pod": "product-service-7f8d799f6f-x4hnj"
+    }
+  ]
+}

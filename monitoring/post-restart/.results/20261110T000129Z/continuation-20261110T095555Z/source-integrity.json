@@ -1,0 +1,9 @@
+{
+  "measurement_sources": {
+    "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/capacity/validate.py": "df4ea1c52970ee2f99a232dc622139e2beffc721a29de2f44f2628dc1d625e52",
+    "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/capacity/run.py": "d95ed7aa143067c9e9ac60358a9857f6814bff2b72861032e9541a91168ccdcc",
+    "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/budget/run.py": "3b78d4af717bb86930b26b39e3688a7e925574c9ba5c21bb05ad1f7f35dd6158",
+    "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/footprint/footprint.js": "00a6db0ee093a48fe0ee43884ca16936eddb230496bcb70ed62feffb1b9a2a02"
+  },
+  "continuation_driver_sha256": "d9138ce594ad122b127076131a16572c05598cc2920fbe3711902b3930bc3f65"
+}

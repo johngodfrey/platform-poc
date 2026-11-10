@@ -1,0 +1,3691 @@
+[
+  {
+    "title": "Can Wasm help us run fewer servers?",
+    "subtitle": "Sustainable computing \u00b7 Java services vs Rust/Wasm on wasmCloud",
+    "source": "monitoring/validation/RESULTS.md; monitoring/capacity/VALIDATION_RESULTS.md",
+    "notes": "The question is useful work per physical machine while meeting a service target. This deck evaluates evidence for consolidation, not a universal runtime ranking. Measurements are from this repository on a local MacBook setup, through 8 November 2026.",
+    "items": [
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 7,
+        "color": "55DFC1"
+      },
+      {
+        "kind": "text",
+        "text": "Can Wasm help us run fewer servers?",
+        "x": 65,
+        "y": 48,
+        "w": 1150,
+        "h": 90,
+        "size": 39,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Sustainable computing \u00b7 Java services vs Rust/Wasm on wasmCloud",
+        "x": 65,
+        "y": 145,
+        "w": 1150,
+        "h": 62,
+        "size": 22,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "A smaller memory footprint.\nA larger CPU appetite.\nA conditional case for consolidation.",
+        "x": 65,
+        "y": 244,
+        "w": 1125,
+        "h": 230,
+        "size": 46,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 65,
+        "y": 578,
+        "w": 1150,
+        "h": 65,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "Promising for memory-bound fleets; a production replacement is not yet proven.",
+        "x": 83,
+        "y": 590,
+        "w": 1112,
+        "h": 49,
+        "size": 23,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "JAVA / WASM  \u00b7  LOCAL BENCHMARKS  \u00b7  08 NOV 2026  \u00b7  SOURCE S1 + S2",
+        "x": 65,
+        "y": 675,
+        "w": 950,
+        "h": 24,
+        "size": 13,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "01 / 18",
+        "x": 1115,
+        "y": 673,
+        "w": 100,
+        "h": 26,
+        "size": 15,
+        "color": "B7C5D7",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "title": "The result is a trade-off, not a winner",
+    "subtitle": "The machine\u2019s limiting resource determines which implementation fits better.",
+    "source": "monitoring/validation/RESULTS.md; monitoring/capacity/VALIDATION_RESULTS.md",
+    "notes": "Retiring capacity is the proposed sustainability mechanism, not an observed outcome. No electrical energy, carbon emissions, or production server counts were measured.",
+    "items": [
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 7,
+        "color": "55DFC1"
+      },
+      {
+        "kind": "text",
+        "text": "The result is a trade-off, not a winner",
+        "x": 65,
+        "y": 48,
+        "w": 1150,
+        "h": 90,
+        "size": 39,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "The machine\u2019s limiting resource determines which implementation fits better.",
+        "x": 65,
+        "y": 145,
+        "w": 1150,
+        "h": 62,
+        "size": 22,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 65,
+        "y": 241,
+        "w": 355,
+        "h": 195,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "WASM\u2019S STRONGEST RESULT",
+        "x": 85,
+        "y": 259,
+        "w": 315,
+        "h": 38,
+        "size": 21,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "Less RAM",
+        "x": 85,
+        "y": 305,
+        "w": 315,
+        "h": 65,
+        "size": 44,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Repeated at idle and under load",
+        "x": 85,
+        "y": 378,
+        "w": 315,
+        "h": 50,
+        "size": 19,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 435,
+        "y": 241,
+        "w": 355,
+        "h": 195,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "JAVA\u2019S STRONGEST RESULT",
+        "x": 455,
+        "y": 259,
+        "w": 315,
+        "h": 38,
+        "size": 21,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "Less CPU",
+        "x": 455,
+        "y": 305,
+        "w": 315,
+        "h": 65,
+        "size": 44,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Lower typical and p95 latency",
+        "x": 455,
+        "y": 378,
+        "w": 315,
+        "h": 50,
+        "size": 19,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 805,
+        "y": 241,
+        "w": 410,
+        "h": 195,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "THE SUSTAINABILITY QUESTION",
+        "x": 825,
+        "y": 259,
+        "w": 370,
+        "h": 38,
+        "size": 21,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "Fewer hosts?",
+        "x": 825,
+        "y": 305,
+        "w": 370,
+        "h": 65,
+        "size": 44,
+        "color": "FFC878",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Only if CPU and latency still fit",
+        "x": 825,
+        "y": 378,
+        "w": 370,
+        "h": 50,
+        "size": 19,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 65,
+        "y": 578,
+        "w": 1150,
+        "h": 65,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "A runtime change is valuable when it lets us consolidate and retire capacity.",
+        "x": 83,
+        "y": 590,
+        "w": 1112,
+        "h": 49,
+        "size": 23,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "JAVA / WASM  \u00b7  LOCAL BENCHMARKS  \u00b7  08 NOV 2026  \u00b7  SOURCE S1 + S2",
+        "x": 65,
+        "y": 675,
+        "w": 950,
+        "h": 24,
+        "size": 13,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "02 / 18",
+        "x": 1115,
+        "y": 673,
+        "w": 100,
+        "h": 26,
+        "size": 15,
+        "color": "B7C5D7",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "title": "What we actually compared",
+    "subtitle": "Complete accepted-order HTTP request paths, not isolated language benchmarks.",
+    "source": "monitoring/validation/RESULTS.md; monitoring/capacity/VALIDATION_RESULTS.md",
+    "notes": "One 16 GiB MacBook Pro; three k3d nodes share a single ten-core Docker VM. Java totals include four application containers. Wasm totals include host and provider child processes. Wasm NATS sidecar, shared databases/messaging, operator, ingress, monitoring, and generator are outside application totals. This is not a whole-system resource or energy inventory. API shapes and architectures differ; accepted HTTP orders do not establish identical downstream work or notification completion.",
+    "items": [
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 7,
+        "color": "55DFC1"
+      },
+      {
+        "kind": "text",
+        "text": "What we actually compared",
+        "x": 65,
+        "y": 48,
+        "w": 1150,
+        "h": 90,
+        "size": 39,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Complete accepted-order HTTP request paths, not isolated language benchmarks.",
+        "x": 65,
+        "y": 145,
+        "w": 1150,
+        "h": 62,
+        "size": 22,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 65,
+        "y": 230,
+        "w": 550,
+        "h": 270,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "rect",
+        "x": 640,
+        "y": 230,
+        "w": 575,
+        "h": 270,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "JAVA",
+        "x": 90,
+        "y": 253,
+        "w": 490,
+        "h": 43,
+        "size": 28,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Four service containers\nOrders \u00b7 Inventory \u00b7 Products \u00b7 Notifications",
+        "x": 90,
+        "y": 315,
+        "w": 490,
+        "h": 145,
+        "size": 27,
+        "color": "F2F5FA",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "RUST / WASM",
+        "x": 665,
+        "y": 253,
+        "w": 520,
+        "h": 43,
+        "size": 28,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "wasmCloud host + native providers\nComponents share runtime resources",
+        "x": 665,
+        "y": 315,
+        "w": 520,
+        "h": 145,
+        "size": 27,
+        "color": "F2F5FA",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 65,
+        "y": 578,
+        "w": 1150,
+        "h": 65,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "One 10-core Docker VM \u00b7 application resource totals \u00b7 shared dependencies excluded",
+        "x": 83,
+        "y": 590,
+        "w": 1112,
+        "h": 49,
+        "size": 23,
+        "color": "B7C5D7",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "JAVA / WASM  \u00b7  LOCAL BENCHMARKS  \u00b7  08 NOV 2026  \u00b7  SOURCE S1 + S2",
+        "x": 65,
+        "y": 675,
+        "w": 950,
+        "h": 24,
+        "size": 13,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "03 / 18",
+        "x": 1115,
+        "y": 673,
+        "w": 100,
+        "h": 26,
+        "size": 15,
+        "color": "B7C5D7",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "title": "How much evidence do we have?",
+    "subtitle": "Historical troubleshooting was retained separately from frozen validation.",
+    "source": "monitoring/validation/RESULTS.md; monitoring/capacity/VALIDATION_RESULTS.md",
+    "notes": "Frozen validation retained 65 historical runs and 1,095 files unchanged. Frozen footprint trials reused processes rather than five independent fresh starts. Capacity repetitions used fresh pods and alternating implementation order. The thirty-minute runs were one per version. Cross-study profiles differ and are not pooled.",
+    "items": [
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 7,
+        "color": "55DFC1"
+      },
+      {
+        "kind": "text",
+        "text": "How much evidence do we have?",
+        "x": 65,
+        "y": 48,
+        "w": 1150,
+        "h": 90,
+        "size": 39,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Historical troubleshooting was retained separately from frozen validation.",
+        "x": 65,
+        "y": 145,
+        "w": 1150,
+        "h": 62,
+        "size": 22,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 65,
+        "y": 230,
+        "w": 338,
+        "h": 44,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "Study",
+        "x": 77,
+        "y": 238,
+        "w": 316,
+        "h": 34,
+        "size": 20,
+        "color": "B7C5D7",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 405,
+        "y": 230,
+        "w": 323,
+        "h": 44,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "Coverage",
+        "x": 417,
+        "y": 238,
+        "w": 301,
+        "h": 34,
+        "size": 20,
+        "color": "B7C5D7",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 730,
+        "y": 230,
+        "w": 483,
+        "h": 44,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "Question",
+        "x": 742,
+        "y": 238,
+        "w": 461,
+        "h": 34,
+        "size": 20,
+        "color": "B7C5D7",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Footprint",
+        "x": 77,
+        "y": 284,
+        "w": 316,
+        "h": 62,
+        "size": 23,
+        "color": "F2F5FA",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "5 alternating pairs",
+        "x": 417,
+        "y": 284,
+        "w": 301,
+        "h": 62,
+        "size": 23,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Idle + loaded resource use",
+        "x": 742,
+        "y": 284,
+        "w": 461,
+        "h": 62,
+        "size": 23,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Memory density",
+        "x": 77,
+        "y": 349,
+        "w": 316,
+        "h": 62,
+        "size": 23,
+        "color": "F2F5FA",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "3 sweeps per version",
+        "x": 417,
+        "y": 349,
+        "w": 301,
+        "h": 62,
+        "size": 23,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Smallest passing allocation",
+        "x": 742,
+        "y": 349,
+        "w": 461,
+        "h": 62,
+        "size": 23,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Cold / cached startup",
+        "x": 77,
+        "y": 414,
+        "w": 316,
+        "h": 62,
+        "size": 23,
+        "color": "F2F5FA",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "5 pairs per version",
+        "x": 417,
+        "y": 414,
+        "w": 301,
+        "h": 62,
+        "size": 23,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "First real accepted order",
+        "x": 742,
+        "y": 414,
+        "w": 461,
+        "h": 62,
+        "size": 23,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Capacity + stability",
+        "x": 77,
+        "y": 479,
+        "w": 316,
+        "h": 62,
+        "size": 23,
+        "color": "F2F5FA",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "3 pairs + 30 min each",
+        "x": 417,
+        "y": 479,
+        "w": 301,
+        "h": 62,
+        "size": 23,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Sustained load and limits",
+        "x": 742,
+        "y": 479,
+        "w": 461,
+        "h": 62,
+        "size": 23,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 65,
+        "y": 578,
+        "w": 1150,
+        "h": 65,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "Multiple comparisons support the trade-off; long-term production behavior remains open.",
+        "x": 83,
+        "y": 590,
+        "w": 1112,
+        "h": 49,
+        "size": 23,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "JAVA / WASM  \u00b7  LOCAL BENCHMARKS  \u00b7  08 NOV 2026  \u00b7  SOURCE S1 + S2",
+        "x": 65,
+        "y": 675,
+        "w": 950,
+        "h": 24,
+        "size": 13,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "04 / 18",
+        "x": 1115,
+        "y": 673,
+        "w": 100,
+        "h": 26,
+        "size": 15,
+        "color": "B7C5D7",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "title": "Idle memory is the clearest opportunity",
+    "subtitle": "Frozen footprint study \u00b7 medians across five runs \u00b7 100 orders/s when loaded",
+    "source": "monitoring/validation/RESULTS.md",
+    "notes": "Loaded values are medians of separate runs; paired median ratios show about 88% lower RAM. These are working-set observations, not required limits or whole-server RAM. Wasm working set increased from 278 to 347 MiB over repeated runs; it was not stationary.",
+    "items": [
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 7,
+        "color": "55DFC1"
+      },
+      {
+        "kind": "text",
+        "text": "Idle memory is the clearest opportunity",
+        "x": 65,
+        "y": 48,
+        "w": 1150,
+        "h": 90,
+        "size": 39,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Frozen footprint study \u00b7 medians across five runs \u00b7 100 orders/s when loaded",
+        "x": 65,
+        "y": 145,
+        "w": 1150,
+        "h": 62,
+        "size": 22,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "Idle application RAM",
+        "x": 65,
+        "y": 238,
+        "w": 545,
+        "h": 42,
+        "size": 24,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Java",
+        "x": 65,
+        "y": 295,
+        "w": 85,
+        "h": 33,
+        "size": 22,
+        "color": "69AEFF",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 155,
+        "y": 298,
+        "w": 286.95652173913044,
+        "h": 29,
+        "color": "69AEFF"
+      },
+      {
+        "kind": "text",
+        "text": "2,732 MiB",
+        "x": 495,
+        "y": 293,
+        "w": 120,
+        "h": 39,
+        "size": 22,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Wasm",
+        "x": 65,
+        "y": 359,
+        "w": 85,
+        "h": 33,
+        "size": 22,
+        "color": "55DFC1",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 155,
+        "y": 362,
+        "w": 30.775351709211282,
+        "h": 29,
+        "color": "55DFC1"
+      },
+      {
+        "kind": "text",
+        "text": "293 MiB",
+        "x": 495,
+        "y": 357,
+        "w": 120,
+        "h": 39,
+        "size": 22,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Loaded application RAM",
+        "x": 670,
+        "y": 238,
+        "w": 545,
+        "h": 42,
+        "size": 24,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Java",
+        "x": 670,
+        "y": 295,
+        "w": 85,
+        "h": 33,
+        "size": 22,
+        "color": "69AEFF",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 760,
+        "y": 298,
+        "w": 286.95652173913044,
+        "h": 29,
+        "color": "69AEFF"
+      },
+      {
+        "kind": "text",
+        "text": "2,739 MiB",
+        "x": 1100,
+        "y": 293,
+        "w": 120,
+        "h": 39,
+        "size": 22,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Wasm",
+        "x": 670,
+        "y": 359,
+        "w": 85,
+        "h": 33,
+        "size": 22,
+        "color": "55DFC1",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 760,
+        "y": 362,
+        "w": 33.83970665269775,
+        "h": 29,
+        "color": "55DFC1"
+      },
+      {
+        "kind": "text",
+        "text": "323 MiB",
+        "x": 1100,
+        "y": 357,
+        "w": 120,
+        "h": 39,
+        "size": 22,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "88% less loaded RAM",
+        "x": 65,
+        "y": 470,
+        "w": 1050,
+        "h": 72,
+        "size": 44,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 65,
+        "y": 578,
+        "w": 1150,
+        "h": 65,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "A smaller resident footprint could reduce memory stranded between traffic bursts.",
+        "x": 83,
+        "y": 590,
+        "w": 1112,
+        "h": 49,
+        "size": 23,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "JAVA / WASM  \u00b7  LOCAL BENCHMARKS  \u00b7  08 NOV 2026  \u00b7  SOURCE S1",
+        "x": 65,
+        "y": 675,
+        "w": 950,
+        "h": 24,
+        "size": 13,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "05 / 18",
+        "x": 1115,
+        "y": 673,
+        "w": 100,
+        "h": 26,
+        "size": 15,
+        "color": "B7C5D7",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "title": "The CPU cost moves in the opposite direction",
+    "subtitle": "Same frozen footprint trials \u00b7 100 orders/s \u00b7 both versions accepted all work",
+    "source": "monitoring/validation/RESULTS.md",
+    "notes": "Idle CPU medians were Java .0198 and Wasm .00283 cores. Loaded p95 run ranges: Java 20.94\u201322.92 ms, Wasm 30.03\u201350.94 ms. Java had lower p95 in every pair. CPU time is not a direct measure of electricity or carbon; no conversion is made.",
+    "items": [
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 7,
+        "color": "55DFC1"
+      },
+      {
+        "kind": "text",
+        "text": "The CPU cost moves in the opposite direction",
+        "x": 65,
+        "y": 48,
+        "w": 1150,
+        "h": 90,
+        "size": 39,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Same frozen footprint trials \u00b7 100 orders/s \u00b7 both versions accepted all work",
+        "x": 65,
+        "y": 145,
+        "w": 1150,
+        "h": 62,
+        "size": 22,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "Loaded application CPU",
+        "x": 65,
+        "y": 238,
+        "w": 545,
+        "h": 42,
+        "size": 24,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Java",
+        "x": 65,
+        "y": 295,
+        "w": 85,
+        "h": 33,
+        "size": 22,
+        "color": "69AEFF",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 155,
+        "y": 298,
+        "w": 154.4286565132307,
+        "h": 29,
+        "color": "69AEFF"
+      },
+      {
+        "kind": "text",
+        "text": "0.275 cores",
+        "x": 495,
+        "y": 293,
+        "w": 120,
+        "h": 39,
+        "size": 22,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Wasm",
+        "x": 65,
+        "y": 359,
+        "w": 85,
+        "h": 33,
+        "size": 22,
+        "color": "55DFC1",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 155,
+        "y": 362,
+        "w": 286.95652173913044,
+        "h": 29,
+        "color": "55DFC1"
+      },
+      {
+        "kind": "text",
+        "text": "0.511 cores",
+        "x": 495,
+        "y": 357,
+        "w": 120,
+        "h": 39,
+        "size": 22,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Order p95 latency",
+        "x": 670,
+        "y": 238,
+        "w": 545,
+        "h": 42,
+        "size": 24,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Java",
+        "x": 670,
+        "y": 295,
+        "w": 85,
+        "h": 33,
+        "size": 22,
+        "color": "69AEFF",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 760,
+        "y": 298,
+        "w": 173.8495715645827,
+        "h": 29,
+        "color": "69AEFF"
+      },
+      {
+        "kind": "text",
+        "text": "21.58 ms",
+        "x": 1100,
+        "y": 293,
+        "w": 120,
+        "h": 39,
+        "size": 22,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Wasm",
+        "x": 670,
+        "y": 359,
+        "w": 85,
+        "h": 33,
+        "size": 22,
+        "color": "55DFC1",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 760,
+        "y": 362,
+        "w": 286.95652173913044,
+        "h": 29,
+        "color": "55DFC1"
+      },
+      {
+        "kind": "text",
+        "text": "35.62 ms",
+        "x": 1100,
+        "y": 357,
+        "w": 120,
+        "h": 39,
+        "size": 22,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Wasm: ~1.86\u00d7 CPU",
+        "x": 65,
+        "y": 470,
+        "w": 1050,
+        "h": 72,
+        "size": 44,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 65,
+        "y": 578,
+        "w": 1150,
+        "h": 65,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "More memory capacity is useful only while CPU and response-time headroom remain.",
+        "x": 83,
+        "y": 590,
+        "w": 1112,
+        "h": 49,
+        "size": 23,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "JAVA / WASM  \u00b7  LOCAL BENCHMARKS  \u00b7  08 NOV 2026  \u00b7  SOURCE S1",
+        "x": 65,
+        "y": 675,
+        "w": 950,
+        "h": 24,
+        "size": 13,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "06 / 18",
+        "x": 1115,
+        "y": 673,
+        "w": 100,
+        "h": 26,
+        "size": 15,
+        "color": "B7C5D7",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "title": "Memory density: a strong, bounded result",
+    "subtitle": "25 orders/s per application \u00b7 CPU headroom \u00b7 p95 target below 100 ms",
+    "source": "monitoring/validation/RESULTS.md",
+    "notes": "Java 2 GiB passed all three; next 1 GiB suffered observed OOMs under equal service splits. This is not an optimized JVM minimum. Wasm 512 MiB passed all; 384 MiB passed two, third inconclusive for insufficient CPU telemetry, not proven saturation. At 256 MiB two OOMs. The 4-versus-16 projection divides an application-only 8 GiB pool by passing caps. It excludes shared platform overhead and concurrent interactions. Do not apply these short 25/s caps to long-lived 350/s workloads.",
+    "items": [
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 7,
+        "color": "55DFC1"
+      },
+      {
+        "kind": "text",
+        "text": "Memory density: a strong, bounded result",
+        "x": 65,
+        "y": 48,
+        "w": 1150,
+        "h": 90,
+        "size": 39,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "25 orders/s per application \u00b7 CPU headroom \u00b7 p95 target below 100 ms",
+        "x": 65,
+        "y": 145,
+        "w": 1150,
+        "h": 62,
+        "size": 22,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "Smallest cap passing all three sweeps",
+        "x": 65,
+        "y": 238,
+        "w": 600,
+        "h": 42,
+        "size": 24,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Java",
+        "x": 65,
+        "y": 295,
+        "w": 85,
+        "h": 33,
+        "size": 22,
+        "color": "69AEFF",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 155,
+        "y": 298,
+        "w": 334.7826086956522,
+        "h": 29,
+        "color": "69AEFF"
+      },
+      {
+        "kind": "text",
+        "text": "2,048 MiB",
+        "x": 550,
+        "y": 293,
+        "w": 120,
+        "h": 39,
+        "size": 22,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Wasm",
+        "x": 65,
+        "y": 359,
+        "w": 85,
+        "h": 33,
+        "size": 22,
+        "color": "55DFC1",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 155,
+        "y": 362,
+        "w": 83.69565217391305,
+        "h": 29,
+        "color": "55DFC1"
+      },
+      {
+        "kind": "text",
+        "text": "512 MiB",
+        "x": 550,
+        "y": 357,
+        "w": 120,
+        "h": 39,
+        "size": 22,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 760,
+        "y": 236,
+        "w": 455,
+        "h": 195,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "8 GiB APPLICATION MEMORY POOL",
+        "x": 780,
+        "y": 254,
+        "w": 415,
+        "h": 38,
+        "size": 21,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "4 vs 16",
+        "x": 780,
+        "y": 300,
+        "w": 415,
+        "h": 65,
+        "size": 44,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Java vs Wasm allocations",
+        "x": 780,
+        "y": 373,
+        "w": 415,
+        "h": 50,
+        "size": 19,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "4\u00d7 projected memory-only density",
+        "x": 65,
+        "y": 470,
+        "w": 1130,
+        "h": 67,
+        "size": 40,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 65,
+        "y": 578,
+        "w": 1150,
+        "h": 65,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "Projection, not sixteen tested concurrent applications. CPU and infrastructure still count.",
+        "x": 83,
+        "y": 590,
+        "w": 1112,
+        "h": 49,
+        "size": 23,
+        "color": "FFC878",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "JAVA / WASM  \u00b7  LOCAL BENCHMARKS  \u00b7  08 NOV 2026  \u00b7  SOURCE S1",
+        "x": 65,
+        "y": 675,
+        "w": 950,
+        "h": 24,
+        "size": 13,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "07 / 18",
+        "x": 1115,
+        "y": 673,
+        "w": 100,
+        "h": 26,
+        "size": 15,
+        "color": "B7C5D7",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "title": "The machine profile can reverse the answer",
+    "subtitle": "Illustrative packing ceilings from the 100/s resource profile, not deployment sizing.",
+    "source": "monitoring/validation/RESULTS.md",
+    "notes": "Arithmetic illustration only, using rounded footprint medians: Java 2739 MiB/.275 cores and Wasm 323 MiB/.511 cores at 100/s each. floor(min(memory/RAM, CPU/cores)). 4 GiB gives Java1/Wasm7;32 GiB givesJava11/Wasm7. Pools are already assumed net of infrastructure reservations; additional safety headroom and peaks reduce counts. No such concurrent packing trial was run. Mean working sets are not safe resource limits. Wasm growth, databases, network contention, SLA and shared runtime scaling can invalidate linear extrapolation. These numbers demonstrate bottleneck reversal, not a sales forecast.",
+    "items": [
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 7,
+        "color": "55DFC1"
+      },
+      {
+        "kind": "text",
+        "text": "The machine profile can reverse the answer",
+        "x": 65,
+        "y": 48,
+        "w": 1150,
+        "h": 90,
+        "size": 39,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Illustrative packing ceilings from the 100/s resource profile, not deployment sizing.",
+        "x": 65,
+        "y": 145,
+        "w": 1150,
+        "h": 62,
+        "size": 22,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 65,
+        "y": 230,
+        "w": 568,
+        "h": 44,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "Usable application pool",
+        "x": 77,
+        "y": 238,
+        "w": 546,
+        "h": 34,
+        "size": 20,
+        "color": "B7C5D7",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 635,
+        "y": 230,
+        "w": 288,
+        "h": 44,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "Java copies",
+        "x": 647,
+        "y": 238,
+        "w": 266,
+        "h": 34,
+        "size": 20,
+        "color": "B7C5D7",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 925,
+        "y": 230,
+        "w": 288,
+        "h": 44,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "Wasm copies",
+        "x": 937,
+        "y": 238,
+        "w": 266,
+        "h": 34,
+        "size": 20,
+        "color": "B7C5D7",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "4 GiB RAM / 4 CPU cores",
+        "x": 77,
+        "y": 284,
+        "w": 546,
+        "h": 92,
+        "size": 23,
+        "color": "F2F5FA",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "1 \u00b7 memory bound",
+        "x": 647,
+        "y": 284,
+        "w": 266,
+        "h": 92,
+        "size": 23,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "7 \u00b7 CPU bound",
+        "x": 937,
+        "y": 284,
+        "w": 266,
+        "h": 92,
+        "size": 23,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "32 GiB RAM / 4 CPU cores",
+        "x": 77,
+        "y": 379,
+        "w": 546,
+        "h": 92,
+        "size": 23,
+        "color": "F2F5FA",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "11 \u00b7 memory bound",
+        "x": 647,
+        "y": 379,
+        "w": 266,
+        "h": 92,
+        "size": 23,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "7 \u00b7 CPU bound",
+        "x": 937,
+        "y": 379,
+        "w": 266,
+        "h": 92,
+        "size": 23,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "copies \u2264 min(RAM pool \u00f7 RAM per copy, CPU pool \u00f7 CPU per copy)",
+        "x": 65,
+        "y": 490,
+        "w": 1130,
+        "h": 58,
+        "size": 26,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 65,
+        "y": 578,
+        "w": 1150,
+        "h": 65,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "Wasm favors memory-tight, CPU-rich hosts; Java may fit CPU-tight hosts better.",
+        "x": 83,
+        "y": 590,
+        "w": 1112,
+        "h": 49,
+        "size": 23,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "JAVA / WASM  \u00b7  LOCAL BENCHMARKS  \u00b7  08 NOV 2026  \u00b7  SOURCE S1",
+        "x": 65,
+        "y": 675,
+        "w": 950,
+        "h": 24,
+        "size": 13,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "08 / 18",
+        "x": 1115,
+        "y": 673,
+        "w": 100,
+        "h": 26,
+        "size": 15,
+        "color": "B7C5D7",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "title": "Startup: Wasm served the first order sooner",
+    "subtitle": "Five paired starts per version \u00b7 complete application scaled from zero \u00b7 warm dependencies",
+    "source": "monitoring/validation/RESULTS.md",
+    "notes": "Median first accepted order, fresh owned worker then same-worker restart. Java cold22.65\u201325.28s,cached14.80\u201325.66; Wasm cold13.34\u201317.36,cached5.35\u20139.20. Image-cold is not whole-machine cold boot; databases remain warm. Wasm component/provider caches are new on both starts. Potential reduction in idle reserve was not measured as energy or fleet savings.",
+    "items": [
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 7,
+        "color": "55DFC1"
+      },
+      {
+        "kind": "text",
+        "text": "Startup: Wasm served the first order sooner",
+        "x": 65,
+        "y": 48,
+        "w": 1150,
+        "h": 90,
+        "size": 39,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Five paired starts per version \u00b7 complete application scaled from zero \u00b7 warm dependencies",
+        "x": 65,
+        "y": 145,
+        "w": 1150,
+        "h": 62,
+        "size": 22,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "Container images cold",
+        "x": 65,
+        "y": 238,
+        "w": 545,
+        "h": 42,
+        "size": 24,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Java",
+        "x": 65,
+        "y": 295,
+        "w": 85,
+        "h": 33,
+        "size": 22,
+        "color": "69AEFF",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 155,
+        "y": 298,
+        "w": 286.9565217391305,
+        "h": 29,
+        "color": "69AEFF"
+      },
+      {
+        "kind": "text",
+        "text": "24.32 s",
+        "x": 495,
+        "y": 293,
+        "w": 120,
+        "h": 39,
+        "size": 22,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Wasm",
+        "x": 65,
+        "y": 359,
+        "w": 85,
+        "h": 33,
+        "size": 22,
+        "color": "55DFC1",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 155,
+        "y": 362,
+        "w": 192.20895308924486,
+        "h": 29,
+        "color": "55DFC1"
+      },
+      {
+        "kind": "text",
+        "text": "16.29 s",
+        "x": 495,
+        "y": 357,
+        "w": 120,
+        "h": 39,
+        "size": 22,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Container images cached",
+        "x": 670,
+        "y": 238,
+        "w": 545,
+        "h": 42,
+        "size": 24,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Java",
+        "x": 670,
+        "y": 295,
+        "w": 85,
+        "h": 33,
+        "size": 22,
+        "color": "69AEFF",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 760,
+        "y": 298,
+        "w": 286.9565217391305,
+        "h": 29,
+        "color": "69AEFF"
+      },
+      {
+        "kind": "text",
+        "text": "15.11 s",
+        "x": 1100,
+        "y": 293,
+        "w": 120,
+        "h": 39,
+        "size": 22,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Wasm",
+        "x": 670,
+        "y": 359,
+        "w": 85,
+        "h": 33,
+        "size": 22,
+        "color": "55DFC1",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 760,
+        "y": 362,
+        "w": 156.4872097372889,
+        "h": 29,
+        "color": "55DFC1"
+      },
+      {
+        "kind": "text",
+        "text": "8.24 s",
+        "x": 1100,
+        "y": 357,
+        "w": 120,
+        "h": 39,
+        "size": 22,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "~33% sooner cold \u00b7 ~45% sooner cached",
+        "x": 65,
+        "y": 470,
+        "w": 1130,
+        "h": 67,
+        "size": 37,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 65,
+        "y": 578,
+        "w": 1150,
+        "h": 65,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "Faster activation could reduce pre-warmed capacity\u2014if the complete scaling loop works.",
+        "x": 83,
+        "y": 590,
+        "w": 1112,
+        "h": 49,
+        "size": 23,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "JAVA / WASM  \u00b7  LOCAL BENCHMARKS  \u00b7  08 NOV 2026  \u00b7  SOURCE S1",
+        "x": 65,
+        "y": 675,
+        "w": 950,
+        "h": 24,
+        "size": 13,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "09 / 18",
+        "x": 1115,
+        "y": 673,
+        "w": 100,
+        "h": 26,
+        "size": 15,
+        "color": "B7C5D7",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "title": "Faster startup did not guarantee faster scale-out",
+    "subtitle": "Earlier five-pair 400/s burst study \u00b7 readiness definitions change the interpretation",
+    "source": "monitoring/scaleout/.results/repeated-20261103T234859Z/series.json",
+    "notes": "Medians computed directly from the five-pair series.json. New-pod first-order median Java16.43/Wasm7.34seconds; capacity-ready Java18.04/Wasm23.33seconds. The harness event includes runtime/control-loop readiness, not a universal scale-ready definition. Java was already healthy under the target in at least some trials; this is not equal pre-scale overload. Prior automatic-scaling experiments were sensitive to triggers, placement, telemetry and workload. These exploratory profiles are separate from the later frozen footprint/startup studies and optimized capacity trials.",
+    "items": [
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 7,
+        "color": "55DFC1"
+      },
+      {
+        "kind": "text",
+        "text": "Faster startup did not guarantee faster scale-out",
+        "x": 65,
+        "y": 48,
+        "w": 1150,
+        "h": 90,
+        "size": 39,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Earlier five-pair 400/s burst study \u00b7 readiness definitions change the interpretation",
+        "x": 65,
+        "y": 145,
+        "w": 1150,
+        "h": 62,
+        "size": 22,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "New pod: first accepted order",
+        "x": 65,
+        "y": 238,
+        "w": 545,
+        "h": 42,
+        "size": 24,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Java",
+        "x": 65,
+        "y": 295,
+        "w": 85,
+        "h": 33,
+        "size": 22,
+        "color": "69AEFF",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 155,
+        "y": 298,
+        "w": 286.95652173913044,
+        "h": 29,
+        "color": "69AEFF"
+      },
+      {
+        "kind": "text",
+        "text": "16.43 s",
+        "x": 495,
+        "y": 293,
+        "w": 120,
+        "h": 39,
+        "size": 22,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Wasm",
+        "x": 65,
+        "y": 359,
+        "w": 85,
+        "h": 33,
+        "size": 22,
+        "color": "55DFC1",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 155,
+        "y": 362,
+        "w": 128.19603588345817,
+        "h": 29,
+        "color": "55DFC1"
+      },
+      {
+        "kind": "text",
+        "text": "7.34 s",
+        "x": 495,
+        "y": 357,
+        "w": 120,
+        "h": 39,
+        "size": 22,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Harness: capacity-ready event",
+        "x": 670,
+        "y": 238,
+        "w": 545,
+        "h": 42,
+        "size": 24,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Java",
+        "x": 670,
+        "y": 295,
+        "w": 85,
+        "h": 33,
+        "size": 22,
+        "color": "69AEFF",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 760,
+        "y": 298,
+        "w": 221.8900836765501,
+        "h": 29,
+        "color": "69AEFF"
+      },
+      {
+        "kind": "text",
+        "text": "18.04 s",
+        "x": 1100,
+        "y": 293,
+        "w": 120,
+        "h": 39,
+        "size": 22,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Wasm",
+        "x": 670,
+        "y": 359,
+        "w": 85,
+        "h": 33,
+        "size": 22,
+        "color": "55DFC1",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 760,
+        "y": 362,
+        "w": 286.95652173913044,
+        "h": 29,
+        "color": "55DFC1"
+      },
+      {
+        "kind": "text",
+        "text": "23.33 s",
+        "x": 1100,
+        "y": 357,
+        "w": 120,
+        "h": 39,
+        "size": 22,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Wasm starts quickly; serving capacity arrives through a wider control loop.",
+        "x": 65,
+        "y": 470,
+        "w": 1130,
+        "h": 80,
+        "size": 30,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 65,
+        "y": 578,
+        "w": 1150,
+        "h": 65,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "Do not promise fewer warm servers from pod startup time alone.",
+        "x": 83,
+        "y": 590,
+        "w": 1112,
+        "h": 49,
+        "size": 23,
+        "color": "FFC878",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "JAVA / WASM  \u00b7  LOCAL BENCHMARKS  \u00b7  08 NOV 2026  \u00b7  SOURCE S3",
+        "x": 65,
+        "y": 675,
+        "w": 950,
+        "h": 24,
+        "size": 13,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "10 / 18",
+        "x": 1115,
+        "y": 673,
+        "w": 100,
+        "h": 26,
+        "size": 15,
+        "color": "B7C5D7",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "title": "Tune allocation before declaring a capacity gap",
+    "subtitle": "Same total application budget: 2 CPU cores / 4 GiB RAM",
+    "source": "monitoring/capacity/VALIDATION_RESULTS.md",
+    "notes": "On this slide both bars are Java: original equal500m per four services vs orders1200m,inventory600m,notifications150m,products50m. Memory1GiB per service unchanged. Matched200/s short-step p95 fell56.72\u219215.36ms. This allocation is orders-specific and made product startup several minutes; not recommended blindly for mixed traffic. Earlier apparent Wasm capacity advantage was confounded by CPU allocation. Bar legend is overridden to original/alternative below.",
+    "items": [
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 7,
+        "color": "55DFC1"
+      },
+      {
+        "kind": "text",
+        "text": "Tune allocation before declaring a capacity gap",
+        "x": 65,
+        "y": 48,
+        "w": 1150,
+        "h": 90,
+        "size": 39,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Same total application budget: 2 CPU cores / 4 GiB RAM",
+        "x": 65,
+        "y": 145,
+        "w": 1150,
+        "h": 62,
+        "size": 22,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "Java: clean five-minute confirmed rate",
+        "x": 65,
+        "y": 238,
+        "w": 600,
+        "h": 42,
+        "size": 24,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Equal",
+        "x": 65,
+        "y": 295,
+        "w": 85,
+        "h": 33,
+        "size": 22,
+        "color": "69AEFF",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 155,
+        "y": 298,
+        "w": 191.304347826087,
+        "h": 29,
+        "color": "69AEFF"
+      },
+      {
+        "kind": "text",
+        "text": "200 /s",
+        "x": 550,
+        "y": 293,
+        "w": 120,
+        "h": 39,
+        "size": 22,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Tuned",
+        "x": 65,
+        "y": 359,
+        "w": 85,
+        "h": 33,
+        "size": 22,
+        "color": "55DFC1",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 155,
+        "y": 362,
+        "w": 334.78260869565224,
+        "h": 29,
+        "color": "55DFC1"
+      },
+      {
+        "kind": "text",
+        "text": "350 /s",
+        "x": 550,
+        "y": 357,
+        "w": 120,
+        "h": 39,
+        "size": 22,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Original split",
+        "x": 65,
+        "y": 425,
+        "w": 300,
+        "h": 40,
+        "size": 22,
+        "color": "69AEFF",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "Alternative split",
+        "x": 355,
+        "y": 425,
+        "w": 300,
+        "h": 40,
+        "size": 22,
+        "color": "55DFC1",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 760,
+        "y": 236,
+        "w": 455,
+        "h": 195,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "ONLY CPU DISTRIBUTION CHANGED",
+        "x": 780,
+        "y": 254,
+        "w": 415,
+        "h": 38,
+        "size": 21,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "+75%",
+        "x": 780,
+        "y": 300,
+        "w": 415,
+        "h": 65,
+        "size": 44,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Confirmed rate at the same budget",
+        "x": 780,
+        "y": 373,
+        "w": 415,
+        "h": 50,
+        "size": 19,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 65,
+        "y": 578,
+        "w": 1150,
+        "h": 65,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "Right-sizing the existing Java stack is also a consolidation opportunity.",
+        "x": 83,
+        "y": 590,
+        "w": 1112,
+        "h": 49,
+        "size": 23,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "JAVA / WASM  \u00b7  LOCAL BENCHMARKS  \u00b7  08 NOV 2026  \u00b7  SOURCE S2",
+        "x": 65,
+        "y": 675,
+        "w": 950,
+        "h": 24,
+        "size": 13,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "11 / 18",
+        "x": 1115,
+        "y": 673,
+        "w": 100,
+        "h": 26,
+        "size": 15,
+        "color": "B7C5D7",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "title": "At sustained 350/s, both accepted every issued order",
+    "subtitle": "One fresh-pod 30-minute run each \u00b7 tuned Java \u00b7 identical 2-core / 4-GiB budgets",
+    "source": "monitoring/capacity/VALIDATION_RESULTS.md",
+    "notes": "Dropped arrivals were never issued; these are not HTTP failures. Both pods remained ready/unchanged. Each long trial started fresh with3min25/s priming and3min100/s warmup, no preceding upper-rate probe. Wasm long run was a separately declared addendum; failed450/400confirmations are retained. Three paired short350/s trials passed each version. Exact throughput maxima unresolved; 400/s varied, and finite generator workers/shared-machine stalls can cause drops. One long run each does not establish universal reliability.",
+    "items": [
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 7,
+        "color": "55DFC1"
+      },
+      {
+        "kind": "text",
+        "text": "At sustained 350/s, both accepted every issued order",
+        "x": 65,
+        "y": 48,
+        "w": 1150,
+        "h": 90,
+        "size": 39,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "One fresh-pod 30-minute run each \u00b7 tuned Java \u00b7 identical 2-core / 4-GiB budgets",
+        "x": 65,
+        "y": 145,
+        "w": 1150,
+        "h": 62,
+        "size": 22,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 65,
+        "y": 230,
+        "w": 568,
+        "h": 44,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "Metric",
+        "x": 77,
+        "y": 238,
+        "w": 546,
+        "h": 34,
+        "size": 20,
+        "color": "B7C5D7",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 635,
+        "y": 230,
+        "w": 288,
+        "h": 44,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "Java",
+        "x": 647,
+        "y": 238,
+        "w": 266,
+        "h": 34,
+        "size": 20,
+        "color": "B7C5D7",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 925,
+        "y": 230,
+        "w": 288,
+        "h": 44,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "Wasm",
+        "x": 937,
+        "y": 238,
+        "w": 266,
+        "h": 34,
+        "size": 20,
+        "color": "B7C5D7",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Accepted orders",
+        "x": 77,
+        "y": 284,
+        "w": 546,
+        "h": 61,
+        "size": 23,
+        "color": "F2F5FA",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "629,954",
+        "x": 647,
+        "y": 284,
+        "w": 266,
+        "h": 61,
+        "size": 23,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "630,001",
+        "x": 937,
+        "y": 284,
+        "w": 266,
+        "h": 61,
+        "size": 23,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "HTTP / body failures",
+        "x": 77,
+        "y": 348,
+        "w": 546,
+        "h": 61,
+        "size": 23,
+        "color": "F2F5FA",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "0",
+        "x": 647,
+        "y": 348,
+        "w": 266,
+        "h": 61,
+        "size": 23,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "0",
+        "x": 937,
+        "y": 348,
+        "w": 266,
+        "h": 61,
+        "size": 23,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Unscheduled arrivals",
+        "x": 77,
+        "y": 412,
+        "w": 546,
+        "h": 61,
+        "size": 23,
+        "color": "F2F5FA",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "47",
+        "x": 647,
+        "y": 412,
+        "w": 266,
+        "h": 61,
+        "size": 23,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "0",
+        "x": 937,
+        "y": 412,
+        "w": 266,
+        "h": 61,
+        "size": 23,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "p95 latency",
+        "x": 77,
+        "y": 476,
+        "w": 546,
+        "h": 61,
+        "size": 23,
+        "color": "F2F5FA",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "21.77 ms",
+        "x": 647,
+        "y": 476,
+        "w": 266,
+        "h": 61,
+        "size": 23,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "51.65 ms",
+        "x": 937,
+        "y": 476,
+        "w": 266,
+        "h": 61,
+        "size": 23,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 65,
+        "y": 578,
+        "w": 1150,
+        "h": 65,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "Wasm passed the strict gate; Java missed zero-drop by 0.0075% of planned work.",
+        "x": 83,
+        "y": 590,
+        "w": 1112,
+        "h": 49,
+        "size": 23,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "JAVA / WASM  \u00b7  LOCAL BENCHMARKS  \u00b7  08 NOV 2026  \u00b7  SOURCE S2",
+        "x": 65,
+        "y": 675,
+        "w": 950,
+        "h": 24,
+        "size": 13,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "12 / 18",
+        "x": 1115,
+        "y": 673,
+        "w": 100,
+        "h": 26,
+        "size": 15,
+        "color": "B7C5D7",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "title": "Sustained load confirms the resource trade-off",
+    "subtitle": "30-minute matched 350/s runs \u00b7 application CPU and working-set memory",
+    "source": "monitoring/capacity/VALIDATION_RESULTS.md",
+    "notes": "CPU90s smoothed rates sampled15s; complete current-container coverage100%. Java .6617cores,Wasm1.1778. RAM1249.32/322.52MiB. These means do not measure hardware energy or establish safe CPU/memory limits. Do not compare absolute RAM directly with unlimited100/s footprints as if configurations matched.",
+    "items": [
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 7,
+        "color": "55DFC1"
+      },
+      {
+        "kind": "text",
+        "text": "Sustained load confirms the resource trade-off",
+        "x": 65,
+        "y": 48,
+        "w": 1150,
+        "h": 90,
+        "size": 39,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "30-minute matched 350/s runs \u00b7 application CPU and working-set memory",
+        "x": 65,
+        "y": 145,
+        "w": 1150,
+        "h": 62,
+        "size": 22,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "Mean CPU consumed",
+        "x": 65,
+        "y": 238,
+        "w": 545,
+        "h": 42,
+        "size": 24,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Java",
+        "x": 65,
+        "y": 295,
+        "w": 85,
+        "h": 33,
+        "size": 22,
+        "color": "69AEFF",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 155,
+        "y": 298,
+        "w": 161.26079574813616,
+        "h": 29,
+        "color": "69AEFF"
+      },
+      {
+        "kind": "text",
+        "text": "0.662 cores",
+        "x": 495,
+        "y": 293,
+        "w": 120,
+        "h": 39,
+        "size": 22,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Wasm",
+        "x": 65,
+        "y": 359,
+        "w": 85,
+        "h": 33,
+        "size": 22,
+        "color": "55DFC1",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 155,
+        "y": 362,
+        "w": 286.95652173913044,
+        "h": 29,
+        "color": "55DFC1"
+      },
+      {
+        "kind": "text",
+        "text": "1.178 cores",
+        "x": 495,
+        "y": 357,
+        "w": 120,
+        "h": 39,
+        "size": 22,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Mean working-set RAM",
+        "x": 670,
+        "y": 238,
+        "w": 545,
+        "h": 42,
+        "size": 24,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Java",
+        "x": 670,
+        "y": 295,
+        "w": 85,
+        "h": 33,
+        "size": 22,
+        "color": "69AEFF",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 760,
+        "y": 298,
+        "w": 286.95652173913044,
+        "h": 29,
+        "color": "69AEFF"
+      },
+      {
+        "kind": "text",
+        "text": "1,249 MiB",
+        "x": 1100,
+        "y": 293,
+        "w": 120,
+        "h": 39,
+        "size": 22,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Wasm",
+        "x": 670,
+        "y": 359,
+        "w": 85,
+        "h": 33,
+        "size": 22,
+        "color": "55DFC1",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 760,
+        "y": 362,
+        "w": 74.20893236328193,
+        "h": 29,
+        "color": "55DFC1"
+      },
+      {
+        "kind": "text",
+        "text": "323 MiB",
+        "x": 1100,
+        "y": 357,
+        "w": 120,
+        "h": 39,
+        "size": 22,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Wasm: 1.78\u00d7 CPU \u00b7 74% less average RAM",
+        "x": 65,
+        "y": 470,
+        "w": 1130,
+        "h": 67,
+        "size": 38,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 65,
+        "y": 578,
+        "w": 1150,
+        "h": 65,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "For consolidation, model both resources at the traffic each instance must handle.",
+        "x": 83,
+        "y": 590,
+        "w": 1112,
+        "h": 49,
+        "size": 23,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "JAVA / WASM  \u00b7  LOCAL BENCHMARKS  \u00b7  08 NOV 2026  \u00b7  SOURCE S2",
+        "x": 65,
+        "y": 675,
+        "w": 950,
+        "h": 24,
+        "size": 13,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "13 / 18",
+        "x": 1115,
+        "y": 673,
+        "w": 100,
+        "h": 26,
+        "size": 15,
+        "color": "B7C5D7",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "title": "The unresolved issue: Wasm memory kept growing",
+    "subtitle": "First vs last five-minute mean RAM in the 30-minute 350/s trial",
+    "source": "monitoring/capacity/VALIDATION_RESULTS.md",
+    "notes": "First/last values are window means, not endpoints or a fitted linear trend. Wasm maximum468MiB;mean322.5. Could be pools,caches,allocator behavior or leak; cause unknown. Do not linearly extrapolate growth. Ending-window RAM still65%belowJava, but advantage narrowed. The512MiB25/s density cap is not validated for long-lived350/s operation.",
+    "items": [
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 7,
+        "color": "55DFC1"
+      },
+      {
+        "kind": "text",
+        "text": "The unresolved issue: Wasm memory kept growing",
+        "x": 65,
+        "y": 48,
+        "w": 1150,
+        "h": 90,
+        "size": 39,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "First vs last five-minute mean RAM in the 30-minute 350/s trial",
+        "x": 65,
+        "y": 145,
+        "w": 1150,
+        "h": 62,
+        "size": 22,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 65,
+        "y": 230,
+        "w": 568,
+        "h": 44,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "Working-set memory",
+        "x": 77,
+        "y": 238,
+        "w": 546,
+        "h": 34,
+        "size": 20,
+        "color": "B7C5D7",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 635,
+        "y": 230,
+        "w": 288,
+        "h": 44,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "Java",
+        "x": 647,
+        "y": 238,
+        "w": 266,
+        "h": 34,
+        "size": 20,
+        "color": "B7C5D7",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 925,
+        "y": 230,
+        "w": 288,
+        "h": 44,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "Wasm",
+        "x": 937,
+        "y": 238,
+        "w": 266,
+        "h": 34,
+        "size": 20,
+        "color": "B7C5D7",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "First five minutes",
+        "x": 77,
+        "y": 284,
+        "w": 546,
+        "h": 79,
+        "size": 23,
+        "color": "F2F5FA",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "1,215 MiB",
+        "x": 647,
+        "y": 284,
+        "w": 266,
+        "h": 79,
+        "size": 23,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "202 MiB",
+        "x": 937,
+        "y": 284,
+        "w": 266,
+        "h": 79,
+        "size": 23,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Last five minutes",
+        "x": 77,
+        "y": 366,
+        "w": 546,
+        "h": 79,
+        "size": 23,
+        "color": "F2F5FA",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "1,288 MiB",
+        "x": 647,
+        "y": 366,
+        "w": 266,
+        "h": 79,
+        "size": 23,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "445 MiB",
+        "x": 937,
+        "y": 366,
+        "w": 266,
+        "h": 79,
+        "size": 23,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Increase",
+        "x": 77,
+        "y": 448,
+        "w": 546,
+        "h": 79,
+        "size": 23,
+        "color": "F2F5FA",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "+6%",
+        "x": 647,
+        "y": 448,
+        "w": 266,
+        "h": 79,
+        "size": 23,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "+120%",
+        "x": 937,
+        "y": 448,
+        "w": 266,
+        "h": 79,
+        "size": 23,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 65,
+        "y": 578,
+        "w": 1150,
+        "h": 65,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "No demonstrated plateau. Long-lived density requires a longer memory investigation.",
+        "x": 83,
+        "y": 590,
+        "w": 1112,
+        "h": 49,
+        "size": 23,
+        "color": "FFC878",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "JAVA / WASM  \u00b7  LOCAL BENCHMARKS  \u00b7  08 NOV 2026  \u00b7  SOURCE S2",
+        "x": 65,
+        "y": 675,
+        "w": 950,
+        "h": 24,
+        "size": 13,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "14 / 18",
+        "x": 1115,
+        "y": 673,
+        "w": 100,
+        "h": 26,
+        "size": 15,
+        "color": "B7C5D7",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "title": "Sustainability: what we can\u2014and cannot\u2014claim",
+    "subtitle": "Resource measurements support a hypothesis; they do not measure its environmental outcome.",
+    "source": "monitoring/validation/RESULTS.md; monitoring/capacity/VALIDATION_RESULTS.md",
+    "notes": "The proposed mechanism is consolidation of a memory-bound fleet. A system using more CPU may still enable a smaller fleet, or may instead hit a CPU bottleneck. Which outcome dominates requires real hosts, workload mixes, reservations and energy measurements. No emission factors, cloud prices or energy-per-core conversion have been assumed.",
+    "items": [
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 7,
+        "color": "55DFC1"
+      },
+      {
+        "kind": "text",
+        "text": "Sustainability: what we can\u2014and cannot\u2014claim",
+        "x": 65,
+        "y": 48,
+        "w": 1150,
+        "h": 90,
+        "size": 39,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Resource measurements support a hypothesis; they do not measure its environmental outcome.",
+        "x": 65,
+        "y": 145,
+        "w": 1150,
+        "h": 62,
+        "size": 22,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 65,
+        "y": 230,
+        "w": 550,
+        "h": 310,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "rect",
+        "x": 640,
+        "y": 230,
+        "w": 575,
+        "h": 310,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "SUPPORTED BY THE TESTS",
+        "x": 88,
+        "y": 250,
+        "w": 505,
+        "h": 42,
+        "size": 23,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Less application RAM\nFaster first accepted order\nMore loaded CPU\nUsually higher p95 latency",
+        "x": 88,
+        "y": 312,
+        "w": 505,
+        "h": 205,
+        "size": 27,
+        "color": "F2F5FA",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "STILL TO BE DEMONSTRATED",
+        "x": 663,
+        "y": 250,
+        "w": 530,
+        "h": 42,
+        "size": 23,
+        "color": "FFC878",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Fewer physical servers\nLower kWh per accepted order\nLower lifecycle carbon\nStable long-term packed density",
+        "x": 663,
+        "y": 312,
+        "w": 530,
+        "h": 205,
+        "size": 27,
+        "color": "F2F5FA",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 65,
+        "y": 578,
+        "w": 1150,
+        "h": 65,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "CPU-seconds and MiB are useful indicators. Neither is a carbon measurement.",
+        "x": 83,
+        "y": 590,
+        "w": 1112,
+        "h": 49,
+        "size": 23,
+        "color": "B7C5D7",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "JAVA / WASM  \u00b7  LOCAL BENCHMARKS  \u00b7  08 NOV 2026  \u00b7  SOURCE S1 + S2",
+        "x": 65,
+        "y": 675,
+        "w": 950,
+        "h": 24,
+        "size": 13,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "15 / 18",
+        "x": 1115,
+        "y": 673,
+        "w": 100,
+        "h": 26,
+        "size": 15,
+        "color": "B7C5D7",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "title": "A practical replacement decision",
+    "subtitle": "Choose by the bottleneck and service target, rather than runtime preference.",
+    "source": "monitoring/validation/RESULTS.md; monitoring/capacity/VALIDATION_RESULTS.md",
+    "notes": "These are recommendations inferred from measured trade-offs, not additional tests. Wasm reliability required a locally patched host and HTTP provider; the operational burden and maintenance of that patch must be part of adoption planning. Java allocation optimization must be retained in a fair production comparison.",
+    "items": [
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 7,
+        "color": "55DFC1"
+      },
+      {
+        "kind": "text",
+        "text": "A practical replacement decision",
+        "x": 65,
+        "y": 48,
+        "w": 1150,
+        "h": 90,
+        "size": 39,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Choose by the bottleneck and service target, rather than runtime preference.",
+        "x": 65,
+        "y": 145,
+        "w": 1150,
+        "h": 62,
+        "size": 22,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 65,
+        "y": 230,
+        "w": 438,
+        "h": 44,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "Deployment profile",
+        "x": 77,
+        "y": 238,
+        "w": 416,
+        "h": 34,
+        "size": 20,
+        "color": "B7C5D7",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 505,
+        "y": 230,
+        "w": 283,
+        "h": 44,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "Assessment",
+        "x": 517,
+        "y": 238,
+        "w": 261,
+        "h": 34,
+        "size": 20,
+        "color": "B7C5D7",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 790,
+        "y": 230,
+        "w": 423,
+        "h": 44,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "Reason",
+        "x": 802,
+        "y": 238,
+        "w": 401,
+        "h": 34,
+        "size": 20,
+        "color": "B7C5D7",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Memory tight; CPU available",
+        "x": 77,
+        "y": 284,
+        "w": 416,
+        "h": 62,
+        "size": 23,
+        "color": "F2F5FA",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "Pilot Wasm",
+        "x": 517,
+        "y": 284,
+        "w": 261,
+        "h": 62,
+        "size": 23,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Strongest density opportunity",
+        "x": 802,
+        "y": 284,
+        "w": 401,
+        "h": 62,
+        "size": 23,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "CPU tight; latency critical",
+        "x": 77,
+        "y": 349,
+        "w": 416,
+        "h": 62,
+        "size": 23,
+        "color": "F2F5FA",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "Favor current Java",
+        "x": 517,
+        "y": 349,
+        "w": 261,
+        "h": 62,
+        "size": 23,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Lower CPU and p95 here",
+        "x": 802,
+        "y": 349,
+        "w": 401,
+        "h": 62,
+        "size": 23,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Bursty; much idle capacity",
+        "x": 77,
+        "y": 414,
+        "w": 416,
+        "h": 62,
+        "size": 23,
+        "color": "F2F5FA",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "Pilot Wasm",
+        "x": 517,
+        "y": 414,
+        "w": 261,
+        "h": 62,
+        "size": 23,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Smaller idle footprint; fast start",
+        "x": 802,
+        "y": 414,
+        "w": 401,
+        "h": 62,
+        "size": 23,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Long-lived, high throughput",
+        "x": 77,
+        "y": 479,
+        "w": 416,
+        "h": 62,
+        "size": 23,
+        "color": "F2F5FA",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "Investigate first",
+        "x": 517,
+        "y": 479,
+        "w": 261,
+        "h": 62,
+        "size": 23,
+        "color": "69AEFF",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Memory plateau unresolved",
+        "x": 802,
+        "y": 479,
+        "w": 401,
+        "h": 62,
+        "size": 23,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "rect",
+        "x": 65,
+        "y": 578,
+        "w": 1150,
+        "h": 65,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "A targeted pilot is supported; a blanket migration claim is not.",
+        "x": 83,
+        "y": 590,
+        "w": 1112,
+        "h": 49,
+        "size": 23,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "JAVA / WASM  \u00b7  LOCAL BENCHMARKS  \u00b7  08 NOV 2026  \u00b7  SOURCE S1 + S2",
+        "x": 65,
+        "y": 675,
+        "w": 950,
+        "h": 24,
+        "size": 13,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "16 / 18",
+        "x": 1115,
+        "y": 673,
+        "w": 100,
+        "h": 26,
+        "size": 15,
+        "color": "B7C5D7",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "title": "The next proof should be fewer real machines",
+    "subtitle": "A production-shaped consolidation trial, rather than another isolated latency benchmark.",
+    "source": "monitoring/capacity/VALIDATION_RESULTS.md; monitoring/validation/RESULTS.md",
+    "notes": "Proposed future acceptance test, not an executed result. Include databases, brokers, operators, sidecars, storage, ingress and monitoring. Measure service completion if accepted orders are asynchronous. Use several trials and a long enough soak to resolve growth; do not aim for100%CPU if it breaks latency/headroom requirements. Measure actual host energy at equal delivered load instead of inferring it from utilization.",
+    "items": [
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 7,
+        "color": "55DFC1"
+      },
+      {
+        "kind": "text",
+        "text": "The next proof should be fewer real machines",
+        "x": 65,
+        "y": 48,
+        "w": 1150,
+        "h": 90,
+        "size": 39,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "A production-shaped consolidation trial, rather than another isolated latency benchmark.",
+        "x": 65,
+        "y": 145,
+        "w": 1150,
+        "h": 62,
+        "size": 22,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 65,
+        "y": 235,
+        "w": 370,
+        "h": 285,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "1  Establish stability",
+        "x": 83,
+        "y": 254,
+        "w": 334,
+        "h": 58,
+        "size": 27,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Explain Wasm memory growth;\nconfirm its steady-state envelope.",
+        "x": 83,
+        "y": 333,
+        "w": 334,
+        "h": 160,
+        "size": 25,
+        "color": "F2F5FA",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 455,
+        "y": 235,
+        "w": 370,
+        "h": 285,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "2  Pack real workloads",
+        "x": 473,
+        "y": 254,
+        "w": 334,
+        "h": 58,
+        "size": 27,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Same SLA and demand, full platform\noverhead, measured CPU headroom.",
+        "x": 473,
+        "y": 333,
+        "w": 334,
+        "h": 160,
+        "size": 25,
+        "color": "F2F5FA",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 845,
+        "y": 235,
+        "w": 370,
+        "h": 285,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "3  Measure the outcome",
+        "x": 863,
+        "y": 254,
+        "w": 334,
+        "h": 58,
+        "size": 27,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Hosts needed, accepted orders,\nlatency, and whole-host kWh.",
+        "x": 863,
+        "y": 333,
+        "w": 334,
+        "h": 160,
+        "size": 25,
+        "color": "F2F5FA",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 65,
+        "y": 578,
+        "w": 1150,
+        "h": 65,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "Success = fewer hosts for the same useful work and SLA, with lower measured energy.",
+        "x": 83,
+        "y": 590,
+        "w": 1112,
+        "h": 49,
+        "size": 23,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "JAVA / WASM  \u00b7  LOCAL BENCHMARKS  \u00b7  08 NOV 2026  \u00b7  SOURCE S1 + S2",
+        "x": 65,
+        "y": 675,
+        "w": 950,
+        "h": 24,
+        "size": 13,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "17 / 18",
+        "x": 1115,
+        "y": 673,
+        "w": 100,
+        "h": 26,
+        "size": 15,
+        "color": "B7C5D7",
+        "bold": false
+      }
+    ]
+  },
+  {
+    "title": "Evidence and reproducibility",
+    "subtitle": "Keep the conclusion attached to the tested system and the retained raw results.",
+    "source": "monitoring/validation/RESULTS.md; monitoring/capacity/VALIDATION_RESULTS.md",
+    "notes": "Frozen runtime: wasmCloud1.9.2-regack.1 and HTTP provider0.25.0-regack.1. Subscriber registration acknowledgement patches in both host/provider transports. Execution limit5s,RPC4s. Same frozen artifacts throughout validation; earlier transport failures and setup failures retained, not silently discarded. Protocol, source and artifact hashes, failed probes, restoration checks and trial reports are in the linked local evidence. Ignored .results files must be exported separately if distributing this repository; the deck itself is self-contained.",
+    "items": [
+      {
+        "kind": "rect",
+        "x": 0,
+        "y": 0,
+        "w": 1280,
+        "h": 7,
+        "color": "55DFC1"
+      },
+      {
+        "kind": "text",
+        "text": "Evidence and reproducibility",
+        "x": 65,
+        "y": 48,
+        "w": 1150,
+        "h": 90,
+        "size": 39,
+        "color": "F2F5FA",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "Keep the conclusion attached to the tested system and the retained raw results.",
+        "x": 65,
+        "y": 145,
+        "w": 1150,
+        "h": 62,
+        "size": 22,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "Frozen validation",
+        "x": 65,
+        "y": 235,
+        "w": 1130,
+        "h": 35,
+        "size": 25,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "monitoring/validation/RESULTS.md\n.results/20261106T204859Z/analysis.html",
+        "x": 65,
+        "y": 280,
+        "w": 1130,
+        "h": 74,
+        "size": 22,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "Allocation, repeated capacity and long-run validation",
+        "x": 65,
+        "y": 380,
+        "w": 1130,
+        "h": 35,
+        "size": 25,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "monitoring/capacity/VALIDATION_RESULTS.md\n.results/validation-20261107T233519Z/analysis.html",
+        "x": 65,
+        "y": 425,
+        "w": 1130,
+        "h": 74,
+        "size": 22,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "rect",
+        "x": 65,
+        "y": 578,
+        "w": 1150,
+        "h": 65,
+        "color": "1A2B3F"
+      },
+      {
+        "kind": "text",
+        "text": "Wasm is a credible consolidation candidate where memory\u2014not CPU\u2014is the constraint.",
+        "x": 83,
+        "y": 590,
+        "w": 1112,
+        "h": 49,
+        "size": 23,
+        "color": "55DFC1",
+        "bold": true
+      },
+      {
+        "kind": "text",
+        "text": "JAVA / WASM  \u00b7  LOCAL BENCHMARKS  \u00b7  08 NOV 2026  \u00b7  SOURCE S1 + S2",
+        "x": 65,
+        "y": 675,
+        "w": 950,
+        "h": 24,
+        "size": 13,
+        "color": "B7C5D7",
+        "bold": false
+      },
+      {
+        "kind": "text",
+        "text": "18 / 18",
+        "x": 1115,
+        "y": 673,
+        "w": 100,
+        "h": 26,
+        "size": 15,
+        "color": "B7C5D7",
+        "bold": false
+      }
+    ]
+  }
+]

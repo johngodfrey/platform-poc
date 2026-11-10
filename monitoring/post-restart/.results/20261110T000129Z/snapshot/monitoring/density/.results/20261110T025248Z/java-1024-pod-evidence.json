@@ -1,0 +1,1442 @@
+{
+  "inventory-service": [
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "annotations": {
+          "kubectl.kubernetes.io/restartedAt": "2026-10-26T00:08:20Z"
+        },
+        "creationTimestamp": "2026-11-10T03:02:55Z",
+        "generateName": "inventory-service-7ff6494757-",
+        "generation": 1,
+        "labels": {
+          "pod-template-hash": "7ff6494757",
+          "service": "inventory"
+        },
+        "name": "inventory-service-7ff6494757-ph7jx",
+        "namespace": "java",
+        "ownerReferences": [
+          {
+            "apiVersion": "apps/v1",
+            "blockOwnerDeletion": true,
+            "controller": true,
+            "kind": "ReplicaSet",
+            "name": "inventory-service-7ff6494757",
+            "uid": "adea3a1b-4cce-49a8-8a42-125cb61eb29c"
+          }
+        ],
+        "resourceVersion": "409732",
+        "uid": "06037494-1b90-4f92-b55c-80e9688f2958"
+      },
+      "spec": {
+        "containers": [
+          {
+            "env": [
+              {
+                "name": "DATABASE_URL",
+                "valueFrom": {
+                  "secretKeyRef": {
+                    "key": "db_url_inventory_service",
+                    "name": "platform-poc-secrets-dmkkc7ct75"
+                  }
+                }
+              },
+              {
+                "name": "DATABASE_USERNAME",
+                "valueFrom": {
+                  "secretKeyRef": {
+                    "key": "db_usr_inventory_service",
+                    "name": "platform-poc-secrets-dmkkc7ct75"
+                  }
+                }
+              },
+              {
+                "name": "DATABASE_PASSWORD",
+                "valueFrom": {
+                  "secretKeyRef": {
+                    "key": "db_pwd_inventory_service",
+                    "name": "platform-poc-secrets-dmkkc7ct75"
+                  }
+                }
+              }
+            ],
+            "image": "k3d-platform-poc.localhost:5001/platform-poc-java/inventory-service:0.1.0",
+            "imagePullPolicy": "Always",
+            "name": "inventory-service",
+            "ports": [
+              {
+                "containerPort": 80,
+                "name": "http",
+                "protocol": "TCP"
+              }
+            ],
+            "readinessProbe": {
+              "failureThreshold": 3,
+              "httpGet": {
+                "path": "/actuator/health",
+                "port": 80,
+                "scheme": "HTTP"
+              },
+              "initialDelaySeconds": 10,
+              "periodSeconds": 10,
+              "successThreshold": 1,
+              "timeoutSeconds": 1
+            },
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "256Mi"
+              }
+            },
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "volumeMounts": [
+              {
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "name": "kube-api-access-vwqww",
+                "readOnly": true
+              }
+            ]
+          }
+        ],
+        "dnsPolicy": "ClusterFirst",
+        "enableServiceLinks": true,
+        "nodeName": "k3d-platform-poc-agent-0",
+        "preemptionPolicy": "PreemptLowerPriority",
+        "priority": 0,
+        "restartPolicy": "Always",
+        "schedulerName": "default-scheduler",
+        "securityContext": {},
+        "serviceAccount": "default",
+        "serviceAccountName": "default",
+        "terminationGracePeriodSeconds": 30,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "volumes": [
+          {
+            "name": "kube-api-access-vwqww",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "status": {
+        "allocatedResources": {
+          "cpu": "100m",
+          "memory": "256Mi"
+        },
+        "conditions": [
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-10T03:02:56Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "PodReadyToStartContainers"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-10T03:02:55Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "Initialized"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-10T03:03:06Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "Ready"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-10T03:03:06Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "ContainersReady"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-10T03:02:55Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "PodScheduled"
+          }
+        ],
+        "containerStatuses": [
+          {
+            "allocatedResources": {
+              "cpu": "100m",
+              "memory": "256Mi"
+            },
+            "containerID": "containerd://209091e2aa3db5a5278bc41fe7f07bef78f8e9dabbaf1acd00c8581d4d8a94c0",
+            "image": "k3d-platform-poc.localhost:5001/platform-poc-java/inventory-service:0.1.0",
+            "imageID": "k3d-platform-poc.localhost:5001/platform-poc-java/inventory-service@sha256:5d5881d87dfa7f0b30cc66bfedf448561b5606ced23076f82ee75fddc31414e8",
+            "lastState": {},
+            "name": "inventory-service",
+            "ready": true,
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "256Mi"
+              }
+            },
+            "restartCount": 0,
+            "started": true,
+            "state": {
+              "running": {
+                "startedAt": "2026-11-10T03:02:56Z"
+              }
+            },
+            "user": {
+              "linux": {
+                "gid": 0,
+                "supplementalGroups": [
+                  0
+                ],
+                "uid": 0
+              }
+            },
+            "volumeMounts": [
+              {
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "name": "kube-api-access-vwqww",
+                "readOnly": true,
+                "recursiveReadOnly": "Disabled"
+              }
+            ]
+          }
+        ],
+        "hostIP": "192.168.117.5",
+        "hostIPs": [
+          {
+            "ip": "192.168.117.5"
+          }
+        ],
+        "observedGeneration": 1,
+        "phase": "Running",
+        "podIP": "10.42.2.205",
+        "podIPs": [
+          {
+            "ip": "10.42.2.205"
+          }
+        ],
+        "qosClass": "Burstable",
+        "resources": {
+          "limits": {
+            "memory": "256Mi"
+          },
+          "requests": {
+            "cpu": "79m",
+            "memory": "256Mi"
+          }
+        },
+        "startTime": "2026-11-10T03:02:55Z"
+      }
+    }
+  ],
+  "notification-service": [
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "creationTimestamp": "2026-11-10T03:02:55Z",
+        "generateName": "notification-service-85dcd5c578-",
+        "generation": 1,
+        "labels": {
+          "pod-template-hash": "85dcd5c578",
+          "service": "notification"
+        },
+        "name": "notification-service-85dcd5c578-zn8rs",
+        "namespace": "java",
+        "ownerReferences": [
+          {
+            "apiVersion": "apps/v1",
+            "blockOwnerDeletion": true,
+            "controller": true,
+            "kind": "ReplicaSet",
+            "name": "notification-service-85dcd5c578",
+            "uid": "37095b3d-3467-4dfd-879f-677c80b9661d"
+          }
+        ],
+        "resourceVersion": "409751",
+        "uid": "88595133-f978-4e46-8222-6d967fec2941"
+      },
+      "spec": {
+        "containers": [
+          {
+            "env": [
+              {
+                "name": "NATS_URL",
+                "valueFrom": {
+                  "secretKeyRef": {
+                    "key": "nats_url",
+                    "name": "platform-poc-secrets-dmkkc7ct75"
+                  }
+                }
+              }
+            ],
+            "image": "k3d-platform-poc.localhost:5001/platform-poc-java/notification-service:0.1.0",
+            "imagePullPolicy": "Always",
+            "name": "notification-service",
+            "ports": [
+              {
+                "containerPort": 80,
+                "name": "http",
+                "protocol": "TCP"
+              }
+            ],
+            "readinessProbe": {
+              "failureThreshold": 3,
+              "httpGet": {
+                "path": "/actuator/health",
+                "port": 80,
+                "scheme": "HTTP"
+              },
+              "initialDelaySeconds": 10,
+              "periodSeconds": 10,
+              "successThreshold": 1,
+              "timeoutSeconds": 1
+            },
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "256Mi"
+              }
+            },
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "volumeMounts": [
+              {
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "name": "kube-api-access-l2nc5",
+                "readOnly": true
+              }
+            ]
+          }
+        ],
+        "dnsPolicy": "ClusterFirst",
+        "enableServiceLinks": true,
+        "nodeName": "k3d-platform-poc-agent-1",
+        "preemptionPolicy": "PreemptLowerPriority",
+        "priority": 0,
+        "restartPolicy": "Always",
+        "schedulerName": "default-scheduler",
+        "securityContext": {},
+        "serviceAccount": "default",
+        "serviceAccountName": "default",
+        "terminationGracePeriodSeconds": 30,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "volumes": [
+          {
+            "name": "kube-api-access-l2nc5",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "status": {
+        "allocatedResources": {
+          "cpu": "100m",
+          "memory": "256Mi"
+        },
+        "conditions": [
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-10T03:02:56Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "PodReadyToStartContainers"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-10T03:02:55Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "Initialized"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-10T03:03:07Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "Ready"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-10T03:03:07Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "ContainersReady"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-10T03:02:55Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "PodScheduled"
+          }
+        ],
+        "containerStatuses": [
+          {
+            "allocatedResources": {
+              "cpu": "100m",
+              "memory": "256Mi"
+            },
+            "containerID": "containerd://d6b9baf0cfdcbcbccc64ce1ed3060adab7089d7dc6d3f9069d8f4c68965df971",
+            "image": "k3d-platform-poc.localhost:5001/platform-poc-java/notification-service:0.1.0",
+            "imageID": "k3d-platform-poc.localhost:5001/platform-poc-java/notification-service@sha256:ea762fcbfd7551ef8b2d0f8d2c387c56d6e300e2eb1123c1a6864c9cdf10eb30",
+            "lastState": {},
+            "name": "notification-service",
+            "ready": true,
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "256Mi"
+              }
+            },
+            "restartCount": 0,
+            "started": true,
+            "state": {
+              "running": {
+                "startedAt": "2026-11-10T03:02:56Z"
+              }
+            },
+            "user": {
+              "linux": {
+                "gid": 0,
+                "supplementalGroups": [
+                  0
+                ],
+                "uid": 0
+              }
+            },
+            "volumeMounts": [
+              {
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "name": "kube-api-access-l2nc5",
+                "readOnly": true,
+                "recursiveReadOnly": "Disabled"
+              }
+            ]
+          }
+        ],
+        "hostIP": "192.168.117.4",
+        "hostIPs": [
+          {
+            "ip": "192.168.117.4"
+          }
+        ],
+        "observedGeneration": 1,
+        "phase": "Running",
+        "podIP": "10.42.1.242",
+        "podIPs": [
+          {
+            "ip": "10.42.1.242"
+          }
+        ],
+        "qosClass": "Burstable",
+        "resources": {
+          "limits": {
+            "memory": "256Mi"
+          },
+          "requests": {
+            "cpu": "79m",
+            "memory": "256Mi"
+          }
+        },
+        "startTime": "2026-11-10T03:02:55Z"
+      }
+    }
+  ],
+  "order-service": [
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "creationTimestamp": "2026-11-10T03:02:55Z",
+        "generateName": "order-service-59cf6676c4-",
+        "generation": 1,
+        "labels": {
+          "pod-template-hash": "59cf6676c4",
+          "service": "order"
+        },
+        "name": "order-service-59cf6676c4-69q6m",
+        "namespace": "java",
+        "ownerReferences": [
+          {
+            "apiVersion": "apps/v1",
+            "blockOwnerDeletion": true,
+            "controller": true,
+            "kind": "ReplicaSet",
+            "name": "order-service-59cf6676c4",
+            "uid": "ee417070-6125-49f7-bf66-9a442d6bac67"
+          }
+        ],
+        "resourceVersion": "409797",
+        "uid": "9bdb1278-0f49-4dd1-bfee-418100403d05"
+      },
+      "spec": {
+        "containers": [
+          {
+            "env": [
+              {
+                "name": "INVENTORY_URL",
+                "value": "http://inventory-service.java.svc.cluster.local:8080/api/inventory"
+              },
+              {
+                "name": "SPRING_JPA_HIBERNATE_DDL_AUTO",
+                "value": "update"
+              },
+              {
+                "name": "DATABASE_URL",
+                "valueFrom": {
+                  "secretKeyRef": {
+                    "key": "db_url_order_service",
+                    "name": "platform-poc-secrets-dmkkc7ct75"
+                  }
+                }
+              },
+              {
+                "name": "DATABASE_USERNAME",
+                "valueFrom": {
+                  "secretKeyRef": {
+                    "key": "db_usr_order_service",
+                    "name": "platform-poc-secrets-dmkkc7ct75"
+                  }
+                }
+              },
+              {
+                "name": "DATABASE_PASSWORD",
+                "valueFrom": {
+                  "secretKeyRef": {
+                    "key": "db_pwd_order_service",
+                    "name": "platform-poc-secrets-dmkkc7ct75"
+                  }
+                }
+              },
+              {
+                "name": "NATS_URL",
+                "valueFrom": {
+                  "secretKeyRef": {
+                    "key": "nats_url",
+                    "name": "platform-poc-secrets-dmkkc7ct75"
+                  }
+                }
+              }
+            ],
+            "image": "k3d-platform-poc.localhost:5001/platform-poc-java/order-service:0.1.0",
+            "imagePullPolicy": "Always",
+            "name": "order-service",
+            "ports": [
+              {
+                "containerPort": 80,
+                "name": "http",
+                "protocol": "TCP"
+              }
+            ],
+            "readinessProbe": {
+              "failureThreshold": 3,
+              "httpGet": {
+                "path": "/actuator/health",
+                "port": 80,
+                "scheme": "HTTP"
+              },
+              "initialDelaySeconds": 10,
+              "periodSeconds": 10,
+              "successThreshold": 1,
+              "timeoutSeconds": 1
+            },
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "256Mi"
+              }
+            },
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "volumeMounts": [
+              {
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "name": "kube-api-access-2dktq",
+                "readOnly": true
+              }
+            ]
+          }
+        ],
+        "dnsPolicy": "ClusterFirst",
+        "enableServiceLinks": true,
+        "nodeName": "k3d-platform-poc-server-0",
+        "preemptionPolicy": "PreemptLowerPriority",
+        "priority": 0,
+        "restartPolicy": "Always",
+        "schedulerName": "default-scheduler",
+        "securityContext": {},
+        "serviceAccount": "default",
+        "serviceAccountName": "default",
+        "terminationGracePeriodSeconds": 30,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "volumes": [
+          {
+            "name": "kube-api-access-2dktq",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "status": {
+        "allocatedResources": {
+          "cpu": "100m",
+          "memory": "256Mi"
+        },
+        "conditions": [
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-10T03:02:56Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "PodReadyToStartContainers"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-10T03:02:55Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "Initialized"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-10T03:02:55Z",
+            "message": "containers with unready status: [order-service]",
+            "observedGeneration": 1,
+            "reason": "ContainersNotReady",
+            "status": "False",
+            "type": "Ready"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-10T03:02:55Z",
+            "message": "containers with unready status: [order-service]",
+            "observedGeneration": 1,
+            "reason": "ContainersNotReady",
+            "status": "False",
+            "type": "ContainersReady"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-10T03:02:55Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "PodScheduled"
+          }
+        ],
+        "containerStatuses": [
+          {
+            "allocatedResources": {
+              "cpu": "100m",
+              "memory": "256Mi"
+            },
+            "containerID": "containerd://c06a8ff92b28c0af2a69739ecb9f239cf8fab2bce937e964dfe27dee6a4bcd1b",
+            "image": "k3d-platform-poc.localhost:5001/platform-poc-java/order-service:0.1.0",
+            "imageID": "k3d-platform-poc.localhost:5001/platform-poc-java/order-service@sha256:8b559e640cef3aecaf69920404617394ee573c50ece3f4ca943b8baa88f74110",
+            "lastState": {
+              "terminated": {
+                "containerID": "containerd://e42a0c05d10f6b706a03633ceedc5c1fa6d332d789d5cae40b989eb004ce26f6",
+                "exitCode": 137,
+                "finishedAt": "2026-11-10T03:03:18Z",
+                "reason": "OOMKilled",
+                "startedAt": "2026-11-10T03:03:06Z"
+              }
+            },
+            "name": "order-service",
+            "ready": false,
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "256Mi"
+              }
+            },
+            "restartCount": 2,
+            "started": true,
+            "state": {
+              "running": {
+                "startedAt": "2026-11-10T03:03:32Z"
+              }
+            },
+            "user": {
+              "linux": {
+                "gid": 0,
+                "supplementalGroups": [
+                  0
+                ],
+                "uid": 0
+              }
+            },
+            "volumeMounts": [
+              {
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "name": "kube-api-access-2dktq",
+                "readOnly": true,
+                "recursiveReadOnly": "Disabled"
+              }
+            ]
+          }
+        ],
+        "hostIP": "192.168.117.2",
+        "hostIPs": [
+          {
+            "ip": "192.168.117.2"
+          }
+        ],
+        "observedGeneration": 1,
+        "phase": "Running",
+        "podIP": "10.42.0.175",
+        "podIPs": [
+          {
+            "ip": "10.42.0.175"
+          }
+        ],
+        "qosClass": "Burstable",
+        "resources": {
+          "limits": {
+            "memory": "256Mi"
+          },
+          "requests": {
+            "cpu": "79m",
+            "memory": "256Mi"
+          }
+        },
+        "startTime": "2026-11-10T03:02:55Z"
+      }
+    },
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "creationTimestamp": "2026-11-10T02:57:51Z",
+        "generateName": "order-service-6579fcb75d-",
+        "generation": 1,
+        "labels": {
+          "pod-template-hash": "6579fcb75d",
+          "service": "order"
+        },
+        "name": "order-service-6579fcb75d-xfjts",
+        "namespace": "java",
+        "ownerReferences": [
+          {
+            "apiVersion": "apps/v1",
+            "blockOwnerDeletion": true,
+            "controller": true,
+            "kind": "ReplicaSet",
+            "name": "order-service-6579fcb75d",
+            "uid": "4db40211-0c44-4023-860c-d7734e4041fe"
+          }
+        ],
+        "resourceVersion": "409357",
+        "uid": "eda6e9e6-77c3-440a-8960-227c3110683f"
+      },
+      "spec": {
+        "containers": [
+          {
+            "env": [
+              {
+                "name": "INVENTORY_URL",
+                "value": "http://inventory-service.java.svc.cluster.local:8080/api/inventory"
+              },
+              {
+                "name": "SPRING_JPA_HIBERNATE_DDL_AUTO",
+                "value": "update"
+              },
+              {
+                "name": "DATABASE_URL",
+                "valueFrom": {
+                  "secretKeyRef": {
+                    "key": "db_url_order_service",
+                    "name": "platform-poc-secrets-dmkkc7ct75"
+                  }
+                }
+              },
+              {
+                "name": "DATABASE_USERNAME",
+                "valueFrom": {
+                  "secretKeyRef": {
+                    "key": "db_usr_order_service",
+                    "name": "platform-poc-secrets-dmkkc7ct75"
+                  }
+                }
+              },
+              {
+                "name": "DATABASE_PASSWORD",
+                "valueFrom": {
+                  "secretKeyRef": {
+                    "key": "db_pwd_order_service",
+                    "name": "platform-poc-secrets-dmkkc7ct75"
+                  }
+                }
+              },
+              {
+                "name": "NATS_URL",
+                "valueFrom": {
+                  "secretKeyRef": {
+                    "key": "nats_url",
+                    "name": "platform-poc-secrets-dmkkc7ct75"
+                  }
+                }
+              }
+            ],
+            "image": "k3d-platform-poc.localhost:5001/platform-poc-java/order-service:0.1.0",
+            "imagePullPolicy": "Always",
+            "name": "order-service",
+            "ports": [
+              {
+                "containerPort": 80,
+                "name": "http",
+                "protocol": "TCP"
+              }
+            ],
+            "readinessProbe": {
+              "failureThreshold": 3,
+              "httpGet": {
+                "path": "/actuator/health",
+                "port": 80,
+                "scheme": "HTTP"
+              },
+              "initialDelaySeconds": 10,
+              "periodSeconds": 10,
+              "successThreshold": 1,
+              "timeoutSeconds": 1
+            },
+            "resources": {
+              "limits": {
+                "memory": "512Mi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "512Mi"
+              }
+            },
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "volumeMounts": [
+              {
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "name": "kube-api-access-7zwxp",
+                "readOnly": true
+              }
+            ]
+          }
+        ],
+        "dnsPolicy": "ClusterFirst",
+        "enableServiceLinks": true,
+        "nodeName": "k3d-platform-poc-agent-1",
+        "preemptionPolicy": "PreemptLowerPriority",
+        "priority": 0,
+        "restartPolicy": "Always",
+        "schedulerName": "default-scheduler",
+        "securityContext": {},
+        "serviceAccount": "default",
+        "serviceAccountName": "default",
+        "terminationGracePeriodSeconds": 30,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "volumes": [
+          {
+            "name": "kube-api-access-7zwxp",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "status": {
+        "allocatedResources": {
+          "cpu": "100m",
+          "memory": "512Mi"
+        },
+        "conditions": [
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-10T02:57:52Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "PodReadyToStartContainers"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-10T02:57:51Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "Initialized"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-10T02:58:03Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "Ready"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-10T02:58:03Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "ContainersReady"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-10T02:57:51Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "PodScheduled"
+          }
+        ],
+        "containerStatuses": [
+          {
+            "allocatedResources": {
+              "cpu": "100m",
+              "memory": "512Mi"
+            },
+            "containerID": "containerd://0d7c1a29019a5cf1cc830d08f9e21a27a007ddfe634c0d4129157cb38bbb5de4",
+            "image": "k3d-platform-poc.localhost:5001/platform-poc-java/order-service:0.1.0",
+            "imageID": "k3d-platform-poc.localhost:5001/platform-poc-java/order-service@sha256:8b559e640cef3aecaf69920404617394ee573c50ece3f4ca943b8baa88f74110",
+            "lastState": {},
+            "name": "order-service",
+            "ready": true,
+            "resources": {
+              "limits": {
+                "memory": "512Mi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "512Mi"
+              }
+            },
+            "restartCount": 0,
+            "started": true,
+            "state": {
+              "running": {
+                "startedAt": "2026-11-10T02:57:52Z"
+              }
+            },
+            "user": {
+              "linux": {
+                "gid": 0,
+                "supplementalGroups": [
+                  0
+                ],
+                "uid": 0
+              }
+            },
+            "volumeMounts": [
+              {
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "name": "kube-api-access-7zwxp",
+                "readOnly": true,
+                "recursiveReadOnly": "Disabled"
+              }
+            ]
+          }
+        ],
+        "hostIP": "192.168.117.4",
+        "hostIPs": [
+          {
+            "ip": "192.168.117.4"
+          }
+        ],
+        "observedGeneration": 1,
+        "phase": "Running",
+        "podIP": "10.42.1.241",
+        "podIPs": [
+          {
+            "ip": "10.42.1.241"
+          }
+        ],
+        "qosClass": "Burstable",
+        "resources": {
+          "limits": {
+            "memory": "512Mi"
+          },
+          "requests": {
+            "cpu": "79m",
+            "memory": "512Mi"
+          }
+        },
+        "startTime": "2026-11-10T02:57:51Z"
+      }
+    }
+  ],
+  "product-service": [
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "creationTimestamp": "2026-11-10T03:02:55Z",
+        "generateName": "product-service-7f4f7d8bf8-",
+        "generation": 1,
+        "labels": {
+          "pod-template-hash": "7f4f7d8bf8",
+          "service": "product"
+        },
+        "name": "product-service-7f4f7d8bf8-tz8bk",
+        "namespace": "java",
+        "ownerReferences": [
+          {
+            "apiVersion": "apps/v1",
+            "blockOwnerDeletion": true,
+            "controller": true,
+            "kind": "ReplicaSet",
+            "name": "product-service-7f4f7d8bf8",
+            "uid": "a6fbcbc8-152f-497d-a9d0-c9a2801f97cc"
+          }
+        ],
+        "resourceVersion": "409735",
+        "uid": "26aacd7c-7b55-44bb-b4ed-ce0eabbea661"
+      },
+      "spec": {
+        "containers": [
+          {
+            "env": [
+              {
+                "name": "REDIS_HOST",
+                "valueFrom": {
+                  "secretKeyRef": {
+                    "key": "redis_host",
+                    "name": "platform-poc-secrets-dmkkc7ct75"
+                  }
+                }
+              },
+              {
+                "name": "REDIS_PORT",
+                "valueFrom": {
+                  "secretKeyRef": {
+                    "key": "redis_port",
+                    "name": "platform-poc-secrets-dmkkc7ct75"
+                  }
+                }
+              }
+            ],
+            "image": "k3d-platform-poc.localhost:5001/platform-poc-java/product-service:0.1.0",
+            "imagePullPolicy": "Always",
+            "name": "product-service",
+            "ports": [
+              {
+                "containerPort": 80,
+                "name": "http",
+                "protocol": "TCP"
+              }
+            ],
+            "readinessProbe": {
+              "failureThreshold": 3,
+              "httpGet": {
+                "path": "/actuator/health",
+                "port": 80,
+                "scheme": "HTTP"
+              },
+              "initialDelaySeconds": 10,
+              "periodSeconds": 10,
+              "successThreshold": 1,
+              "timeoutSeconds": 1
+            },
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "256Mi"
+              }
+            },
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "volumeMounts": [
+              {
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "name": "kube-api-access-wtj4p",
+                "readOnly": true
+              }
+            ]
+          }
+        ],
+        "dnsPolicy": "ClusterFirst",
+        "enableServiceLinks": true,
+        "nodeName": "k3d-platform-poc-agent-0",
+        "preemptionPolicy": "PreemptLowerPriority",
+        "priority": 0,
+        "restartPolicy": "Always",
+        "schedulerName": "default-scheduler",
+        "securityContext": {},
+        "serviceAccount": "default",
+        "serviceAccountName": "default",
+        "terminationGracePeriodSeconds": 30,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "volumes": [
+          {
+            "name": "kube-api-access-wtj4p",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "status": {
+        "allocatedResources": {
+          "cpu": "100m",
+          "memory": "256Mi"
+        },
+        "conditions": [
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-10T03:02:56Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "PodReadyToStartContainers"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-10T03:02:55Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "Initialized"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-10T03:03:06Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "Ready"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-10T03:03:06Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "ContainersReady"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-10T03:02:55Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "PodScheduled"
+          }
+        ],
+        "containerStatuses": [
+          {
+            "allocatedResources": {
+              "cpu": "100m",
+              "memory": "256Mi"
+            },
+            "containerID": "containerd://a3533ab32eb7572fb94fe0cf638613885ed41d6f342897d1d1dff005beb3c87c",
+            "image": "k3d-platform-poc.localhost:5001/platform-poc-java/product-service:0.1.0",
+            "imageID": "k3d-platform-poc.localhost:5001/platform-poc-java/product-service@sha256:c5302fa0aef01bfe70614d5e373ac848e564f60bdbf1d8e8b6dfcb617a89bbae",
+            "lastState": {},
+            "name": "product-service",
+            "ready": true,
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "100m",
+                "memory": "256Mi"
+              }
+            },
+            "restartCount": 0,
+            "started": true,
+            "state": {
+              "running": {
+                "startedAt": "2026-11-10T03:02:56Z"
+              }
+            },
+            "user": {
+              "linux": {
+                "gid": 0,
+                "supplementalGroups": [
+                  0
+                ],
+                "uid": 0
+              }
+            },
+            "volumeMounts": [
+              {
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "name": "kube-api-access-wtj4p",
+                "readOnly": true,
+                "recursiveReadOnly": "Disabled"
+              }
+            ]
+          }
+        ],
+        "hostIP": "192.168.117.5",
+        "hostIPs": [
+          {
+            "ip": "192.168.117.5"
+          }
+        ],
+        "observedGeneration": 1,
+        "phase": "Running",
+        "podIP": "10.42.2.206",
+        "podIPs": [
+          {
+            "ip": "10.42.2.206"
+          }
+        ],
+        "qosClass": "Burstable",
+        "resources": {
+          "limits": {
+            "memory": "256Mi"
+          },
+          "requests": {
+            "cpu": "79m",
+            "memory": "256Mi"
+          }
+        },
+        "startTime": "2026-11-10T03:02:55Z"
+      }
+    }
+  ]
+}

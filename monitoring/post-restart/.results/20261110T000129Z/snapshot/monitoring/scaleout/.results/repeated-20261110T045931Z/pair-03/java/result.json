@@ -1,0 +1,184 @@
+{
+  "windows": [
+    {
+      "start_s": 105,
+      "end_s": 120,
+      "accepted": 6000,
+      "completed": 6000,
+      "failures": 0,
+      "p95_ms": 7.584399999999998,
+      "passed": true
+    },
+    {
+      "start_s": 120,
+      "end_s": 135,
+      "accepted": 6000,
+      "completed": 6000,
+      "failures": 0,
+      "p95_ms": 6.138499999999997,
+      "passed": true
+    },
+    {
+      "start_s": 135,
+      "end_s": 150,
+      "accepted": 6000,
+      "completed": 6000,
+      "failures": 0,
+      "p95_ms": 13.619,
+      "passed": true
+    },
+    {
+      "start_s": 150,
+      "end_s": 165,
+      "accepted": 6000,
+      "completed": 6000,
+      "failures": 0,
+      "p95_ms": 16.475599999999986,
+      "passed": true
+    },
+    {
+      "start_s": 165,
+      "end_s": 180,
+      "accepted": 6000,
+      "completed": 6000,
+      "failures": 0,
+      "p95_ms": 11.4813,
+      "passed": true
+    },
+    {
+      "start_s": 180,
+      "end_s": 195,
+      "accepted": 6000,
+      "completed": 6000,
+      "failures": 0,
+      "p95_ms": 7.744149999999999,
+      "passed": true
+    },
+    {
+      "start_s": 195,
+      "end_s": 210,
+      "accepted": 6000,
+      "completed": 6000,
+      "failures": 0,
+      "p95_ms": 8.465049999999994,
+      "passed": true
+    },
+    {
+      "start_s": 210,
+      "end_s": 225,
+      "accepted": 6000,
+      "completed": 6000,
+      "failures": 0,
+      "p95_ms": 12.601049999999985,
+      "passed": true
+    },
+    {
+      "start_s": 225,
+      "end_s": 240,
+      "accepted": 6000,
+      "completed": 6000,
+      "failures": 0,
+      "p95_ms": 21.869149999999948,
+      "passed": true
+    },
+    {
+      "start_s": 240,
+      "end_s": 255,
+      "accepted": 6000,
+      "completed": 6000,
+      "failures": 0,
+      "p95_ms": 8.029299999999994,
+      "passed": true
+    },
+    {
+      "start_s": 255,
+      "end_s": 270,
+      "accepted": 6000,
+      "completed": 6000,
+      "failures": 0,
+      "p95_ms": 10.722749999999996,
+      "passed": true
+    },
+    {
+      "start_s": 270,
+      "end_s": 285,
+      "accepted": 6000,
+      "completed": 6000,
+      "failures": 0,
+      "p95_ms": 10.347199999999988,
+      "passed": true
+    },
+    {
+      "start_s": 285,
+      "end_s": 300,
+      "accepted": 6000,
+      "completed": 6000,
+      "failures": 0,
+      "p95_ms": 9.276649999999997,
+      "passed": true
+    },
+    {
+      "start_s": 300,
+      "end_s": 315,
+      "accepted": 6000,
+      "completed": 6000,
+      "failures": 0,
+      "p95_ms": 8.083249999999994,
+      "passed": true
+    }
+  ],
+  "already_healthy_before_scale": true,
+  "recovery_seconds": null,
+  "post_scale_slo_observed": true,
+  "original_capacity": 1,
+  "target_capacity": 2,
+  "scale_accepted_s": 136.80653619766235,
+  "scale_command_seconds": 0.17234516143798828,
+  "capacity_ready_seconds": 14.020435810089111,
+  "dropped_iterations": 0,
+  "new_pod_ready_seconds": 12.668453333000798,
+  "new_pod_order_accepted_seconds": 13.322967292002431,
+  "readiness_protocol": "new-pod-direct-order-v1",
+  "readiness": {
+    "protocol": "new-pod-direct-order-v1",
+    "poll_seconds": 2,
+    "order_timeout_seconds": 10,
+    "pods": {
+      "f2dfeb04-441e-4bc0-a68b-12c93077abba": {
+        "name": "order-service-59b7b5cb76-fc7db",
+        "baseline": true,
+        "created_observed_seconds": 0.5261190830024134,
+        "currently_ready": true,
+        "pod_ready_seconds": 0.5261216250000871
+      },
+      "68a8e88d-f2a1-47df-8fd7-866a34e9baf1": {
+        "name": "order-service-59b7b5cb76-g8q2z",
+        "baseline": false,
+        "created_observed_seconds": 0.5261258329992415,
+        "currently_ready": true,
+        "pod_ready_seconds": 12.668453333000798,
+        "probe_attempts": [
+          {
+            "start_seconds": 12.668469374999404,
+            "duration_seconds": 0.6544970000031753,
+            "status": 201,
+            "accepted": true
+          }
+        ],
+        "order_accepted_seconds": 13.322967292002431,
+        "images": {
+          "order-service": "k3d-platform-poc.localhost:5001/platform-poc-java/order-service@sha256:8b559e640cef3aecaf69920404617394ee573c50ece3f4ca943b8baa88f74110"
+        }
+      }
+    },
+    "errors": [],
+    "baseline_changed": false,
+    "request_started_at": 1794288573.315207
+  },
+  "scale_request_s": 136.63419103622437,
+  "readiness_comparison_valid": true,
+  "traffic_window_kind": "request_start",
+  "target_capacity_observed": true,
+  "observation_errors": [],
+  "target_capacity_stable_after_ready": true
+}

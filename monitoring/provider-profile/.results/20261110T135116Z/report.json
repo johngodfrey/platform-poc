@@ -1,0 +1,9 @@
+{
+  "state": "failed",
+  "directory": "/Users/johngodfrey/Repos/platform-poc/monitoring/provider-profile/.results/20261110T135116Z",
+  "stages": {},
+  "method": "100/s;60s warmup;90s measurement; unchanged live images; PostgreSQL duration logging +10Hz activity sampling +Hikari pool metrics +provider process CPU",
+  "error": "RuntimeError: Java pool acquisition metrics unavailable; inspect preflight",
+  "logging_restored": true,
+  "finished": 1794318678.543894
+}

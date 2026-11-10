@@ -1,0 +1,156 @@
+{
+  "records": [
+    {
+      "namespace": "java",
+      "deployment": "inventory-service",
+      "container": "inventory-service",
+      "uid": "67d70f45-7618-4d59-8bf8-e894ba1f8cae",
+      "original": {},
+      "budget": {},
+      "allowed": [
+        {},
+        {
+          "limits": {
+            "memory": "1024Mi"
+          },
+          "requests": {
+            "cpu": "100m",
+            "memory": "1024Mi"
+          }
+        },
+        {
+          "limits": {
+            "memory": "512Mi"
+          },
+          "requests": {
+            "cpu": "100m",
+            "memory": "512Mi"
+          }
+        },
+        {
+          "limits": {
+            "memory": "256Mi"
+          },
+          "requests": {
+            "cpu": "100m",
+            "memory": "256Mi"
+          }
+        }
+      ]
+    },
+    {
+      "namespace": "java",
+      "deployment": "notification-service",
+      "container": "notification-service",
+      "uid": "d421d6ea-a8a0-4108-ba28-6a7043e769d8",
+      "original": {},
+      "budget": {},
+      "allowed": [
+        {},
+        {
+          "limits": {
+            "memory": "1024Mi"
+          },
+          "requests": {
+            "cpu": "100m",
+            "memory": "1024Mi"
+          }
+        },
+        {
+          "limits": {
+            "memory": "512Mi"
+          },
+          "requests": {
+            "cpu": "100m",
+            "memory": "512Mi"
+          }
+        },
+        {
+          "limits": {
+            "memory": "256Mi"
+          },
+          "requests": {
+            "cpu": "100m",
+            "memory": "256Mi"
+          }
+        }
+      ]
+    },
+    {
+      "namespace": "java",
+      "deployment": "order-service",
+      "container": "order-service",
+      "uid": "2371863a-c026-4023-8b73-542b37d2beb5",
+      "original": {},
+      "budget": {},
+      "allowed": [
+        {},
+        {
+          "limits": {
+            "memory": "1024Mi"
+          },
+          "requests": {
+            "cpu": "100m",
+            "memory": "1024Mi"
+          }
+        },
+        {
+          "limits": {
+            "memory": "512Mi"
+          },
+          "requests": {
+            "cpu": "100m",
+            "memory": "512Mi"
+          }
+        },
+        {
+          "limits": {
+            "memory": "256Mi"
+          },
+          "requests": {
+            "cpu": "100m",
+            "memory": "256Mi"
+          }
+        }
+      ]
+    },
+    {
+      "namespace": "java",
+      "deployment": "product-service",
+      "container": "product-service",
+      "uid": "ea963967-6311-4eb6-a38c-d6ee8a2cd708",
+      "original": {},
+      "budget": {},
+      "allowed": [
+        {},
+        {
+          "limits": {
+            "memory": "1024Mi"
+          },
+          "requests": {
+            "cpu": "100m",
+            "memory": "1024Mi"
+          }
+        },
+        {
+          "limits": {
+            "memory": "512Mi"
+          },
+          "requests": {
+            "cpu": "100m",
+            "memory": "512Mi"
+          }
+        },
+        {
+          "limits": {
+            "memory": "256Mi"
+          },
+          "requests": {
+            "cpu": "100m",
+            "memory": "256Mi"
+          }
+        }
+      ]
+    }
+  ]
+}

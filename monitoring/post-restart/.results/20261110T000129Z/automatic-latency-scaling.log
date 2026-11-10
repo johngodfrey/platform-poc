@@ -1,0 +1,17 @@
+java functional preflight: order accepted
+Pair 1: java
+java CPU target 0.1764 cores per unit; baseline 0.1411
+java functional preflight: order accepted
+wasm functional preflight: order accepted
+Pair 1: wasm
+wasm CPU target 0.4701 cores per unit; baseline 0.3761
+wasm functional preflight: order accepted
+wasm functional preflight: order accepted
+Pair 2: wasm
+wasm CPU target 0.496 cores per unit; baseline 0.3968
+wasm functional preflight: order accepted
+java functional preflight: order accepted
+Pair 2: java
+java CPU target 0.1771 cores per unit; baseline 0.1417
+java functional preflight: order accepted
+Report: /Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/autoscale/.results/20261110T070822Z/report.html

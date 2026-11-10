@@ -1,0 +1,9 @@
+[
+  "/Library/Frameworks/Python.framework/Versions/3.11/bin/python3",
+  "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/startup_cache/run.py",
+  "run",
+  "--pairs",
+  "5",
+  "--target",
+  "both"
+]

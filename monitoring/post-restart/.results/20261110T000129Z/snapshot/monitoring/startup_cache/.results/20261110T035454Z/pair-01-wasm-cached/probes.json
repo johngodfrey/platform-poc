@@ -1,0 +1,114 @@
+[
+  {
+    "status": 503,
+    "accepted": false,
+    "duration_seconds": 0.011263542000961024,
+    "start_seconds": 0.1700827080021554,
+    "end_seconds": 0.1813830829996732
+  },
+  {
+    "status": 503,
+    "accepted": false,
+    "duration_seconds": 0.003633583000919316,
+    "start_seconds": 1.1760308330012776,
+    "end_seconds": 1.1797144160009339
+  },
+  {
+    "status": 500,
+    "accepted": false,
+    "duration_seconds": 0.02399758400133578,
+    "start_seconds": 2.18610291600271,
+    "end_seconds": 2.2101425000000745
+  },
+  {
+    "status": 500,
+    "accepted": false,
+    "duration_seconds": 0.01102862500192714,
+    "start_seconds": 3.193876249999448,
+    "end_seconds": 3.2049717910012987
+  },
+  {
+    "status": 500,
+    "accepted": false,
+    "duration_seconds": 0.009734208000736544,
+    "start_seconds": 4.198051708001003,
+    "end_seconds": 4.207886041000165
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.04404024999894318,
+    "start_seconds": 5.201420666002377,
+    "end_seconds": 5.24546887500037
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.056335833000048297,
+    "start_seconds": 6.205623750000086,
+    "end_seconds": 6.261969041002885
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.018210458001703955,
+    "start_seconds": 7.211734333002823,
+    "end_seconds": 7.22996412500288
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.017214250001416076,
+    "start_seconds": 8.21530970800086,
+    "end_seconds": 8.232533583002805
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.023989375000383006,
+    "start_seconds": 9.224396625002555,
+    "end_seconds": 9.24841195800036
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.015025250002508983,
+    "start_seconds": 10.232981541001209,
+    "end_seconds": 10.24801487500008
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.016013000000384636,
+    "start_seconds": 11.24301904100139,
+    "end_seconds": 11.259041290999448
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.032125791996804764,
+    "start_seconds": 12.248672416000773,
+    "end_seconds": 12.280813249999483
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.035040791997744236,
+    "start_seconds": 13.25456000000122,
+    "end_seconds": 13.289642416002607
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.02626225000130944,
+    "start_seconds": 14.262820875002944,
+    "end_seconds": 14.289117457999964
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.018420333999529248,
+    "start_seconds": 15.271089875001053,
+    "end_seconds": 15.28951783299999
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "purpose": "Source inventory points to the actual repository; all measurements and child outputs remain in the isolated copy.",
+  "file": "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/validation/run.py",
+  "original_sha256": "e6228ec75d79e0e89361cf19f30b5175ba4609287c2367cf5a2a899f969bde71",
+  "snapshot_sha256": "cc5c93deb0f5418353f00d634d6728928188caf37c6fe3e2f44d4f11779f21b6"
+}

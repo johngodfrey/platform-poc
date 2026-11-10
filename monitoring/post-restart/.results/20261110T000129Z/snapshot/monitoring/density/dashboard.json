@@ -1,0 +1,1247 @@
+{
+  "uid": "java-wasm-memory-density",
+  "title": "Java vs Wasm \u2014 memory density",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "5s",
+  "time": {
+    "from": "now-1h",
+    "to": "now"
+  },
+  "tags": [
+    "platform-poc",
+    "memory-density"
+  ],
+  "panels": [
+    {
+      "id": 1,
+      "title": "Application memory \u2014 current",
+      "type": "stat",
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "poc_app_memory_bytes",
+          "legendFormat": "{{implementation}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "bytes",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "values": false
+        },
+        "colorMode": "value",
+        "graphMode": "area"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Application CPU \u2014 current",
+      "type": "stat",
+      "gridPos": {
+        "x": 8,
+        "y": 0,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "poc_app_cpu_cores",
+          "legendFormat": "{{implementation}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "cores",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "values": false
+        },
+        "colorMode": "value",
+        "graphMode": "area"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Accepted orders / second",
+      "type": "stat",
+      "gridPos": {
+        "x": 16,
+        "y": 0,
+        "w": 8,
+        "h": 4
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum by (implementation,testid) (rate(k6_demo_orders_accepted_total{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"density-.*\"}[20s]))",
+          "legendFormat": "{{implementation}} {{testid}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ops",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "values": false
+        },
+        "colorMode": "value",
+        "graphMode": "area"
+      }
+    },
+    {
+      "id": 4,
+      "title": "Application memory",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 0,
+        "y": 4,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "poc_app_memory_bytes",
+          "legendFormat": "{{implementation}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "Java application containers; Wasm host container includes its child provider processes. Working set, not requests or limits.",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "bytes",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "Application CPU",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 12,
+        "y": 4,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "poc_app_cpu_cores",
+          "legendFormat": "{{implementation}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "30-second CPU rate; 1 core = 1,000 millicores. Monitoring overhead is separate.",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "cores",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "Delivered versus offered orders / second",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 0,
+        "y": 12,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum by (implementation,testid) (rate(k6_demo_orders_accepted_total{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"density-.*\"}[20s]))",
+          "legendFormat": "{{implementation}} {{testid}} accepted",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        },
+        {
+          "refId": "B",
+          "expr": "max by (implementation,testid) (k6_demo_target_rps{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"density-.*\"})",
+          "legendFormat": "{{implementation}} {{testid}} offered",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "Accepted rate uses a 20-second window. Metrics are emitted by the benchmark runners.",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ops",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "Order latency (cumulative run statistics)",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 12,
+        "y": 12,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "k6_http_req_duration_p95{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"density-.*\",scenario=\"orders\"}",
+          "legendFormat": "{{implementation}} p95",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        },
+        {
+          "refId": "B",
+          "expr": "k6_http_req_duration_avg{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"density-.*\",scenario=\"orders\"}",
+          "legendFormat": "{{implementation}} average",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "k6 trend gauges are statistics accumulated during each run, not percentiles over the visible dashboard time range. Do not average percentiles across runs.",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "Failures and dropped orders / second",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 0,
+        "y": 20,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum by (implementation,testid) (rate(k6_demo_order_failures_total{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"density-.*\"}[20s]))",
+          "legendFormat": "{{implementation}} failed",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        },
+        {
+          "refId": "B",
+          "expr": "sum by (implementation,testid) (rate(k6_dropped_iterations_total{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"density-.*\"}[20s]))",
+          "legendFormat": "{{implementation}} dropped",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ops",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 11,
+      "title": "Demo phase: 0 idle / 1 load / 2 recovery",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 12,
+        "y": 20,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "max by (implementation,testid) (k6_demo_phase{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"density-.*\"})",
+          "legendFormat": "{{implementation}} {{testid}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 12,
+      "title": "Application CPU-seconds / 1,000 accepted orders",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 0,
+        "y": 28,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "(poc_app_cpu_cores / on (implementation) group_right () (sum by (implementation,testid) (rate(k6_demo_orders_accepted_total{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"density-.*\"}[30s])) > 0) * 1000) and on (implementation,testid) (max by (implementation,testid) (min_over_time(k6_demo_phase{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"density-.*\"}[30s])) == 1) and on (implementation,testid) (max by (implementation,testid) (max_over_time(k6_demo_phase{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"density-.*\"}[30s])) == 1)",
+          "legendFormat": "{{implementation}} {{testid}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "Run-specific live ratio, not cumulative CPU cost. Both CPU and throughput use 30-second windows. Only shown after a full window in the load phase; startup and recovery are excluded to avoid dividing lingering CPU usage by nearly zero throughput. Includes application idle/background CPU; run one test per implementation at a time.",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 101,
+      "title": "Configured total application memory limit",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 0,
+        "y": 36,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "max by (implementation,testid) (k6_density_memory_limit_bytes{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"density-.*\"})",
+          "legendFormat": "{{implementation}} {{testid}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "Java divides this limit equally across four application containers; Wasm assigns it to the host. CPU limits are removed.",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "bytes",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 102,
+      "title": "Projected slots at current cap \u2014 unvalidated",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 12,
+        "y": 36,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "max by (implementation,testid) (k6_density_projected_slots{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"density-.*\"})",
+          "legendFormat": "{{implementation}} {{testid}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "floor(application-only RAM pool / current allocation). This is a hypothesis, not a count of deployed stacks or a pass verdict. See report.html for allocations that passed every repeat.",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 103,
+      "title": "Node CPU utilization \u2014 headroom check",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 0,
+        "y": 44,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "(max by (node) (sum by (node) (rate(container_cpu_usage_seconds_total{job=\"density-node\",id=\"/\"}[30s])) / on (node) max by (node) (machine_cpu_cores{job=\"density-node\"}))) and on (node) (min by (node) (min_over_time(up{job=\"density-node\"}[30s])) == 1)",
+          "legendFormat": "{{node}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "30-second sampled node CPU / node core count. The report marks stages inconclusive if metrics are missing or any node reaches the configured ceiling. k3d nodes share one VM: this does not measure macOS CPU pressure or prove physical CPU isolation.",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percentunit",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 104,
+      "title": "Maximum allowed node CPU utilization",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 12,
+        "y": 44,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "max by (implementation,testid) (k6_density_max_node_cpu_fraction{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"density-.*\"})",
+          "legendFormat": "{{implementation}} {{testid}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "Default ceiling is 60%. CPU and memory resource charts show live deployments independent of Run selection.",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "percentunit",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 199,
+      "title": "Memory-density experiment",
+      "type": "text",
+      "gridPos": {
+        "x": 0,
+        "y": 52,
+        "w": 24,
+        "h": 6
+      },
+      "options": {
+        "mode": "markdown",
+        "content": "Run **`python3 monitoring/density/run.py run both`**. Fixed order rate, descending memory limits, no application CPU limits, warmup at every limit and repeated measurements. **Projected slots are not proven concurrent capacity.** An allocation passes only when all repeats meet latency/reliability gates with sampled node CPU headroom. Missing CPU telemetry or runtime interruptions are inconclusive. RAM pool excludes infrastructure and host overhead. Java uses equal per-service allocations; Wasm shares its host allocation. Stop other tests, keep the machine awake, and consult **report.html** for the smallest passing tested allocation and any inconclusive outcomes."
+      }
+    }
+  ],
+  "templating": {
+    "list": [
+      {
+        "name": "implementation",
+        "type": "custom",
+        "query": "java,wasm",
+        "includeAll": true,
+        "allValue": ".*",
+        "multi": true,
+        "current": {
+          "text": "All",
+          "value": "$__all"
+        }
+      },
+      {
+        "name": "run",
+        "label": "Run",
+        "type": "query",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "footprint-prometheus"
+        },
+        "query": {
+          "query": "label_values(k6_demo_phase{testid=~\"density-.*\"}, testid)",
+          "refId": "runs"
+        },
+        "refresh": 2,
+        "includeAll": true,
+        "allValue": ".*",
+        "multi": true,
+        "current": {
+          "text": "All",
+          "value": "$__all"
+        }
+      }
+    ]
+  },
+  "links": [
+    {
+      "title": "Java vs Wasm \u2014 live footprint",
+      "type": "link",
+      "url": "/grafana/d/java-wasm-footprint",
+      "keepTime": true
+    },
+    {
+      "title": "Java vs Wasm \u2014 fixed-budget density",
+      "type": "link",
+      "url": "/grafana/d/java-wasm-budget",
+      "keepTime": true
+    },
+    {
+      "title": "Java vs Wasm \u2014 order-rate saturation",
+      "type": "link",
+      "url": "/grafana/d/java-wasm-capacity",
+      "keepTime": true
+    },
+    {
+      "title": "Java vs Wasm \u2014 scale-out",
+      "type": "link",
+      "url": "/grafana/d/java-wasm-scaleout",
+      "keepTime": true
+    }
+  ]
+}

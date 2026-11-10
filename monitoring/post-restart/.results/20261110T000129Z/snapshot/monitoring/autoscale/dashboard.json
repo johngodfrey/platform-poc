@@ -1,0 +1,1103 @@
+{
+  "uid": "java-wasm-autoscale",
+  "title": "Java vs Wasm \u2014 automatic scaling",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "5s",
+  "time": {
+    "from": "now-30m",
+    "to": "now"
+  },
+  "tags": [
+    "platform-poc",
+    "autoscale"
+  ],
+  "panels": [
+    {
+      "id": 1,
+      "title": "CPU signal and target per capacity unit",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "k6_autoscale_cpu_cores{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"autoscale-.*\"}",
+          "legendFormat": "{{implementation}} total CPU",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        },
+        {
+          "refId": "B",
+          "expr": "k6_autoscale_target_cpu_cores{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"autoscale-.*\"}",
+          "legendFormat": "{{implementation}} target/unit",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "60-second CPU rates. Java order-service CPU versus Wasm runtime CPU; targets are independently calibrated. Divide total CPU by serving capacity for downscale decisions.",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "cores",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Desired and verified serving capacity",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 12,
+        "y": 0,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "k6_autoscale_desired_capacity{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"autoscale-.*\"}",
+          "legendFormat": "{{implementation}} desired",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        },
+        {
+          "refId": "B",
+          "expr": "k6_autoscale_observed_capacity{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"autoscale-.*\"}",
+          "legendFormat": "{{implementation}} serving",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "Java order pods versus complete Wasm hosts; distinct scaling scopes.",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "Offered and accepted orders/s",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 0,
+        "y": 8,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "k6_autoscale_offered_rps{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"autoscale-.*\"}",
+          "legendFormat": "{{implementation}} offered",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        },
+        {
+          "refId": "B",
+          "expr": "sum by (implementation,testid)(rate(k6_autoscale_accepted_total{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"autoscale-.*\"}[15s]))",
+          "legendFormat": "{{implementation}} accepted",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ops",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Order p95 \u2014 request-start cohorts",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 12,
+        "y": 8,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "k6_autoscale_latency_ms_p95{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"autoscale-.*\"}",
+          "legendFormat": "{{implementation}} window {{window}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "Independent 15-second request-start cohorts; final gates are calculated in report.html.",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ms",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "CPU signal validity",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 0,
+        "y": 16,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "k6_autoscale_signal_valid{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"autoscale-.*\"}",
+          "legendFormat": "{{implementation}} fresh signal",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "Zero disables CPU decisions and resets the downscale stabilization timer.",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "Controller: 0 waiting, 1 up requested, 2 down requested",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 12,
+        "y": 16,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "k6_autoscale_controller_state{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"autoscale-.*\"}",
+          "legendFormat": "{{implementation}} controller",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "Application CPU",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 0,
+        "y": 24,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "poc_app_cpu_cores",
+          "legendFormat": "{{implementation}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "Live resource series are not filtered by run.",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "cores",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "Application memory",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 12,
+        "y": 24,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "poc_app_memory_bytes",
+          "legendFormat": "{{implementation}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "bytes",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "Failures and dropped work/s",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 0,
+        "y": 32,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum by (implementation,testid)(rate(k6_autoscale_failures_total{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"autoscale-.*\"}[15s]))",
+          "legendFormat": "{{implementation}} failed",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        },
+        {
+          "refId": "B",
+          "expr": "sum by (implementation,testid)(rate(k6_dropped_iterations_total{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"autoscale-.*\"}[15s]))",
+          "legendFormat": "{{implementation}} dropped",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ops",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "Phase: 0 warm, 1 baseline, 2 burst, 3 recovery",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 12,
+        "y": 32,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "k6_autoscale_phase{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"autoscale-.*\"}",
+          "legendFormat": "{{implementation}} phase",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "Phases control load only; observed CPU or latency drives scaling actions.",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 11,
+      "title": "Settled latency signal and scale-out threshold",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 0,
+        "y": 40,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "k6_autoscale_latency_p95_ms{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"autoscale-.*\"}",
+          "legendFormat": "{{implementation}} settled cohort p95",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        },
+        {
+          "refId": "B",
+          "expr": "k6_autoscale_target_latency_ms{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"autoscale-.*\"}",
+          "legendFormat": "{{implementation}} threshold",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "Latency mode scales out after two consecutive settled 15-second cohorts above 500 ms. Waits 20 seconds after cohort end for the 10-second HTTP limit and metric export. CPU mode ignores this signal.",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ms",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 12,
+      "title": "Latency signal validity and selected policy",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 12,
+        "y": 40,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "k6_autoscale_latency_signal_valid{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"autoscale-.*\"}",
+          "legendFormat": "{{implementation}} valid latency",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        },
+        {
+          "refId": "B",
+          "expr": "k6_autoscale_trigger_latency{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"autoscale-.*\"}",
+          "legendFormat": "{{implementation}} latency mode (1=yes)",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 99,
+      "title": "Interpretation",
+      "type": "text",
+      "gridPos": {
+        "x": 0,
+        "y": 48,
+        "w": 24,
+        "h": 7
+      },
+      "options": {
+        "mode": "markdown",
+        "content": "Run `python3 monitoring/autoscale/run.py run` for CPU scale-out; add `--trigger latency` for two consecutive settled p95 cohorts above 500 ms. This is a shared benchmark controller, **not native Kubernetes HPA**. Both modes keep CPU-based scale-in: 60 seconds below 70% average target. CPU target is 1.25\u00d7 warmup median (minimum 50m), capped at two units and one cycle. Java adds an order pod; Wasm adds a whole serving host. CPU scopes differ. Latency decisions include cohort/settling/export delay. The report separates trigger, direct new-pod order, serving capacity, traffic recovery and downscale. Forced final cleanup is not automatic scaling."
+      }
+    }
+  ],
+  "templating": {
+    "list": [
+      {
+        "name": "implementation",
+        "type": "custom",
+        "query": "java,wasm",
+        "includeAll": true,
+        "allValue": ".*",
+        "multi": true,
+        "current": {
+          "text": "All",
+          "value": "$__all"
+        }
+      },
+      {
+        "name": "run",
+        "label": "Run",
+        "type": "query",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "footprint-prometheus"
+        },
+        "query": {
+          "query": "label_values(k6_autoscale_phase{testid=~\"autoscale-.*\"}, testid)",
+          "refId": "runs"
+        },
+        "refresh": 2,
+        "includeAll": true,
+        "allValue": ".*",
+        "multi": true,
+        "current": {
+          "text": "All",
+          "value": "$__all"
+        }
+      }
+    ]
+  },
+  "links": [
+    {
+      "title": "Budget tests",
+      "type": "link",
+      "url": "/grafana/d/java-wasm-budget",
+      "keepTime": true
+    }
+  ]
+}

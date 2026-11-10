@@ -1,0 +1,177 @@
+[
+  {
+    "status": 503,
+    "accepted": false,
+    "duration_seconds": 0.0026849999994738027,
+    "start_seconds": 0.36490374999993946,
+    "end_seconds": 0.3676232500001788
+  },
+  {
+    "status": 503,
+    "accepted": false,
+    "duration_seconds": 0.0028692079977190588,
+    "start_seconds": 1.3748630419977417,
+    "end_seconds": 1.377774666998448
+  },
+  {
+    "status": 503,
+    "accepted": false,
+    "duration_seconds": 0.004356042001745664,
+    "start_seconds": 2.376487833000283,
+    "end_seconds": 2.3808915829977195
+  },
+  {
+    "status": 503,
+    "accepted": false,
+    "duration_seconds": 0.004562957998132333,
+    "start_seconds": 3.3816355829985696,
+    "end_seconds": 3.386329458000546
+  },
+  {
+    "status": 503,
+    "accepted": false,
+    "duration_seconds": 0.003938249999919208,
+    "start_seconds": 4.391671833000146,
+    "end_seconds": 4.39567199999874
+  },
+  {
+    "status": 503,
+    "accepted": false,
+    "duration_seconds": 0.004302417000872083,
+    "start_seconds": 5.399795291999908,
+    "end_seconds": 5.404198416999861
+  },
+  {
+    "status": 503,
+    "accepted": false,
+    "duration_seconds": 0.003984834002039861,
+    "start_seconds": 6.409830291999242,
+    "end_seconds": 6.413874666999618
+  },
+  {
+    "status": 503,
+    "accepted": false,
+    "duration_seconds": 0.003962583999964409,
+    "start_seconds": 7.4141219169978285,
+    "end_seconds": 7.418145874999027
+  },
+  {
+    "status": 503,
+    "accepted": false,
+    "duration_seconds": 0.008288083001389168,
+    "start_seconds": 8.415441749999445,
+    "end_seconds": 8.423820042000443
+  },
+  {
+    "status": 503,
+    "accepted": false,
+    "duration_seconds": 0.0054584579993388616,
+    "start_seconds": 9.415898957999161,
+    "end_seconds": 9.421418624999205
+  },
+  {
+    "status": 503,
+    "accepted": false,
+    "duration_seconds": 0.0032725830023991875,
+    "start_seconds": 10.421387041998969,
+    "end_seconds": 10.424689583000145
+  },
+  {
+    "status": 503,
+    "accepted": false,
+    "duration_seconds": 0.007058166000206256,
+    "start_seconds": 11.431438416999299,
+    "end_seconds": 11.438533791999362
+  },
+  {
+    "status": 503,
+    "accepted": false,
+    "duration_seconds": 0.009243332999176346,
+    "start_seconds": 12.437893457998143,
+    "end_seconds": 12.447209416997794
+  },
+  {
+    "status": 503,
+    "accepted": false,
+    "duration_seconds": 0.009611416997358901,
+    "start_seconds": 13.447941916998388,
+    "end_seconds": 13.457695749999402
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.501729334002448,
+    "start_seconds": 14.453015416998824,
+    "end_seconds": 14.954762666999159
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.0590671249992738,
+    "start_seconds": 15.459740416998102,
+    "end_seconds": 15.518824667000445
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.03154324999923119,
+    "start_seconds": 16.46858174999943,
+    "end_seconds": 16.50014720800027
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.057931916999223176,
+    "start_seconds": 17.478505832998053,
+    "end_seconds": 17.536482999999862
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.06403416700050002,
+    "start_seconds": 18.48569929199948,
+    "end_seconds": 18.549746917000448
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.02979741700255545,
+    "start_seconds": 19.493918249998387,
+    "end_seconds": 19.523733916998026
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.05228104100024211,
+    "start_seconds": 20.495856207999168,
+    "end_seconds": 20.548174249997828
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.07597595900006127,
+    "start_seconds": 21.498783457998798,
+    "end_seconds": 21.574807207998674
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.0542850419988099,
+    "start_seconds": 22.500478375000966,
+    "end_seconds": 22.554810417001136
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.03500466700279503,
+    "start_seconds": 23.500653167000564,
+    "end_seconds": 23.53567720800129
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.038730167001631344,
+    "start_seconds": 24.507802000000083,
+    "end_seconds": 24.546625457998744
+  }
+]

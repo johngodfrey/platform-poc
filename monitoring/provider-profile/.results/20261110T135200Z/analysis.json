@@ -1,0 +1,412 @@
+{
+  "method": "100/s;60s warmup;90s measurement; unchanged live images; PostgreSQL duration logging +10Hz activity sampling +Hikari pool metrics +provider process CPU",
+  "limitations": [
+    "Inventory Actuator pool metrics are not exposed; no inventory pool-wait duration can be inferred. Its PostgreSQL sessions and waits are still sampled.",
+    "These are diagnostic runs with statement logging; different log volumes can affect overhead. Do not treat their HTTP timings as an uninstrumented runtime benchmark.",
+    "Statement-duration observations are server elapsed timings, not server CPU timings or complete provider-call durations.",
+    "Wasm still uses implicit PostgreSQL transactions. No explicit BEGIN/COMMIT messages does not mean zero transaction or commit cost. Logged extended-protocol phases are not guaranteed to account for implicit transaction completion; do not compare their sums as complete database-path latency.",
+    "PostgreSQL wait events are sampled. Idle ClientRead is not pool contention; a missed short wait is not proof of no waiting.",
+    "Wasm deadpool acquisition latency is not exported by the stock provider. Backend samples cannot measure requests queued before obtaining a database connection.",
+    "Native process CPU includes host and its direct provider processes, not NATS sidecars/brokers or PostgreSQL server processes. This is a process-cost profile, not a function-level CPU flamegraph."
+  ],
+  "implementations": {
+    "java": {
+      "requests": 9001,
+      "http_duration_ms": {
+        "avg": 11.509018997889154,
+        "min": 3.771,
+        "med": 8.095,
+        "max": 272.532,
+        "p(90)": 16.761,
+        "p(95)": 23.738
+      },
+      "failed_checks": 0,
+      "data_statements_per_order": 4.0,
+      "transaction_commands_per_order": 4.0,
+      "data_execution_ms_per_order": 0.499452394178425,
+      "transaction_execution_ms_per_order": 0.4057334740584391,
+      "phases": {
+        "parse": {
+          "events": 170,
+          "server_elapsed_ms": 68.244
+        },
+        "bind": {
+          "events": 72178,
+          "server_elapsed_ms": 2345.676000000008
+        },
+        "execute": {
+          "events": 72008,
+          "server_elapsed_ms": 8147.578000000015
+        },
+        "statement": {
+          "events": 0,
+          "server_elapsed_ms": 0
+        }
+      },
+      "sql": [
+        {
+          "database": "inventory-service",
+          "phase": "execute",
+          "sql": "select i1_0.id,i1_0.quantity,i1_0.sku_code from t_inventory i1_0 where i1_0.sku_code in ($?)",
+          "timing_ms": {
+            "count": 9001,
+            "mean": 0.04947828019108988,
+            "median": 0.028,
+            "p95": 0.072,
+            "maximum": 8.741,
+            "total": 445.3540000000019
+          }
+        },
+        {
+          "database": "order-service",
+          "phase": "execute",
+          "sql": "insert into t_orders (order_number) values ($?) RETURNING *",
+          "timing_ms": {
+            "count": 9001,
+            "mean": 0.1669820019997778,
+            "median": 0.071,
+            "p95": 0.253,
+            "maximum": 89.769,
+            "total": 1503.0050000000065
+          }
+        },
+        {
+          "database": "order-service",
+          "phase": "execute",
+          "sql": "insert into t_order_line_items (price,quantity,sku_code) values ($?,$?,$?) RETURNING *",
+          "timing_ms": {
+            "count": 9001,
+            "mean": 0.08627630263304077,
+            "median": 0.041,
+            "p95": 0.148,
+            "maximum": 22.545,
+            "total": 776.5729999999974
+          }
+        },
+        {
+          "database": "order-service",
+          "phase": "execute",
+          "sql": "insert into t_orders_order_line_items_list (order_id,order_line_items_list_id) values ($?,$?)",
+          "timing_ms": {
+            "count": 9001,
+            "mean": 0.19671580935451616,
+            "median": 0.11,
+            "p95": 0.436,
+            "maximum": 55.232,
+            "total": 1770.6389999999978
+          }
+        },
+        {
+          "database": "inventory-service",
+          "phase": "execute",
+          "sql": "BEGIN READ ONLY",
+          "timing_ms": {
+            "count": 9001,
+            "mean": 0.036986890345517165,
+            "median": 0.016,
+            "p95": 0.039,
+            "maximum": 8.258,
+            "total": 332.91899999999686
+          }
+        },
+        {
+          "database": "inventory-service",
+          "phase": "execute",
+          "sql": "COMMIT",
+          "timing_ms": {
+            "count": 9001,
+            "mean": 0.04671592045328297,
+            "median": 0.022,
+            "p95": 0.054,
+            "maximum": 22.631,
+            "total": 420.49000000000626
+          }
+        },
+        {
+          "database": "order-service",
+          "phase": "execute",
+          "sql": "BEGIN",
+          "timing_ms": {
+            "count": 9001,
+            "mean": 0.008090212198644595,
+            "median": 0.003,
+            "p95": 0.007,
+            "maximum": 5.921,
+            "total": 72.82000000000077
+          }
+        },
+        {
+          "database": "order-service",
+          "phase": "execute",
+          "sql": "COMMIT",
+          "timing_ms": {
+            "count": 9001,
+            "mean": 0.3139404510609932,
+            "median": 0.203,
+            "p95": 0.607,
+            "maximum": 27.207,
+            "total": 2825.7780000000066
+          }
+        }
+      ],
+      "pools": {
+        "order-service": {
+          "acquisitions": 9019.0,
+          "mean_acquire_ms": 0.268176267102783,
+          "pending_sample_max": 0.0,
+          "active_sample_max": 9.0
+        },
+        "inventory-service": {
+          "acquisitions": null,
+          "mean_acquire_ms": null,
+          "pending_sample_max": null,
+          "active_sample_max": null
+        }
+      },
+      "activity": {
+        "samples": 830,
+        "states": {
+          "idle": 16140,
+          "idle in transaction": 236,
+          "active": 224
+        },
+        "active_connection_observations": 224,
+        "active_wait_events": [
+          {
+            "type": "none",
+            "event": "none",
+            "observations": 183
+          },
+          {
+            "type": "Client",
+            "event": "ClientRead",
+            "observations": 24
+          },
+          {
+            "type": "IO",
+            "event": "WALWrite",
+            "observations": 15
+          },
+          {
+            "type": "LWLock",
+            "event": "WALWrite",
+            "observations": 2
+          }
+        ],
+        "distinct_backend_pids": {
+          "inventory-service": 10,
+          "order-service": 10
+        },
+        "max_sampled_connections": {
+          "inventory-service": 10,
+          "order-service": 10
+        }
+      },
+      "native_processes": [
+        {
+          "pid": 1799333,
+          "executable": "/usr/local/bin/wasmcloud",
+          "cpu_seconds": 0.08000000000000007,
+          "mean_cores": 0.0008826641106949842
+        },
+        {
+          "pid": 1799452,
+          "executable": "/tmp/wasmcloudcache/NAAKWU5ZXLN4QCE7JBCY3EC6EIH67ACTNJIJQNY24PAEMSWQISVHUX3Y/host_docker_internal_5001_v2_platform_poc_http_server_0_25_0_regack_1",
+          "cpu_seconds": 0.009999999999999898,
+          "mean_cores": 0.00011033301383687181
+        },
+        {
+          "pid": 1799471,
+          "executable": "/tmp/wasmcloudcache/NAAKWU5ZXLN4QCE7JBCY3EC6EIH67ACTNJIJQNY24PAEMSWQISVHUX3Y/ghcr_io_wasmcloud_keyvalue_redis_0_28_2",
+          "cpu_seconds": 0.0,
+          "mean_cores": 0.0
+        },
+        {
+          "pid": 1799484,
+          "executable": "/tmp/wasmcloudcache/NAAKWU5ZXLN4QCE7JBCY3EC6EIH67ACTNJIJQNY24PAEMSWQISVHUX3Y/ghcr_io_wasmcloud_sqldb_postgres_0_7_2",
+          "cpu_seconds": 0.020000000000000018,
+          "mean_cores": 0.00022066602767374606
+        },
+        {
+          "pid": 1799511,
+          "executable": "/tmp/wasmcloudcache/NAAKWU5ZXLN4QCE7JBCY3EC6EIH67ACTNJIJQNY24PAEMSWQISVHUX3Y/ghcr_io_wasmcloud_messaging_nats_0_24_0",
+          "cpu_seconds": 0.010000000000000009,
+          "mean_cores": 0.00011033301383687303
+        }
+      ]
+    },
+    "wasm": {
+      "requests": 9001,
+      "http_duration_ms": {
+        "med": 12.406,
+        "max": 214.101,
+        "p(90)": 20.405,
+        "p(95)": 25.795,
+        "avg": 14.845896900344348,
+        "min": 7.153
+      },
+      "failed_checks": 0,
+      "data_statements_per_order": 2.0,
+      "transaction_commands_per_order": 0.0,
+      "data_execution_ms_per_order": 0.4113461837573597,
+      "transaction_execution_ms_per_order": 0.0,
+      "phases": {
+        "parse": {
+          "events": 18002,
+          "server_elapsed_ms": 5064.482000000007
+        },
+        "bind": {
+          "events": 18002,
+          "server_elapsed_ms": 3755.1499999999896
+        },
+        "execute": {
+          "events": 18002,
+          "server_elapsed_ms": 3702.5269999999946
+        },
+        "statement": {
+          "events": 0,
+          "server_elapsed_ms": 0
+        }
+      },
+      "sql": [
+        {
+          "database": "platform-poc-wasm",
+          "phase": "execute",
+          "sql": "SELECT sku, quantity FROM inventory.t_inventory WHERE sku = $?",
+          "timing_ms": {
+            "count": 9001,
+            "mean": 0.05002233085212754,
+            "median": 0.024,
+            "p95": 0.082,
+            "maximum": 11.918,
+            "total": 450.2509999999992
+          }
+        },
+        {
+          "database": "platform-poc-wasm",
+          "phase": "execute",
+          "sql": "WITH order_id AS ( INSERT INTO orders.t_orders (order_number, total) VALUES ($?, $?) RETURNING id ), item_ids AS ( INSERT INTO orders.t_order_line_items (price, quantity, sku) VALUES (?,?,?) RETURNING id ), joins AS ( SELECT order_id.id as order_id, item_ids.id as item_id FROM order_id, item_ids ) INSERT INTO orders.t_orders_order_line_items_list (order_id, order_line_items_list_id) (SELECT order_id, item_id FROM joins);",
+          "timing_ms": {
+            "count": 9001,
+            "mean": 0.3613238529052328,
+            "median": 0.198,
+            "p95": 0.964,
+            "maximum": 42.567,
+            "total": 3252.2759999999953
+          }
+        }
+      ],
+      "pools": {
+        "order-service": {
+          "acquisitions": 18.0,
+          "mean_acquire_ms": 2.698586944444445,
+          "pending_sample_max": 0.0,
+          "active_sample_max": 0.0
+        },
+        "inventory-service": {
+          "acquisitions": null,
+          "mean_acquire_ms": null,
+          "pending_sample_max": null,
+          "active_sample_max": null
+        }
+      },
+      "activity": {
+        "samples": 830,
+        "states": {
+          "idle": 15559,
+          "active": 211
+        },
+        "active_connection_observations": 211,
+        "active_wait_events": [
+          {
+            "type": "none",
+            "event": "none",
+            "observations": 106
+          },
+          {
+            "type": "Client",
+            "event": "ClientRead",
+            "observations": 77
+          },
+          {
+            "type": "IO",
+            "event": "WALWrite",
+            "observations": 20
+          },
+          {
+            "type": "IPC",
+            "event": "ProcArrayGroupUpdate",
+            "observations": 3
+          },
+          {
+            "type": "LWLock",
+            "event": "WALWrite",
+            "observations": 2
+          },
+          {
+            "type": "LWLock",
+            "event": "ProcArray",
+            "observations": 1
+          },
+          {
+            "type": "IO",
+            "event": "DataFileExtend",
+            "observations": 1
+          },
+          {
+            "type": "Lock",
+            "event": "extend",
+            "observations": 1
+          }
+        ],
+        "distinct_backend_pids": {
+          "platform-poc-wasm": 19
+        },
+        "max_sampled_connections": {
+          "platform-poc-wasm": 19
+        }
+      },
+      "native_processes": [
+        {
+          "pid": 1799333,
+          "executable": "/usr/local/bin/wasmcloud",
+          "cpu_seconds": 29.259999999999998,
+          "mean_cores": 0.32312960750295716
+        },
+        {
+          "pid": 1799452,
+          "executable": "/tmp/wasmcloudcache/NAAKWU5ZXLN4QCE7JBCY3EC6EIH67ACTNJIJQNY24PAEMSWQISVHUX3Y/host_docker_internal_5001_v2_platform_poc_http_server_0_25_0_regack_1",
+          "cpu_seconds": 6.62,
+          "mean_cores": 0.07310724544325278
+        },
+        {
+          "pid": 1799471,
+          "executable": "/tmp/wasmcloudcache/NAAKWU5ZXLN4QCE7JBCY3EC6EIH67ACTNJIJQNY24PAEMSWQISVHUX3Y/ghcr_io_wasmcloud_keyvalue_redis_0_28_2",
+          "cpu_seconds": 0.0,
+          "mean_cores": 0.0
+        },
+        {
+          "pid": 1799484,
+          "executable": "/tmp/wasmcloudcache/NAAKWU5ZXLN4QCE7JBCY3EC6EIH67ACTNJIJQNY24PAEMSWQISVHUX3Y/ghcr_io_wasmcloud_sqldb_postgres_0_7_2",
+          "cpu_seconds": 7.339999999999999,
+          "mean_cores": 0.08105848663949779
+        },
+        {
+          "pid": 1799511,
+          "executable": "/tmp/wasmcloudcache/NAAKWU5ZXLN4QCE7JBCY3EC6EIH67ACTNJIJQNY24PAEMSWQISVHUX3Y/ghcr_io_wasmcloud_messaging_nats_0_24_0",
+          "cpu_seconds": 3.6100000000000003,
+          "mean_cores": 0.039866639886728485
+        }
+      ]
+    }
+  },
+  "sources": {
+    "report.json": "25a470e0f14920a9eec7ca4eb575b74c10debf636c8a51b29264f00008d205b8",
+    "java-activity.json": "ee4933dad9556727aaeeeb8a4db6dfa36dd1ad7368c52062005eac939151664b",
+    "wasm-activity.json": "e28b35a88516f7d83e46d10922df7e814099b95e8fb044e388ccc5b0d430ebbc",
+    "java-pools.json": "33b6eae7dc0331b0a42187ae4444d503b3922045353a6b9ea89a5a24ae02372d",
+    "wasm-pools.json": "ecd6476abd155edeb92f88ee0babc739344884277e3dab6773fe80ce662d10df",
+    "wasm-statements.json": "2d6b15b01cfbc6ae7bc4f4fc370028561eabecfb4aadf3e92dc643b8c88052af",
+    "java-statements.json": "31f13ec83e85120fa633f86fbf70874f9541ab03da412fe537dd4dece463e0d7"
+  }
+}

@@ -1,0 +1,1184 @@
+{
+  "uid": "java-wasm-scaleout",
+  "title": "Java vs Wasm \u2014 scale-out",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "5s",
+  "time": {
+    "from": "now-30m",
+    "to": "now"
+  },
+  "tags": [
+    "platform-poc",
+    "scaleout"
+  ],
+  "panels": [
+    {
+      "id": 1,
+      "title": "Application memory",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 0,
+        "y": 0,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "poc_app_memory_bytes",
+          "legendFormat": "{{implementation}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "Live deployment working sets; aggregate telemetry has shown inconsistencies after restarts. Run selection does not filter resource charts.",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "bytes",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 2,
+      "title": "Application CPU",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 12,
+        "y": 0,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "poc_app_cpu_cores",
+          "legendFormat": "{{implementation}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "30-second CPU rate, not CPU limits.",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "cores",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 3,
+      "title": "Offered and accepted orders/s",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 0,
+        "y": 8,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "max by (implementation,testid) (k6_scaleout_offered_rps{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"scaleout-.*\"})",
+          "legendFormat": "{{implementation}} offered",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        },
+        {
+          "refId": "B",
+          "expr": "sum by (implementation,testid) (rate(k6_scaleout_accepted_total{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"scaleout-.*\"}[15s]))",
+          "legendFormat": "{{implementation}} accepted",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ops",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 4,
+      "title": "Order p95 \u2014 separate 15-second request-start cohorts",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 12,
+        "y": 8,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "k6_scaleout_latency_ms_p95{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"scaleout-.*\"}",
+          "legendFormat": "{{implementation}} window {{window}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "Each line accumulates only within its tagged request-start cohort, not the entire run. The report requires two full passing windows after the actual scale command; no retries.",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ms",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 5,
+      "title": "Java ready order pods with successful direct orders",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 0,
+        "y": 16,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "k6_scaleout_observed_capacity{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"scaleout-.*\",implementation=\"java\"}",
+          "legendFormat": "java observed",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        },
+        {
+          "refId": "B",
+          "expr": "k6_scaleout_desired_capacity{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"scaleout-.*\",implementation=\"java\"}",
+          "legendFormat": "java desired",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 6,
+      "title": "Wasm capacity \u2014 hosts or concurrency (see mode)",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 12,
+        "y": 16,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "k6_scaleout_observed_capacity{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"scaleout-.*\",implementation=\"wasm\"}",
+          "legendFormat": "wasm {{wasm_mode}} observed",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        },
+        {
+          "refId": "B",
+          "expr": "k6_scaleout_desired_capacity{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"scaleout-.*\",implementation=\"wasm\"}",
+          "legendFormat": "wasm {{wasm_mode}} desired",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "Host mode: verified routable runtime hosts (1\u21922). Concurrency mode: orders max_instances (10\u219220). Do not compare the units across modes.",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 7,
+      "title": "Failures and dropped work/s",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 0,
+        "y": 24,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum by (implementation,testid) (rate(k6_scaleout_failures_total{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"scaleout-.*\"}[15s]))",
+          "legendFormat": "{{implementation}} failures",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        },
+        {
+          "refId": "B",
+          "expr": "sum by (implementation,testid) (rate(k6_dropped_iterations_total{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"scaleout-.*\"}[15s]))",
+          "legendFormat": "{{implementation}} dropped",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ops",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 8,
+      "title": "Phase: 0 warm / 1 baseline / 2 burst / 3 scale period / 4 recovery",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 12,
+        "y": 24,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "k6_scaleout_phase{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"scaleout-.*\"}",
+          "legendFormat": "{{implementation}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "Phase 3 begins at planned scale time. The actual command-accepted chart and report record observed timing.",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 9,
+      "title": "Scale command accepted",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 0,
+        "y": 32,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "k6_scaleout_command_accepted{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"scaleout-.*\"}",
+          "legendFormat": "{{implementation}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 10,
+      "title": "Completed orders/s",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 12,
+        "y": 32,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "sum by (implementation,testid) (rate(k6_scaleout_completed_total{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"scaleout-.*\"}[15s]))",
+          "legendFormat": "{{implementation}} completions",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "ops",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 11,
+      "title": "Capacity observation available",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 0,
+        "y": 40,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "k6_scaleout_observation_valid{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"scaleout-.*\"}",
+          "legendFormat": "{{implementation}}",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "Zero means capacity polling failed; the last capacity gauge can be stale. Readiness timing is recorded only after a successful observation.",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 12,
+      "title": "Wasm host pods and aggregate orders allowance",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 12,
+        "y": 40,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "k6_scaleout_host_ready_pods{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"scaleout-.*\",implementation=\"wasm\"}",
+          "legendFormat": "ready host pods",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        },
+        {
+          "refId": "B",
+          "expr": "k6_scaleout_orders_concurrency{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"scaleout-.*\",implementation=\"wasm\"}",
+          "legendFormat": "orders concurrency allowance",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "New host mode preserves the patched runtime and timeout settings. New pods join HTTP routing only after runtime/component checks and a direct successful order.",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "short",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 13,
+      "title": "New pod readiness \u2014 common protocol",
+      "type": "timeseries",
+      "gridPos": {
+        "x": 0,
+        "y": 48,
+        "w": 12,
+        "h": 8
+      },
+      "datasource": {
+        "type": "prometheus",
+        "uid": "footprint-prometheus"
+      },
+      "targets": [
+        {
+          "refId": "A",
+          "expr": "k6_scaleout_new_pod_ready_seconds{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"scaleout-.*\"}",
+          "legendFormat": "{{implementation}} pod Ready",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        },
+        {
+          "refId": "B",
+          "expr": "k6_scaleout_new_pod_order_seconds{testid=~\"$run\",implementation=~\"$implementation\",testid=~\"scaleout-.*\"}",
+          "legendFormat": "{{implementation}} direct order accepted",
+          "datasource": {
+            "type": "prometheus",
+            "uid": "footprint-prometheus"
+          }
+        }
+      ],
+      "description": "Independent 2-second polling and identical HTTP 201/direct-order checks with a 10-second timeout. Timings start when the scale request begins. Native Kubernetes Ready probes differ; functional order acceptance is the common application gate. Wasm full-host verification remains separate.",
+      "fieldConfig": {
+        "defaults": {
+          "unit": "s",
+          "min": 0,
+          "color": {
+            "mode": "palette-classic"
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^java.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#5794F2"
+                }
+              }
+            ]
+          },
+          {
+            "matcher": {
+              "id": "byRegexp",
+              "options": "^wasm.*"
+            },
+            "properties": [
+              {
+                "id": "color",
+                "value": {
+                  "mode": "fixed",
+                  "fixedColor": "#73BF69"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      "options": {
+        "legend": {
+          "displayMode": "table",
+          "placement": "bottom",
+          "calcs": [
+            "lastNotNull",
+            "max"
+          ]
+        },
+        "tooltip": {
+          "mode": "multi"
+        }
+      }
+    },
+    {
+      "id": 99,
+      "title": "Interpretation",
+      "type": "text",
+      "gridPos": {
+        "x": 0,
+        "y": 56,
+        "w": 24,
+        "h": 7
+      },
+      "options": {
+        "mode": "markdown",
+        "content": "Run **`python3 monitoring/scaleout/run.py run both --wasm-mode host`** to start a real additional Wasm host pod with providers and serving components. Java adds only an order-service pod, so these scale different scopes. Use **`--wasm-mode concurrency`** for the previous existing-host test. Images may be cached. Readiness requires runtime inventory, matching images, a direct successful order against the new pod and a ready persistent HTTP endpoint. The report separates common pod Ready/direct-order timings, command acceptance, full capacity and traffic recovery. Use repeat.py for five alternating pairs and median/range charts. Recovery requires two full passing request-start windows after readiness. Original capacity/version is restored; keep the runner terminal open."
+      }
+    }
+  ],
+  "templating": {
+    "list": [
+      {
+        "name": "implementation",
+        "type": "custom",
+        "query": "java,wasm",
+        "includeAll": true,
+        "allValue": ".*",
+        "multi": true,
+        "current": {
+          "text": "All",
+          "value": "$__all"
+        }
+      },
+      {
+        "name": "run",
+        "label": "Run",
+        "type": "query",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "footprint-prometheus"
+        },
+        "query": {
+          "query": "label_values(k6_scaleout_phase{testid=~\"scaleout-.*\"}, testid)",
+          "refId": "runs"
+        },
+        "refresh": 2,
+        "includeAll": true,
+        "allValue": ".*",
+        "multi": true,
+        "current": {
+          "text": "All",
+          "value": "$__all"
+        }
+      }
+    ]
+  },
+  "links": [
+    {
+      "title": "Budget tests",
+      "type": "link",
+      "url": "/grafana/d/java-wasm-budget",
+      "keepTime": true
+    }
+  ]
+}

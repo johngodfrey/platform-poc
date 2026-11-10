@@ -1,0 +1,106 @@
+{
+  "settings": {
+    "target": "wasm",
+    "rates": "350",
+    "seconds": 1800,
+    "warmup": 180,
+    "warmup_rate": 100,
+    "p95_ms": 100.0,
+    "vus": 250,
+    "budget": "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/capacity/.results/validation-20261110T080306Z/tuned-budget.json",
+    "confirm_seconds": 0
+  },
+  "budget": {
+    "description": "Allocation sensitivity: unchanged total CPU/RAM; Java order 1200m, inventory 600m, notification 150m, product 50m.",
+    "cpu_millicores": 2000,
+    "memory_mib": 4096,
+    "java": [
+      {
+        "deployment": "inventory-service",
+        "container": "inventory-service",
+        "cpu_millicores": 600,
+        "memory_mib": 1024
+      },
+      {
+        "deployment": "notification-service",
+        "container": "notification-service",
+        "cpu_millicores": 150,
+        "memory_mib": 1024
+      },
+      {
+        "deployment": "order-service",
+        "container": "order-service",
+        "cpu_millicores": 1200,
+        "memory_mib": 1024
+      },
+      {
+        "deployment": "product-service",
+        "container": "product-service",
+        "cpu_millicores": 50,
+        "memory_mib": 1024
+      }
+    ],
+    "wasm": [
+      {
+        "deployment": "wasmcloud-host",
+        "container": "wasmcloud-host",
+        "cpu_millicores": 2000,
+        "memory_mib": 4096
+      }
+    ]
+  },
+  "implementations": {
+    "wasm": {
+      "stages": [
+        {
+          "rate": 350,
+          "requests": 623807,
+          "accepted": 623807,
+          "failures": 0,
+          "dropped": 6194,
+          "p95_ms": 256.5957999999999,
+          "achieved_orders_per_second": 346.55944444444447,
+          "passed": false,
+          "budget_and_pods_unchanged": true,
+          "readiness_lost": false,
+          "http_failure_rate": 0,
+          "exit_code": 99,
+          "status": "inconclusive_dropped_work",
+          "median_ms": 10.019,
+          "max_ms": 3481.566
+        }
+      ],
+      "warmup": {
+        "rate": 100,
+        "requests": 18000,
+        "accepted": 18000,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 11.056299999999995,
+        "achieved_orders_per_second": 100.0,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "priming": {
+          "rate": 25,
+          "requests": 4501,
+          "accepted": 4501,
+          "failures": 0,
+          "dropped": 0,
+          "p95_ms": 24.184,
+          "achieved_orders_per_second": 25.005555555555556,
+          "passed": true,
+          "budget_and_pods_unchanged": true,
+          "readiness_lost": false,
+          "http_failure_rate": 0,
+          "exit_code": 0
+        }
+      }
+    }
+  },
+  "completed": true,
+  "restored": true,
+  "applications_healthy": true
+}

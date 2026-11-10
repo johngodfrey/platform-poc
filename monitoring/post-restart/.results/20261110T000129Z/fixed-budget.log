@@ -1,0 +1,49 @@
+Saved resource backup: /Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/budget/.results/20261110T042446Z/state.json
+Applying budgets restarts application pods. Inventory uses create-drop and will recreate its demo tables.
+Live dashboard: http://localhost:8080/grafana/d/java-wasm-budget
+Waiting for deployment "inventory-service" rollout to finish: 0 of 1 updated replicas are available...
+deployment "inventory-service" successfully rolled out
+deployment "notification-service" successfully rolled out
+deployment "order-service" successfully rolled out
+deployment "product-service" successfully rolled out
+deployment "wasmcloud-host" successfully rolled out
+java functional preflight: order accepted
+{"implementation": "java", "warmup": true, "rate": 10, "requests": 301, "accepted": 301, "failures": 0, "dropped": 0, "p95_ms": 39.776, "achieved_orders_per_second": 10.033333333333333, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "java", "warmup": false, "rate": 1, "requests": 61, "accepted": 61, "failures": 0, "dropped": 0, "p95_ms": 58.579, "achieved_orders_per_second": 1.0166666666666666, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "java", "warmup": false, "rate": 2, "requests": 121, "accepted": 121, "failures": 0, "dropped": 0, "p95_ms": 51.483, "achieved_orders_per_second": 2.0166666666666666, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "java", "warmup": false, "rate": 5, "requests": 301, "accepted": 301, "failures": 0, "dropped": 0, "p95_ms": 44.928, "achieved_orders_per_second": 5.016666666666667, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "java", "warmup": false, "rate": 10, "requests": 600, "accepted": 600, "failures": 0, "dropped": 0, "p95_ms": 34.712199999999996, "achieved_orders_per_second": 10.0, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "java", "warmup": false, "rate": 15, "requests": 901, "accepted": 901, "failures": 0, "dropped": 0, "p95_ms": 27.228, "achieved_orders_per_second": 15.016666666666667, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "java", "warmup": false, "rate": 20, "requests": 1201, "accepted": 1201, "failures": 0, "dropped": 0, "p95_ms": 23.186, "achieved_orders_per_second": 20.016666666666666, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "java", "warmup": false, "rate": 25, "requests": 1500, "accepted": 1500, "failures": 0, "dropped": 0, "p95_ms": 21.68005, "achieved_orders_per_second": 25.0, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "java", "warmup": false, "rate": 30, "requests": 1801, "accepted": 1801, "failures": 0, "dropped": 0, "p95_ms": 20.586, "achieved_orders_per_second": 30.016666666666666, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "java", "warmup": false, "rate": 35, "requests": 2100, "accepted": 2100, "failures": 0, "dropped": 0, "p95_ms": 16.688899999999997, "achieved_orders_per_second": 35.0, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "java", "warmup": false, "rate": 40, "requests": 2400, "accepted": 2400, "failures": 0, "dropped": 0, "p95_ms": 17.09749999999999, "achieved_orders_per_second": 40.0, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "java", "warmup": false, "rate": 45, "requests": 2701, "accepted": 2701, "failures": 0, "dropped": 0, "p95_ms": 15.048, "achieved_orders_per_second": 45.016666666666666, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "java", "warmup": false, "rate": 50, "requests": 3001, "accepted": 3001, "failures": 0, "dropped": 0, "p95_ms": 14.029, "achieved_orders_per_second": 50.016666666666666, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+java functional preflight: order accepted
+wasm functional preflight: order accepted
+{"implementation": "wasm", "warmup": true, "rate": 10, "requests": 301, "accepted": 301, "failures": 0, "dropped": 0, "p95_ms": 32.389, "achieved_orders_per_second": 10.033333333333333, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "wasm", "warmup": false, "rate": 1, "requests": 61, "accepted": 61, "failures": 0, "dropped": 0, "p95_ms": 38.783, "achieved_orders_per_second": 1.0166666666666666, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "wasm", "warmup": false, "rate": 2, "requests": 120, "accepted": 120, "failures": 0, "dropped": 0, "p95_ms": 38.605000000000004, "achieved_orders_per_second": 2.0, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "wasm", "warmup": false, "rate": 5, "requests": 301, "accepted": 301, "failures": 0, "dropped": 0, "p95_ms": 37.551, "achieved_orders_per_second": 5.016666666666667, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "wasm", "warmup": false, "rate": 10, "requests": 601, "accepted": 601, "failures": 0, "dropped": 0, "p95_ms": 30.999, "achieved_orders_per_second": 10.016666666666667, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "wasm", "warmup": false, "rate": 15, "requests": 901, "accepted": 901, "failures": 0, "dropped": 0, "p95_ms": 25.311, "achieved_orders_per_second": 15.016666666666667, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "wasm", "warmup": false, "rate": 20, "requests": 1200, "accepted": 1200, "failures": 0, "dropped": 0, "p95_ms": 23.459449999999997, "achieved_orders_per_second": 20.0, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "wasm", "warmup": false, "rate": 25, "requests": 1501, "accepted": 1501, "failures": 0, "dropped": 0, "p95_ms": 20.482, "achieved_orders_per_second": 25.016666666666666, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "wasm", "warmup": false, "rate": 30, "requests": 1800, "accepted": 1800, "failures": 0, "dropped": 0, "p95_ms": 18.555099999999996, "achieved_orders_per_second": 30.0, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "wasm", "warmup": false, "rate": 35, "requests": 2100, "accepted": 2100, "failures": 0, "dropped": 0, "p95_ms": 16.81095, "achieved_orders_per_second": 35.0, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "wasm", "warmup": false, "rate": 40, "requests": 2400, "accepted": 2400, "failures": 0, "dropped": 0, "p95_ms": 16.23735, "achieved_orders_per_second": 40.0, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "wasm", "warmup": false, "rate": 45, "requests": 2700, "accepted": 2700, "failures": 0, "dropped": 0, "p95_ms": 15.877949999999998, "achieved_orders_per_second": 45.0, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "wasm", "warmup": false, "rate": 50, "requests": 3001, "accepted": 3001, "failures": 0, "dropped": 0, "p95_ms": 14.389, "achieved_orders_per_second": 50.016666666666666, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+wasm functional preflight: order accepted
+Waiting for deployment "inventory-service" rollout to finish: 0 of 1 updated replicas are available...
+deployment "inventory-service" successfully rolled out
+deployment "notification-service" successfully rolled out
+deployment "order-service" successfully rolled out
+deployment "product-service" successfully rolled out
+deployment "wasmcloud-host" successfully rolled out
+java functional preflight: order accepted
+wasm functional preflight: order accepted
+Report: /Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/budget/.results/20261110T042446Z/report.html
+Manual recovery if needed: python3 monitoring/budget/run.py restore /Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/budget/.results/20261110T042446Z/state.json

@@ -1,0 +1,200 @@
+2026-11-10T10:54:09.662Z  INFO 1 --- [order-service] [  Thread-172198] c.r.orderservice.service.OrderService    : Order Number 6692309f-c3b0-4d41-ad1b-34607190fe93 Placed Successfully
+2026-11-10T10:54:09.662Z  INFO 1 --- [order-service] [  Thread-172200] c.r.orderservice.service.OrderService    : Order Number 34fc7a8d-33f8-4fb9-847d-1393859b6a23 Placed Successfully
+2026-11-10T10:54:09.663Z  INFO 1 --- [order-service] [  Thread-172204] c.r.orderservice.service.OrderService    : Order Number ab9cfea6-deca-491e-98df-c42ae04d7956 Placed Successfully
+2026-11-10T10:54:09.663Z  INFO 1 --- [order-service] [  Thread-172203] c.r.orderservice.service.OrderService    : Order Number 93f0db30-ac56-4234-84cf-df5c8cad8b88 Placed Successfully
+2026-11-10T10:54:09.664Z  INFO 1 --- [order-service] [  Thread-172205] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.664Z  INFO 1 --- [order-service] [  Thread-172205] c.r.orderservice.service.OrderService    : Order Number 8111cc3d-ee85-4fbe-848e-d6f8b353eb65 Placed Successfully
+2026-11-10T10:54:09.666Z  INFO 1 --- [order-service] [  Thread-172206] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.666Z  INFO 1 --- [order-service] [  Thread-172207] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.666Z  INFO 1 --- [order-service] [  Thread-172207] c.r.orderservice.service.OrderService    : Order Number e8be7ce4-9a1e-4925-b8c3-50151d2fdb47 Placed Successfully
+2026-11-10T10:54:09.666Z  INFO 1 --- [order-service] [  Thread-172206] c.r.orderservice.service.OrderService    : Order Number 20c184be-de27-4fcc-91f9-ca16ee1255de Placed Successfully
+2026-11-10T10:54:09.670Z  INFO 1 --- [order-service] [  Thread-172208] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.670Z  INFO 1 --- [order-service] [  Thread-172209] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.671Z  INFO 1 --- [order-service] [  Thread-172208] c.r.orderservice.service.OrderService    : Order Number 7191a57d-63c4-424c-8b7b-381304cd3a9b Placed Successfully
+2026-11-10T10:54:09.671Z  INFO 1 --- [order-service] [  Thread-172209] c.r.orderservice.service.OrderService    : Order Number 19d27d43-9916-4965-a593-a218b2676c54 Placed Successfully
+2026-11-10T10:54:09.671Z  INFO 1 --- [order-service] [  Thread-172210] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.671Z  INFO 1 --- [order-service] [  Thread-172210] c.r.orderservice.service.OrderService    : Order Number e994e496-5fe4-4016-8651-2b9d4eba1102 Placed Successfully
+2026-11-10T10:54:09.672Z  INFO 1 --- [order-service] [  Thread-172211] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.673Z  INFO 1 --- [order-service] [  Thread-172212] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.673Z  INFO 1 --- [order-service] [  Thread-172211] c.r.orderservice.service.OrderService    : Order Number 9ec3ef02-c7b4-46bc-83f7-ba2f95791be3 Placed Successfully
+2026-11-10T10:54:09.674Z  INFO 1 --- [order-service] [  Thread-172212] c.r.orderservice.service.OrderService    : Order Number 49f95600-947f-4d07-afdd-492813a58422 Placed Successfully
+2026-11-10T10:54:09.675Z  INFO 1 --- [order-service] [  Thread-172213] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.676Z  INFO 1 --- [order-service] [  Thread-172213] c.r.orderservice.service.OrderService    : Order Number d52ded3e-b578-4d7b-81e1-f5476f2b9de7 Placed Successfully
+2026-11-10T10:54:09.677Z  INFO 1 --- [order-service] [  Thread-172214] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.678Z  INFO 1 --- [order-service] [  Thread-172215] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.678Z  INFO 1 --- [order-service] [  Thread-172214] c.r.orderservice.service.OrderService    : Order Number 1d4afaad-6c19-4a08-bcdd-5536554eddf2 Placed Successfully
+2026-11-10T10:54:09.678Z  INFO 1 --- [order-service] [  Thread-172215] c.r.orderservice.service.OrderService    : Order Number 548c0433-3bc9-41d6-b311-30260b249c21 Placed Successfully
+2026-11-10T10:54:09.682Z  INFO 1 --- [order-service] [  Thread-172218] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.682Z  INFO 1 --- [order-service] [  Thread-172216] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.682Z  INFO 1 --- [order-service] [  Thread-172217] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.683Z  INFO 1 --- [order-service] [  Thread-172218] c.r.orderservice.service.OrderService    : Order Number 4f4db2d3-d728-4358-9228-c70426af7659 Placed Successfully
+2026-11-10T10:54:09.683Z  INFO 1 --- [order-service] [  Thread-172216] c.r.orderservice.service.OrderService    : Order Number 1f83901f-0cb7-4320-8871-71ee87a68733 Placed Successfully
+2026-11-10T10:54:09.683Z  INFO 1 --- [order-service] [  Thread-172217] c.r.orderservice.service.OrderService    : Order Number f6e0a082-4b93-40c6-bfd0-f7e8bee32c0e Placed Successfully
+2026-11-10T10:54:09.686Z  INFO 1 --- [order-service] [  Thread-172219] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.686Z  INFO 1 --- [order-service] [  Thread-172220] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.687Z  INFO 1 --- [order-service] [  Thread-172219] c.r.orderservice.service.OrderService    : Order Number e1e03ed2-d7af-491f-8173-d7f238b95890 Placed Successfully
+2026-11-10T10:54:09.687Z  INFO 1 --- [order-service] [  Thread-172220] c.r.orderservice.service.OrderService    : Order Number d75a14af-7fa3-4a9c-a5b7-d06b49208bf4 Placed Successfully
+2026-11-10T10:54:09.688Z  INFO 1 --- [order-service] [  Thread-172221] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.689Z  INFO 1 --- [order-service] [  Thread-172222] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.689Z  INFO 1 --- [order-service] [  Thread-172221] c.r.orderservice.service.OrderService    : Order Number a7bee082-1fd3-4595-8408-cd8932d366e8 Placed Successfully
+2026-11-10T10:54:09.689Z  INFO 1 --- [order-service] [  Thread-172222] c.r.orderservice.service.OrderService    : Order Number 1c8a84f1-bc06-46ec-a394-7ac0c86d8ca3 Placed Successfully
+2026-11-10T10:54:09.690Z  INFO 1 --- [order-service] [  Thread-172223] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.691Z  INFO 1 --- [order-service] [  Thread-172223] c.r.orderservice.service.OrderService    : Order Number e27ee4da-cfa7-4c0d-b1ca-4341ea2abf87 Placed Successfully
+2026-11-10T10:54:09.692Z  INFO 1 --- [order-service] [  Thread-172224] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.693Z  INFO 1 --- [order-service] [  Thread-172224] c.r.orderservice.service.OrderService    : Order Number 9affd61f-f70b-4ce8-b699-52414782b086 Placed Successfully
+2026-11-10T10:54:09.693Z  INFO 1 --- [order-service] [  Thread-172225] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.698Z  INFO 1 --- [order-service] [  Thread-172225] c.r.orderservice.service.OrderService    : Order Number 5d819a7e-c279-4026-bccd-9cb82341c9c3 Placed Successfully
+2026-11-10T10:54:09.698Z  INFO 1 --- [order-service] [  Thread-172226] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.701Z  INFO 1 --- [order-service] [  Thread-172226] c.r.orderservice.service.OrderService    : Order Number 735f653a-397e-46a4-acf7-442a38bce679 Placed Successfully
+2026-11-10T10:54:09.701Z  INFO 1 --- [order-service] [  Thread-172227] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.702Z  INFO 1 --- [order-service] [  Thread-172229] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.702Z  INFO 1 --- [order-service] [  Thread-172228] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.702Z  INFO 1 --- [order-service] [  Thread-172230] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.702Z  INFO 1 --- [order-service] [  Thread-172231] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.702Z  INFO 1 --- [order-service] [  Thread-172229] c.r.orderservice.service.OrderService    : Order Number 6c7e0d48-e7e4-410c-89a5-02c86320818d Placed Successfully
+2026-11-10T10:54:09.703Z  INFO 1 --- [order-service] [  Thread-172227] c.r.orderservice.service.OrderService    : Order Number 49f0ce73-6c88-44e6-bce6-2ddf548caf28 Placed Successfully
+2026-11-10T10:54:09.703Z  INFO 1 --- [order-service] [  Thread-172230] c.r.orderservice.service.OrderService    : Order Number cd4d5b46-dcf6-49c9-9ee6-5d52f2a31c57 Placed Successfully
+2026-11-10T10:54:09.703Z  INFO 1 --- [order-service] [  Thread-172228] c.r.orderservice.service.OrderService    : Order Number 0499b0fb-3e25-4814-abdf-0c3163aba901 Placed Successfully
+2026-11-10T10:54:09.703Z  INFO 1 --- [order-service] [  Thread-172231] c.r.orderservice.service.OrderService    : Order Number a425cc2e-d5f5-4492-b7c2-ea1da87d4cab Placed Successfully
+2026-11-10T10:54:09.706Z  INFO 1 --- [order-service] [  Thread-172232] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.706Z  INFO 1 --- [order-service] [  Thread-172233] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.706Z  INFO 1 --- [order-service] [  Thread-172232] c.r.orderservice.service.OrderService    : Order Number a6ee4e22-3a91-405e-a048-6b5af435f9a3 Placed Successfully
+2026-11-10T10:54:09.706Z  INFO 1 --- [order-service] [  Thread-172233] c.r.orderservice.service.OrderService    : Order Number 11269137-33bc-46ee-82e5-e8c045865250 Placed Successfully
+2026-11-10T10:54:09.707Z  INFO 1 --- [order-service] [  Thread-172234] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.707Z  INFO 1 --- [order-service] [  Thread-172234] c.r.orderservice.service.OrderService    : Order Number 40d9a5fb-59bd-4d46-9a10-1f9506f9bf16 Placed Successfully
+2026-11-10T10:54:09.709Z  INFO 1 --- [order-service] [  Thread-172235] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.709Z  INFO 1 --- [order-service] [  Thread-172235] c.r.orderservice.service.OrderService    : Order Number affb5718-2f9c-41fd-96ad-5a42c93d94ac Placed Successfully
+2026-11-10T10:54:09.710Z  INFO 1 --- [order-service] [  Thread-172236] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.711Z  INFO 1 --- [order-service] [  Thread-172236] c.r.orderservice.service.OrderService    : Order Number 10baa20e-5b7c-4952-b2ae-3aa3729e1b79 Placed Successfully
+2026-11-10T10:54:09.711Z  INFO 1 --- [order-service] [  Thread-172237] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.712Z  INFO 1 --- [order-service] [  Thread-172237] c.r.orderservice.service.OrderService    : Order Number 75eda2e0-627a-41e6-b614-2e314365fefb Placed Successfully
+2026-11-10T10:54:09.713Z  INFO 1 --- [order-service] [  Thread-172238] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.714Z  INFO 1 --- [order-service] [  Thread-172238] c.r.orderservice.service.OrderService    : Order Number deba11f0-bf4e-4811-b04b-a6680f6c2538 Placed Successfully
+2026-11-10T10:54:09.715Z  INFO 1 --- [order-service] [  Thread-172239] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.716Z  INFO 1 --- [order-service] [  Thread-172240] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.716Z  INFO 1 --- [order-service] [  Thread-172239] c.r.orderservice.service.OrderService    : Order Number 0dff5182-6b24-4aaa-9442-bb717bfadf07 Placed Successfully
+2026-11-10T10:54:09.717Z  INFO 1 --- [order-service] [  Thread-172240] c.r.orderservice.service.OrderService    : Order Number ec3ba0dd-3fed-43f0-ba9d-58116a91d7e1 Placed Successfully
+2026-11-10T10:54:09.718Z  INFO 1 --- [order-service] [  Thread-172241] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.719Z  INFO 1 --- [order-service] [  Thread-172241] c.r.orderservice.service.OrderService    : Order Number bf1f6433-ce9a-40f3-ab8f-0ee29875d8b2 Placed Successfully
+2026-11-10T10:54:09.719Z  INFO 1 --- [order-service] [  Thread-172242] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.721Z  INFO 1 --- [order-service] [  Thread-172242] c.r.orderservice.service.OrderService    : Order Number 40b4d99e-8a15-414f-b74b-94c20042e344 Placed Successfully
+2026-11-10T10:54:09.721Z  INFO 1 --- [order-service] [  Thread-172243] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.722Z  INFO 1 --- [order-service] [  Thread-172243] c.r.orderservice.service.OrderService    : Order Number d71cb6d2-98ca-4f3a-807d-91e97df1e416 Placed Successfully
+2026-11-10T10:54:09.723Z  INFO 1 --- [order-service] [  Thread-172244] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.724Z  INFO 1 --- [order-service] [  Thread-172245] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.726Z  INFO 1 --- [order-service] [  Thread-172244] c.r.orderservice.service.OrderService    : Order Number e884d4be-64c7-427b-9fbf-42890bd44858 Placed Successfully
+2026-11-10T10:54:09.745Z  INFO 1 --- [order-service] [  Thread-172245] c.r.orderservice.service.OrderService    : Order Number f16777b8-8231-4652-997a-570011322b95 Placed Successfully
+2026-11-10T10:54:09.745Z  INFO 1 --- [order-service] [  Thread-172246] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.746Z  INFO 1 --- [order-service] [  Thread-172247] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.747Z  INFO 1 --- [order-service] [  Thread-172248] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.747Z  INFO 1 --- [order-service] [  Thread-172249] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.747Z  INFO 1 --- [order-service] [  Thread-172250] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.747Z  INFO 1 --- [order-service] [  Thread-172251] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.748Z  INFO 1 --- [order-service] [  Thread-172253] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.748Z  INFO 1 --- [order-service] [  Thread-172252] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.749Z  INFO 1 --- [order-service] [  Thread-172246] c.r.orderservice.service.OrderService    : Order Number f8a467f2-0ba8-487b-86a1-e64ac03479ab Placed Successfully
+2026-11-10T10:54:09.750Z  INFO 1 --- [order-service] [  Thread-172247] c.r.orderservice.service.OrderService    : Order Number b6bf5f50-27b7-49cb-a1ff-8f28921bee6b Placed Successfully
+2026-11-10T10:54:09.751Z  INFO 1 --- [order-service] [  Thread-172248] c.r.orderservice.service.OrderService    : Order Number 7d06750c-1744-413d-ac71-6a945ebdb0ab Placed Successfully
+2026-11-10T10:54:09.752Z  INFO 1 --- [order-service] [  Thread-172254] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.752Z  INFO 1 --- [order-service] [  Thread-172249] c.r.orderservice.service.OrderService    : Order Number 513c7de5-9aa5-4a14-9cba-4132a2c8b950 Placed Successfully
+2026-11-10T10:54:09.752Z  INFO 1 --- [order-service] [  Thread-172250] c.r.orderservice.service.OrderService    : Order Number f26e5aca-ca71-4edc-af58-db78efea6738 Placed Successfully
+2026-11-10T10:54:09.753Z  INFO 1 --- [order-service] [  Thread-172251] c.r.orderservice.service.OrderService    : Order Number 2123c947-5ff2-4d35-a68a-bea5cc828767 Placed Successfully
+2026-11-10T10:54:09.753Z  INFO 1 --- [order-service] [  Thread-172253] c.r.orderservice.service.OrderService    : Order Number ede7c565-87f3-4a1b-8afb-784ef37ad359 Placed Successfully
+2026-11-10T10:54:09.753Z  INFO 1 --- [order-service] [  Thread-172252] c.r.orderservice.service.OrderService    : Order Number f0407b45-e42b-43e2-bb0b-3ac757dd4b8f Placed Successfully
+2026-11-10T10:54:09.756Z  INFO 1 --- [order-service] [  Thread-172254] c.r.orderservice.service.OrderService    : Order Number 767a0d3c-4eb4-41ae-8ccc-7a72dfaeb706 Placed Successfully
+2026-11-10T10:54:09.756Z  INFO 1 --- [order-service] [  Thread-172255] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.757Z  INFO 1 --- [order-service] [  Thread-172256] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.757Z  INFO 1 --- [order-service] [  Thread-172257] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.758Z  INFO 1 --- [order-service] [  Thread-172255] c.r.orderservice.service.OrderService    : Order Number 18c0bc13-6f33-4943-bf27-ac7485fa154a Placed Successfully
+2026-11-10T10:54:09.758Z  INFO 1 --- [order-service] [  Thread-172257] c.r.orderservice.service.OrderService    : Order Number 9c8b53ee-eb90-4406-88bc-910857a92a3e Placed Successfully
+2026-11-10T10:54:09.759Z  INFO 1 --- [order-service] [  Thread-172258] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.758Z  INFO 1 --- [order-service] [  Thread-172259] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.758Z  INFO 1 --- [order-service] [  Thread-172256] c.r.orderservice.service.OrderService    : Order Number f06e1442-c93d-4b46-bab6-ffff79652b25 Placed Successfully
+2026-11-10T10:54:09.758Z  INFO 1 --- [order-service] [  Thread-172263] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.758Z  INFO 1 --- [order-service] [  Thread-172261] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.758Z  INFO 1 --- [order-service] [  Thread-172260] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.759Z  INFO 1 --- [order-service] [  Thread-172264] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.759Z  INFO 1 --- [order-service] [  Thread-172262] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.759Z  INFO 1 --- [order-service] [  Thread-172259] c.r.orderservice.service.OrderService    : Order Number d402b20b-713a-47fe-993c-88ea47278fdf Placed Successfully
+2026-11-10T10:54:09.759Z  INFO 1 --- [order-service] [  Thread-172260] c.r.orderservice.service.OrderService    : Order Number 81043416-6f18-47c2-8150-eac50f7a078d Placed Successfully
+2026-11-10T10:54:09.760Z  INFO 1 --- [order-service] [  Thread-172261] c.r.orderservice.service.OrderService    : Order Number a24359d6-eb80-4bd4-b7cb-9e02a45af66a Placed Successfully
+2026-11-10T10:54:09.760Z  INFO 1 --- [order-service] [  Thread-172258] c.r.orderservice.service.OrderService    : Order Number 717265b0-01e5-4dcb-8f50-9b9a065dad25 Placed Successfully
+2026-11-10T10:54:09.760Z  INFO 1 --- [order-service] [  Thread-172264] c.r.orderservice.service.OrderService    : Order Number 82dcb3ab-396c-41cc-9790-9f88ef08ea00 Placed Successfully
+2026-11-10T10:54:09.760Z  INFO 1 --- [order-service] [  Thread-172262] c.r.orderservice.service.OrderService    : Order Number c4d311c7-ad46-4cd5-9869-3645d4ddd9a3 Placed Successfully
+2026-11-10T10:54:09.760Z  INFO 1 --- [order-service] [  Thread-172263] c.r.orderservice.service.OrderService    : Order Number d22927f9-6c73-4a6d-bade-d1ec0052ac6f Placed Successfully
+2026-11-10T10:54:09.762Z  INFO 1 --- [order-service] [  Thread-172265] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.762Z  INFO 1 --- [order-service] [  Thread-172267] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.762Z  INFO 1 --- [order-service] [  Thread-172266] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.762Z  INFO 1 --- [order-service] [  Thread-172270] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.762Z  INFO 1 --- [order-service] [  Thread-172268] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.763Z  INFO 1 --- [order-service] [  Thread-172265] c.r.orderservice.service.OrderService    : Order Number d9287f6c-3e01-43ec-b6e4-0e08772adebe Placed Successfully
+2026-11-10T10:54:09.763Z  INFO 1 --- [order-service] [  Thread-172269] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.763Z  INFO 1 --- [order-service] [  Thread-172266] c.r.orderservice.service.OrderService    : Order Number 2cdd92cf-48be-41ad-b04b-e8895a797db2 Placed Successfully
+2026-11-10T10:54:09.763Z  INFO 1 --- [order-service] [  Thread-172267] c.r.orderservice.service.OrderService    : Order Number 28dac6a6-2adc-400d-93e5-f3ee2e9a3878 Placed Successfully
+2026-11-10T10:54:09.763Z  INFO 1 --- [order-service] [  Thread-172268] c.r.orderservice.service.OrderService    : Order Number b7481ad3-97d6-40ff-9fea-166d946f6291 Placed Successfully
+2026-11-10T10:54:09.763Z  INFO 1 --- [order-service] [  Thread-172270] c.r.orderservice.service.OrderService    : Order Number 232b97b0-35a9-49fd-982d-1a62dbda1354 Placed Successfully
+2026-11-10T10:54:09.763Z  INFO 1 --- [order-service] [  Thread-172269] c.r.orderservice.service.OrderService    : Order Number 646d9e07-02c7-415d-89a1-67034cf47afe Placed Successfully
+2026-11-10T10:54:09.764Z  INFO 1 --- [order-service] [  Thread-172271] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.764Z  INFO 1 --- [order-service] [  Thread-172271] c.r.orderservice.service.OrderService    : Order Number 1a37e59f-5d30-405f-8282-31b7bae9ea33 Placed Successfully
+2026-11-10T10:54:09.765Z  INFO 1 --- [order-service] [  Thread-172272] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.766Z  INFO 1 --- [order-service] [  Thread-172272] c.r.orderservice.service.OrderService    : Order Number a6906c7b-6b4a-431e-96eb-50afe621751a Placed Successfully
+2026-11-10T10:54:09.767Z  INFO 1 --- [order-service] [  Thread-172273] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.768Z  INFO 1 --- [order-service] [  Thread-172273] c.r.orderservice.service.OrderService    : Order Number 5e424262-87e6-4b83-bfbc-9421255798ba Placed Successfully
+2026-11-10T10:54:09.768Z  INFO 1 --- [order-service] [  Thread-172274] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.768Z  INFO 1 --- [order-service] [  Thread-172274] c.r.orderservice.service.OrderService    : Order Number b113e267-c42c-4668-a9b6-8675510960ea Placed Successfully
+2026-11-10T10:54:09.771Z  INFO 1 --- [order-service] [  Thread-172276] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.772Z  INFO 1 --- [order-service] [  Thread-172275] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.772Z  INFO 1 --- [order-service] [  Thread-172275] c.r.orderservice.service.OrderService    : Order Number 29a05564-0818-4c15-8ed9-ee84ef06b71e Placed Successfully
+2026-11-10T10:54:09.772Z  INFO 1 --- [order-service] [  Thread-172276] c.r.orderservice.service.OrderService    : Order Number e7adf016-19c3-4612-88a7-6db0cb12fecb Placed Successfully
+2026-11-10T10:54:09.775Z  INFO 1 --- [order-service] [  Thread-172277] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.775Z  INFO 1 --- [order-service] [  Thread-172278] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.776Z  INFO 1 --- [order-service] [  Thread-172277] c.r.orderservice.service.OrderService    : Order Number 90f49dad-fd42-4ebd-94bd-12263c14dc22 Placed Successfully
+2026-11-10T10:54:09.776Z  INFO 1 --- [order-service] [  Thread-172278] c.r.orderservice.service.OrderService    : Order Number 701305af-4cde-4657-abfd-be34b197bf51 Placed Successfully
+2026-11-10T10:54:09.777Z  INFO 1 --- [order-service] [  Thread-172279] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.777Z  INFO 1 --- [order-service] [  Thread-172279] c.r.orderservice.service.OrderService    : Order Number b4d2fae8-01c9-481c-85ac-dbdbec1fc511 Placed Successfully
+2026-11-10T10:54:09.778Z  INFO 1 --- [order-service] [  Thread-172280] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.779Z  INFO 1 --- [order-service] [  Thread-172280] c.r.orderservice.service.OrderService    : Order Number 5ceb7b84-0b95-46a6-abe3-b84e24eef5db Placed Successfully
+2026-11-10T10:54:09.779Z  INFO 1 --- [order-service] [  Thread-172281] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.780Z  INFO 1 --- [order-service] [  Thread-172281] c.r.orderservice.service.OrderService    : Order Number 64272155-5b2e-421d-a2a9-9817b7bc8893 Placed Successfully
+2026-11-10T10:54:09.781Z  INFO 1 --- [order-service] [  Thread-172282] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.782Z  INFO 1 --- [order-service] [  Thread-172282] c.r.orderservice.service.OrderService    : Order Number 779bd0d0-39e3-428e-937a-a72a8a952a80 Placed Successfully
+2026-11-10T10:54:09.782Z  INFO 1 --- [order-service] [  Thread-172283] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.783Z  INFO 1 --- [order-service] [  Thread-172283] c.r.orderservice.service.OrderService    : Order Number 3f1915e4-2885-4393-9544-1bdcd08fe208 Placed Successfully
+2026-11-10T10:54:09.783Z  INFO 1 --- [order-service] [  Thread-172284] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.784Z  INFO 1 --- [order-service] [  Thread-172284] c.r.orderservice.service.OrderService    : Order Number 06c331fc-4900-4235-a47b-1dedf7a27f68 Placed Successfully
+2026-11-10T10:54:09.785Z  INFO 1 --- [order-service] [  Thread-172285] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.786Z  INFO 1 --- [order-service] [  Thread-172285] c.r.orderservice.service.OrderService    : Order Number a391ae48-39d0-4afa-970e-a941283b3643 Placed Successfully
+2026-11-10T10:54:09.787Z  INFO 1 --- [order-service] [  Thread-172286] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.787Z  INFO 1 --- [order-service] [  Thread-172286] c.r.orderservice.service.OrderService    : Order Number 957daba8-733e-4dc7-8776-c5150d58305a Placed Successfully
+2026-11-10T10:54:09.788Z  INFO 1 --- [order-service] [  Thread-172287] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.789Z  INFO 1 --- [order-service] [  Thread-172287] c.r.orderservice.service.OrderService    : Order Number 755f6797-c75d-4310-bf11-0958f1ad6b39 Placed Successfully
+2026-11-10T10:54:09.790Z  INFO 1 --- [order-service] [  Thread-172288] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.790Z  INFO 1 --- [order-service] [  Thread-172288] c.r.orderservice.service.OrderService    : Order Number 408848f6-1a4d-4607-bb4a-ef531db8ebf7 Placed Successfully
+2026-11-10T10:54:09.792Z  INFO 1 --- [order-service] [  Thread-172289] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.792Z  INFO 1 --- [order-service] [  Thread-172289] c.r.orderservice.service.OrderService    : Order Number 9bccea32-0613-49a2-bef8-91db79fe1c9e Placed Successfully
+2026-11-10T10:54:09.793Z  INFO 1 --- [order-service] [  Thread-172290] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.794Z  INFO 1 --- [order-service] [  Thread-172290] c.r.orderservice.service.OrderService    : Order Number fce04aa5-3e10-4bbd-9854-afac90faaaee Placed Successfully
+2026-11-10T10:54:09.795Z  INFO 1 --- [order-service] [  Thread-172291] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.799Z  INFO 1 --- [order-service] [  Thread-172291] c.r.orderservice.service.OrderService    : Order Number 86392316-681d-41a4-bdf6-fb3a5ed20968 Placed Successfully
+2026-11-10T10:54:09.799Z  INFO 1 --- [order-service] [  Thread-172292] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.800Z  INFO 1 --- [order-service] [  Thread-172293] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.800Z  INFO 1 --- [order-service] [  Thread-172292] c.r.orderservice.service.OrderService    : Order Number ad88fc12-8803-4a6b-a76c-590e7a58501a Placed Successfully
+2026-11-10T10:54:09.801Z  INFO 1 --- [order-service] [  Thread-172294] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.801Z  INFO 1 --- [order-service] [  Thread-172293] c.r.orderservice.service.OrderService    : Order Number 04d86a2b-4847-474a-a70f-893a1d7a8fab Placed Successfully
+2026-11-10T10:54:09.802Z  INFO 1 --- [order-service] [  Thread-172295] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.802Z  INFO 1 --- [order-service] [  Thread-172294] c.r.orderservice.service.OrderService    : Order Number 3a7c68f8-516f-488d-8f20-8a4ade0279fe Placed Successfully
+2026-11-10T10:54:09.803Z  INFO 1 --- [order-service] [  Thread-172296] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.803Z  INFO 1 --- [order-service] [  Thread-172295] c.r.orderservice.service.OrderService    : Order Number 857eb239-5e01-49de-8ccc-eff73ff43654 Placed Successfully
+2026-11-10T10:54:09.804Z  INFO 1 --- [order-service] [  Thread-172296] c.r.orderservice.service.OrderService    : Order Number 0d75de61-a5c6-4eda-99e6-927bc8a36943 Placed Successfully
+2026-11-10T10:54:09.805Z  INFO 1 --- [order-service] [  Thread-172297] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.805Z  INFO 1 --- [order-service] [  Thread-172298] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.806Z  INFO 1 --- [order-service] [  Thread-172297] c.r.orderservice.service.OrderService    : Order Number f5cf87a4-74a6-41af-ad49-9707f5957518 Placed Successfully
+2026-11-10T10:54:09.806Z  INFO 1 --- [order-service] [  Thread-172298] c.r.orderservice.service.OrderService    : Order Number aed0eb12-9b26-42ef-85cd-00504451404b Placed Successfully
+2026-11-10T10:54:09.807Z  INFO 1 --- [order-service] [  Thread-172299] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.807Z  INFO 1 --- [order-service] [  Thread-172299] c.r.orderservice.service.OrderService    : Order Number 0422ac61-2ad2-4886-91c8-cf2b46ba96bb Placed Successfully
+2026-11-10T10:54:09.808Z  INFO 1 --- [order-service] [  Thread-172300] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.809Z  INFO 1 --- [order-service] [  Thread-172300] c.r.orderservice.service.OrderService    : Order Number 1f9ad20d-fd43-4968-bd17-848a95e94777 Placed Successfully
+2026-11-10T10:54:09.810Z  INFO 1 --- [order-service] [  Thread-172301] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.810Z  INFO 1 --- [order-service] [  Thread-172301] c.r.orderservice.service.OrderService    : Order Number d545fa2e-c196-4899-8b42-17ea1d363912 Placed Successfully
+2026-11-10T10:54:09.811Z  INFO 1 --- [order-service] [  Thread-172302] c.r.orderservice.service.OrderService    : All requested products are in stock
+2026-11-10T10:54:09.812Z  INFO 1 --- [order-service] [  Thread-172302] c.r.orderservice.service.OrderService    : Order Number f1b3cf00-c729-48cc-89e4-50e779c2ade0 Placed Successfully

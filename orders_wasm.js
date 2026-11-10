@@ -63,17 +63,19 @@ export default function () {
   // Count every failure, but avoid logging every response under load.
   if (failed && !failureSampleLogged) {
     failureSampleLogged = true;
-    console.warn(JSON.stringify({
-      event: "order_failure_sample",
-      timestamp: new Date().toISOString(),
-      vu: __VU,
-      iteration: __ITER,
-      status: response.status,
-      error_code: response.error_code,
-      error: response.error,
-      duration_ms: response.timings.duration,
-      body: String(response.body || "").slice(0, 1000),
-    }));
+    console.warn(
+      JSON.stringify({
+        event: "order_failure_sample",
+        timestamp: new Date().toISOString(),
+        vu: __VU,
+        iteration: __ITER,
+        status: response.status,
+        error_code: response.error_code,
+        error: response.error,
+        duration_ms: response.timings.duration,
+        body: String(response.body || "").slice(0, 1000),
+      }),
+    );
   }
 
   check(response, {

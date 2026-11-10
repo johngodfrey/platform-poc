@@ -1,0 +1,41 @@
+{
+  "time": 1794292858.4708428,
+  "elapsed": 797.5197579860687,
+  "control": {
+    "desired_capacity": 1,
+    "observed_capacity": 1,
+    "cpu_cores": 0.3957517432208079,
+    "target_cpu_cores": 0.4823720933756237,
+    "signal_valid": 1,
+    "controller_state": 2,
+    "latency_p95_ms": null,
+    "target_latency_ms": 500,
+    "latency_signal_valid": 0,
+    "trigger_latency": 0
+  },
+  "actuator": {
+    "observed": 1,
+    "pending": false,
+    "actions": [
+      {
+        "action": "up",
+        "request_time": 1794292278.479258,
+        "ack_time": 1794292279.069669,
+        "ready_time": 1794292302.738486
+      },
+      {
+        "action": "down",
+        "request_time": 1794292663.5361931,
+        "ack_time": 1794292689.036652,
+        "ready_time": 1794292692.240407
+      }
+    ],
+    "errors": []
+  },
+  "signal_error_count": 1,
+  "last_signal_error": {
+    "elapsed": 182.24603605270386,
+    "error": "Waiting for final warmup cohort completions",
+    "signal": "cpu/calibration"
+  }
+}

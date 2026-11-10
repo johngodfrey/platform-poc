@@ -1,0 +1,19 @@
+Frozen campaign: /Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/validation/.results/20261110T000415Z/report.html
+Footprint pair 1/5: java warmup
+Footprint pair 1/5: wasm warmup
+Footprint pair 2/5: wasm warmup
+Footprint pair 2/5: java warmup
+Footprint pair 3/5: java warmup
+Footprint pair 3/5: wasm warmup
+Footprint pair 4/5: wasm warmup
+Footprint pair 4/5: java warmup
+Footprint pair 5/5: java warmup
+Footprint pair 5/5: wasm warmup
+density: java, sweep/pair series 1
+density: wasm, sweep/pair series 1
+density: wasm, sweep/pair series 2
+density: java, sweep/pair series 2
+density: java, sweep/pair series 3
+density: wasm, sweep/pair series 3
+startup_cache: both, sweep/pair series 1
+Campaign report: /Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/validation/.results/20261110T000415Z/report.html

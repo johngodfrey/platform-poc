@@ -1,0 +1,25 @@
+{
+  "targets": [
+    "java"
+  ],
+  "factor": 2,
+  "wasm_mode": "host",
+  "wasm_actuator": "versioned desired count plus explicit runtime scale command",
+  "java": {
+    "uid": "2371863a-c026-4023-8b73-542b37d2beb5",
+    "original": 1,
+    "target": 2,
+    "image": "k3d-platform-poc.localhost:5001/platform-poc-java/order-service:0.1.0",
+    "resources": {},
+    "source_template_hash": "5cae0bc8af71b26fa5af1546f3791cc5ce8612a12f6c5d56e900762d77352ce7",
+    "baseline_pod_uids": [
+      "3dfd2d64-de4e-42f8-a781-9e18fe6f283d"
+    ],
+    "pod_selector": "service=order",
+    "images": {
+      "order-service": "k3d-platform-poc.localhost:5001/platform-poc-java/order-service@sha256:8b559e640cef3aecaf69920404617394ee573c50ece3f4ca943b8baa88f74110"
+    }
+  },
+  "_state_path": "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/autoscale/.results/20261110T061338Z/state.json",
+  "run_token": "autoscale-cpu-20261110T061338Z-2-java"
+}

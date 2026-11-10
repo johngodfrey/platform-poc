@@ -1,0 +1,303 @@
+{
+  "before": {
+    "time": 1794303581.161771,
+    "samples": [
+      {
+        "node": "k3d-platform-poc-agent-0",
+        "line": "container_cpu_cfs_burst_periods_total{container=\"wasmcloud-host\",id=\"/kubepods/burstable/pod2aa46fc3-43d3-4408-bcbb-6d031b600312/34af02d093ddbeb2be1076a82be5c7c668d97ab8bac4c2cfcaf93cad0fa3f98a\",image=\"docker.io/platform-poc/wasmcloud:1.9.2-regack.1\",name=\"34af02d093ddbeb2be1076a82be5c7c668d97ab8bac4c2cfcaf93cad0fa3f98a\",namespace=\"wasm\",pod=\"wasmcloud-host-bb85c6d5d-zkwpj\"} 0 1794303569308"
+      },
+      {
+        "node": "k3d-platform-poc-agent-0",
+        "line": "container_cpu_cfs_burst_seconds_total{container=\"wasmcloud-host\",id=\"/kubepods/burstable/pod2aa46fc3-43d3-4408-bcbb-6d031b600312/34af02d093ddbeb2be1076a82be5c7c668d97ab8bac4c2cfcaf93cad0fa3f98a\",image=\"docker.io/platform-poc/wasmcloud:1.9.2-regack.1\",name=\"34af02d093ddbeb2be1076a82be5c7c668d97ab8bac4c2cfcaf93cad0fa3f98a\",namespace=\"wasm\",pod=\"wasmcloud-host-bb85c6d5d-zkwpj\"} 0 1794303569308"
+      },
+      {
+        "node": "k3d-platform-poc-agent-0",
+        "line": "container_cpu_cfs_periods_total{container=\"wasmcloud-host\",id=\"/kubepods/burstable/pod2aa46fc3-43d3-4408-bcbb-6d031b600312/34af02d093ddbeb2be1076a82be5c7c668d97ab8bac4c2cfcaf93cad0fa3f98a\",image=\"docker.io/platform-poc/wasmcloud:1.9.2-regack.1\",name=\"34af02d093ddbeb2be1076a82be5c7c668d97ab8bac4c2cfcaf93cad0fa3f98a\",namespace=\"wasm\",pod=\"wasmcloud-host-bb85c6d5d-zkwpj\"} 1 1794303569308"
+      },
+      {
+        "node": "k3d-platform-poc-agent-0",
+        "line": "container_cpu_cfs_throttled_periods_total{container=\"wasmcloud-host\",id=\"/kubepods/burstable/pod2aa46fc3-43d3-4408-bcbb-6d031b600312/34af02d093ddbeb2be1076a82be5c7c668d97ab8bac4c2cfcaf93cad0fa3f98a\",image=\"docker.io/platform-poc/wasmcloud:1.9.2-regack.1\",name=\"34af02d093ddbeb2be1076a82be5c7c668d97ab8bac4c2cfcaf93cad0fa3f98a\",namespace=\"wasm\",pod=\"wasmcloud-host-bb85c6d5d-zkwpj\"} 0 1794303569308"
+      },
+      {
+        "node": "k3d-platform-poc-agent-0",
+        "line": "container_cpu_cfs_throttled_seconds_total{container=\"wasmcloud-host\",id=\"/kubepods/burstable/pod2aa46fc3-43d3-4408-bcbb-6d031b600312/34af02d093ddbeb2be1076a82be5c7c668d97ab8bac4c2cfcaf93cad0fa3f98a\",image=\"docker.io/platform-poc/wasmcloud:1.9.2-regack.1\",name=\"34af02d093ddbeb2be1076a82be5c7c668d97ab8bac4c2cfcaf93cad0fa3f98a\",namespace=\"wasm\",pod=\"wasmcloud-host-bb85c6d5d-zkwpj\"} 0 1794303569308"
+      }
+    ]
+  },
+  "after": {
+    "time": 1794303779.973435,
+    "samples": [
+      {
+        "node": "k3d-platform-poc-agent-0",
+        "line": "container_cpu_cfs_burst_periods_total{container=\"wasmcloud-host\",id=\"/kubepods/burstable/pod2aa46fc3-43d3-4408-bcbb-6d031b600312/34af02d093ddbeb2be1076a82be5c7c668d97ab8bac4c2cfcaf93cad0fa3f98a\",image=\"docker.io/platform-poc/wasmcloud:1.9.2-regack.1\",name=\"34af02d093ddbeb2be1076a82be5c7c668d97ab8bac4c2cfcaf93cad0fa3f98a\",namespace=\"wasm\",pod=\"wasmcloud-host-bb85c6d5d-zkwpj\"} 0 1794303779603"
+      },
+      {
+        "node": "k3d-platform-poc-agent-0",
+        "line": "container_cpu_cfs_burst_seconds_total{container=\"wasmcloud-host\",id=\"/kubepods/burstable/pod2aa46fc3-43d3-4408-bcbb-6d031b600312/34af02d093ddbeb2be1076a82be5c7c668d97ab8bac4c2cfcaf93cad0fa3f98a\",image=\"docker.io/platform-poc/wasmcloud:1.9.2-regack.1\",name=\"34af02d093ddbeb2be1076a82be5c7c668d97ab8bac4c2cfcaf93cad0fa3f98a\",namespace=\"wasm\",pod=\"wasmcloud-host-bb85c6d5d-zkwpj\"} 0 1794303779603"
+      },
+      {
+        "node": "k3d-platform-poc-agent-0",
+        "line": "container_cpu_cfs_periods_total{container=\"wasmcloud-host\",id=\"/kubepods/burstable/pod2aa46fc3-43d3-4408-bcbb-6d031b600312/34af02d093ddbeb2be1076a82be5c7c668d97ab8bac4c2cfcaf93cad0fa3f98a\",image=\"docker.io/platform-poc/wasmcloud:1.9.2-regack.1\",name=\"34af02d093ddbeb2be1076a82be5c7c668d97ab8bac4c2cfcaf93cad0fa3f98a\",namespace=\"wasm\",pod=\"wasmcloud-host-bb85c6d5d-zkwpj\"} 1880 1794303779603"
+      },
+      {
+        "node": "k3d-platform-poc-agent-0",
+        "line": "container_cpu_cfs_throttled_periods_total{container=\"wasmcloud-host\",id=\"/kubepods/burstable/pod2aa46fc3-43d3-4408-bcbb-6d031b600312/34af02d093ddbeb2be1076a82be5c7c668d97ab8bac4c2cfcaf93cad0fa3f98a\",image=\"docker.io/platform-poc/wasmcloud:1.9.2-regack.1\",name=\"34af02d093ddbeb2be1076a82be5c7c668d97ab8bac4c2cfcaf93cad0fa3f98a\",namespace=\"wasm\",pod=\"wasmcloud-host-bb85c6d5d-zkwpj\"} 3 1794303779603"
+      },
+      {
+        "node": "k3d-platform-poc-agent-0",
+        "line": "container_cpu_cfs_throttled_seconds_total{container=\"wasmcloud-host\",id=\"/kubepods/burstable/pod2aa46fc3-43d3-4408-bcbb-6d031b600312/34af02d093ddbeb2be1076a82be5c7c668d97ab8bac4c2cfcaf93cad0fa3f98a\",image=\"docker.io/platform-poc/wasmcloud:1.9.2-regack.1\",name=\"34af02d093ddbeb2be1076a82be5c7c668d97ab8bac4c2cfcaf93cad0fa3f98a\",namespace=\"wasm\",pod=\"wasmcloud-host-bb85c6d5d-zkwpj\"} 0.107575 1794303779603"
+      }
+    ]
+  },
+  "load_start": 1794303586.42,
+  "load_end": 1794303766.42,
+  "current_pods": [
+    "wasmcloud-host-bb85c6d5d-zkwpj"
+  ],
+  "queries": {
+    "cpu": {
+      "status": "success",
+      "data": {
+        "resultType": "matrix",
+        "result": [
+          {
+            "metric": {
+              "container": "nats-leaf",
+              "pod": "wasmcloud-host-bb85c6d5d-zkwpj"
+            },
+            "values": [
+              [
+                1794303616.42,
+                "0.06742438999119307"
+              ],
+              [
+                1794303631.42,
+                "0.08021492249618503"
+              ],
+              [
+                1794303646.42,
+                "0.07620037480178751"
+              ],
+              [
+                1794303661.42,
+                "0.07656864329375397"
+              ],
+              [
+                1794303676.42,
+                "0.04967845858297204"
+              ],
+              [
+                1794303706.42,
+                "0.07824482233502543"
+              ],
+              [
+                1794303721.42,
+                "0.0820549684089603"
+              ],
+              [
+                1794303736.42,
+                "0.07892862708430734"
+              ],
+              [
+                1794303751.42,
+                "0.0792508053122351"
+              ],
+              [
+                1794303766.42,
+                "0.05558676688412549"
+              ]
+            ]
+          },
+          {
+            "metric": {
+              "container": "wasmcloud-host",
+              "pod": "wasmcloud-host-bb85c6d5d-zkwpj"
+            },
+            "values": [
+              [
+                1794303586.42,
+                "0.15796162518561513"
+              ],
+              [
+                1794303601.42,
+                "0.1429037722778512"
+              ],
+              [
+                1794303616.42,
+                "0.18548302816901416"
+              ],
+              [
+                1794303631.42,
+                "0.19695639775549617"
+              ],
+              [
+                1794303646.42,
+                "0.187150946511116"
+              ],
+              [
+                1794303661.42,
+                "0.19435976524290843"
+              ],
+              [
+                1794303676.42,
+                "0.19077391304347802"
+              ],
+              [
+                1794303691.42,
+                "0.1932723110073623"
+              ],
+              [
+                1794303706.42,
+                "0.19695561139028472"
+              ],
+              [
+                1794303721.42,
+                "0.197302770500913"
+              ],
+              [
+                1794303736.42,
+                "0.19808375804985967"
+              ],
+              [
+                1794303751.42,
+                "0.1938219978746016"
+              ],
+              [
+                1794303766.42,
+                "0.19479828191622764"
+              ]
+            ]
+          }
+        ]
+      }
+    },
+    "memory": {
+      "status": "success",
+      "data": {
+        "resultType": "matrix",
+        "result": [
+          {
+            "metric": {
+              "container": "nats-leaf",
+              "pod": "wasmcloud-host-bb85c6d5d-zkwpj"
+            },
+            "values": [
+              [
+                1794303586.42,
+                "3989504"
+              ],
+              [
+                1794303601.42,
+                "8384512"
+              ],
+              [
+                1794303616.42,
+                "21708800"
+              ],
+              [
+                1794303631.42,
+                "22192128"
+              ],
+              [
+                1794303646.42,
+                "22183936"
+              ],
+              [
+                1794303661.42,
+                "22888448"
+              ],
+              [
+                1794303676.42,
+                "22888448"
+              ],
+              [
+                1794303691.42,
+                "23162880"
+              ],
+              [
+                1794303706.42,
+                "22237184"
+              ],
+              [
+                1794303721.42,
+                "23257088"
+              ],
+              [
+                1794303736.42,
+                "28012544"
+              ],
+              [
+                1794303751.42,
+                "25763840"
+              ],
+              [
+                1794303766.42,
+                "25849856"
+              ]
+            ]
+          },
+          {
+            "metric": {
+              "container": "wasmcloud-host",
+              "pod": "wasmcloud-host-bb85c6d5d-zkwpj"
+            },
+            "values": [
+              [
+                1794303586.42,
+                "181321728"
+              ],
+              [
+                1794303601.42,
+                "189657088"
+              ],
+              [
+                1794303616.42,
+                "189489152"
+              ],
+              [
+                1794303631.42,
+                "189796352"
+              ],
+              [
+                1794303646.42,
+                "201842688"
+              ],
+              [
+                1794303661.42,
+                "202645504"
+              ],
+              [
+                1794303676.42,
+                "202727424"
+              ],
+              [
+                1794303691.42,
+                "202944512"
+              ],
+              [
+                1794303706.42,
+                "199852032"
+              ],
+              [
+                1794303721.42,
+                "199991296"
+              ],
+              [
+                1794303736.42,
+                "198975488"
+              ],
+              [
+                1794303751.42,
+                "199680000"
+              ],
+              [
+                1794303766.42,
+                "199581696"
+              ]
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

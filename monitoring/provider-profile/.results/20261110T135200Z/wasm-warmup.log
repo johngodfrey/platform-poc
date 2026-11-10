@@ -1,0 +1,76 @@
+
+
+  █ THRESHOLDS 
+
+    dropped_iterations
+    ✓ 'count==0' count=0
+
+    order_failures
+    ✓ 'count==0' count=0
+
+    order_responses{status:0}
+    ✓ 'count>=0' count=0
+
+    order_responses{status:201}
+    ✓ 'count>=0' count=6001
+
+    order_responses{status:400}
+    ✓ 'count>=0' count=0
+
+    order_responses{status:404}
+    ✓ 'count>=0' count=0
+
+    order_responses{status:500}
+    ✓ 'count>=0' count=0
+
+    order_responses{status:502}
+    ✓ 'count>=0' count=0
+
+    order_responses{status:503}
+    ✓ 'count>=0' count=0
+
+    order_responses{status:504}
+    ✓ 'count>=0' count=0
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 6001    99.98713/s
+    checks_succeeded...: 100.00% 6001 out of 6001
+    checks_failed......: 0.00%   0 out of 6001
+
+    ✓ order accepted
+
+    CUSTOM
+    order_client_timeouts..........: 0      0/s
+    order_failures.................: 0      0/s
+    order_responses................: 6001   99.98713/s
+      { status:0 }.................: 0      0/s
+      { status:201 }...............: 6001   99.98713/s
+      { status:400 }...............: 0      0/s
+      { status:404 }...............: 0      0/s
+      { status:500 }...............: 0      0/s
+      { status:502 }...............: 0      0/s
+      { status:503 }...............: 0      0/s
+      { status:504 }...............: 0      0/s
+    order_transport_failures.......: 0      0/s
+
+    HTTP
+    http_req_duration..............: avg=14.31ms min=6.1ms  med=11.26ms max=266.1ms  p(90)=18.94ms p(95)=25.28ms
+      { expected_response:true }...: avg=14.31ms min=6.1ms  med=11.26ms max=266.1ms  p(90)=18.94ms p(95)=25.28ms
+    http_req_failed................: 0.00%  0 out of 6001
+    http_reqs......................: 6001   99.98713/s
+
+    EXECUTION
+    dropped_iterations.............: 0      0/s
+    iteration_duration.............: avg=14.72ms min=6.29ms med=11.65ms max=270.28ms p(90)=19.44ms p(95)=26.09ms
+    iterations.....................: 6001   99.98713/s
+    vus............................: 5      min=1         max=8  
+    vus_max........................: 250    min=250       max=250
+
+    NETWORK
+    data_received..................: 1.5 MB 25 kB/s
+    data_sent......................: 1.1 MB 18 kB/s
+
+
+

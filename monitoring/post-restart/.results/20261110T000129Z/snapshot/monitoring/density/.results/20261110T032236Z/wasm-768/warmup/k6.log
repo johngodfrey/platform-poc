@@ -1,0 +1,52 @@
+time="2026-11-10T03:37:34Z" level=info msg="{\"event\":\"demo_started\",\"start_ms\":1794281854960}" source=console
+
+
+  █ THRESHOLDS 
+
+    demo_order_failures
+    ✓ 'count==0' count=0
+
+    dropped_iterations
+    ✓ 'count==0' count=0
+
+    http_req_duration{scenario:orders}
+    ✓ 'p(95)<1000000' p(95)=22.23ms
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 3001    23.057351/s
+    checks_succeeded...: 100.00% 3001 out of 3001
+    checks_failed......: 0.00%   0 out of 3001
+
+    ✓ order accepted
+
+    CUSTOM
+    demo_order_failures.............: 0         0/s
+    demo_orders_accepted............: 3001      23.057351/s
+    demo_phase......................: 2         min=0         max=2        
+    demo_target_rps.................: 0         min=0         max=25       
+    density_max_node_cpu_fraction...: 0.6       min=0.6       max=0.6      
+    density_memory_limit_bytes......: 805306368 min=805306368 max=805306368
+    density_projected_slots.........: 10        min=10        max=10       
+
+    HTTP
+    http_req_duration...............: avg=13.89ms min=6.2ms  med=12.53ms max=291.87ms p(90)=19.1ms p(95)=22.23ms
+      { expected_response:true }....: avg=13.89ms min=6.2ms  med=12.53ms max=291.87ms p(90)=19.1ms p(95)=22.23ms
+      { scenario:orders }...........: avg=13.89ms min=6.2ms  med=12.53ms max=291.87ms p(90)=19.1ms p(95)=22.23ms
+    http_req_failed.................: 0.00%     0 out of 3001
+    http_reqs.......................: 3001      23.057351/s
+
+    EXECUTION
+    dropped_iterations..............: 0         0/s
+    iteration_duration..............: avg=55.38ms min=6.33ms med=13.29ms max=1s       p(90)=22.1ms p(95)=42ms   
+    iterations......................: 3131      24.05617/s
+    vus.............................: 1         min=1         max=4        
+    vus_max.........................: 251       min=251       max=251      
+
+    NETWORK
+    data_received...................: 759 kB    5.8 kB/s
+    data_sent.......................: 531 kB    4.1 kB/s
+
+
+

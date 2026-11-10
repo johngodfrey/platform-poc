@@ -1,0 +1,1202 @@
+{
+  "created": 1794269068.6615849,
+  "source_sha256": {
+    "body_check_wasm.js": "61c427b11c2f50aab82111662be68d4f05531608f3cce92740d70b15e35409d7",
+    "orders_wasm.js": "8e5d69abc618df6beae3f8a50c964e2f2c7bfa9c212427d1f4e8fe28b26210d0",
+    "README.md": "9572b5dee438b33f43450904793c0172542ce47636427ddcbfb4441acff20a72",
+    "monitoring/budget/budget.json": "f4072642e4240aee5fa62c2380b16b5c42d3e15c36f327719a53ecb02543d9d0",
+    "monitoring/budget/dashboard.json": "9872e81ff9c96abf5093b12b7f660be50cc11522710008a8a8047503446f700d",
+    "monitoring/budget/test_run.py": "8fb5561503eabef2be964c5785c3c9e6a8338dab35f59b972b0d103c8976214f",
+    "monitoring/budget/run.py": "3b78d4af717bb86930b26b39e3688a7e925574c9ba5c21bb05ad1f7f35dd6158",
+    "monitoring/autoscale/compare.py": "16803611c382a34e4ae984e37d8ed86e419769d9783be0c98d3444928686318d",
+    "monitoring/autoscale/test_compare.py": "ac4461c3f7cb5af035888ea2c7c4bf5a6eb2b2139be7223c67ef4e6015889b64",
+    "monitoring/autoscale/smoke.js": "da8d3bbbc0328ff34724bff7b919105e17d149375a5c35d34cf58c5ecdabd84c",
+    "monitoring/autoscale/load.js": "fe92ad47b40f3e1ff58819cec7bb3d01accd3ac5bf3e845ca01200c3c52feb8d",
+    "monitoring/autoscale/dashboard.json": "6fdf998822360d9c4a206f34eae18a36d9ad56463ded13e8ab929f2f9310ea2b",
+    "monitoring/autoscale/dashboard.py": "ddf7018435c499a5903f82d91affaae8fca538d5615c8a17a8ca580851dc179d",
+    "monitoring/autoscale/test_run.py": "57271c55f358c5fe079e1558cb144ee2eed8dca753cde89e26b847c516c640c0",
+    "monitoring/autoscale/analyse.py": "2f2a193df3c599e64ad4da055a263a73a30de47d0bbec479b7d6a8b7387c8de1",
+    "monitoring/autoscale/run.py": "eaf67b1f390cd6dca906548c40ad8fb22fe44d0febe376ab36c4a7b28f30659b",
+    ".github/workflows/java-containers-k8s.yml": "4319ff185e71f78c32e598b844232c40a65407b9ac2de10415d97340d816e351",
+    ".github/workflows/rust-containers-k8s.yml": "2b17a6eeb766a2b79c38d690f01e38fef9ce8df5509a28720509eadf647da0c3",
+    ".github/workflows/wasm-components.yml": "209f54d5644e020331a3fce562fe2ec300275cc41c2f6fda7e329699f153dfac",
+    "constant_response_wasm.js": "72ac22fab8dda46b1af16d7c43481056d2d9dc9b3f6a3200954a6c73d937895b",
+    "monitoring/scaleout/analyse_phases.py": "f9f1dd70d4a6bceefe2bfc9405fdc1f56fc77ed2a6527eb732193e1fc9ed598c",
+    "monitoring/scaleout/readiness.py": "c939d798efc4378171d70c72a0dfd42c2cf267aa719b8e51a92b5cad4cbe4f14",
+    "monitoring/scaleout/repeat.py": "3e120ede5dd1428fa0258c105a76129ce26435ccfd321df488f288e31c67f009",
+    "monitoring/scaleout/load.js": "8ab80e413a985c37af5eb0d67f2c4bf1e6905c03161d1d74224b605026d57569",
+    "monitoring/scaleout/host_mode.py": "c1c444deb742a510dc0b4736df47c5566413a80763ed40dfe3224fe95289bf6d",
+    "monitoring/scaleout/dashboard.json": "1f97a13991b446f4810f9c568323ce9f949cabcd6a51f56fe402b12afb0d8b52",
+    "monitoring/scaleout/dashboard.py": "1594d5593fb26606b1070f68611a68a2b3347139ebad8e3b5e49099acea4b271",
+    "monitoring/scaleout/test_readiness.py": "4adf206e8f072457317fb3d736b8d8f17dbda7c37551e9b52dd71d5a03cac66a",
+    "monitoring/scaleout/test_run.py": "38d493cb0e8ac53be5c100cb83a54571846679ae17b970d6c55138a131def1df",
+    "monitoring/scaleout/test_host_mode.py": "eddc778ac362bc94648cac7e96e5388db283b111bd8560bf9b9599330e459461",
+    "monitoring/scaleout/run.py": "3bfe6aaa4323b18372a8f9d86ae1333c97e543234d2e5ff5ad139e8362ca5d05",
+    "monitoring/scaleout/test_repeat.py": "1db0b1399ba198b02f754ed9edec6528b468ff505879790d052d2ec87b30520f",
+    "monitoring/scaleout/test_analyse_phases.py": "ce70819bc4fc5dffd58c7057b1144b292c7aabf611a70e062a9d301a7c478b04",
+    "monitoring/scalezero/test_run.py": "045f7ff1baea1e187f5c4a130208b141cfeaeff889af5cae27f3e62487a7230e",
+    "monitoring/scalezero/run.py": "86937d6260adbfe718fc6b1332e189f626d20db5bdb034e4bc70559fa4056a2c",
+    "wasm-components/Cargo.lock": "9da92989e89d2cf1781e866da56cf1d0f5dc834117b8313deaf2aa678fdc6ddc",
+    "monitoring/footprint/install.py": "63d30a1fa54e8e891c91ffc80a4e8cfcbd0acca82bdf3df514bfd04813c587bd",
+    "monitoring/footprint/dashboard.json": "ede6ab5a0f07901f6f5fe42093a4eb7656db38b85e3d4a1c1e0de902a312df07",
+    "monitoring/footprint/resources.json": "e2dd496fadefb834f8bfea3d897e1e4980fcf6aed465cee5e2288cf5e24ba669",
+    "monitoring/footprint/footprint.js": "00a6db0ee093a48fe0ee43884ca16936eddb230496bcb70ed62feffb1b9a2a02",
+    "monitoring/footprint/generate.py": "0df3aec2a598e2e856a6af35de694b08384da5ce0bf9e222d34fd2e15e74b414",
+    "monitoring/footprint/run.py": "b2229d712741c2e7c16559f6ba511209ffa25388b653d197c973b44128847f06",
+    "monitoring/validation/protocol.json": "006fd1c2739a7906413cd4a58082a54ee9a9df333d41dbf073ddbebdc99c27d8",
+    "monitoring/validation/reconstruct_memory.py": "0ec366e38075d3c0a45e55a1c7738d312a31c16ba6de1594370365fdbcf6ae9a",
+    "monitoring/validation/RESULTS.md": "cc62a2a10981030de69323213a79098773f9b73520367197e411fdf5ffa3d993",
+    "monitoring/validation/README.md": "68a92dfc962a504779212df7734647803f0ec24cb3000f8e7d1e044eaf03481a",
+    "monitoring/validation/test_analysis.py": "ce47f3680b1a699d8460c6bce297c286541f287a401c06f8ac9e577a0f5887e8",
+    "monitoring/validation/analyse.py": "ee181fc845694291c586a837d95ef982c04426366ec04b57000e0a3b591600ce",
+    "monitoring/validation/test_validation.py": "4027c4104df7ffab4b1cd125855abce30c655a91cc49b4dbe23984a12ecd0697",
+    "monitoring/validation/run.py": "e6228ec75d79e0e89361cf19f30b5175ba4609287c2367cf5a2a899f969bde71",
+    "monitoring/validation/catalog.py": "d7f56d10e883062f6e8da19d627e662d78df8fd68240307456dd5cbd97731883",
+    "monitoring/capacity/finish_stability.py": "8969f2fa4f46d39e94d02fb14336b97c47baddfdb03cb4d2c5c5b7745067aed9",
+    "monitoring/capacity/test_series.py": "3a8a900abb1fc5e0402b2031e3497db9cd72684fd56c4ef85eadc41de505747f",
+    "monitoring/capacity/test_validate.py": "30a5dbc1c820414e71c5a177729bfd419766f69e1f235ab86cba33f08370142a",
+    "monitoring/capacity/test_summary.py": "4fad3970bce92ecb214777e108e35297a9bd2785c155b9d11d614678f6fb9b95",
+    "monitoring/capacity/run_series.py": "a40ff2ed629d2d0fa3a3f0ad3dd9c8ab09cbc88b1fba42e2cbb16af7361ff812",
+    "monitoring/capacity/RESULTS.md": "9efbeaef74fb8426e8785fff5fa91315db5e3b94e3749b7055cec1970bbd2dce",
+    "monitoring/capacity/validate.py": "df4ea1c52970ee2f99a232dc622139e2beffc721a29de2f44f2628dc1d625e52",
+    "monitoring/capacity/dashboard.json": "5847fe7a42f60ee448fbd975b2e6c56a9bbf7db61a1f17b48457ac7d95e20f0b",
+    "monitoring/capacity/README.md": "359df7066596d3b3a582ec46fb6e30165b343a85a02d8961a367c95301ee7ee0",
+    "monitoring/capacity/VALIDATION_RESULTS.md": "8a1ef09c8bdc08195f2d04c7f22a16f92511395bdaef5902bffea00fe61a2e2e",
+    "monitoring/capacity/collect_stability.py": "be5652269b73a4052ad514b906fa253c20d627e8434126ba8f45d77a243857f9",
+    "monitoring/capacity/summarize.py": "1a54589424164d3ab9014f22fde711968331e16a774aa42524c1a4023e9b6b72",
+    "monitoring/capacity/test_analysis_validation.py": "a0b08a4fd379010c4bed2fddf4b9c391e61328ce4e680fa5f9502d22e9a68755",
+    "monitoring/capacity/test_run.py": "5fa326b16ee9060b95114008500bbe98363e68accde2ecfb253ed64b4ac3033c",
+    "monitoring/capacity/test_finish_stability.py": "006c6d0d766ecd5aedf843e2c2003e7560c49bac1296578918791650a0fd147c",
+    "monitoring/capacity/analyse_validation.py": "095e4a65cc03016a7497846e80960b8761ec25803a523cda9bb1ecbcc8b9f4bf",
+    "monitoring/capacity/run.py": "d95ed7aa143067c9e9ac60358a9857f6814bff2b72861032e9541a91168ccdcc",
+    "wasm-components/Cargo.toml": "cf1bc7c93a00e6ff5fb9dfcf51b2b1f45abf81806b7316470903cbc4b0484700",
+    "monitoring/startup_cache/test_run.py": "7b67d51befa2b9f55a76ee2e540b84571cc0c567226456179c78a870e2787f2f",
+    "monitoring/startup_cache/analyse.py": "010ebf697719d2059812807d72a23bb5926433dae361e378ffe40a1a5c7f5290",
+    "monitoring/startup_cache/run.py": "45fb7bacb0e8be6bac5bb7792fc56013fcb533cef21b8c248a146ec68ea20acf",
+    "wasm-components/inventory-service/src/lib.rs": "e76a46e28304c659df35417fe8c7df730a0865f4f062a77baa5517112b7fdfd3",
+    "wasm-components/inventory-service/wasmcloud.toml": "cc6461499c71723f5ddb50bf93a817058ae52e9275928450df8939dc495837f3",
+    "wasm-components/inventory-service/README.md": "dde48135919702146d621ead4a076cf2df01329433cbc00d6f89d1b6c415e861",
+    "wasm-components/http-controller/src/lib.rs": "bb3fdd3bfe2b9fff77235bfc3fb81345acf6f89804f190bfc070718375c46d69",
+    "wasm-components/http-controller/wasmcloud.lock": "fd6f245e6c99044121b87e2300b21d59e4780697363003aa3c4faa89f0307e43",
+    "wasm-components/http-controller/wasmcloud.toml": "80c67eb6f91b479f3533dcdf15c9a63140f1b92ee1f24a522036a08048457949",
+    "wasm-components/http-controller/README.md": "0f65b3afcd21f7cf2829af5c57b3bf121044b98477e074197dbbce3c8e2e3f61",
+    "wasm-components/data-init/src/lib.rs": "8a28be07304ba58752f409478ccb11346dbaa789447da7c1c4dd1fec56d6685a",
+    "wasm-components/products-service/src/lib.rs": "b3b7fc1b2993443b32aee082074704bc5b87acfb79f3f015d833a9c7bbcefb60",
+    "wasm-components/data-init/wasmcloud.lock": "a0785c6c860e1614545d5516917351abcb0f9afc43ee67e83c0213a8ce9e47ac",
+    "wasm-components/data-init/wasmcloud.toml": "7c088dfb65038dc3622579fad36b0f890ef0892a751b5b566d527221ca21f125",
+    "wasm-components/data-init/README.md": "40ab7eda0d10eaba4555f08da0162482950b5a60c5fc13b3950f6bd0f7cd235f",
+    "wasm-components/notification-service/src/lib.rs": "644ee65d2938e3c2f54d19d8084886c022448eeb6070895058ac23a27d1c545f",
+    "wasm-components/products-service/wasmcloud.lock": "a592f47bb8654914fcd50219ddebff61cc1f17e446f80c8f64e247dfe0ff286e",
+    "wasm-components/products-service/wasmcloud.toml": "b2a9241fa2514f3dc7720d0023946ecbdb401659c59a6389fbf2fa21fec20730",
+    "wasm-components/products-service/README.md": "63bd1a8d67897970a5cf7efb485dca0148efd01521e34e390382b31b84ef58e7",
+    "wasm-components/notification-service/wasmcloud.lock": "da81af773882fcb09dcf734017c80113a5b5bc5b7c57b53b960dba822e893ce6",
+    "wasm-components/notification-service/wasmcloud.toml": "9461a500569939091fe4a428d8e9a1263ae6339da06be21161ac3dc59ce7e25e",
+    "wasm-components/notification-service/README.md": "555234261a2bc154c17a8fcfb22881e9351fad6c5d0b00d2b2542fc251c489ca",
+    "platform-wasmcloud/operator/wadm-values.yaml": "0b041b656c1769cb5384d68d56be16da0ff0053a8584ea96bc9fdbd14379b628",
+    "platform-wasmcloud/operator/wasmcloud-host.yaml": "56e969c01504ccdf085a24a70a7692c857305c3ea13480d50b8c16cf62bce0a0",
+    "platform-wasmcloud/operator/hello-world-application.yaml": "ad2ee231aadc9245e3e253457912b7a1499bfbbe8ef888bdb1bfe9a9bb32d6ad",
+    "platform-wasmcloud/operator/README.md": "98137765c69abaf00c4b737815e7944433742bcece6b14d088f9e5aeb11aff22",
+    "wasm-components/inventory-service/wit/world.wit": "7678d5dd75940fd0baced7e0f33f267c9555f2cfc88adebcbdf5ae17dbad28b8",
+    "wasm-components/inventory-service/wit/inventory.wit": "694f4213441b88be16ae3daf492d929afb9dfc27c17341f81342725cc580289c",
+    "wasm-components/inventory-service/wkg.lock": "b5e93ee5db499e3fbde864b2b690a34488fc80d6e41f655a4b72cf74ea6cd418",
+    "wasm-components/inventory-service/Cargo.toml": "e11530c2dcbf7564f3b7827c2d5967e4bfd0dd91bb2cefd30e5dbb0420f4dc8d",
+    "wasm-components/http-controller/wit/world.wit": "5410d3022f7879a4432b41272c4f9b72dc7339ba2ab75b9a6d559b4cc6fc9aa5",
+    "monitoring/post-restart/README.md": "9eb942bad07ac110368c968ccafecb6de8f641b5b5bcd5abd64b147fe7a28095",
+    "monitoring/post-restart/run.py": "81fa76cbd204d3eb82f197d1f32c693fb8b30b2064b9631ba367530d509681fd",
+    "wasm-components/data-init/wit/data-init.wit": "1f3add89d81733d10013c91a6644a52305e72a884231f45d131d8ad67916920f",
+    "wasm-components/http-controller/Cargo.toml": "a0539c8de6b298ba5795b9af2f819ddac40a72efd2c9503914f8197be494067b",
+    "wasm-components/README.md": "3e9ab5f0c13d32a9cc93b437ca9af38a453bdadaa000f45cd0ecba29f0ff7730",
+    "wasm-components/products-service/Cargo.toml": "0d97f5ccf91e332365be17c7354768d20bb3bf54746efc829c695f4082ad5757",
+    "wasm-components/data-init/wit/world.wit": "8478888c045c81913e3d979e425a1302e2285d920d558e62533494df01c8b139",
+    "wasm-components/data-init/Cargo.toml": "55391bee1d252479fb6bcb2b7cd79afc10d58689cef980d6e57397bea7c560d2",
+    "wasm-components/notification-service/Cargo.toml": "38606b61b84c66f4b5de722a4c43ea6d74d3c77b4dfe33dc0bf018c21b30d9bb",
+    "wasm-components/notification-service/wit/world.wit": "3ad6514e10edd92d86b5719082eea49f7ddc53b4e3b618fec0d554b556606593",
+    "platform-wasmcloud/wadm.yaml": "f45ff8432bdb54f3c8d9a9cdc2e2764b0fe23a62bebd0f92dd8c0387d300409f",
+    "platform-wasmcloud/stop.fish": "92ba2afe895854f91bcf08053fef867da5e743c8db221bac2cdea0c7b0b6d396",
+    "platform-wasmcloud/build.fish": "b60f07b57863231e6b18b4354a5325829e9722aa53e570b91efefbadba27cc88",
+    "platform-wasmcloud/restart.fish": "782ba2068e32d65464992e3589377805999193fdf9a3dcaddffc72ca91a9e6dd",
+    "platform-wasmcloud/start.fish": "ec428c0e954762524a3e2732dcfff5878fb9ae84d1b5a21e566edc025eb5fb19",
+    "platform-wasmcloud/operator/nats-values.yaml": "ac0e22432d6f8bfbcca9135ccec3a7413162980caf9511b24625d11ebe3372a0",
+    "java-containers-k8s/README.md": "f2b6bcda8462b982c470e0b5953c62b21d00d84e9cd41268a64499976177e20f",
+    "wasm-components/products-service/wit/products.wit": "34db62f32c96ca8bd1dca94ae4d61439208780c2981b26acc0e5e5f070274931",
+    "wasm-components/products-service/wit/world.wit": "dd52c8109911d61612afdacfc489eaf22363aee89e0c15a12e4df55992ab7d1c",
+    "wasm-components/scripts/clean.fish": "6cb8dd1e4f563ff8d8c2923b7676589a1b50a230e50545b7a74f1ade909fd19a",
+    "wasm-components/scripts/update_deps.fish": "47d564d9494709bad994d24b0398a82bee7e8ab245b9ea684d9a072461b9ff6f",
+    "wasm-components/scripts/test.fish": "0e4435c6b2a4ce2d43eb83b2410533fd6bf30d3646dd915dbc413515e2ef6622",
+    "wasm-components/orders-service/Cargo.toml": "3660888d21b29e8a968f9c45a22a35771aa7776e5c2174f83219f0cb8ec6d5e5",
+    "wasm-components/orders-service/wasmcloud.toml": "20e161fc4ddaccb6ecee560955297a63b252dc6524e43b15beba65da059f6154",
+    "wasm-components/orders-service/README.md": "d08dd7ff99f9b37dc5c0dda5fcb2e9bfc5b32cc99b5414487a630b250b0ba9b1",
+    "wasm-components/orders-service/wasmcloud.lock": "ba01bb8648464d50d451ef257c7d4dc45907370a3f1e02bfc5f835db52062fa3",
+    "platform-wasmcloud/local/up.fish": "1940da3d025af9f98e274b6b0f4bc0ede93353e5ef9806eb86096da2aeeb7a48",
+    "platform-wasmcloud/local/down.fish": "0daba87340f74284b5df4cc04e0aea59cce8a8dfea23691b76fc651ede0d9601",
+    "platform-wasmcloud/README.md": "037df5607044f5c6094b961c91e11ce198afe341f1f565d4aa8985d00f7681a3",
+    "platform-wasmcloud/build_and_push.fish": "4cbaf6da35654e0f595b5c83355d0c31cd94be90a0b78c6dac9aee17f929ccbf",
+    "wasm-components/orders-service/wit/orders.wit": "8c637ab8c83601363fe604cface2fc69697da83c6120cfbbc557e94f921b0fa4",
+    "wasm-components/orders-service/wit/world.wit": "bc744caf1092deb30a7c66293b0eca4d422b1d5a51dcba2bdf9f30679c0b03ff",
+    "wasm-components/orders-service/src/lib.rs": "7cd73adb306b53956e53b4609342a8bc6067bb8677c7b2e44e0553df21c6863e",
+    "java-containers-k8s/inventory-service/benchmark.fish": "1c10df9737994aeb6a65843a9f4d78c509bb33c74dd136cc75b5be21243f435c",
+    "java-containers-k8s/inventory-service/run.fish": "32ec358c8ed1ab7d1d60ac2b72c4e1678dc4cd7aab0ebfb672b17f38ee99b967",
+    "platform-wasmcloud/operator/deploy/base/namespace.yaml": "b687b133452590cb8d5405318bb8e8901df395429b895b161f6a404ff2a2072c",
+    "platform-wasmcloud/operator/deploy/base/kustomization.yaml": "12bf4ad996593a853c43a1aa63a0fc8784b37fdff1896427647ea6d732df5905",
+    "platform-wasmcloud/operator/deploy/base/deployment.yaml": "50124593b814e0193db9c31958a09bfa475fbcdee4b10487639c85ff633c1728",
+    "rust-containers-k8s/inventory-service/Dockerfile": "80aaa01c8448e332bbdfbf410f4de675d1f66f20657d969940c8929f7fa20a6c",
+    "rust-containers-k8s/inventory-service/benchmark.fish": "1c10df9737994aeb6a65843a9f4d78c509bb33c74dd136cc75b5be21243f435c",
+    "platform-wasmcloud/operator/deploy/local/kustomization.yaml": "122b527d06c990274152a7763e49e5cfac1b1f8122bf1707a18923af0617ede7",
+    "platform-wasmcloud/operator/deploy/local/local-registry.yaml": "b8a56c52df6a7a8fcaac903910e29a35442466d66ebf7d2e11b32dfd2d9ef0db",
+    "presentations/sustainable-computing/slide-content.json": "9e1adfcf57fc0317baa85cf33f89bc7d600677d27272b7e6aed3abadb89f3c01",
+    "presentations/sustainable-computing/README.md": "c97df42869bda6c6c24dfba4c759a3f43a330cf559bd9bd4e9fb712666269559",
+    "presentations/sustainable-computing/evidence-manifest.json": "b78a121a313a30c23d555aad9767b60ad870ac5ca329a3e3c6c5671736662c1e",
+    "presentations/sustainable-computing/build_deck.py": "b13b3d970fa8facfc5b06072a5ffff5b2ac43fa7c8c20c91857d229ea3c81bc7",
+    "rust-containers-k8s/inventory-service/run.fish": "d079422c7eea2150ca3b6634137dace853c7dc13e98c0168845b5e7705a84fcd",
+    "rust-containers-k8s/inventory-service/Cargo.lock": "606ae0190bcc912fa7096170de184ef73a5ff89484056c3c94f211efb7c1f9ed",
+    "platform-wasmcloud/benchmark.fish": "86456ad9565e866536550532209596fe2424de716155d5ef9400551d5d0b67c0",
+    "orders_java.js": "a3affa16fd531eb33aafd2c00c9ac0a6332c98ddaa4b9d3b7ff461199b8d2c43",
+    "rust-containers-k8s/.sqlx/query-6bf59dda6e5db7bc3235366cb1a42a3e76b37bc85086fb71c1944d9d8bb5a38c.json": "78a10704d13b3f8c74d54e13fe5cc1fba0e423a293284306af73cfc6a9aec42a",
+    "rust-containers-k8s/.sqlx/query-e397a801966d47a99b0b3b109458f1f538bea67b3adb2e82304f7d4278b5225f.json": "00b162b7b2b22c2b98d2b31efef1330a1302f3fce7c1b95213b60fd828fb6b1f",
+    "rust-containers-k8s/.sqlx/query-bc8c39e428aaaa676dac2880288bfe7a855116c8f87b0a0f00c480e4a068813f.json": "766da34f292353b858416a53e3584d95128375474fa938707a9ff9a6d1456415",
+    "rust-containers-k8s/.sqlx/query-ec32a82d65e640cdf1ce55786cbbb431943ce608a6446e516da346adb93e2733.json": "8ad33e188271a3070208d9a4ab1de1273d2419d66177e6ca4d96a9c67882e6d8",
+    "rust-containers-k8s/.sqlx/query-c7a82e107f3866d3fde4cb2fcf3a09ff19ae059d236feddb3578aa4b0ce74163.json": "faa6ebfd00d3fc3ff0318bfb1a6a33d335207ac275e2196a37b730fcb9181ded",
+    "rust-containers-k8s/docker-build.fish": "37d2c75520536c306ceda8a40ec3f8947f083ea0b5f41defca8a0102d5977767",
+    "rust-containers-k8s/inventory-service/Cargo.toml": "e058f5d322f193006a2231386c4d5659d305320cb973d2df66d4420ff9c1cde4",
+    "platform-wasmcloud/experiments/transport-registration/prepare.py": "33af295d0d9e8c3a17fec3ad1a9247f973a7531cb66f147f956624aea0d9b548",
+    "platform-wasmcloud/experiments/transport-registration/test.py": "5af364d613ae130d8f68f59d853dfb4cf9a666c4835fcf42ce8531495923db0f",
+    "platform-wasmcloud/k3d/create.fish": "c83e16b755333f0b13bf771181e2345bcfc4d3eb41deb8da63e55d5752aae5f3",
+    "platform-wasmcloud/k3d/up.fish": "ecd5da734aeeae86eee8fd5c83cf347ed1bb5dbc1d7f69d03b26544e4e7eab0e",
+    "platform-wasmcloud/k3d/publish-transport.fish": "1ef304ea82980cd87d0772398e15090814067e5be0fa7b046fdaa5cd6255a9fe",
+    "platform-wasmcloud/k3d/wasmcloud-host.yaml": "8e7d4d9fac962ccb0e6cd40d4e57f1b20ab247ad6dd7d5b4827d809c4a275b9e",
+    "platform-wasmcloud/k3d/wadm.yaml": "1976b0906be5ab2e25dd84cfa860df92c4369e4f915d1abb1903f79a2c4c9590",
+    "platform-wasmcloud/k3d/undeploy.fish": "3599c4fa534f4e08745e81c6e78d258a6f3fccb7bb038a43e463bdbb34ec092b",
+    "platform-wasmcloud/k3d/README.md": "2d8aff48dd5f1c826ab338779c21c09d267169fbeb3c5954d24208969479d2a0",
+    "platform-wasmcloud/k3d/render-application.py": "b46f4d81f47113fd4ac467606eb0b366321459c5b2d2f4acf1b55d82ee0491f9",
+    "platform-wasmcloud/k3d/down.fish": "cc006588e6a5b474570a324580b97d93f120c88ef81ef98706400a8c11b9e7a8",
+    "platform-wasmcloud/k3d/expose-http.fish": "b2e40eb115dcfb08716ab3cc2f9e5d5ddc41846263233ba15487ce8fb98e6dd8",
+    "platform-wasmcloud/k3d/install-operator.fish": "0d147966359a502a9f59d23aeefa653e8303c220f6c1c8ae3227f274f37f4e16",
+    "platform-wasmcloud/k3d/ingress.yaml": "d9c046a083d04608efcf3ba3d5ffd5a3e2898d1affcaa10215bbac851b26b047",
+    "platform-wasmcloud/k3d/deploy.fish": "63702ee130c7daeb4d80c1b8558ccd71967bde5fc9d239577da8c55748705bb7",
+    "platform-wasmcloud/k3d/platform-values.yaml": "a5ffe45200b754dcfd6bd80d559860a8d057d85bd9b6959eeef1e6a0b010abbe",
+    "platform-wasmcloud/k3d/http-service.yaml": "23adbe11ce7fa689ac6f667cf77947abf201daba2d467164127077e128c41a78",
+    "platform-wasmcloud/k3d/configure-host.fish": "997e26031471dd59c4a2cb27ae5f94016af8c09e429eefa59432ea24bc6cfeed",
+    "platform-wasmcloud/k3d/destroy.fish": "19670218d966607bd6d666ccb8ff49ff1a82be7cd3e999460019e73f14752380",
+    "platform-wasmcloud/k3d/test.fish": "4f8a1a32191a22bf4f5be3e8d2c7826764b4a3b7d40d4c96c2938ea94902a26e",
+    "platform-wasmcloud/k3d/benchmark.fish": "8c2bba6ad8dff3a32de2dcfa3fee5094bf2e5e157660b94776e11c6b59709776",
+    "platform-wasmcloud/experiments/transport-registration/patches/wrpc-transport-nats-0.27.1.patch": "0e6b17274279041d9cfaca1100daeb3ca5e55fca26e4b4ebf9db26341089154c",
+    "platform-wasmcloud/experiments/transport-registration/patches/wrpc-transport-nats-0.29.0.patch": "f1f43de8321a882ec350ab218ca8eab3c36bcd1027c0797d77af8c3826c4120d",
+    "platform-wasmcloud/experiments/transport-registration/Dockerfile": "ba14f3ebf414b1592e7a15f6b013dd933701300f447f8220f2aca4072dd80453",
+    "platform-wasmcloud/experiments/transport-registration/registration_stress.rs": "01dafa642dddeb857f7e1167357ff6a16f259557f81370cd0a3577a4f121577c",
+    "monitoring/density/load.js": "0d06094093b9d5e6ad9eedab43497a710bc099edb9f889482d6eb25f96829893",
+    "monitoring/density/dashboard.json": "d2da31da05302180a135af4b976e0ee86154380f21bc477ddb0209a13c7ac93c",
+    "monitoring/density/dashboard.py": "c599e5ea5f762ea74b8b049f0080ecc153d2456074ede86025ae1b4b4a1d131a",
+    "monitoring/density/test_run.py": "4f4f4640517edf894f35bdd436d7c7e4018ade6f64075a05fcea54a7304eeebd",
+    "monitoring/density/run.py": "dee800634a4118e39df168f8197ae1b6bb6560ce09d78e592564e81e3851f8d1",
+    "java-containers-k8s/notification-service/run.fish": "1fae61502c6ad3968b79cb7bd7e2978e95f9be9268b9b52b1d023a0dae439e72",
+    "java-containers-k8s/order-service/benchmark.fish": "754a5fa5beffab70db4bad25a887cb054842ab60aefdeaa272925b5a56a845f2",
+    "java-containers-k8s/order-service/run.fish": "1e0e9b80c02035629784690a47be2220d7e200e30a6a9ae758d34e51cee534e8",
+    "platform-wasmcloud/google/scripts/provision.fish": "2bded3b65368854774126cb22c649e6d7bb3bf7b542df2f9918ae93aee687ea0",
+    "platform-wasmcloud/google/scripts/destroy.fish": "996c2299cc8e10196f3c5d68f8b8069bb418519d06f67b44e688db83f1748e30",
+    "platform-wasmcloud/google/README.md": "5ececf4c8df4cc3cd57b63eb6670826dafcefdd79b0b3cb23d1aaaa3b848606a",
+    "rust-containers-k8s/order-service/src/model.rs": "303307bf42e1bd4d08a360f0fc1222103925956dddbbd7e706a365bc785ef9ea",
+    "java-containers-k8s/kubernetes/local_k3d/create.fish": "de8d002fe7685372d98c4fa6d59332f635909e36b8c80c5e11a442e47fdf3bd4",
+    "java-containers-k8s/kubernetes/local_k3d/up.fish": "2aff4bb16aa65b990ac70d5e636c6392c57de80b548630d3baf80cff85f16f25",
+    "java-containers-k8s/kubernetes/local_k3d/migrate-namespace.fish": "c5c4451a76d8361c59723c4d31ca845b83abbc47c5db22abaee74946897eb5eb",
+    "java-containers-k8s/kubernetes/local_k3d/undeploy.fish": "be67785fccb3db8d3f2f57d87c2fbcfcf6fe917b285d57d5663dd14472b3a329",
+    "java-containers-k8s/kubernetes/local_k3d/build.fish": "f2f898c1538922633795318ef00a6b8cc20db72d09bf45e32d3c7c1d332b8e92",
+    "java-containers-k8s/kubernetes/local_k3d/README.md": "48f8ca5a3dae54a1975845cc0d2895ca6ac57e1bcd0c43fb0c7c955b7ad4c897",
+    "java-containers-k8s/kubernetes/local_k3d/down.fish": "d90660d722a60499f434b8ae7da8e3006c2a95f40bd00e2c8e9c10efd94d9f64",
+    "java-containers-k8s/kubernetes/local_k3d/deploy.fish": "fb0eda7c91e22242c35af4ae21f07f0c303786646ec9ccb6bd190c91e1705a0b",
+    "java-containers-k8s/kubernetes/local_k3d/destroy.fish": "19670218d966607bd6d666ccb8ff49ff1a82be7cd3e999460019e73f14752380",
+    "java-containers-k8s/kubernetes/local_k3d/test.fish": "10254d56849a3a50a1ac163fde7be095d4a6e3c34c8356b67c15663386dd2da3",
+    "rust-containers-k8s/order-service/src/api/mod.rs": "09121bf2807c94e2b175cd8ae942f812dc598c6c8663b9639bdcc49296256312",
+    "rust-containers-k8s/order-service/src/api/server.rs": "7b57f406a3a41d8b45273f3d4b63b9d813b181aecf03e9488dc5af59bd673195",
+    "rust-containers-k8s/order-service/src/api/types.rs": "e2560787de8cec74071c410714f4a1bab45b03ef065915c4076d98aed3938f36",
+    "rust-containers-k8s/order-service/src/api/handlers.rs": "f234ef73302b8e09dfc6078f728dc1bc8dc34909fbe9e0937e25671180f5504f",
+    "rust-containers-k8s/order-service/src/main.rs": "1324bed9500d73d722ccf1120841af7e82ef7693829c31448a027e1bc0aac02d",
+    "rust-containers-k8s/order-service/src/lib.rs": "53dec61fa152f179b6c4ec31d440617089d3879d95b3b9a2e765293d61412522",
+    "rust-containers-k8s/order-service/src/config.rs": "652888de7cf94a361426543084d238ea74e9acfba4a28411c89dbbf9de5b76ed",
+    "rust-containers-k8s/order-service/run.fish": "a47dd026ffb54712dafdab3029d8b91f4737c8ca8a5fe7fb0a7fece0281d1ab2",
+    "rust-containers-k8s/order-service/Cargo.lock": "9e47660673be4612c7fde06be7334109418df30bf571e17265ab54348fb001d3",
+    "rust-containers-k8s/order-service/Dockerfile": "b69ec8aeffd16d7db8a9a44cb09cbf68d163d10bf2930217f3f803cc559f4e0c",
+    "rust-containers-k8s/order-service/benchmark.fish": "15e80a639ec2eb9a203debd76efbc688e2b6840f4e7b3459885de859d1776d58",
+    "java-containers-k8s/kubernetes/manifests/base/product.yaml": "f46b4cd3935828bd7e7ba6af55493b852c90418157995e0e346beb4d9da23aea",
+    "java-containers-k8s/kubernetes/manifests/base/inventory.yaml": "866aaca073d5a74da6334600189cd1888d649ad6f5ca969bd25b0f88885bbf29",
+    "java-containers-k8s/kubernetes/manifests/base/order.yaml": "cfb6981d4d66dae31292153aba77ebacfe930f16519e476fbe0b95b6505a9d69",
+    "java-containers-k8s/kubernetes/manifests/base/notification.yaml": "83675be9f68c88af0f3f4d2f87997d9ca8cfd1b9b6f0275522921ef2938329d3",
+    "java-containers-k8s/kubernetes/manifests/base/kustomization.yaml": "8a464a34ec2ed765d970a42b0a48063a126f8c5e0189f64d5659e96cbef58077",
+    "java-containers-k8s/kubernetes/manifests/kustomization.yaml": "7887417d2577c00808fbdd272e0dd28cfab2cf2f49bb5e5c948fcb0a14d31500",
+    "rust-containers-k8s/order-service/Cargo.toml": "098f12f9933ae73b1cd27c4886e4787252cab98744662323389d6fa2d63cd5e8",
+    "rust-containers-k8s/README.md": "d2d022079367687812f7235bcee1bd26a1ad476c8ec1ed7b6cb64da52062332c",
+    "rust-containers-k8s/Cargo.lock": "ed77db765ee4ab2ea833d259f428bfae4df419f34156ccc271e786319b2e4eb6",
+    "rust-containers-k8s/inventory-service/src/lib.rs": "642adf47abbb0d2a47c76648dcb81c4bbe8c91586b284080142bd0aeb3a2ae13",
+    "rust-containers-k8s/inventory-service/src/config.rs": "ae667976961fa716ecea6d685f2ab2a9b6cee554c9dc03f421b25f0ff84f989b",
+    "rust-containers-k8s/inventory-service/src/main.rs": "084cb2799d227c4cdabde44741daff42c434acc6afea67aaa4fd8077d1e931f4",
+    "rust-containers-k8s/notification-service/Dockerfile": "1f2bfe5ae32f5a7cdb39378321932d64d348011ee9340d208264ae7edad20893",
+    "rust-containers-k8s/notification-service/Cargo.toml": "1660ee937320e98f30dadc61d8fd70e89bf5a1e8a9dbe79505b4d80ea1a7fef4",
+    "rust-containers-k8s/Cargo.toml": "349c5ce04b841be1e10eff0089595944749f904c638b2e4d28c5c00919a842af",
+    "rust-containers-k8s/notification-service/run.fish": "82c241cc1c2b24ee2283f39610653a1b869d189777ecd280de2626aa1d60c906",
+    "rust-containers-k8s/notification-service/Cargo.lock": "e9847a0622281e6c2c1277b8061dfaaedc9184ba56f8c59db1af0e7d6eb72678",
+    "rust-containers-k8s/kubernetes/manifests/kustomization.yaml": "7887417d2577c00808fbdd272e0dd28cfab2cf2f49bb5e5c948fcb0a14d31500",
+    "java-containers-k8s/product-service/benchmark.fish": "d2c9c7c691a7ececec2e12cbe8598bfcac8ea8ab7c39b44b35f15d8f073ac38a",
+    "java-containers-k8s/product-service/run.fish": "a7d832b2fc3750640909b7978241ae6fcafe43fe5436f1b4ad690ba7c270338b",
+    "java-containers-k8s/kubernetes/manifests/overlays/local/product.yaml": "47078e3f60ceab623cf22054f620b2eb471e8ae2c0bb5df4e99601c5d9ee84ae",
+    "java-containers-k8s/kubernetes/manifests/overlays/local/inventory.yaml": "5687d04e485bb1f7cedf76d79ad97ca187d887531609e3dc9c45e202b7b2c35b",
+    "java-containers-k8s/kubernetes/manifests/overlays/local/order.yaml": "c7936569dadd8837ebebff9b7f98ab9bc67a62eb0d7edc63b01db67de28a1ceb",
+    "java-containers-k8s/kubernetes/manifests/overlays/local/notification.yaml": "8f406114138a69975c7e94e85eecfb15ce6ec9d138447c014fddcc6b35e7347a",
+    "java-containers-k8s/kubernetes/manifests/overlays/local/namespace.yaml": "164865ff216f324762f36e1790387fa58e9d48c7eae05a5e55933a54b8cc2def",
+    "java-containers-k8s/kubernetes/manifests/overlays/local/kustomization.yaml": "5162584dc513a3744d8a0b77082179efd0196e45615c15b0d7d5480ea9c0363a",
+    "rust-containers-k8s/inventory-service/src/api/mod.rs": "09121bf2807c94e2b175cd8ae942f812dc598c6c8663b9639bdcc49296256312",
+    "rust-containers-k8s/inventory-service/src/api/server.rs": "4463ce38927b897b781ddd47a59a315ad86c7e7974089ffc205e5c6886c4ac3e",
+    "rust-containers-k8s/inventory-service/src/api/types.rs": "fef8e2245a18b18fe071eee9298540c1e0b0b43449183b9d89f360a055c2bbe2",
+    "rust-containers-k8s/inventory-service/src/api/handlers.rs": "d6e25f27a5dd904911647959d4a92639489ffad3192e2ef92887acf3a5559d4c",
+    "rust-containers-k8s/product-service/Cargo.lock": "bebb60f808938fe28746bfc1448fdc63f920d78964b457bdb0dc5728735e03f8",
+    "rust-containers-k8s/product-service/Dockerfile": "d5b1e2175da0f51749e2c05c6a799cf4cde63ca1e393474115897809366b4b33",
+    "rust-containers-k8s/product-service/benchmark.fish": "d2c9c7c691a7ececec2e12cbe8598bfcac8ea8ab7c39b44b35f15d8f073ac38a",
+    "rust-containers-k8s/product-service/Cargo.toml": "ceb91dc720922b82bd3dc3b2c86878846c3f216a41115d4fed3994d20cd2c6d0",
+    "rust-containers-k8s/product-service/run.fish": "3354bcb12d0c5a1781a8b3b067f954fd60fb04433de19620501bd721686010ac",
+    "rust-containers-k8s/notification-service/src/main.rs": "a4d8bf1dafa32b35c01d53f9648ad96870b1b46b701a9d17e15f2d016f10adbc",
+    "rust-containers-k8s/notification-service/src/server.rs": "ef6d2555f91ac14e39a7e28a9ac9617abdbf3f35e0b6bd3f4c7cd228c9c83b01",
+    "rust-containers-k8s/notification-service/src/lib.rs": "c5a77b6859dad72edff13117ff30a32597451dc94fd29da6b2f6bc76a92b8b2f",
+    "rust-containers-k8s/notification-service/src/config.rs": "7cf93244a73934b1779d328228315a2bfb063ba304562b4d9fc0993f798fb722",
+    "rust-containers-k8s/notification-service/src/core.rs": "511481295b0e28254cf958190943d5db170d8cdebabba2b6ff31c7872b45eebe",
+    "rust-containers-k8s/kubernetes/manifests/base/notification.yaml": "9acc642f4a12e4b2b8e7b001b8e36f080d4513e716655c6cb582b7591586ad8e",
+    "rust-containers-k8s/kubernetes/manifests/base/kustomization.yaml": "8a464a34ec2ed765d970a42b0a48063a126f8c5e0189f64d5659e96cbef58077",
+    "rust-containers-k8s/kubernetes/manifests/base/order.yaml": "1cebffe35cd13fd70562d93e335709814a1633ef1e1854917f1aa49baf08a581",
+    "rust-containers-k8s/kubernetes/manifests/base/inventory.yaml": "bf1c372876fd0f0f488ca2f077eecfde2ffd4af035c795a23054488af1ce9774",
+    "rust-containers-k8s/kubernetes/manifests/base/product.yaml": "b8cc91aae1b3129f75ecd8730f09e4f5970da96f13f8dd467c737deb33d0bf1c",
+    "rust-containers-k8s/kubernetes/local_k3d/create.fish": "dc7866d7d27536f42bddbd798b365ab54e50df0b44860e7275766719561a4f75",
+    "rust-containers-k8s/kubernetes/local_k3d/up.fish": "2aff4bb16aa65b990ac70d5e636c6392c57de80b548630d3baf80cff85f16f25",
+    "rust-containers-k8s/kubernetes/local_k3d/undeploy.fish": "ba6b665d7e6b36383b131802d3138a12f6d602511ca384fb5ef2c72dc0b67cab",
+    "rust-containers-k8s/kubernetes/local_k3d/build.fish": "c24ebee007fa28b8fd4b78f5ffec4372fb9079c0d4c656f95c24915b0c8cebd9",
+    "rust-containers-k8s/kubernetes/local_k3d/README.md": "18726f5e7023ebe2a668e05bc9801edb74b67159cdfc0ae00c2d16889109b4ff",
+    "rust-containers-k8s/kubernetes/local_k3d/down.fish": "d90660d722a60499f434b8ae7da8e3006c2a95f40bd00e2c8e9c10efd94d9f64",
+    "rust-containers-k8s/kubernetes/local_k3d/deploy.fish": "da7ad052b295c8d95f14d776ae0a05e9f7ec0478c0d7516a2770046ec30fd13f",
+    "rust-containers-k8s/kubernetes/local_k3d/destroy.fish": "19670218d966607bd6d666ccb8ff49ff1a82be7cd3e999460019e73f14752380",
+    "rust-containers-k8s/kubernetes/local_k3d/test.fish": "d674054c37b3de08cd5dfd50b8bc54ea3a1d8f4973c395ca80ef608a49ceb3dd",
+    "rust-containers-k8s/product-service/src/lib.rs": "642adf47abbb0d2a47c76648dcb81c4bbe8c91586b284080142bd0aeb3a2ae13",
+    "rust-containers-k8s/product-service/src/config.rs": "bd81121cf2986bea0ea871f66305f811804f7b5adbaf2ac649ffba910a99a36e",
+    "rust-containers-k8s/product-service/src/main.rs": "a6dbac8fc99526cac4fca0136efef1b9d3f8d9bbf4fcb48c6f34b3d3bde4560f",
+    "rust-containers-k8s/kubernetes/manifests/overlays/local/kustomization.yaml": "a3ccbd59879530be1cf762345b3a13435fbf65285efd150a3ab7770c67fff8e4",
+    "rust-containers-k8s/kubernetes/manifests/overlays/local/notification.yaml": "b3ff34b00badc7bf28aa270f01663a5c36299366194a6dba91abfeb71bb575b9",
+    "rust-containers-k8s/kubernetes/manifests/overlays/local/order.yaml": "088c00fa9ca69f37774efa63627b58ccc31ed6135cca3f4f449bc9d3fc1a45a2",
+    "rust-containers-k8s/kubernetes/manifests/overlays/local/inventory.yaml": "fdf1bc0ee1ac7ee4bf2e4c9fb6dee6d280113b651f3804384e28dafa8d3cc697",
+    "rust-containers-k8s/kubernetes/manifests/overlays/local/product.yaml": "ef3611fdf270aef3047d4533d8e671554e0f9bfe71436494b4e1dba1053829c4",
+    "rust-containers-k8s/product-service/src/api/mod.rs": "7f36de62577918c7529d2fe2d5293d5fa74564eb92068cecbfbd46ec66f3377e",
+    "rust-containers-k8s/product-service/src/api/server.rs": "36a19b882f4f0ee63f8fd25f18893ccc9ff65e8c977619dbb54cf5179c17f630",
+    "rust-containers-k8s/product-service/src/api/types.rs": "bcc21f960488e1f6903a46f85d5ac79eca8a2248e2d35bd6d584b2e53ef2f059",
+    "rust-containers-k8s/product-service/src/api/core.rs": "d24041cf4db5773979ac127a39f22f04626667174d4fb80be7fa81cd549d5020"
+  },
+  "controls": {
+    "java/secrets": "4a61ffa087d23aa497d92dc25335ae847bcb66701d8949f7b6f21609f125ba9e",
+    "java/configmaps": "57effd9d2a84e79ad201f02536afd9fb40ff969dda23151e8e2cd5927c14a7aa",
+    "wasm/secrets": "633ce834bf85a0fa09656429fdab3bfb8cfe10ec717d01157d805d28d61ce3e3",
+    "wasm/configmaps": "240f09edb43c422804d8175e2a95776352fe69bec6237c8779f6135797f7aa2f",
+    "application_spec": "1c90bda904dc0d369cc2734690cc8ce3e02f4cae01015b75201e07904e079215",
+    "wasm/deployments": "21f1858d6966f1e0c15a22cf05c651348d1c8f8844b8ea941a5946e153b414e2",
+    "wasm/statefulsets": "1b45fd416fb2aa1e8db053b19bde36be06585eeb7f1eac219953c3bb0c2458a5",
+    "monitoring/deployments": "7af64ca8518279d2082a4a8231cea94dacbf55535637984ac3b7aef75416d877",
+    "monitoring/configmaps": "4f037f79de20165dfda0fa9fcb9b410687b192a2894543aa840dc2b5e2e2c904",
+    "java/services": "e21a54fe31f87c40d8754844b00d27b92568a9a0f5b9c7ec3de633e4fee8d28b",
+    "java/ingresses": "d48dcbf38d43102ca7a413371e85cf7431c681b58b292b71646dee33b02434e3",
+    "wasm/services": "6fb5903062552cc1263fcb367e96df21e623475c75d14ace47d499de03497140",
+    "wasm/ingresses": "e40aa9a05037259659caf4cd1277168261aa4220a70122afb7d3853431a27413"
+  },
+  "git_head": "84f205c898ca6706b59fe3427fc528f56922a943",
+  "git_status": " M README.md\n M orders_java.js\n M orders_wasm.js\n?? .DS_Store\n?? monitoring/post-restart/\n?? presentations/\n",
+  "records": [
+    {
+      "namespace": "java",
+      "name": "inventory-service",
+      "uid": "67d70f45-7618-4d59-8bf8-e894ba1f8cae",
+      "template_hash": "69308c02de3f6917de96e5e0f6143ed49363b7222f2dd65899675630f38686f1",
+      "images": {
+        "inventory-service": "k3d-platform-poc.localhost:5001/platform-poc-java/inventory-service@sha256:5d5881d87dfa7f0b30cc66bfedf448561b5606ced23076f82ee75fddc31414e8"
+      }
+    },
+    {
+      "namespace": "java",
+      "name": "notification-service",
+      "uid": "d421d6ea-a8a0-4108-ba28-6a7043e769d8",
+      "template_hash": "cd9f84cd8ae2c5829815ff19e8ebb6164b77c3329bb4fb7ae49c5c0405b6fa4f",
+      "images": {
+        "notification-service": "k3d-platform-poc.localhost:5001/platform-poc-java/notification-service@sha256:ea762fcbfd7551ef8b2d0f8d2c387c56d6e300e2eb1123c1a6864c9cdf10eb30"
+      }
+    },
+    {
+      "namespace": "java",
+      "name": "order-service",
+      "uid": "2371863a-c026-4023-8b73-542b37d2beb5",
+      "template_hash": "5cae0bc8af71b26fa5af1546f3791cc5ce8612a12f6c5d56e900762d77352ce7",
+      "images": {
+        "order-service": "k3d-platform-poc.localhost:5001/platform-poc-java/order-service@sha256:8b559e640cef3aecaf69920404617394ee573c50ece3f4ca943b8baa88f74110"
+      }
+    },
+    {
+      "namespace": "java",
+      "name": "product-service",
+      "uid": "ea963967-6311-4eb6-a38c-d6ee8a2cd708",
+      "template_hash": "4ea1864cc60e85f9a36636481cb77aafb2b2d074fd517919d1ee1cca819a186d",
+      "images": {
+        "product-service": "k3d-platform-poc.localhost:5001/platform-poc-java/product-service@sha256:c5302fa0aef01bfe70614d5e373ac848e564f60bdbf1d8e8b6dfcb617a89bbae"
+      }
+    },
+    {
+      "namespace": "wasm",
+      "name": "wasmcloud-host",
+      "uid": "8f943c2b-4316-4495-8dc9-a05981d6dabf",
+      "template_hash": "d13c27faf0bb0d38c32858e0d362dd3342f1ce8c91de1bb601d08a70b9e95306",
+      "images": {
+        "nats-leaf": "docker.io/library/nats@sha256:b83efabe3e7def1e0a4a31ec6e078999bb17c80363f881df35edc70fcb6bb927",
+        "wasmcloud-host": "sha256:a22906face539085647ef862bed734e95c05ba6882d870528b92ea4af1b79ea6"
+      }
+    }
+  ],
+  "hostconfig_hash": "9df0babf6480fdcb2597aab75a096debaa93ef187c989cfebe3b55e5cc994bfd",
+  "component_counts": {
+    "data-init": 1,
+    "products-service": 1,
+    "orders-service": 10,
+    "notification-service": 1,
+    "inventory-service": 10,
+    "http-controller": 10
+  },
+  "providers": [
+    "kv-redis",
+    "nats",
+    "http-server",
+    "sqldb-postgres"
+  ],
+  "power": {
+    "power": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=38797411)\t100%; charged; 0:00 remaining present: true\n",
+    "lid_open": true
+  },
+  "application_images": [
+    {
+      "name": "data-init",
+      "type": "component",
+      "image": "host.docker.internal:5001/v2/platform-poc/data_init:0.1.0"
+    },
+    {
+      "name": "http-controller",
+      "type": "component",
+      "image": "host.docker.internal:5001/v2/platform-poc/http_controller:0.1.3"
+    },
+    {
+      "name": "products-service",
+      "type": "component",
+      "image": "host.docker.internal:5001/v2/platform-poc/products_service:0.1.0"
+    },
+    {
+      "name": "inventory-service",
+      "type": "component",
+      "image": "host.docker.internal:5001/v2/platform-poc/inventory_service:0.1.0"
+    },
+    {
+      "name": "notification-service",
+      "type": "component",
+      "image": "host.docker.internal:5001/v2/platform-poc/notification_service:0.1.0"
+    },
+    {
+      "name": "orders-service",
+      "type": "component",
+      "image": "host.docker.internal:5001/v2/platform-poc/orders_service:0.1.0"
+    },
+    {
+      "name": "http-server",
+      "type": "capability",
+      "image": "host.docker.internal:5001/v2/platform-poc/http-server:0.25.0-regack.1"
+    },
+    {
+      "name": "kv-redis",
+      "type": "capability",
+      "image": "ghcr.io/wasmcloud/keyvalue-redis:0.28.2"
+    },
+    {
+      "name": "sqldb-postgres",
+      "type": "capability",
+      "image": "ghcr.io/wasmcloud/sqldb-postgres:0.7.2"
+    },
+    {
+      "name": "nats",
+      "type": "capability",
+      "image": "ghcr.io/wasmcloud/messaging-nats:0.24.0"
+    }
+  ],
+  "nodes": {
+    "apiVersion": "v1",
+    "items": [
+      {
+        "apiVersion": "v1",
+        "kind": "Node",
+        "metadata": {
+          "annotations": {
+            "alpha.kubernetes.io/provided-node-ip": "192.168.117.5",
+            "flannel.alpha.coreos.com/backend-data": "{\"VNI\":1,\"VtepMAC\":\"32:0e:83:3f:59:a8\"}",
+            "flannel.alpha.coreos.com/backend-type": "vxlan",
+            "flannel.alpha.coreos.com/kube-subnet-manager": "true",
+            "flannel.alpha.coreos.com/public-ip": "192.168.117.5",
+            "k3s.io/hostname": "k3d-platform-poc-agent-0",
+            "k3s.io/internal-ip": "192.168.117.5",
+            "k3s.io/node-args": "[\"agent\"]",
+            "k3s.io/node-config-hash": "NSOPWI3YQZDM5TYORXFUGIL2XFSXYCCXEMAFWDRWLMXDFEPCOB5Q====",
+            "k3s.io/node-env": "{\"K3S_KUBECONFIG_OUTPUT\":\"/output/kubeconfig.yaml\",\"K3S_TOKEN\":\"********\",\"K3S_URL\":\"https://k3d-platform-poc-server-0:6443\"}",
+            "node.alpha.kubernetes.io/ttl": "0",
+            "volumes.kubernetes.io/controller-managed-attach-detach": "true"
+          },
+          "creationTimestamp": "2026-10-06T20:44:14Z",
+          "finalizers": [
+            "wrangler.cattle.io/node"
+          ],
+          "labels": {
+            "beta.kubernetes.io/arch": "arm64",
+            "beta.kubernetes.io/instance-type": "k3s",
+            "beta.kubernetes.io/os": "linux",
+            "kubernetes.io/arch": "arm64",
+            "kubernetes.io/hostname": "k3d-platform-poc-agent-0",
+            "kubernetes.io/os": "linux",
+            "node.kubernetes.io/instance-type": "k3s"
+          },
+          "name": "k3d-platform-poc-agent-0",
+          "resourceVersion": "400215",
+          "uid": "543196ba-ec51-416d-bd1f-87b9c7c263c0"
+        },
+        "spec": {
+          "podCIDR": "10.42.2.0/24",
+          "podCIDRs": [
+            "10.42.2.0/24"
+          ],
+          "providerID": "k3s://k3d-platform-poc-agent-0"
+        },
+        "status": {
+          "addresses": [
+            {
+              "address": "192.168.117.5",
+              "type": "InternalIP"
+            },
+            {
+              "address": "k3d-platform-poc-agent-0",
+              "type": "Hostname"
+            }
+          ],
+          "allocatable": {
+            "cpu": "10",
+            "ephemeral-storage": "311945487730",
+            "memory": "8195968Ki",
+            "pods": "110"
+          },
+          "capacity": {
+            "cpu": "10",
+            "ephemeral-storage": "313152Mi",
+            "memory": "8195968Ki",
+            "pods": "110"
+          },
+          "conditions": [
+            {
+              "lastHeartbeatTime": "2026-11-10T00:00:54Z",
+              "lastTransitionTime": "2026-11-09T23:46:17Z",
+              "message": "kubelet has sufficient memory available",
+              "reason": "KubeletHasSufficientMemory",
+              "status": "False",
+              "type": "MemoryPressure"
+            },
+            {
+              "lastHeartbeatTime": "2026-11-10T00:00:54Z",
+              "lastTransitionTime": "2026-11-09T23:46:17Z",
+              "message": "kubelet has no disk pressure",
+              "reason": "KubeletHasNoDiskPressure",
+              "status": "False",
+              "type": "DiskPressure"
+            },
+            {
+              "lastHeartbeatTime": "2026-11-10T00:00:54Z",
+              "lastTransitionTime": "2026-11-09T23:46:17Z",
+              "message": "kubelet has sufficient PID available",
+              "reason": "KubeletHasSufficientPID",
+              "status": "False",
+              "type": "PIDPressure"
+            },
+            {
+              "lastHeartbeatTime": "2026-11-10T00:00:54Z",
+              "lastTransitionTime": "2026-11-09T23:46:17Z",
+              "message": "kubelet is posting ready status",
+              "reason": "KubeletReady",
+              "status": "True",
+              "type": "Ready"
+            }
+          ],
+          "daemonEndpoints": {
+            "kubeletEndpoint": {
+              "Port": 10250
+            }
+          },
+          "declaredFeatures": [
+            "ExtendWebSocketsToKubelet",
+            "InPlacePodLevelResourcesVerticalScaling",
+            "InPlacePodVerticalScalingInitContainers",
+            "RestartAllContainersOnContainerExits"
+          ],
+          "features": {
+            "supplementalGroupsPolicy": true
+          },
+          "images": [
+            {
+              "names": [
+                "k3d-platform-poc.localhost:5001/platform-poc-java/order-service@sha256:8b559e640cef3aecaf69920404617394ee573c50ece3f4ca943b8baa88f74110",
+                "k3d-platform-poc.localhost:5001/platform-poc-java/order-service:0.1.0"
+              ],
+              "sizeBytes": 175515378
+            },
+            {
+              "names": [
+                "k3d-platform-poc.localhost:5001/platform-poc-java/inventory-service@sha256:5d5881d87dfa7f0b30cc66bfedf448561b5606ced23076f82ee75fddc31414e8",
+                "k3d-platform-poc.localhost:5001/platform-poc-java/inventory-service:0.1.0"
+              ],
+              "sizeBytes": 159345115
+            },
+            {
+              "names": [
+                "k3d-platform-poc.localhost:5001/platform-poc-java/notification-service@sha256:ea762fcbfd7551ef8b2d0f8d2c387c56d6e300e2eb1123c1a6864c9cdf10eb30",
+                "k3d-platform-poc.localhost:5001/platform-poc-java/notification-service:0.1.0"
+              ],
+              "sizeBytes": 145444542
+            },
+            {
+              "names": [
+                "k3d-platform-poc.localhost:5001/platform-poc-java/product-service@sha256:c5302fa0aef01bfe70614d5e373ac848e564f60bdbf1d8e8b6dfcb617a89bbae",
+                "k3d-platform-poc.localhost:5001/platform-poc-java/product-service:0.1.0"
+              ],
+              "sizeBytes": 141801174
+            },
+            {
+              "names": [
+                "docker.io/platform-poc/wasmcloud:1.9.2-regack.1"
+              ],
+              "sizeBytes": 140922637
+            },
+            {
+              "names": [
+                "docker.io/rancher/klipper-helm@sha256:5425a2b4613d2458dbdff99218e8d487ebb59c20e7a941f061c0777070f0aac1",
+                "docker.io/rancher/klipper-helm:v0.13.3-build20260727"
+              ],
+              "sizeBytes": 67806801
+            },
+            {
+              "names": [
+                "ghcr.io/wasmcloud/wadm@sha256:587edb2a764efb2d2b81cd05eb9caced87265206549406daa39db6e13b3f3b7a",
+                "ghcr.io/wasmcloud/wadm:v0.19.0"
+              ],
+              "sizeBytes": 50347933
+            },
+            {
+              "names": [
+                "docker.io/rancher/mirrored-library-traefik@sha256:4299bbed850421258fc5448c2e0e6ad350981d4d335a68de11b92448aedbefe5",
+                "docker.io/rancher/mirrored-library-traefik:3.7.8"
+              ],
+              "sizeBytes": 49364865
+            },
+            {
+              "names": [
+                "ghcr.io/wasmcloud/wasmcloud-operator@sha256:5f048ddd38757d4cbac40046466baf23bc189aff946de6295c179bd66c75df47",
+                "ghcr.io/wasmcloud/wasmcloud-operator:0.4.0"
+              ],
+              "sizeBytes": 18652211
+            },
+            {
+              "names": [
+                "ghcr.io/wasmcloud/wasmcloud@sha256:250dcf057727dc7eb643639e6840e0207d9597928b22a05572c2b0ca771c22f4",
+                "ghcr.io/wasmcloud/wasmcloud:1.9.2"
+              ],
+              "sizeBytes": 16454251
+            },
+            {
+              "names": [
+                "ghcr.io/wasmcloud/wasmcloud@sha256:e078c9529c7009e3d6ce0abfca584cf3e333eb945611acdb431622bf307687db",
+                "ghcr.io/wasmcloud/wasmcloud:1.5.1"
+              ],
+              "sizeBytes": 15703441
+            },
+            {
+              "names": [
+                "docker.io/library/nats@sha256:b83efabe3e7def1e0a4a31ec6e078999bb17c80363f881df35edc70fcb6bb927",
+                "docker.io/library/nats:2.10-alpine"
+              ],
+              "sizeBytes": 10296399
+            },
+            {
+              "names": [
+                "docker.io/rancher/klipper-lb@sha256:910944bb0bd94f060a82a56ca1ea1c577d3e49b3473a093a47a985f32e92d94a",
+                "docker.io/rancher/klipper-lb:v0.4.17"
+              ],
+              "sizeBytes": 5793195
+            },
+            {
+              "names": [
+                "docker.io/rancher/mirrored-pause@sha256:f548e0e8e3dc1896ca956272154dde3314e8cc4fde0a57577ee9fa1c63f5baf4",
+                "docker.io/rancher/mirrored-pause:3.10.2"
+              ],
+              "sizeBytes": 268296
+            }
+          ],
+          "nodeInfo": {
+            "architecture": "arm64",
+            "bootID": "3210f197-caca-4476-8073-2224d88fb2c0",
+            "containerRuntimeVersion": "containerd://2.3.4-k3s1.36",
+            "kernelVersion": "7.2.12-orbstack-00394-gbecdd6130068",
+            "kubeProxyVersion": "",
+            "kubeletVersion": "v1.36.4+k3s1",
+            "machineID": "",
+            "operatingSystem": "linux",
+            "osImage": "K3s v1.36.4+k3s1",
+            "swap": {
+              "capacity": 9466404864
+            },
+            "systemUUID": ""
+          },
+          "runtimeHandlers": [
+            {
+              "features": {
+                "recursiveReadOnlyMounts": true,
+                "userNamespaces": true
+              },
+              "name": ""
+            },
+            {
+              "features": {
+                "recursiveReadOnlyMounts": true,
+                "userNamespaces": true
+              },
+              "name": "runc"
+            },
+            {
+              "features": {
+                "recursiveReadOnlyMounts": false,
+                "userNamespaces": false
+              },
+              "name": "runhcs-wcow-process"
+            }
+          ]
+        }
+      },
+      {
+        "apiVersion": "v1",
+        "kind": "Node",
+        "metadata": {
+          "annotations": {
+            "alpha.kubernetes.io/provided-node-ip": "192.168.117.4",
+            "flannel.alpha.coreos.com/backend-data": "{\"VNI\":1,\"VtepMAC\":\"1a:f8:70:a1:38:86\"}",
+            "flannel.alpha.coreos.com/backend-type": "vxlan",
+            "flannel.alpha.coreos.com/kube-subnet-manager": "true",
+            "flannel.alpha.coreos.com/public-ip": "192.168.117.4",
+            "k3s.io/hostname": "k3d-platform-poc-agent-1",
+            "k3s.io/internal-ip": "192.168.117.4",
+            "k3s.io/node-args": "[\"agent\"]",
+            "k3s.io/node-config-hash": "NSOPWI3YQZDM5TYORXFUGIL2XFSXYCCXEMAFWDRWLMXDFEPCOB5Q====",
+            "k3s.io/node-env": "{\"K3S_KUBECONFIG_OUTPUT\":\"/output/kubeconfig.yaml\",\"K3S_TOKEN\":\"********\",\"K3S_URL\":\"https://k3d-platform-poc-server-0:6443\"}",
+            "node.alpha.kubernetes.io/ttl": "0",
+            "volumes.kubernetes.io/controller-managed-attach-detach": "true"
+          },
+          "creationTimestamp": "2026-10-06T20:44:12Z",
+          "finalizers": [
+            "wrangler.cattle.io/node"
+          ],
+          "labels": {
+            "beta.kubernetes.io/arch": "arm64",
+            "beta.kubernetes.io/instance-type": "k3s",
+            "beta.kubernetes.io/os": "linux",
+            "kubernetes.io/arch": "arm64",
+            "kubernetes.io/hostname": "k3d-platform-poc-agent-1",
+            "kubernetes.io/os": "linux",
+            "node.kubernetes.io/instance-type": "k3s"
+          },
+          "name": "k3d-platform-poc-agent-1",
+          "resourceVersion": "400251",
+          "uid": "e65f04a9-f70b-459b-88c0-48a1799c4ad4"
+        },
+        "spec": {
+          "podCIDR": "10.42.1.0/24",
+          "podCIDRs": [
+            "10.42.1.0/24"
+          ],
+          "providerID": "k3s://k3d-platform-poc-agent-1"
+        },
+        "status": {
+          "addresses": [
+            {
+              "address": "192.168.117.4",
+              "type": "InternalIP"
+            },
+            {
+              "address": "k3d-platform-poc-agent-1",
+              "type": "Hostname"
+            }
+          ],
+          "allocatable": {
+            "cpu": "10",
+            "ephemeral-storage": "311562967206",
+            "memory": "8195968Ki",
+            "pods": "110"
+          },
+          "capacity": {
+            "cpu": "10",
+            "ephemeral-storage": "312768Mi",
+            "memory": "8195968Ki",
+            "pods": "110"
+          },
+          "conditions": [
+            {
+              "lastHeartbeatTime": "2026-11-10T00:01:47Z",
+              "lastTransitionTime": "2026-11-09T09:25:57Z",
+              "message": "kubelet has sufficient memory available",
+              "reason": "KubeletHasSufficientMemory",
+              "status": "False",
+              "type": "MemoryPressure"
+            },
+            {
+              "lastHeartbeatTime": "2026-11-10T00:01:47Z",
+              "lastTransitionTime": "2026-11-09T09:25:57Z",
+              "message": "kubelet has no disk pressure",
+              "reason": "KubeletHasNoDiskPressure",
+              "status": "False",
+              "type": "DiskPressure"
+            },
+            {
+              "lastHeartbeatTime": "2026-11-10T00:01:47Z",
+              "lastTransitionTime": "2026-11-09T09:25:57Z",
+              "message": "kubelet has sufficient PID available",
+              "reason": "KubeletHasSufficientPID",
+              "status": "False",
+              "type": "PIDPressure"
+            },
+            {
+              "lastHeartbeatTime": "2026-11-10T00:01:47Z",
+              "lastTransitionTime": "2026-11-09T23:32:57Z",
+              "message": "kubelet is posting ready status",
+              "reason": "KubeletReady",
+              "status": "True",
+              "type": "Ready"
+            }
+          ],
+          "daemonEndpoints": {
+            "kubeletEndpoint": {
+              "Port": 10250
+            }
+          },
+          "declaredFeatures": [
+            "ExtendWebSocketsToKubelet",
+            "InPlacePodLevelResourcesVerticalScaling",
+            "InPlacePodVerticalScalingInitContainers",
+            "RestartAllContainersOnContainerExits"
+          ],
+          "features": {
+            "supplementalGroupsPolicy": true
+          },
+          "images": [
+            {
+              "names": [
+                "k3d-platform-poc.localhost:5001/platform-poc-java/order-service@sha256:8b559e640cef3aecaf69920404617394ee573c50ece3f4ca943b8baa88f74110",
+                "k3d-platform-poc.localhost:5001/platform-poc-java/order-service:0.1.0"
+              ],
+              "sizeBytes": 175515378
+            },
+            {
+              "names": [
+                "k3d-platform-poc.localhost:5001/platform-poc-java/notification-service@sha256:ea762fcbfd7551ef8b2d0f8d2c387c56d6e300e2eb1123c1a6864c9cdf10eb30",
+                "k3d-platform-poc.localhost:5001/platform-poc-java/notification-service:0.1.0"
+              ],
+              "sizeBytes": 145444542
+            },
+            {
+              "names": [
+                "k3d-platform-poc.localhost:5001/platform-poc-java/product-service@sha256:c5302fa0aef01bfe70614d5e373ac848e564f60bdbf1d8e8b6dfcb617a89bbae",
+                "k3d-platform-poc.localhost:5001/platform-poc-java/product-service:0.1.0"
+              ],
+              "sizeBytes": 141801174
+            },
+            {
+              "names": [
+                "docker.io/platform-poc/wasmcloud:1.9.2-regack.1"
+              ],
+              "sizeBytes": 140922637
+            },
+            {
+              "names": [
+                "docker.io/rancher/klipper-helm@sha256:5425a2b4613d2458dbdff99218e8d487ebb59c20e7a941f061c0777070f0aac1",
+                "docker.io/rancher/klipper-helm:v0.13.3-build20260727"
+              ],
+              "sizeBytes": 67806801
+            },
+            {
+              "names": [
+                "docker.io/rancher/mirrored-coredns-coredns@sha256:900f9c109f7a33545d3c811516e8376df9019147b750f5ce3e254468769176ea",
+                "docker.io/rancher/mirrored-coredns-coredns:1.14.6"
+              ],
+              "sizeBytes": 21239459
+            },
+            {
+              "names": [
+                "docker.io/rancher/mirrored-metrics-server@sha256:d9862115e7c7881280d3d75ca26bda8ffc0fc213315979575bf23ce9826205c0",
+                "docker.io/rancher/mirrored-metrics-server:v0.9.0"
+              ],
+              "sizeBytes": 20915021
+            },
+            {
+              "names": [
+                "ghcr.io/wasmcloud/wasmcloud@sha256:250dcf057727dc7eb643639e6840e0207d9597928b22a05572c2b0ca771c22f4",
+                "ghcr.io/wasmcloud/wasmcloud:1.9.2"
+              ],
+              "sizeBytes": 16454251
+            },
+            {
+              "names": [
+                "ghcr.io/wasmcloud/wasmcloud@sha256:e078c9529c7009e3d6ce0abfca584cf3e333eb945611acdb431622bf307687db",
+                "ghcr.io/wasmcloud/wasmcloud:1.5.1"
+              ],
+              "sizeBytes": 15703441
+            },
+            {
+              "names": [
+                "docker.io/rancher/local-path-provisioner@sha256:e757967a5ec338f6a9b371c5a9688bedaa8c3578ea3dd4db329ea0084be0a86f",
+                "docker.io/rancher/local-path-provisioner:v0.0.37"
+              ],
+              "sizeBytes": 13414862
+            },
+            {
+              "names": [
+                "docker.io/library/nats@sha256:b83efabe3e7def1e0a4a31ec6e078999bb17c80363f881df35edc70fcb6bb927",
+                "docker.io/library/nats:2.10-alpine"
+              ],
+              "sizeBytes": 10296399
+            },
+            {
+              "names": [
+                "docker.io/rancher/klipper-lb@sha256:910944bb0bd94f060a82a56ca1ea1c577d3e49b3473a093a47a985f32e92d94a",
+                "docker.io/rancher/klipper-lb:v0.4.17"
+              ],
+              "sizeBytes": 5793195
+            },
+            {
+              "names": [
+                "docker.io/rancher/mirrored-pause@sha256:f548e0e8e3dc1896ca956272154dde3314e8cc4fde0a57577ee9fa1c63f5baf4",
+                "docker.io/rancher/mirrored-pause:3.10.2"
+              ],
+              "sizeBytes": 268296
+            }
+          ],
+          "nodeInfo": {
+            "architecture": "arm64",
+            "bootID": "3210f197-caca-4476-8073-2224d88fb2c0",
+            "containerRuntimeVersion": "containerd://2.3.4-k3s1.36",
+            "kernelVersion": "7.2.12-orbstack-00394-gbecdd6130068",
+            "kubeProxyVersion": "",
+            "kubeletVersion": "v1.36.4+k3s1",
+            "machineID": "",
+            "operatingSystem": "linux",
+            "osImage": "K3s v1.36.4+k3s1",
+            "swap": {
+              "capacity": 9466404864
+            },
+            "systemUUID": ""
+          },
+          "runtimeHandlers": [
+            {
+              "features": {
+                "recursiveReadOnlyMounts": true,
+                "userNamespaces": true
+              },
+              "name": ""
+            },
+            {
+              "features": {
+                "recursiveReadOnlyMounts": true,
+                "userNamespaces": true
+              },
+              "name": "runc"
+            },
+            {
+              "features": {
+                "recursiveReadOnlyMounts": false,
+                "userNamespaces": false
+              },
+              "name": "runhcs-wcow-process"
+            }
+          ]
+        }
+      },
+      {
+        "apiVersion": "v1",
+        "kind": "Node",
+        "metadata": {
+          "annotations": {
+            "alpha.kubernetes.io/provided-node-ip": "192.168.117.2",
+            "flannel.alpha.coreos.com/backend-data": "{\"VNI\":1,\"VtepMAC\":\"de:e0:f9:56:07:7d\"}",
+            "flannel.alpha.coreos.com/backend-type": "vxlan",
+            "flannel.alpha.coreos.com/kube-subnet-manager": "true",
+            "flannel.alpha.coreos.com/public-ip": "192.168.117.2",
+            "k3s.io/hostname": "k3d-platform-poc-server-0",
+            "k3s.io/internal-ip": "192.168.117.2",
+            "k3s.io/node-args": "[\"server\",\"--tls-san\",\"0.0.0.0\",\"--tls-san\",\"k3d-platform-poc-serverlb\"]",
+            "k3s.io/node-config-hash": "PHARR7DSHMKB3F5PCDBFCICHUW6XQCW3KL34CYSDAOFLGVXQAKMQ====",
+            "k3s.io/node-env": "{\"K3S_KUBECONFIG_OUTPUT\":\"/output/kubeconfig.yaml\",\"K3S_TOKEN\":\"********\"}",
+            "node.alpha.kubernetes.io/ttl": "0",
+            "volumes.kubernetes.io/controller-managed-attach-detach": "true"
+          },
+          "creationTimestamp": "2026-10-06T20:44:04Z",
+          "finalizers": [
+            "wrangler.cattle.io/node"
+          ],
+          "labels": {
+            "beta.kubernetes.io/arch": "arm64",
+            "beta.kubernetes.io/instance-type": "k3s",
+            "beta.kubernetes.io/os": "linux",
+            "kubernetes.io/arch": "arm64",
+            "kubernetes.io/hostname": "k3d-platform-poc-server-0",
+            "kubernetes.io/os": "linux",
+            "node-role.kubernetes.io/control-plane": "true",
+            "node.kubernetes.io/instance-type": "k3s"
+          },
+          "name": "k3d-platform-poc-server-0",
+          "resourceVersion": "400178",
+          "uid": "fcfef9eb-40bc-42ae-bca7-0699d3ff8c87"
+        },
+        "spec": {
+          "podCIDR": "10.42.0.0/24",
+          "podCIDRs": [
+            "10.42.0.0/24"
+          ],
+          "providerID": "k3s://k3d-platform-poc-server-0"
+        },
+        "status": {
+          "addresses": [
+            {
+              "address": "192.168.117.2",
+              "type": "InternalIP"
+            },
+            {
+              "address": "k3d-platform-poc-server-0",
+              "type": "Hostname"
+            }
+          ],
+          "allocatable": {
+            "cpu": "10",
+            "ephemeral-storage": "311562967206",
+            "memory": "8195968Ki",
+            "pods": "110"
+          },
+          "capacity": {
+            "cpu": "10",
+            "ephemeral-storage": "312768Mi",
+            "memory": "8195968Ki",
+            "pods": "110"
+          },
+          "conditions": [
+            {
+              "lastHeartbeatTime": "2026-11-09T23:59:53Z",
+              "lastTransitionTime": "2026-11-09T06:41:18Z",
+              "message": "kubelet has sufficient memory available",
+              "reason": "KubeletHasSufficientMemory",
+              "status": "False",
+              "type": "MemoryPressure"
+            },
+            {
+              "lastHeartbeatTime": "2026-11-09T23:59:53Z",
+              "lastTransitionTime": "2026-11-09T06:41:18Z",
+              "message": "kubelet has no disk pressure",
+              "reason": "KubeletHasNoDiskPressure",
+              "status": "False",
+              "type": "DiskPressure"
+            },
+            {
+              "lastHeartbeatTime": "2026-11-09T23:59:53Z",
+              "lastTransitionTime": "2026-11-09T06:41:18Z",
+              "message": "kubelet has sufficient PID available",
+              "reason": "KubeletHasSufficientPID",
+              "status": "False",
+              "type": "PIDPressure"
+            },
+            {
+              "lastHeartbeatTime": "2026-11-09T23:59:53Z",
+              "lastTransitionTime": "2026-11-09T23:32:57Z",
+              "message": "kubelet is posting ready status",
+              "reason": "KubeletReady",
+              "status": "True",
+              "type": "Ready"
+            }
+          ],
+          "daemonEndpoints": {
+            "kubeletEndpoint": {
+              "Port": 10250
+            }
+          },
+          "declaredFeatures": [
+            "ExtendWebSocketsToKubelet",
+            "InPlacePodLevelResourcesVerticalScaling",
+            "InPlacePodVerticalScalingInitContainers",
+            "RestartAllContainersOnContainerExits"
+          ],
+          "features": {
+            "supplementalGroupsPolicy": true
+          },
+          "images": [
+            {
+              "names": [
+                "docker.io/grafana/grafana@sha256:dbbc38ea21103cefb50396340cd88afec779c7e070b0a7bf5a75b4ce46651d3f",
+                "docker.io/grafana/grafana:13.2.4"
+              ],
+              "sizeBytes": 445133462
+            },
+            {
+              "names": [
+                "k3d-platform-poc.localhost:5001/platform-poc-java/order-service@sha256:8b559e640cef3aecaf69920404617394ee573c50ece3f4ca943b8baa88f74110",
+                "k3d-platform-poc.localhost:5001/platform-poc-java/order-service:0.1.0"
+              ],
+              "sizeBytes": 175515378
+            },
+            {
+              "names": [
+                "k3d-platform-poc.localhost:5001/platform-poc-java/inventory-service@sha256:5d5881d87dfa7f0b30cc66bfedf448561b5606ced23076f82ee75fddc31414e8",
+                "k3d-platform-poc.localhost:5001/platform-poc-java/inventory-service:0.1.0"
+              ],
+              "sizeBytes": 159345115
+            },
+            {
+              "names": [
+                "k3d-platform-poc.localhost:5001/platform-poc-java/notification-service@sha256:ea762fcbfd7551ef8b2d0f8d2c387c56d6e300e2eb1123c1a6864c9cdf10eb30",
+                "k3d-platform-poc.localhost:5001/platform-poc-java/notification-service:0.1.0"
+              ],
+              "sizeBytes": 145444542
+            },
+            {
+              "names": [
+                "k3d-platform-poc.localhost:5001/platform-poc-java/product-service@sha256:c5302fa0aef01bfe70614d5e373ac848e564f60bdbf1d8e8b6dfcb617a89bbae",
+                "k3d-platform-poc.localhost:5001/platform-poc-java/product-service:0.1.0"
+              ],
+              "sizeBytes": 141801174
+            },
+            {
+              "names": [
+                "docker.io/platform-poc/wasmcloud:1.9.2-regack.1"
+              ],
+              "sizeBytes": 140922637
+            },
+            {
+              "names": [
+                "docker.io/prom/prometheus@sha256:fa3302279710be2f21a8301ec17a8b4f2301fd829bd113839b3b6b02b6f191a2",
+                "docker.io/prom/prometheus:v3.15.1"
+              ],
+              "sizeBytes": 104854302
+            },
+            {
+              "names": [
+                "docker.io/rancher/mirrored-coredns-coredns@sha256:900f9c109f7a33545d3c811516e8376df9019147b750f5ce3e254468769176ea",
+                "docker.io/rancher/mirrored-coredns-coredns:1.14.6"
+              ],
+              "sizeBytes": 21239459
+            },
+            {
+              "names": [
+                "ghcr.io/wasmcloud/wasmcloud@sha256:250dcf057727dc7eb643639e6840e0207d9597928b22a05572c2b0ca771c22f4",
+                "ghcr.io/wasmcloud/wasmcloud:1.9.2"
+              ],
+              "sizeBytes": 16454251
+            },
+            {
+              "names": [
+                "docker.io/rancher/local-path-provisioner@sha256:e757967a5ec338f6a9b371c5a9688bedaa8c3578ea3dd4db329ea0084be0a86f",
+                "docker.io/rancher/local-path-provisioner:v0.0.37"
+              ],
+              "sizeBytes": 13414862
+            },
+            {
+              "names": [
+                "docker.io/library/nats@sha256:b83efabe3e7def1e0a4a31ec6e078999bb17c80363f881df35edc70fcb6bb927",
+                "docker.io/library/nats:2.10-alpine"
+              ],
+              "sizeBytes": 10296399
+            },
+            {
+              "names": [
+                "docker.io/library/nats@sha256:78bcf0e25197171d65e797b391bf5eb519e8bc8f4b4c907dc9b9c0f505416d71",
+                "docker.io/library/nats:2.10.19-alpine"
+              ],
+              "sizeBytes": 9861875
+            },
+            {
+              "names": [
+                "docker.io/rancher/klipper-lb@sha256:910944bb0bd94f060a82a56ca1ea1c577d3e49b3473a093a47a985f32e92d94a",
+                "docker.io/rancher/klipper-lb:v0.4.17"
+              ],
+              "sizeBytes": 5793195
+            },
+            {
+              "names": [
+                "docker.io/natsio/nats-server-config-reloader@sha256:4ab11cc7204eb1f26ce6df8c63e86759980f380c6397c93094852017209f0fb1",
+                "docker.io/natsio/nats-server-config-reloader:0.15.1"
+              ],
+              "sizeBytes": 5153075
+            },
+            {
+              "names": [
+                "docker.io/rancher/mirrored-library-busybox@sha256:101b4afd76732482eff9b95cae5f94bcf295e521fbec4e01b69c5421f3f3f3e5",
+                "docker.io/rancher/mirrored-library-busybox:1.37.0"
+              ],
+              "sizeBytes": 1850819
+            },
+            {
+              "names": [
+                "docker.io/rancher/mirrored-pause@sha256:f548e0e8e3dc1896ca956272154dde3314e8cc4fde0a57577ee9fa1c63f5baf4",
+                "docker.io/rancher/mirrored-pause:3.10.2"
+              ],
+              "sizeBytes": 268296
+            }
+          ],
+          "nodeInfo": {
+            "architecture": "arm64",
+            "bootID": "3210f197-caca-4476-8073-2224d88fb2c0",
+            "containerRuntimeVersion": "containerd://2.3.4-k3s1.36",
+            "kernelVersion": "7.2.12-orbstack-00394-gbecdd6130068",
+            "kubeProxyVersion": "",
+            "kubeletVersion": "v1.36.4+k3s1",
+            "machineID": "",
+            "operatingSystem": "linux",
+            "osImage": "K3s v1.36.4+k3s1",
+            "swap": {
+              "capacity": 9466404864
+            },
+            "systemUUID": ""
+          },
+          "runtimeHandlers": [
+            {
+              "features": {
+                "recursiveReadOnlyMounts": true,
+                "userNamespaces": true
+              },
+              "name": ""
+            },
+            {
+              "features": {
+                "recursiveReadOnlyMounts": true,
+                "userNamespaces": true
+              },
+              "name": "runc"
+            },
+            {
+              "features": {
+                "recursiveReadOnlyMounts": false,
+                "userNamespaces": false
+              },
+              "name": "runhcs-wcow-process"
+            }
+          ]
+        }
+      }
+    ],
+    "kind": "List",
+    "metadata": {
+      "resourceVersion": ""
+    }
+  },
+  "versions": {
+    "k6": "k6 v2.3.0 (commit/devel, go1.27.1, darwin/arm64)",
+    "docker": "29.8.2",
+    "k3d": "k3d version v5.9.0\nk3s version v1.36.4-k3s1 (default)",
+    "rust": "rustc 1.99.0 (b940084d7 2026-09-28)",
+    "wash": "wash          v0.38.0\n\u251c nats-server v2.10.20\n\u251c wadm        v0.19.0\n\u2514 wasmcloud   v1.4.2"
+  }
+}

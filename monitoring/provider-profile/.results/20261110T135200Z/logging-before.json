@@ -1,0 +1,17 @@
+{
+  "log_line_prefix": {
+    "effective": "%m [%p] ",
+    "source": "default",
+    "auto_override": null
+  },
+  "log_parameter_max_length": {
+    "effective": "-1",
+    "source": "default",
+    "auto_override": null
+  },
+  "log_min_duration_statement": {
+    "effective": "-1",
+    "source": "default",
+    "auto_override": null
+  }
+}

@@ -1,0 +1,786 @@
+{
+  "status": "complete",
+  "settings": {
+    "pairs": 5,
+    "output": null,
+    "burst_rate": 400,
+    "after_scale": 180,
+    "warmup": 60,
+    "baseline": 30,
+    "before_scale": 45,
+    "recovery": 30,
+    "window": 15,
+    "vus": 250
+  },
+  "sources": {
+    "run.py": "3bfe6aaa4323b18372a8f9d86ae1333c97e543234d2e5ff5ad139e8362ca5d05",
+    "readiness.py": "c939d798efc4378171d70c72a0dfd42c2cf267aa719b8e51a92b5cad4cbe4f14",
+    "host_mode.py": "c1c444deb742a510dc0b4736df47c5566413a80763ed40dfe3224fe95289bf6d",
+    "load.js": "8ab80e413a985c37af5eb0d67f2c4bf1e6905c03161d1d74224b605026d57569",
+    "repeat.py": "3e120ede5dd1428fa0258c105a76129ce26435ccfd321df488f288e31c67f009"
+  },
+  "pairs": [
+    {
+      "pair": 1,
+      "order": "java-first",
+      "path": "pair-01",
+      "restored": true,
+      "baseline": {
+        "java": {
+          "image": "k3d-platform-poc.localhost:5001/platform-poc-java/order-service:0.1.0",
+          "resources": {},
+          "original": 1,
+          "source_template_hash": "5cae0bc8af71b26fa5af1546f3791cc5ce8612a12f6c5d56e900762d77352ce7",
+          "images": {
+            "order-service": "k3d-platform-poc.localhost:5001/platform-poc-java/order-service@sha256:8b559e640cef3aecaf69920404617394ee573c50ece3f4ca943b8baa88f74110"
+          }
+        },
+        "wasm": {
+          "version": "v0.0.9-regack.1",
+          "template": "d13c27faf0bb0d38c32858e0d362dd3342f1ce8c91de1bb601d08a70b9e95306",
+          "images": {
+            "nats-leaf": "docker.io/library/nats@sha256:b83efabe3e7def1e0a4a31ec6e078999bb17c80363f881df35edc70fcb6bb927",
+            "wasmcloud-host": "sha256:a22906face539085647ef862bed734e95c05ba6882d870528b92ea4af1b79ea6"
+          },
+          "components": {
+            "data-init": {
+              "id": "data-init",
+              "count": 1,
+              "image_ref": "host.docker.internal:5001/v2/platform-poc/data_init:0.1.0",
+              "annotations": {
+                "wasmcloud.dev/appspec": "platform-poc",
+                "wasmcloud.dev/managed-by": "wadm",
+                "wasmcloud.dev/scaler": "51b4422039bf1620c06be7e7257fc6548da9707a7578c472c185eb4200f94378",
+                "wasmcloud.dev/spread_name": "default"
+              }
+            },
+            "http-controller": {
+              "id": "http-controller",
+              "count": 10,
+              "image_ref": "host.docker.internal:5001/v2/platform-poc/http_controller:0.1.3",
+              "annotations": {
+                "wasmcloud.dev/appspec": "platform-poc",
+                "wasmcloud.dev/managed-by": "wadm",
+                "wasmcloud.dev/scaler": "0f85a66f29f095906a7b51e22c32724b7113dd5551bbdc939b7279c57618a713",
+                "wasmcloud.dev/spread_name": "default"
+              }
+            },
+            "products-service": {
+              "id": "products-service",
+              "count": 1,
+              "image_ref": "host.docker.internal:5001/v2/platform-poc/products_service:0.1.0",
+              "annotations": {
+                "wasmcloud.dev/appspec": "platform-poc",
+                "wasmcloud.dev/managed-by": "wadm",
+                "wasmcloud.dev/scaler": "3848580d53d95c68a35e27792df182d1307900793b47dc7812c373d1aa02d139",
+                "wasmcloud.dev/spread_name": "default"
+              }
+            },
+            "inventory-service": {
+              "id": "inventory-service",
+              "count": 10,
+              "image_ref": "host.docker.internal:5001/v2/platform-poc/inventory_service:0.1.0",
+              "annotations": {
+                "wasmcloud.dev/appspec": "platform-poc",
+                "wasmcloud.dev/managed-by": "wadm",
+                "wasmcloud.dev/scaler": "8bbc60b17877178e5f1b6575196d13d1856268957e88c261c8eb86bbfc45a391",
+                "wasmcloud.dev/spread_name": "default"
+              }
+            },
+            "notification-service": {
+              "id": "notification-service",
+              "count": 1,
+              "image_ref": "host.docker.internal:5001/v2/platform-poc/notification_service:0.1.0",
+              "annotations": {
+                "wasmcloud.dev/appspec": "platform-poc",
+                "wasmcloud.dev/managed-by": "wadm",
+                "wasmcloud.dev/scaler": "6af60a8677a8f7962eed95f449ba8b1a6afb5658d742ad35cd518e331988c5a6",
+                "wasmcloud.dev/spread_name": "default"
+              }
+            },
+            "orders-service": {
+              "id": "orders-service",
+              "count": 10,
+              "image_ref": "host.docker.internal:5001/v2/platform-poc/orders_service:0.1.0",
+              "annotations": {
+                "wasmcloud.dev/appspec": "platform-poc",
+                "wasmcloud.dev/managed-by": "wadm",
+                "wasmcloud.dev/scaler": "ba2a94faf0e76eef4abb7acd7c4e6923882a3f0b4d208187c79717ded88b8ac9",
+                "wasmcloud.dev/spread_name": "default"
+              }
+            }
+          }
+        }
+      },
+      "implementations": {
+        "java": {
+          "readiness_valid": true,
+          "new_pod_ready_seconds": 14.295382125001197,
+          "new_pod_order_accepted_seconds": 14.33881462499994,
+          "capacity_ready_seconds": 16.019152879714966,
+          "median_ms": 4.929,
+          "p95_ms": 21.297599999999928,
+          "dropped_iterations": 0,
+          "failures": 0,
+          "accepted": 102499,
+          "already_healthy": true,
+          "recovery_seconds": null,
+          "target_stable": true
+        },
+        "wasm": {
+          "readiness_valid": true,
+          "new_pod_ready_seconds": 7.9427907499994035,
+          "new_pod_order_accepted_seconds": 7.993863749998127,
+          "capacity_ready_seconds": 22.91023898124695,
+          "median_ms": 12.01,
+          "p95_ms": 26.393,
+          "dropped_iterations": 0,
+          "failures": 0,
+          "accepted": 102499,
+          "already_healthy": true,
+          "recovery_seconds": null,
+          "target_stable": true
+        }
+      },
+      "valid": true,
+      "power_before": {
+        "time": 1794286771.419359,
+        "ac": true,
+        "details": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=38797411)\t100%; charged; 0:00 remaining present: true\n"
+      },
+      "power_after": {
+        "time": 1794287582.797013,
+        "ac": true,
+        "details": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=38797411)\t100%; charged; 0:00 remaining present: true\n"
+      }
+    },
+    {
+      "pair": 2,
+      "order": "wasm-first",
+      "path": "pair-02",
+      "restored": true,
+      "baseline": {
+        "java": {
+          "image": "k3d-platform-poc.localhost:5001/platform-poc-java/order-service:0.1.0",
+          "resources": {},
+          "original": 1,
+          "source_template_hash": "5cae0bc8af71b26fa5af1546f3791cc5ce8612a12f6c5d56e900762d77352ce7",
+          "images": {
+            "order-service": "k3d-platform-poc.localhost:5001/platform-poc-java/order-service@sha256:8b559e640cef3aecaf69920404617394ee573c50ece3f4ca943b8baa88f74110"
+          }
+        },
+        "wasm": {
+          "version": "v0.0.9-regack.1",
+          "template": "d13c27faf0bb0d38c32858e0d362dd3342f1ce8c91de1bb601d08a70b9e95306",
+          "images": {
+            "nats-leaf": "docker.io/library/nats@sha256:b83efabe3e7def1e0a4a31ec6e078999bb17c80363f881df35edc70fcb6bb927",
+            "wasmcloud-host": "sha256:a22906face539085647ef862bed734e95c05ba6882d870528b92ea4af1b79ea6"
+          },
+          "components": {
+            "data-init": {
+              "id": "data-init",
+              "count": 1,
+              "image_ref": "host.docker.internal:5001/v2/platform-poc/data_init:0.1.0",
+              "annotations": {
+                "wasmcloud.dev/appspec": "platform-poc",
+                "wasmcloud.dev/managed-by": "wadm",
+                "wasmcloud.dev/scaler": "51b4422039bf1620c06be7e7257fc6548da9707a7578c472c185eb4200f94378",
+                "wasmcloud.dev/spread_name": "default"
+              }
+            },
+            "http-controller": {
+              "id": "http-controller",
+              "count": 10,
+              "image_ref": "host.docker.internal:5001/v2/platform-poc/http_controller:0.1.3",
+              "annotations": {
+                "wasmcloud.dev/appspec": "platform-poc",
+                "wasmcloud.dev/managed-by": "wadm",
+                "wasmcloud.dev/scaler": "0f85a66f29f095906a7b51e22c32724b7113dd5551bbdc939b7279c57618a713",
+                "wasmcloud.dev/spread_name": "default"
+              }
+            },
+            "products-service": {
+              "id": "products-service",
+              "count": 1,
+              "image_ref": "host.docker.internal:5001/v2/platform-poc/products_service:0.1.0",
+              "annotations": {
+                "wasmcloud.dev/appspec": "platform-poc",
+                "wasmcloud.dev/managed-by": "wadm",
+                "wasmcloud.dev/scaler": "3848580d53d95c68a35e27792df182d1307900793b47dc7812c373d1aa02d139",
+                "wasmcloud.dev/spread_name": "default"
+              }
+            },
+            "inventory-service": {
+              "id": "inventory-service",
+              "count": 10,
+              "image_ref": "host.docker.internal:5001/v2/platform-poc/inventory_service:0.1.0",
+              "annotations": {
+                "wasmcloud.dev/appspec": "platform-poc",
+                "wasmcloud.dev/managed-by": "wadm",
+                "wasmcloud.dev/scaler": "8bbc60b17877178e5f1b6575196d13d1856268957e88c261c8eb86bbfc45a391",
+                "wasmcloud.dev/spread_name": "default"
+              }
+            },
+            "notification-service": {
+              "id": "notification-service",
+              "count": 1,
+              "image_ref": "host.docker.internal:5001/v2/platform-poc/notification_service:0.1.0",
+              "annotations": {
+                "wasmcloud.dev/appspec": "platform-poc",
+                "wasmcloud.dev/managed-by": "wadm",
+                "wasmcloud.dev/scaler": "6af60a8677a8f7962eed95f449ba8b1a6afb5658d742ad35cd518e331988c5a6",
+                "wasmcloud.dev/spread_name": "default"
+              }
+            },
+            "orders-service": {
+              "id": "orders-service",
+              "count": 10,
+              "image_ref": "host.docker.internal:5001/v2/platform-poc/orders_service:0.1.0",
+              "annotations": {
+                "wasmcloud.dev/appspec": "platform-poc",
+                "wasmcloud.dev/managed-by": "wadm",
+                "wasmcloud.dev/scaler": "ba2a94faf0e76eef4abb7acd7c4e6923882a3f0b4d208187c79717ded88b8ac9",
+                "wasmcloud.dev/spread_name": "default"
+              }
+            }
+          }
+        }
+      },
+      "implementations": {
+        "wasm": {
+          "readiness_valid": true,
+          "new_pod_ready_seconds": 7.118065915998159,
+          "new_pod_order_accepted_seconds": 7.178731790998427,
+          "capacity_ready_seconds": 22.751816987991333,
+          "median_ms": 11.655,
+          "p95_ms": 24.379199999999994,
+          "dropped_iterations": 0,
+          "failures": 0,
+          "accepted": 102499,
+          "already_healthy": true,
+          "recovery_seconds": null,
+          "target_stable": true
+        },
+        "java": {
+          "readiness_valid": true,
+          "new_pod_ready_seconds": 14.993561375002173,
+          "new_pod_order_accepted_seconds": 15.512352292000287,
+          "capacity_ready_seconds": 16.016533136367798,
+          "median_ms": 4.429,
+          "p95_ms": 14.15419999999999,
+          "dropped_iterations": 0,
+          "failures": 0,
+          "accepted": 102499,
+          "already_healthy": true,
+          "recovery_seconds": null,
+          "target_stable": true
+        }
+      },
+      "valid": true,
+      "power_before": {
+        "time": 1794287582.81465,
+        "ac": true,
+        "details": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=38797411)\t100%; charged; 0:00 remaining present: true\n"
+      },
+      "power_after": {
+        "time": 1794288394.257067,
+        "ac": true,
+        "details": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=38797411)\t100%; charged; 0:00 remaining present: true\n"
+      }
+    },
+    {
+      "pair": 3,
+      "order": "java-first",
+      "path": "pair-03",
+      "restored": true,
+      "baseline": {
+        "java": {
+          "image": "k3d-platform-poc.localhost:5001/platform-poc-java/order-service:0.1.0",
+          "resources": {},
+          "original": 1,
+          "source_template_hash": "5cae0bc8af71b26fa5af1546f3791cc5ce8612a12f6c5d56e900762d77352ce7",
+          "images": {
+            "order-service": "k3d-platform-poc.localhost:5001/platform-poc-java/order-service@sha256:8b559e640cef3aecaf69920404617394ee573c50ece3f4ca943b8baa88f74110"
+          }
+        },
+        "wasm": {
+          "version": "v0.0.9-regack.1",
+          "template": "d13c27faf0bb0d38c32858e0d362dd3342f1ce8c91de1bb601d08a70b9e95306",
+          "images": {
+            "nats-leaf": "docker.io/library/nats@sha256:b83efabe3e7def1e0a4a31ec6e078999bb17c80363f881df35edc70fcb6bb927",
+            "wasmcloud-host": "sha256:a22906face539085647ef862bed734e95c05ba6882d870528b92ea4af1b79ea6"
+          },
+          "components": {
+            "data-init": {
+              "id": "data-init",
+              "count": 1,
+              "image_ref": "host.docker.internal:5001/v2/platform-poc/data_init:0.1.0",
+              "annotations": {
+                "wasmcloud.dev/appspec": "platform-poc",
+                "wasmcloud.dev/managed-by": "wadm",
+                "wasmcloud.dev/scaler": "51b4422039bf1620c06be7e7257fc6548da9707a7578c472c185eb4200f94378",
+                "wasmcloud.dev/spread_name": "default"
+              }
+            },
+            "http-controller": {
+              "id": "http-controller",
+              "count": 10,
+              "image_ref": "host.docker.internal:5001/v2/platform-poc/http_controller:0.1.3",
+              "annotations": {
+                "wasmcloud.dev/appspec": "platform-poc",
+                "wasmcloud.dev/managed-by": "wadm",
+                "wasmcloud.dev/scaler": "0f85a66f29f095906a7b51e22c32724b7113dd5551bbdc939b7279c57618a713",
+                "wasmcloud.dev/spread_name": "default"
+              }
+            },
+            "products-service": {
+              "id": "products-service",
+              "count": 1,
+              "image_ref": "host.docker.internal:5001/v2/platform-poc/products_service:0.1.0",
+              "annotations": {
+                "wasmcloud.dev/appspec": "platform-poc",
+                "wasmcloud.dev/managed-by": "wadm",
+                "wasmcloud.dev/scaler": "3848580d53d95c68a35e27792df182d1307900793b47dc7812c373d1aa02d139",
+                "wasmcloud.dev/spread_name": "default"
+              }
+            },
+            "inventory-service": {
+              "id": "inventory-service",
+              "count": 10,
+              "image_ref": "host.docker.internal:5001/v2/platform-poc/inventory_service:0.1.0",
+              "annotations": {
+                "wasmcloud.dev/appspec": "platform-poc",
+                "wasmcloud.dev/managed-by": "wadm",
+                "wasmcloud.dev/scaler": "8bbc60b17877178e5f1b6575196d13d1856268957e88c261c8eb86bbfc45a391",
+                "wasmcloud.dev/spread_name": "default"
+              }
+            },
+            "notification-service": {
+              "id": "notification-service",
+              "count": 1,
+              "image_ref": "host.docker.internal:5001/v2/platform-poc/notification_service:0.1.0",
+              "annotations": {
+                "wasmcloud.dev/appspec": "platform-poc",
+                "wasmcloud.dev/managed-by": "wadm",
+                "wasmcloud.dev/scaler": "6af60a8677a8f7962eed95f449ba8b1a6afb5658d742ad35cd518e331988c5a6",
+                "wasmcloud.dev/spread_name": "default"
+              }
+            },
+            "orders-service": {
+              "id": "orders-service",
+              "count": 10,
+              "image_ref": "host.docker.internal:5001/v2/platform-poc/orders_service:0.1.0",
+              "annotations": {
+                "wasmcloud.dev/appspec": "platform-poc",
+                "wasmcloud.dev/managed-by": "wadm",
+                "wasmcloud.dev/scaler": "ba2a94faf0e76eef4abb7acd7c4e6923882a3f0b4d208187c79717ded88b8ac9",
+                "wasmcloud.dev/spread_name": "default"
+              }
+            }
+          }
+        }
+      },
+      "implementations": {
+        "java": {
+          "readiness_valid": true,
+          "new_pod_ready_seconds": 12.668453333000798,
+          "new_pod_order_accepted_seconds": 13.322967292002431,
+          "capacity_ready_seconds": 14.020435810089111,
+          "median_ms": 4.211,
+          "p95_ms": 10.602099999999997,
+          "dropped_iterations": 0,
+          "failures": 0,
+          "accepted": 102499,
+          "already_healthy": true,
+          "recovery_seconds": null,
+          "target_stable": true
+        },
+        "wasm": {
+          "readiness_valid": true,
+          "new_pod_ready_seconds": 6.1209722090025025,
+          "new_pod_order_accepted_seconds": 6.205752249999932,
+          "capacity_ready_seconds": 22.85458517074585,
+          "median_ms": 14.517,
+          "p95_ms": 44.73559999999984,
+          "dropped_iterations": 36,
+          "failures": 0,
+          "accepted": 102463,
+          "already_healthy": true,
+          "recovery_seconds": null,
+          "target_stable": true
+        }
+      },
+      "valid": true,
+      "power_before": {
+        "time": 1794288394.272505,
+        "ac": true,
+        "details": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=38797411)\t100%; charged; 0:00 remaining present: true\n"
+      },
+      "power_after": {
+        "time": 1794289203.9049249,
+        "ac": true,
+        "details": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=38797411)\t100%; charged; 0:00 remaining present: true\n"
+      }
+    },
+    {
+      "pair": 4,
+      "order": "wasm-first",
+      "path": "pair-04",
+      "restored": true,
+      "baseline": {
+        "java": {
+          "image": "k3d-platform-poc.localhost:5001/platform-poc-java/order-service:0.1.0",
+          "resources": {},
+          "original": 1,
+          "source_template_hash": "5cae0bc8af71b26fa5af1546f3791cc5ce8612a12f6c5d56e900762d77352ce7",
+          "images": {
+            "order-service": "k3d-platform-poc.localhost:5001/platform-poc-java/order-service@sha256:8b559e640cef3aecaf69920404617394ee573c50ece3f4ca943b8baa88f74110"
+          }
+        },
+        "wasm": {
+          "version": "v0.0.9-regack.1",
+          "template": "d13c27faf0bb0d38c32858e0d362dd3342f1ce8c91de1bb601d08a70b9e95306",
+          "images": {
+            "nats-leaf": "docker.io/library/nats@sha256:b83efabe3e7def1e0a4a31ec6e078999bb17c80363f881df35edc70fcb6bb927",
+            "wasmcloud-host": "sha256:a22906face539085647ef862bed734e95c05ba6882d870528b92ea4af1b79ea6"
+          },
+          "components": {
+            "data-init": {
+              "id": "data-init",
+              "count": 1,
+              "image_ref": "host.docker.internal:5001/v2/platform-poc/data_init:0.1.0",
+              "annotations": {
+                "wasmcloud.dev/appspec": "platform-poc",
+                "wasmcloud.dev/managed-by": "wadm",
+                "wasmcloud.dev/scaler": "51b4422039bf1620c06be7e7257fc6548da9707a7578c472c185eb4200f94378",
+                "wasmcloud.dev/spread_name": "default"
+              }
+            },
+            "http-controller": {
+              "id": "http-controller",
+              "count": 10,
+              "image_ref": "host.docker.internal:5001/v2/platform-poc/http_controller:0.1.3",
+              "annotations": {
+                "wasmcloud.dev/appspec": "platform-poc",
+                "wasmcloud.dev/managed-by": "wadm",
+                "wasmcloud.dev/scaler": "0f85a66f29f095906a7b51e22c32724b7113dd5551bbdc939b7279c57618a713",
+                "wasmcloud.dev/spread_name": "default"
+              }
+            },
+            "products-service": {
+              "id": "products-service",
+              "count": 1,
+              "image_ref": "host.docker.internal:5001/v2/platform-poc/products_service:0.1.0",
+              "annotations": {
+                "wasmcloud.dev/appspec": "platform-poc",
+                "wasmcloud.dev/managed-by": "wadm",
+                "wasmcloud.dev/scaler": "3848580d53d95c68a35e27792df182d1307900793b47dc7812c373d1aa02d139",
+                "wasmcloud.dev/spread_name": "default"
+              }
+            },
+            "inventory-service": {
+              "id": "inventory-service",
+              "count": 10,
+              "image_ref": "host.docker.internal:5001/v2/platform-poc/inventory_service:0.1.0",
+              "annotations": {
+                "wasmcloud.dev/appspec": "platform-poc",
+                "wasmcloud.dev/managed-by": "wadm",
+                "wasmcloud.dev/scaler": "8bbc60b17877178e5f1b6575196d13d1856268957e88c261c8eb86bbfc45a391",
+                "wasmcloud.dev/spread_name": "default"
+              }
+            },
+            "notification-service": {
+              "id": "notification-service",
+              "count": 1,
+              "image_ref": "host.docker.internal:5001/v2/platform-poc/notification_service:0.1.0",
+              "annotations": {
+                "wasmcloud.dev/appspec": "platform-poc",
+                "wasmcloud.dev/managed-by": "wadm",
+                "wasmcloud.dev/scaler": "6af60a8677a8f7962eed95f449ba8b1a6afb5658d742ad35cd518e331988c5a6",
+                "wasmcloud.dev/spread_name": "default"
+              }
+            },
+            "orders-service": {
+              "id": "orders-service",
+              "count": 10,
+              "image_ref": "host.docker.internal:5001/v2/platform-poc/orders_service:0.1.0",
+              "annotations": {
+                "wasmcloud.dev/appspec": "platform-poc",
+                "wasmcloud.dev/managed-by": "wadm",
+                "wasmcloud.dev/scaler": "ba2a94faf0e76eef4abb7acd7c4e6923882a3f0b4d208187c79717ded88b8ac9",
+                "wasmcloud.dev/spread_name": "default"
+              }
+            }
+          }
+        }
+      },
+      "implementations": {
+        "wasm": {
+          "readiness_valid": true,
+          "new_pod_ready_seconds": 5.57072929199785,
+          "new_pod_order_accepted_seconds": 5.624634374999005,
+          "capacity_ready_seconds": 22.824050903320312,
+          "median_ms": 13.18,
+          "p95_ms": 27.239,
+          "dropped_iterations": 0,
+          "failures": 0,
+          "accepted": 102499,
+          "already_healthy": true,
+          "recovery_seconds": null,
+          "target_stable": true
+        },
+        "java": {
+          "readiness_valid": true,
+          "new_pod_ready_seconds": 13.790128458000254,
+          "new_pod_order_accepted_seconds": 13.812854042000254,
+          "capacity_ready_seconds": 14.043766975402832,
+          "median_ms": 4.062,
+          "p95_ms": 10.410099999999996,
+          "dropped_iterations": 0,
+          "failures": 0,
+          "accepted": 102499,
+          "already_healthy": true,
+          "recovery_seconds": null,
+          "target_stable": true
+        }
+      },
+      "valid": true,
+      "power_before": {
+        "time": 1794289203.9195452,
+        "ac": true,
+        "details": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=38797411)\t100%; charged; 0:00 remaining present: true\n"
+      },
+      "power_after": {
+        "time": 1794290011.236342,
+        "ac": true,
+        "details": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=38797411)\t100%; charged; 0:00 remaining present: true\n"
+      }
+    },
+    {
+      "pair": 5,
+      "order": "java-first",
+      "path": "pair-05",
+      "restored": true,
+      "baseline": {
+        "java": {
+          "image": "k3d-platform-poc.localhost:5001/platform-poc-java/order-service:0.1.0",
+          "resources": {},
+          "original": 1,
+          "source_template_hash": "5cae0bc8af71b26fa5af1546f3791cc5ce8612a12f6c5d56e900762d77352ce7",
+          "images": {
+            "order-service": "k3d-platform-poc.localhost:5001/platform-poc-java/order-service@sha256:8b559e640cef3aecaf69920404617394ee573c50ece3f4ca943b8baa88f74110"
+          }
+        },
+        "wasm": {
+          "version": "v0.0.9-regack.1",
+          "template": "d13c27faf0bb0d38c32858e0d362dd3342f1ce8c91de1bb601d08a70b9e95306",
+          "images": {
+            "nats-leaf": "docker.io/library/nats@sha256:b83efabe3e7def1e0a4a31ec6e078999bb17c80363f881df35edc70fcb6bb927",
+            "wasmcloud-host": "sha256:a22906face539085647ef862bed734e95c05ba6882d870528b92ea4af1b79ea6"
+          },
+          "components": {
+            "data-init": {
+              "id": "data-init",
+              "count": 1,
+              "image_ref": "host.docker.internal:5001/v2/platform-poc/data_init:0.1.0",
+              "annotations": {
+                "wasmcloud.dev/appspec": "platform-poc",
+                "wasmcloud.dev/managed-by": "wadm",
+                "wasmcloud.dev/scaler": "51b4422039bf1620c06be7e7257fc6548da9707a7578c472c185eb4200f94378",
+                "wasmcloud.dev/spread_name": "default"
+              }
+            },
+            "http-controller": {
+              "id": "http-controller",
+              "count": 10,
+              "image_ref": "host.docker.internal:5001/v2/platform-poc/http_controller:0.1.3",
+              "annotations": {
+                "wasmcloud.dev/appspec": "platform-poc",
+                "wasmcloud.dev/managed-by": "wadm",
+                "wasmcloud.dev/scaler": "0f85a66f29f095906a7b51e22c32724b7113dd5551bbdc939b7279c57618a713",
+                "wasmcloud.dev/spread_name": "default"
+              }
+            },
+            "products-service": {
+              "id": "products-service",
+              "count": 1,
+              "image_ref": "host.docker.internal:5001/v2/platform-poc/products_service:0.1.0",
+              "annotations": {
+                "wasmcloud.dev/appspec": "platform-poc",
+                "wasmcloud.dev/managed-by": "wadm",
+                "wasmcloud.dev/scaler": "3848580d53d95c68a35e27792df182d1307900793b47dc7812c373d1aa02d139",
+                "wasmcloud.dev/spread_name": "default"
+              }
+            },
+            "inventory-service": {
+              "id": "inventory-service",
+              "count": 10,
+              "image_ref": "host.docker.internal:5001/v2/platform-poc/inventory_service:0.1.0",
+              "annotations": {
+                "wasmcloud.dev/appspec": "platform-poc",
+                "wasmcloud.dev/managed-by": "wadm",
+                "wasmcloud.dev/scaler": "8bbc60b17877178e5f1b6575196d13d1856268957e88c261c8eb86bbfc45a391",
+                "wasmcloud.dev/spread_name": "default"
+              }
+            },
+            "notification-service": {
+              "id": "notification-service",
+              "count": 1,
+              "image_ref": "host.docker.internal:5001/v2/platform-poc/notification_service:0.1.0",
+              "annotations": {
+                "wasmcloud.dev/appspec": "platform-poc",
+                "wasmcloud.dev/managed-by": "wadm",
+                "wasmcloud.dev/scaler": "6af60a8677a8f7962eed95f449ba8b1a6afb5658d742ad35cd518e331988c5a6",
+                "wasmcloud.dev/spread_name": "default"
+              }
+            },
+            "orders-service": {
+              "id": "orders-service",
+              "count": 10,
+              "image_ref": "host.docker.internal:5001/v2/platform-poc/orders_service:0.1.0",
+              "annotations": {
+                "wasmcloud.dev/appspec": "platform-poc",
+                "wasmcloud.dev/managed-by": "wadm",
+                "wasmcloud.dev/scaler": "ba2a94faf0e76eef4abb7acd7c4e6923882a3f0b4d208187c79717ded88b8ac9",
+                "wasmcloud.dev/spread_name": "default"
+              }
+            }
+          }
+        }
+      },
+      "implementations": {
+        "java": {
+          "readiness_valid": true,
+          "new_pod_ready_seconds": 12.761244666002312,
+          "new_pod_order_accepted_seconds": 13.053253375001077,
+          "capacity_ready_seconds": 14.025327205657959,
+          "median_ms": 4.093,
+          "p95_ms": 10.165299999999986,
+          "dropped_iterations": 0,
+          "failures": 0,
+          "accepted": 102499,
+          "already_healthy": true,
+          "recovery_seconds": null,
+          "target_stable": true
+        },
+        "wasm": {
+          "readiness_valid": true,
+          "new_pod_ready_seconds": 4.016775707998022,
+          "new_pod_order_accepted_seconds": 4.048231790999125,
+          "capacity_ready_seconds": 22.740375995635986,
+          "median_ms": 13.067,
+          "p95_ms": 27.597,
+          "dropped_iterations": 0,
+          "failures": 0,
+          "accepted": 102499,
+          "already_healthy": true,
+          "recovery_seconds": null,
+          "target_stable": true
+        }
+      },
+      "valid": true,
+      "power_before": {
+        "time": 1794290011.2523,
+        "ac": true,
+        "details": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=38797411)\t100%; charged; 0:00 remaining present: true\n"
+      },
+      "power_after": {
+        "time": 1794290810.583637,
+        "ac": true,
+        "details": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=38797411)\t100%; charged; 0:00 remaining present: true\n"
+      }
+    }
+  ],
+  "aggregates": {
+    "java": {
+      "new_pod_ready_seconds": {
+        "n": 5,
+        "median": 13.790128458000254,
+        "minimum": 12.668453333000798,
+        "maximum": 14.993561375002173
+      },
+      "new_pod_order_accepted_seconds": {
+        "n": 5,
+        "median": 13.812854042000254,
+        "minimum": 13.053253375001077,
+        "maximum": 15.512352292000287
+      },
+      "capacity_ready_seconds": {
+        "n": 5,
+        "median": 14.043766975402832,
+        "minimum": 14.020435810089111,
+        "maximum": 16.019152879714966
+      },
+      "median_ms": {
+        "n": 5,
+        "median": 4.211,
+        "minimum": 4.062,
+        "maximum": 4.929
+      },
+      "p95_ms": {
+        "n": 5,
+        "median": 10.602099999999997,
+        "minimum": 10.165299999999986,
+        "maximum": 21.297599999999928
+      },
+      "dropped_iterations": {
+        "n": 5,
+        "median": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "failures": {
+        "n": 5,
+        "median": 0,
+        "minimum": 0,
+        "maximum": 0
+      }
+    },
+    "wasm": {
+      "new_pod_ready_seconds": {
+        "n": 5,
+        "median": 6.1209722090025025,
+        "minimum": 4.016775707998022,
+        "maximum": 7.9427907499994035
+      },
+      "new_pod_order_accepted_seconds": {
+        "n": 5,
+        "median": 6.205752249999932,
+        "minimum": 4.048231790999125,
+        "maximum": 7.993863749998127
+      },
+      "capacity_ready_seconds": {
+        "n": 5,
+        "median": 22.824050903320312,
+        "minimum": 22.740375995635986,
+        "maximum": 22.91023898124695
+      },
+      "median_ms": {
+        "n": 5,
+        "median": 13.067,
+        "minimum": 11.655,
+        "maximum": 14.517
+      },
+      "p95_ms": {
+        "n": 5,
+        "median": 27.239,
+        "minimum": 24.379199999999994,
+        "maximum": 44.73559999999984
+      },
+      "dropped_iterations": {
+        "n": 5,
+        "median": 0,
+        "minimum": 0,
+        "maximum": 36
+      },
+      "failures": {
+        "n": 5,
+        "median": 0,
+        "minimum": 0,
+        "maximum": 0
+      }
+    }
+  },
+  "current_pair": 5,
+  "current_order": "java-first"
+}

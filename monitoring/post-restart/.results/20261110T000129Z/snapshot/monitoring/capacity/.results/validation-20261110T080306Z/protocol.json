@@ -1,0 +1,126 @@
+{
+  "cpu_sensitivity": {
+    "original": {
+      "description": "Application-container limits; shared databases, host NATS, Wasm sidecar and control plane are outside this budget.",
+      "cpu_millicores": 2000,
+      "memory_mib": 4096,
+      "java": [
+        {
+          "deployment": "inventory-service",
+          "container": "inventory-service",
+          "cpu_millicores": 500,
+          "memory_mib": 1024
+        },
+        {
+          "deployment": "notification-service",
+          "container": "notification-service",
+          "cpu_millicores": 500,
+          "memory_mib": 1024
+        },
+        {
+          "deployment": "order-service",
+          "container": "order-service",
+          "cpu_millicores": 500,
+          "memory_mib": 1024
+        },
+        {
+          "deployment": "product-service",
+          "container": "product-service",
+          "cpu_millicores": 500,
+          "memory_mib": 1024
+        }
+      ],
+      "wasm": [
+        {
+          "deployment": "wasmcloud-host",
+          "container": "wasmcloud-host",
+          "cpu_millicores": 2000,
+          "memory_mib": 4096
+        }
+      ]
+    },
+    "tuned": {
+      "description": "Allocation sensitivity: unchanged total CPU/RAM; Java order 1200m, inventory 600m, notification 150m, product 50m.",
+      "cpu_millicores": 2000,
+      "memory_mib": 4096,
+      "java": [
+        {
+          "deployment": "inventory-service",
+          "container": "inventory-service",
+          "cpu_millicores": 600,
+          "memory_mib": 1024
+        },
+        {
+          "deployment": "notification-service",
+          "container": "notification-service",
+          "cpu_millicores": 150,
+          "memory_mib": 1024
+        },
+        {
+          "deployment": "order-service",
+          "container": "order-service",
+          "cpu_millicores": 1200,
+          "memory_mib": 1024
+        },
+        {
+          "deployment": "product-service",
+          "container": "product-service",
+          "cpu_millicores": 50,
+          "memory_mib": 1024
+        }
+      ],
+      "wasm": [
+        {
+          "deployment": "wasmcloud-host",
+          "container": "wasmcloud-host",
+          "cpu_millicores": 2000,
+          "memory_mib": 4096
+        }
+      ]
+    },
+    "rates": [
+      100,
+      200,
+      250,
+      300,
+      350,
+      400,
+      450,
+      500,
+      600
+    ]
+  },
+  "priming_seconds": 180,
+  "priming_rate": 25,
+  "warmup_seconds": 180,
+  "warmup_rate": 100,
+  "step_seconds": 120,
+  "confirmation_seconds": 300,
+  "repeats": 3,
+  "pair_orders": [
+    [
+      "java",
+      "wasm"
+    ],
+    [
+      "wasm",
+      "java"
+    ],
+    [
+      "java",
+      "wasm"
+    ]
+  ],
+  "wasm_rates": [
+    350,
+    400,
+    450
+  ],
+  "p95_ms": 100,
+  "vus": 250,
+  "request_timeout": "10s",
+  "selection": "Use tuned Java if its confirmed rate is at least original; otherwise retain original. Repeats retest its confirmed bracket.",
+  "stability": "1800 seconds at the minimum passing confirmation rate across all three repeats; no stability run if any repeat has no passing confirmation.",
+  "rollout_wait_seconds": 600,
+  "caveats": "One shared local VM; per-application budgets exclude databases, messaging, Wasm sidecar and monitoring. Warmup now 100/s, so do not pool earlier 25/s-warmup results."
+}

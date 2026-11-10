@@ -1,0 +1,178 @@
+{
+  "implementation": "wasm",
+  "pair": 4,
+  "start_time": 1794291074.097711,
+  "scale_ack_seconds": 0.1745279169990681,
+  "first_order_seconds": 8.259081374999369,
+  "all_pods_ready_seconds": 3.041055874997255,
+  "stable_serving_seconds": 18.33142074999705,
+  "probe_attempts": [
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.0028118749978602864,
+      "start_seconds": 0.17452974999832804,
+      "end_seconds": 0.17737366699657287
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.013653875001182314,
+      "start_seconds": 1.1845733749978535,
+      "end_seconds": 1.1982772089977516
+    },
+    {
+      "status": 502,
+      "accepted": false,
+      "duration_seconds": 0.003437708001001738,
+      "start_seconds": 2.189684874996601,
+      "end_seconds": 2.19317670899909
+    },
+    {
+      "status": 500,
+      "accepted": false,
+      "duration_seconds": 0.016934541999944486,
+      "start_seconds": 3.1902419589969213,
+      "end_seconds": 3.207257291996939
+    },
+    {
+      "status": 500,
+      "accepted": false,
+      "duration_seconds": 0.009111917002883274,
+      "start_seconds": 4.1908929999990505,
+      "end_seconds": 4.2003392499973415
+    },
+    {
+      "status": 500,
+      "accepted": false,
+      "duration_seconds": 0.01393087500036927,
+      "start_seconds": 5.1949326249996375,
+      "end_seconds": 5.209016499997233
+    },
+    {
+      "status": 500,
+      "accepted": false,
+      "duration_seconds": 0.010359459000028437,
+      "start_seconds": 6.198080833997665,
+      "end_seconds": 6.208476291998522
+    },
+    {
+      "status": 500,
+      "accepted": false,
+      "duration_seconds": 0.011113374999695225,
+      "start_seconds": 7.206043374997535,
+      "end_seconds": 7.2172204999988026
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.050104582998756086,
+      "start_seconds": 8.208959958999912,
+      "end_seconds": 8.259081374999369
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.04089679199751117,
+      "start_seconds": 9.219124791998183,
+      "end_seconds": 9.260061749999295
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.040435042003082344,
+      "start_seconds": 10.227384208999865,
+      "end_seconds": 10.26785362499868
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.03021683299812139,
+      "start_seconds": 11.233156374997634,
+      "end_seconds": 11.263387791997957
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.029368625000643078,
+      "start_seconds": 12.243235999998433,
+      "end_seconds": 12.272655708999082
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.04769066600056249,
+      "start_seconds": 13.243815458998142,
+      "end_seconds": 13.291549833997124
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.03510587500204565,
+      "start_seconds": 14.25359404199844,
+      "end_seconds": 14.288707208997948
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.03097841699855053,
+      "start_seconds": 15.263628791999508,
+      "end_seconds": 15.294619124997553
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.04157649999979185,
+      "start_seconds": 16.27369487499891,
+      "end_seconds": 16.31530304199987
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.02972866699929,
+      "start_seconds": 17.27995891699902,
+      "end_seconds": 17.30971099999806
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.04137579200323671,
+      "start_seconds": 18.29002220899929,
+      "end_seconds": 18.33142074999705
+    }
+  ],
+  "pods": {
+    "pods": {
+      "e5ebf7d7-4a80-4c38-8f60-c325c89611b3": {
+        "name": "wasmcloud-host-f65d47bc8-7drdn",
+        "deployment": "wasmcloud-host",
+        "created_seconds": 1.0107978339983674,
+        "currently_ready": true,
+        "ready_seconds": 3.041035791997274
+      }
+    },
+    "errors": [],
+    "all_ready_seconds": 3.041055874997255,
+    "currently_all_ready": true
+  },
+  "valid": true,
+  "verified_zero": true,
+  "runtime_verified": {
+    "seconds": 28.838943499999004,
+    "host_id": "NCRMYCENII2R2GO5BWY3METRMN5PNQJSK4XUMRZHRE6CGG7EF5TCZLYU",
+    "components": {
+      "notification-service": 1,
+      "orders-service": 10,
+      "http-controller": 10,
+      "products-service": 1,
+      "data-init": 1,
+      "inventory-service": 10
+    },
+    "providers": [
+      "nats",
+      "sqldb-postgres",
+      "http-server",
+      "kv-redis"
+    ]
+  }
+}

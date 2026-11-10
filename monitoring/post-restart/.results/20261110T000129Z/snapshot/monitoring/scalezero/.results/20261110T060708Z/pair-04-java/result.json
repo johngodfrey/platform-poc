@@ -1,0 +1,223 @@
+{
+  "implementation": "java",
+  "pair": 4,
+  "start_time": 1794291110.5448692,
+  "scale_ack_seconds": 0.31836295899847755,
+  "first_order_seconds": 14.634911083998304,
+  "all_pods_ready_seconds": 14.209726834000321,
+  "stable_serving_seconds": 24.523826708998968,
+  "probe_attempts": [
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.003852750000078231,
+      "start_seconds": 0.31836420899708173,
+      "end_seconds": 0.32224787499944796
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.003667250002763467,
+      "start_seconds": 1.3220119999969029,
+      "end_seconds": 1.325736249997135
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.004489625000132946,
+      "start_seconds": 2.3269894999975804,
+      "end_seconds": 2.331517791997612
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.009253791999071836,
+      "start_seconds": 3.3371223340000142,
+      "end_seconds": 3.346494333996816
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.014058500000828644,
+      "start_seconds": 4.342180583997106,
+      "end_seconds": 4.356290166997496
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.00461179099875153,
+      "start_seconds": 5.3498475839987805,
+      "end_seconds": 5.354561041996931
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.0067148330017516855,
+      "start_seconds": 6.3511881249978615,
+      "end_seconds": 6.357973999998649
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.010223541998129804,
+      "start_seconds": 7.352650249998987,
+      "end_seconds": 7.362910416999512
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.01674545800051419,
+      "start_seconds": 8.36269666699809,
+      "end_seconds": 8.37951366699781
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.02236612499837065,
+      "start_seconds": 9.37224491699817,
+      "end_seconds": 9.394659208999656
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.009349709001980955,
+      "start_seconds": 10.375740333998692,
+      "end_seconds": 10.385167041997192
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.010381541000242578,
+      "start_seconds": 11.381800249997468,
+      "end_seconds": 11.392206249998708
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.0034214580009575,
+      "start_seconds": 12.390333249997639,
+      "end_seconds": 12.393808834000083
+    },
+    {
+      "status": 500,
+      "accepted": false,
+      "duration_seconds": 0.3725136670000211,
+      "start_seconds": 13.400364334000187,
+      "end_seconds": 13.7729322089981
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.2244851249997737,
+      "start_seconds": 14.410405374997936,
+      "end_seconds": 14.634911083998304
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.05035883399978047,
+      "start_seconds": 15.41132049999942,
+      "end_seconds": 15.461693792000005
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.05745833299806691,
+      "start_seconds": 16.421365541998966,
+      "end_seconds": 16.478839583996887
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.050987292001082096,
+      "start_seconds": 17.429804583996884,
+      "end_seconds": 17.480810666998877
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.06696870800078614,
+      "start_seconds": 18.439873708997766,
+      "end_seconds": 18.506874374998006
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.05906616699940059,
+      "start_seconds": 19.449649624999438,
+      "end_seconds": 19.508742499998334
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.03436491699903854,
+      "start_seconds": 20.459718458998395,
+      "end_seconds": 20.494115833997057
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.058748708997882204,
+      "start_seconds": 21.46207954199781,
+      "end_seconds": 21.520869166997727
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.058626124999136664,
+      "start_seconds": 22.47076549999838,
+      "end_seconds": 22.529403499996988
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.07172537500082399,
+      "start_seconds": 23.472396249999292,
+      "end_seconds": 23.54416924999896
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.04441370800122968,
+      "start_seconds": 24.479390917000273,
+      "end_seconds": 24.523826708998968
+    }
+  ],
+  "pods": {
+    "pods": {
+      "555869eb-3e07-48a5-b128-80a22dff59ce": {
+        "name": "inventory-service-76587d759-8jbd6",
+        "deployment": "inventory-service",
+        "created_seconds": 1.0065712919968064,
+        "currently_ready": true,
+        "ready_seconds": 14.193165249998856
+      },
+      "6bcaf599-bfd1-4b41-bc28-db40f7b0e03a": {
+        "name": "notification-service-55d4c787b4-wz75v",
+        "deployment": "notification-service",
+        "created_seconds": 1.0083904589992017,
+        "currently_ready": true,
+        "ready_seconds": 13.195228166998277
+      },
+      "387c30a5-5f03-4b80-bda7-5c645ac58eda": {
+        "name": "order-service-59b7b5cb76-srqwg",
+        "deployment": "order-service",
+        "created_seconds": 1.0100077919996693,
+        "currently_ready": true,
+        "ready_seconds": 13.198366833999899
+      },
+      "1332b5c1-d852-4ee1-937e-768b723e4e26": {
+        "name": "product-service-77b664576d-4xs4p",
+        "deployment": "product-service",
+        "created_seconds": 1.0116582919981738,
+        "currently_ready": true,
+        "ready_seconds": 13.200986249998095
+      }
+    },
+    "errors": [],
+    "all_ready_seconds": 14.209726834000321,
+    "currently_all_ready": true
+  },
+  "valid": true,
+  "verified_zero": true
+}

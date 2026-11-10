@@ -1,0 +1,13 @@
+wasm functional preflight: order accepted
+java functional preflight: order accepted
+Dashboard: http://localhost:8080/grafana/d/java-wasm-scaleout
+wasm scale accepted at 148.46 seconds
+wasm target capacity observed after 22.75 seconds
+wasm functional preflight: order accepted
+java scale accepted at 137.44 seconds
+java target capacity observed after 16.02 seconds
+java functional preflight: order accepted
+wasm functional preflight: order accepted
+java functional preflight: order accepted
+Report: /Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/scaleout/.results/repeated-20261110T045931Z/pair-02/report.html
+Recovery: python3 monitoring/scaleout/run.py restore /Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/scaleout/.results/repeated-20261110T045931Z/pair-02/state.json

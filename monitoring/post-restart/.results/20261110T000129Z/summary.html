@@ -1,0 +1,138 @@
+<!doctype html><meta charset="utf-8"><title>post-restart interim summary</title><style>body{font:18px system-ui;max-width:1100px;margin:40px auto;padding:20px;line-height:1.5}table{border-collapse:collapse;width:100%}td,th{padding:12px;text-align:left;border-bottom:1px solid #bbb}a{color:#167}</style><h1>post-restart interim summary</h1><p>Completed warmed runs reproduce lower Wasm memory and higher loaded CPU, with much closer latency than earlier trials. The campaign stopped on an environmental mains/lid guard during repeated capacity trials; long-run stability remains unmeasured in this campaign.</p><table><tr><th>Footprint at100/s, five runs</th><th>Java</th><th>Wasm</th></tr><tr><td>Idle RAM</td><td>1,638 MiB</td><td>298 MiB</td></tr><tr><td>Loaded RAM</td><td>1,642 MiB</td><td>304 MiB</td></tr><tr><td>Loaded CPU</td><td>0.248 cores</td><td>0.386 cores</td></tr><tr><td>Orderp95, median across runs</td><td>10.64 ms</td><td>12.48 ms</td></tr></table><h2>Interpretation and limitations</h2><ul><li>Footprint medians across five runs per implementation. Application-only resources; infrastructure excluded.</li><li>Density next smaller allocations were inconclusive_runtime; do not call them demonstrated OOM minima.</li><li>All five scale-out trials per implementation were already healthy before scale. This is not proof of overload recovery.</li><li>The capacity matrix stopped on an environmental mains/lid guard. Its interrupted child reports restored=True and applications_healthy=True. No new 30-minute stability trials completed.</li><li>One completed bounded Wasm350/s step had0HTTP failures,872dropped arrivals,p95~296ms. This is not an exact capacity maximum.</li><li>All2638 pre-existing historical files verified unchanged at summary time.</li></ul><p><a href="summary.json">Full derived metrics and source hashes</a> · <a href="live.html">All post-restart reports</a></p><h2>Startup, density and scaling</h2><pre>{
+  &quot;startup&quot;: {
+    &quot;java-cold&quot;: {
+      &quot;median_seconds&quot;: 20.96086991699849,
+      &quot;range_seconds&quot;: [
+        20.136204958002054,
+        21.99972208300096
+      ],
+      &quot;n&quot;: 5
+    },
+    &quot;java-cached&quot;: {
+      &quot;median_seconds&quot;: 15.024798374997772,
+      &quot;range_seconds&quot;: [
+        13.618263832999219,
+        17.063309959001344
+      ],
+      &quot;n&quot;: 5
+    },
+    &quot;wasm-cold&quot;: {
+      &quot;median_seconds&quot;: 14.282420208000985,
+      &quot;range_seconds&quot;: [
+        12.27511258300001,
+        15.33357158400031
+      ],
+      &quot;n&quot;: 5
+    },
+    &quot;wasm-cached&quot;: {
+      &quot;median_seconds&quot;: 6.652934749999986,
+      &quot;range_seconds&quot;: [
+        5.24546887500037,
+        13.29997424999965
+      ],
+      &quot;n&quot;: 5
+    },
+    &quot;java-scalezero&quot;: {
+      &quot;median_seconds&quot;: 14.918762000001152,
+      &quot;range_seconds&quot;: [
+        14.634911083998304,
+        14.94973383300021
+      ],
+      &quot;n&quot;: 5
+    },
+    &quot;wasm-scalezero&quot;: {
+      &quot;median_seconds&quot;: 8.259081374999369,
+      &quot;range_seconds&quot;: [
+        6.264082624998991,
+        9.256392208000761
+      ],
+      &quot;n&quot;: 5
+    }
+  },
+  &quot;density&quot;: {
+    &quot;java&quot;: [
+      {
+        &quot;source&quot;: &quot;monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/density/.results/20261110T013453Z/report.json&quot;,
+        &quot;lowest_pass_mib&quot;: 2048,
+        &quot;last_stage&quot;: &quot;inconclusive_runtime&quot;,
+        &quot;last_limit_mib&quot;: 1024
+      },
+      {
+        &quot;source&quot;: &quot;monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/density/.results/20261110T025248Z/report.json&quot;,
+        &quot;lowest_pass_mib&quot;: 2048,
+        &quot;last_stage&quot;: &quot;inconclusive_runtime&quot;,
+        &quot;last_limit_mib&quot;: 1024
+      },
+      {
+        &quot;source&quot;: &quot;monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/density/.results/20261110T030746Z/report.json&quot;,
+        &quot;lowest_pass_mib&quot;: 2048,
+        &quot;last_stage&quot;: &quot;inconclusive_runtime&quot;,
+        &quot;last_limit_mib&quot;: 1024
+      }
+    ],
+    &quot;wasm&quot;: [
+      {
+        &quot;source&quot;: &quot;monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/density/.results/20261110T014938Z/report.json&quot;,
+        &quot;lowest_pass_mib&quot;: 384,
+        &quot;last_stage&quot;: &quot;inconclusive_runtime&quot;,
+        &quot;last_limit_mib&quot;: 256
+      },
+      {
+        &quot;source&quot;: &quot;monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/density/.results/20261110T022137Z/report.json&quot;,
+        &quot;lowest_pass_mib&quot;: 384,
+        &quot;last_stage&quot;: &quot;inconclusive_runtime&quot;,
+        &quot;last_limit_mib&quot;: 256
+      },
+      {
+        &quot;source&quot;: &quot;monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/density/.results/20261110T032236Z/report.json&quot;,
+        &quot;lowest_pass_mib&quot;: 384,
+        &quot;last_stage&quot;: &quot;inconclusive_runtime&quot;,
+        &quot;last_limit_mib&quot;: 256
+      }
+    ]
+  },
+  &quot;scaleout&quot;: {
+    &quot;java&quot;: {
+      &quot;new_pod_order_accepted_seconds&quot;: 13.812854042000254,
+      &quot;capacity_ready_seconds&quot;: 14.043766975402832,
+      &quot;p95_ms&quot;: 10.602099999999997,
+      &quot;failures&quot;: 0,
+      &quot;dropped&quot;: 0,
+      &quot;already_healthy_trials&quot;: 5
+    },
+    &quot;wasm&quot;: {
+      &quot;new_pod_order_accepted_seconds&quot;: 6.205752249999932,
+      &quot;capacity_ready_seconds&quot;: 22.824050903320312,
+      &quot;p95_ms&quot;: 27.239,
+      &quot;failures&quot;: 0,
+      &quot;dropped&quot;: 36,
+      &quot;already_healthy_trials&quot;: 5
+    }
+  },
+  &quot;autoscale&quot;: {
+    &quot;latency&quot;: {
+      &quot;java&quot;: {
+        &quot;cycles&quot;: 0,
+        &quot;failures&quot;: 0,
+        &quot;dropped&quot;: 0
+      },
+      &quot;wasm&quot;: {
+        &quot;cycles&quot;: 0,
+        &quot;failures&quot;: 0,
+        &quot;dropped&quot;: 0
+      }
+    },
+    &quot;cpu&quot;: {
+      &quot;java&quot;: {
+        &quot;cycles&quot;: 2,
+        &quot;failures&quot;: 5,
+        &quot;dropped&quot;: 0
+      },
+      &quot;wasm&quot;: {
+        &quot;cycles&quot;: 2,
+        &quot;failures&quot;: 0,
+        &quot;dropped&quot;: 0
+      }
+    }
+  }
+}</pre>

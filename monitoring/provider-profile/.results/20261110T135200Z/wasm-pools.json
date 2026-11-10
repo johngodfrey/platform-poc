@@ -1,0 +1,2458 @@
+{
+  "before": {
+    "order-service": {
+      "hikaricp.connections.active": {
+        "name": "hikaricp.connections.active",
+        "description": "Active connections",
+        "measurements": [
+          {
+            "statistic": "VALUE",
+            "value": 0.0
+          }
+        ],
+        "availableTags": [
+          {
+            "tag": "pool",
+            "values": [
+              "HikariPool-1"
+            ]
+          }
+        ]
+      },
+      "hikaricp.connections.pending": {
+        "name": "hikaricp.connections.pending",
+        "description": "Pending threads",
+        "measurements": [
+          {
+            "statistic": "VALUE",
+            "value": 0.0
+          }
+        ],
+        "availableTags": [
+          {
+            "tag": "pool",
+            "values": [
+              "HikariPool-1"
+            ]
+          }
+        ]
+      },
+      "hikaricp.connections.max": {
+        "name": "hikaricp.connections.max",
+        "description": "Max connections",
+        "measurements": [
+          {
+            "statistic": "VALUE",
+            "value": 10.0
+          }
+        ],
+        "availableTags": [
+          {
+            "tag": "pool",
+            "values": [
+              "HikariPool-1"
+            ]
+          }
+        ]
+      },
+      "hikaricp.connections.acquire": {
+        "name": "hikaricp.connections.acquire",
+        "description": "Connection acquire time",
+        "baseUnit": "seconds",
+        "measurements": [
+          {
+            "statistic": "COUNT",
+            "value": 16235.0
+          },
+          {
+            "statistic": "TOTAL_TIME",
+            "value": 7.089678324
+          },
+          {
+            "statistic": "MAX",
+            "value": 0.208149314
+          }
+        ],
+        "availableTags": [
+          {
+            "tag": "pool",
+            "values": [
+              "HikariPool-1"
+            ]
+          }
+        ]
+      },
+      "hikaricp.connections.timeout": {
+        "name": "hikaricp.connections.timeout",
+        "description": "Connection timeout total count",
+        "measurements": [
+          {
+            "statistic": "COUNT",
+            "value": 0.0
+          }
+        ],
+        "availableTags": [
+          {
+            "tag": "pool",
+            "values": [
+              "HikariPool-1"
+            ]
+          }
+        ]
+      }
+    },
+    "inventory-service": {
+      "hikaricp.connections.active": {
+        "error": "HTTP Error 404: Not Found"
+      },
+      "hikaricp.connections.pending": {
+        "error": "HTTP Error 404: Not Found"
+      },
+      "hikaricp.connections.max": {
+        "error": "HTTP Error 404: Not Found"
+      },
+      "hikaricp.connections.acquire": {
+        "error": "HTTP Error 404: Not Found"
+      },
+      "hikaricp.connections.timeout": {
+        "error": "HTTP Error 404: Not Found"
+      }
+    }
+  },
+  "samples": [
+    {
+      "time": 1794318941.4421299,
+      "metrics": {
+        "order-service": {
+          "hikaricp.connections.active": {
+            "name": "hikaricp.connections.active",
+            "description": "Active connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.pending": {
+            "name": "hikaricp.connections.pending",
+            "description": "Pending threads",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.max": {
+            "name": "hikaricp.connections.max",
+            "description": "Max connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 10.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.acquire": {
+            "name": "hikaricp.connections.acquire",
+            "description": "Connection acquire time",
+            "baseUnit": "seconds",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 16235.0
+              },
+              {
+                "statistic": "TOTAL_TIME",
+                "value": 7.089678324
+              },
+              {
+                "statistic": "MAX",
+                "value": 0.208149314
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.timeout": {
+            "name": "hikaricp.connections.timeout",
+            "description": "Connection timeout total count",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          }
+        },
+        "inventory-service": {
+          "hikaricp.connections.active": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.pending": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.max": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.acquire": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.timeout": {
+            "error": "HTTP Error 404: Not Found"
+          }
+        }
+      }
+    },
+    {
+      "time": 1794318946.620925,
+      "metrics": {
+        "order-service": {
+          "hikaricp.connections.active": {
+            "name": "hikaricp.connections.active",
+            "description": "Active connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.pending": {
+            "name": "hikaricp.connections.pending",
+            "description": "Pending threads",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.max": {
+            "name": "hikaricp.connections.max",
+            "description": "Max connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 10.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.acquire": {
+            "name": "hikaricp.connections.acquire",
+            "description": "Connection acquire time",
+            "baseUnit": "seconds",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 16235.0
+              },
+              {
+                "statistic": "TOTAL_TIME",
+                "value": 7.089678324
+              },
+              {
+                "statistic": "MAX",
+                "value": 0.208149314
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.timeout": {
+            "name": "hikaricp.connections.timeout",
+            "description": "Connection timeout total count",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          }
+        },
+        "inventory-service": {
+          "hikaricp.connections.active": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.pending": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.max": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.acquire": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.timeout": {
+            "error": "HTTP Error 404: Not Found"
+          }
+        }
+      }
+    },
+    {
+      "time": 1794318951.74531,
+      "metrics": {
+        "order-service": {
+          "hikaricp.connections.active": {
+            "name": "hikaricp.connections.active",
+            "description": "Active connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.pending": {
+            "name": "hikaricp.connections.pending",
+            "description": "Pending threads",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.max": {
+            "name": "hikaricp.connections.max",
+            "description": "Max connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 10.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.acquire": {
+            "name": "hikaricp.connections.acquire",
+            "description": "Connection acquire time",
+            "baseUnit": "seconds",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 16237.0
+              },
+              {
+                "statistic": "TOTAL_TIME",
+                "value": 7.09275761
+              },
+              {
+                "statistic": "MAX",
+                "value": 0.208149314
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.timeout": {
+            "name": "hikaricp.connections.timeout",
+            "description": "Connection timeout total count",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          }
+        },
+        "inventory-service": {
+          "hikaricp.connections.active": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.pending": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.max": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.acquire": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.timeout": {
+            "error": "HTTP Error 404: Not Found"
+          }
+        }
+      }
+    },
+    {
+      "time": 1794318956.8692741,
+      "metrics": {
+        "order-service": {
+          "hikaricp.connections.active": {
+            "name": "hikaricp.connections.active",
+            "description": "Active connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.pending": {
+            "name": "hikaricp.connections.pending",
+            "description": "Pending threads",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.max": {
+            "name": "hikaricp.connections.max",
+            "description": "Max connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 10.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.acquire": {
+            "name": "hikaricp.connections.acquire",
+            "description": "Connection acquire time",
+            "baseUnit": "seconds",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 16237.0
+              },
+              {
+                "statistic": "TOTAL_TIME",
+                "value": 7.09275761
+              },
+              {
+                "statistic": "MAX",
+                "value": 0.208149314
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.timeout": {
+            "name": "hikaricp.connections.timeout",
+            "description": "Connection timeout total count",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          }
+        },
+        "inventory-service": {
+          "hikaricp.connections.active": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.pending": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.max": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.acquire": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.timeout": {
+            "error": "HTTP Error 404: Not Found"
+          }
+        }
+      }
+    },
+    {
+      "time": 1794318962.0116851,
+      "metrics": {
+        "order-service": {
+          "hikaricp.connections.active": {
+            "name": "hikaricp.connections.active",
+            "description": "Active connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.pending": {
+            "name": "hikaricp.connections.pending",
+            "description": "Pending threads",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.max": {
+            "name": "hikaricp.connections.max",
+            "description": "Max connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 10.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.acquire": {
+            "name": "hikaricp.connections.acquire",
+            "description": "Connection acquire time",
+            "baseUnit": "seconds",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 16239.0
+              },
+              {
+                "statistic": "TOTAL_TIME",
+                "value": 7.095616846
+              },
+              {
+                "statistic": "MAX",
+                "value": 0.208149314
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.timeout": {
+            "name": "hikaricp.connections.timeout",
+            "description": "Connection timeout total count",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          }
+        },
+        "inventory-service": {
+          "hikaricp.connections.active": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.pending": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.max": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.acquire": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.timeout": {
+            "error": "HTTP Error 404: Not Found"
+          }
+        }
+      }
+    },
+    {
+      "time": 1794318967.1221719,
+      "metrics": {
+        "order-service": {
+          "hikaricp.connections.active": {
+            "name": "hikaricp.connections.active",
+            "description": "Active connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.pending": {
+            "name": "hikaricp.connections.pending",
+            "description": "Pending threads",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.max": {
+            "name": "hikaricp.connections.max",
+            "description": "Max connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 10.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.acquire": {
+            "name": "hikaricp.connections.acquire",
+            "description": "Connection acquire time",
+            "baseUnit": "seconds",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 16239.0
+              },
+              {
+                "statistic": "TOTAL_TIME",
+                "value": 7.095616846
+              },
+              {
+                "statistic": "MAX",
+                "value": 0.108832961
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.timeout": {
+            "name": "hikaricp.connections.timeout",
+            "description": "Connection timeout total count",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          }
+        },
+        "inventory-service": {
+          "hikaricp.connections.active": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.pending": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.max": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.acquire": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.timeout": {
+            "error": "HTTP Error 404: Not Found"
+          }
+        }
+      }
+    },
+    {
+      "time": 1794318972.245177,
+      "metrics": {
+        "order-service": {
+          "hikaricp.connections.active": {
+            "name": "hikaricp.connections.active",
+            "description": "Active connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.pending": {
+            "name": "hikaricp.connections.pending",
+            "description": "Pending threads",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.max": {
+            "name": "hikaricp.connections.max",
+            "description": "Max connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 10.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.acquire": {
+            "name": "hikaricp.connections.acquire",
+            "description": "Connection acquire time",
+            "baseUnit": "seconds",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 16241.0
+              },
+              {
+                "statistic": "TOTAL_TIME",
+                "value": 7.099104371
+              },
+              {
+                "statistic": "MAX",
+                "value": 0.108832961
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.timeout": {
+            "name": "hikaricp.connections.timeout",
+            "description": "Connection timeout total count",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          }
+        },
+        "inventory-service": {
+          "hikaricp.connections.active": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.pending": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.max": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.acquire": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.timeout": {
+            "error": "HTTP Error 404: Not Found"
+          }
+        }
+      }
+    },
+    {
+      "time": 1794318977.329064,
+      "metrics": {
+        "order-service": {
+          "hikaricp.connections.active": {
+            "name": "hikaricp.connections.active",
+            "description": "Active connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.pending": {
+            "name": "hikaricp.connections.pending",
+            "description": "Pending threads",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.max": {
+            "name": "hikaricp.connections.max",
+            "description": "Max connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 10.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.acquire": {
+            "name": "hikaricp.connections.acquire",
+            "description": "Connection acquire time",
+            "baseUnit": "seconds",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 16241.0
+              },
+              {
+                "statistic": "TOTAL_TIME",
+                "value": 7.099104371
+              },
+              {
+                "statistic": "MAX",
+                "value": 0.108832961
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.timeout": {
+            "name": "hikaricp.connections.timeout",
+            "description": "Connection timeout total count",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          }
+        },
+        "inventory-service": {
+          "hikaricp.connections.active": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.pending": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.max": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.acquire": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.timeout": {
+            "error": "HTTP Error 404: Not Found"
+          }
+        }
+      }
+    },
+    {
+      "time": 1794318982.572045,
+      "metrics": {
+        "order-service": {
+          "hikaricp.connections.active": {
+            "name": "hikaricp.connections.active",
+            "description": "Active connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.pending": {
+            "name": "hikaricp.connections.pending",
+            "description": "Pending threads",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.max": {
+            "name": "hikaricp.connections.max",
+            "description": "Max connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 10.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.acquire": {
+            "name": "hikaricp.connections.acquire",
+            "description": "Connection acquire time",
+            "baseUnit": "seconds",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 16243.0
+              },
+              {
+                "statistic": "TOTAL_TIME",
+                "value": 7.105556006
+              },
+              {
+                "statistic": "MAX",
+                "value": 0.108832961
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.timeout": {
+            "name": "hikaricp.connections.timeout",
+            "description": "Connection timeout total count",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          }
+        },
+        "inventory-service": {
+          "hikaricp.connections.active": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.pending": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.max": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.acquire": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.timeout": {
+            "error": "HTTP Error 404: Not Found"
+          }
+        }
+      }
+    },
+    {
+      "time": 1794318987.660539,
+      "metrics": {
+        "order-service": {
+          "hikaricp.connections.active": {
+            "name": "hikaricp.connections.active",
+            "description": "Active connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.pending": {
+            "name": "hikaricp.connections.pending",
+            "description": "Pending threads",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.max": {
+            "name": "hikaricp.connections.max",
+            "description": "Max connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 10.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.acquire": {
+            "name": "hikaricp.connections.acquire",
+            "description": "Connection acquire time",
+            "baseUnit": "seconds",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 16243.0
+              },
+              {
+                "statistic": "TOTAL_TIME",
+                "value": 7.105556006
+              },
+              {
+                "statistic": "MAX",
+                "value": 0.108832961
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.timeout": {
+            "name": "hikaricp.connections.timeout",
+            "description": "Connection timeout total count",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          }
+        },
+        "inventory-service": {
+          "hikaricp.connections.active": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.pending": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.max": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.acquire": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.timeout": {
+            "error": "HTTP Error 404: Not Found"
+          }
+        }
+      }
+    },
+    {
+      "time": 1794318992.7556942,
+      "metrics": {
+        "order-service": {
+          "hikaricp.connections.active": {
+            "name": "hikaricp.connections.active",
+            "description": "Active connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.pending": {
+            "name": "hikaricp.connections.pending",
+            "description": "Pending threads",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.max": {
+            "name": "hikaricp.connections.max",
+            "description": "Max connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 10.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.acquire": {
+            "name": "hikaricp.connections.acquire",
+            "description": "Connection acquire time",
+            "baseUnit": "seconds",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 16245.0
+              },
+              {
+                "statistic": "TOTAL_TIME",
+                "value": 7.118325861
+              },
+              {
+                "statistic": "MAX",
+                "value": 0.108832961
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.timeout": {
+            "name": "hikaricp.connections.timeout",
+            "description": "Connection timeout total count",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          }
+        },
+        "inventory-service": {
+          "hikaricp.connections.active": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.pending": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.max": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.acquire": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.timeout": {
+            "error": "HTTP Error 404: Not Found"
+          }
+        }
+      }
+    },
+    {
+      "time": 1794318997.840288,
+      "metrics": {
+        "order-service": {
+          "hikaricp.connections.active": {
+            "name": "hikaricp.connections.active",
+            "description": "Active connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.pending": {
+            "name": "hikaricp.connections.pending",
+            "description": "Pending threads",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.max": {
+            "name": "hikaricp.connections.max",
+            "description": "Max connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 10.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.acquire": {
+            "name": "hikaricp.connections.acquire",
+            "description": "Connection acquire time",
+            "baseUnit": "seconds",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 16245.0
+              },
+              {
+                "statistic": "TOTAL_TIME",
+                "value": 7.118325861
+              },
+              {
+                "statistic": "MAX",
+                "value": 0.108832961
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.timeout": {
+            "name": "hikaricp.connections.timeout",
+            "description": "Connection timeout total count",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          }
+        },
+        "inventory-service": {
+          "hikaricp.connections.active": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.pending": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.max": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.acquire": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.timeout": {
+            "error": "HTTP Error 404: Not Found"
+          }
+        }
+      }
+    },
+    {
+      "time": 1794319002.919054,
+      "metrics": {
+        "order-service": {
+          "hikaricp.connections.active": {
+            "name": "hikaricp.connections.active",
+            "description": "Active connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.pending": {
+            "name": "hikaricp.connections.pending",
+            "description": "Pending threads",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.max": {
+            "name": "hikaricp.connections.max",
+            "description": "Max connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 10.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.acquire": {
+            "name": "hikaricp.connections.acquire",
+            "description": "Connection acquire time",
+            "baseUnit": "seconds",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 16247.0
+              },
+              {
+                "statistic": "TOTAL_TIME",
+                "value": 7.121798385
+              },
+              {
+                "statistic": "MAX",
+                "value": 0.108832961
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.timeout": {
+            "name": "hikaricp.connections.timeout",
+            "description": "Connection timeout total count",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          }
+        },
+        "inventory-service": {
+          "hikaricp.connections.active": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.pending": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.max": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.acquire": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.timeout": {
+            "error": "HTTP Error 404: Not Found"
+          }
+        }
+      }
+    },
+    {
+      "time": 1794319008.053032,
+      "metrics": {
+        "order-service": {
+          "hikaricp.connections.active": {
+            "name": "hikaricp.connections.active",
+            "description": "Active connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.pending": {
+            "name": "hikaricp.connections.pending",
+            "description": "Pending threads",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.max": {
+            "name": "hikaricp.connections.max",
+            "description": "Max connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 10.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.acquire": {
+            "name": "hikaricp.connections.acquire",
+            "description": "Connection acquire time",
+            "baseUnit": "seconds",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 16247.0
+              },
+              {
+                "statistic": "TOTAL_TIME",
+                "value": 7.121798385
+              },
+              {
+                "statistic": "MAX",
+                "value": 0.108832961
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.timeout": {
+            "name": "hikaricp.connections.timeout",
+            "description": "Connection timeout total count",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          }
+        },
+        "inventory-service": {
+          "hikaricp.connections.active": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.pending": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.max": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.acquire": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.timeout": {
+            "error": "HTTP Error 404: Not Found"
+          }
+        }
+      }
+    },
+    {
+      "time": 1794319013.158648,
+      "metrics": {
+        "order-service": {
+          "hikaricp.connections.active": {
+            "name": "hikaricp.connections.active",
+            "description": "Active connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.pending": {
+            "name": "hikaricp.connections.pending",
+            "description": "Pending threads",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.max": {
+            "name": "hikaricp.connections.max",
+            "description": "Max connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 10.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.acquire": {
+            "name": "hikaricp.connections.acquire",
+            "description": "Connection acquire time",
+            "baseUnit": "seconds",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 16249.0
+              },
+              {
+                "statistic": "TOTAL_TIME",
+                "value": 7.130220386
+              },
+              {
+                "statistic": "MAX",
+                "value": 0.108832961
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.timeout": {
+            "name": "hikaricp.connections.timeout",
+            "description": "Connection timeout total count",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          }
+        },
+        "inventory-service": {
+          "hikaricp.connections.active": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.pending": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.max": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.acquire": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.timeout": {
+            "error": "HTTP Error 404: Not Found"
+          }
+        }
+      }
+    },
+    {
+      "time": 1794319018.3071911,
+      "metrics": {
+        "order-service": {
+          "hikaricp.connections.active": {
+            "name": "hikaricp.connections.active",
+            "description": "Active connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.pending": {
+            "name": "hikaricp.connections.pending",
+            "description": "Pending threads",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.max": {
+            "name": "hikaricp.connections.max",
+            "description": "Max connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 10.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.acquire": {
+            "name": "hikaricp.connections.acquire",
+            "description": "Connection acquire time",
+            "baseUnit": "seconds",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 16249.0
+              },
+              {
+                "statistic": "TOTAL_TIME",
+                "value": 7.130220386
+              },
+              {
+                "statistic": "MAX",
+                "value": 0.108832961
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.timeout": {
+            "name": "hikaricp.connections.timeout",
+            "description": "Connection timeout total count",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          }
+        },
+        "inventory-service": {
+          "hikaricp.connections.active": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.pending": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.max": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.acquire": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.timeout": {
+            "error": "HTTP Error 404: Not Found"
+          }
+        }
+      }
+    },
+    {
+      "time": 1794319023.4126458,
+      "metrics": {
+        "order-service": {
+          "hikaricp.connections.active": {
+            "name": "hikaricp.connections.active",
+            "description": "Active connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.pending": {
+            "name": "hikaricp.connections.pending",
+            "description": "Pending threads",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.max": {
+            "name": "hikaricp.connections.max",
+            "description": "Max connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 10.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.acquire": {
+            "name": "hikaricp.connections.acquire",
+            "description": "Connection acquire time",
+            "baseUnit": "seconds",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 16251.0
+              },
+              {
+                "statistic": "TOTAL_TIME",
+                "value": 7.133083372
+              },
+              {
+                "statistic": "MAX",
+                "value": 0.012769355
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.timeout": {
+            "name": "hikaricp.connections.timeout",
+            "description": "Connection timeout total count",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          }
+        },
+        "inventory-service": {
+          "hikaricp.connections.active": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.pending": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.max": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.acquire": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.timeout": {
+            "error": "HTTP Error 404: Not Found"
+          }
+        }
+      }
+    },
+    {
+      "time": 1794319028.5944378,
+      "metrics": {
+        "order-service": {
+          "hikaricp.connections.active": {
+            "name": "hikaricp.connections.active",
+            "description": "Active connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.pending": {
+            "name": "hikaricp.connections.pending",
+            "description": "Pending threads",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.max": {
+            "name": "hikaricp.connections.max",
+            "description": "Max connections",
+            "measurements": [
+              {
+                "statistic": "VALUE",
+                "value": 10.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.acquire": {
+            "name": "hikaricp.connections.acquire",
+            "description": "Connection acquire time",
+            "baseUnit": "seconds",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 16253.0
+              },
+              {
+                "statistic": "TOTAL_TIME",
+                "value": 7.138252889
+              },
+              {
+                "statistic": "MAX",
+                "value": 0.012769355
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          },
+          "hikaricp.connections.timeout": {
+            "name": "hikaricp.connections.timeout",
+            "description": "Connection timeout total count",
+            "measurements": [
+              {
+                "statistic": "COUNT",
+                "value": 0.0
+              }
+            ],
+            "availableTags": [
+              {
+                "tag": "pool",
+                "values": [
+                  "HikariPool-1"
+                ]
+              }
+            ]
+          }
+        },
+        "inventory-service": {
+          "hikaricp.connections.active": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.pending": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.max": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.acquire": {
+            "error": "HTTP Error 404: Not Found"
+          },
+          "hikaricp.connections.timeout": {
+            "error": "HTTP Error 404: Not Found"
+          }
+        }
+      }
+    }
+  ],
+  "after": {
+    "order-service": {
+      "hikaricp.connections.active": {
+        "name": "hikaricp.connections.active",
+        "description": "Active connections",
+        "measurements": [
+          {
+            "statistic": "VALUE",
+            "value": 0.0
+          }
+        ],
+        "availableTags": [
+          {
+            "tag": "pool",
+            "values": [
+              "HikariPool-1"
+            ]
+          }
+        ]
+      },
+      "hikaricp.connections.pending": {
+        "name": "hikaricp.connections.pending",
+        "description": "Pending threads",
+        "measurements": [
+          {
+            "statistic": "VALUE",
+            "value": 0.0
+          }
+        ],
+        "availableTags": [
+          {
+            "tag": "pool",
+            "values": [
+              "HikariPool-1"
+            ]
+          }
+        ]
+      },
+      "hikaricp.connections.max": {
+        "name": "hikaricp.connections.max",
+        "description": "Max connections",
+        "measurements": [
+          {
+            "statistic": "VALUE",
+            "value": 10.0
+          }
+        ],
+        "availableTags": [
+          {
+            "tag": "pool",
+            "values": [
+              "HikariPool-1"
+            ]
+          }
+        ]
+      },
+      "hikaricp.connections.acquire": {
+        "name": "hikaricp.connections.acquire",
+        "description": "Connection acquire time",
+        "baseUnit": "seconds",
+        "measurements": [
+          {
+            "statistic": "COUNT",
+            "value": 16253.0
+          },
+          {
+            "statistic": "TOTAL_TIME",
+            "value": 7.138252889
+          },
+          {
+            "statistic": "MAX",
+            "value": 0.012769355
+          }
+        ],
+        "availableTags": [
+          {
+            "tag": "pool",
+            "values": [
+              "HikariPool-1"
+            ]
+          }
+        ]
+      },
+      "hikaricp.connections.timeout": {
+        "name": "hikaricp.connections.timeout",
+        "description": "Connection timeout total count",
+        "measurements": [
+          {
+            "statistic": "COUNT",
+            "value": 0.0
+          }
+        ],
+        "availableTags": [
+          {
+            "tag": "pool",
+            "values": [
+              "HikariPool-1"
+            ]
+          }
+        ]
+      }
+    },
+    "inventory-service": {
+      "hikaricp.connections.active": {
+        "error": "HTTP Error 404: Not Found"
+      },
+      "hikaricp.connections.pending": {
+        "error": "HTTP Error 404: Not Found"
+      },
+      "hikaricp.connections.max": {
+        "error": "HTTP Error 404: Not Found"
+      },
+      "hikaricp.connections.acquire": {
+        "error": "HTTP Error 404: Not Found"
+      },
+      "hikaricp.connections.timeout": {
+        "error": "HTTP Error 404: Not Found"
+      }
+    }
+  }
+}

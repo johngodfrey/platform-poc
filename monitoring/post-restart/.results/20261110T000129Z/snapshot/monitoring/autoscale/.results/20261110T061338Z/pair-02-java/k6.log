@@ -1,0 +1,939 @@
+{"level":"info","msg":"{\"event\":\"autoscale_started\",\"start_ms\":1794293696743}","source":"console","time":"2026-11-10T06:54:56Z"}
+
+
+  █ THRESHOLDS 
+
+    autoscale_accepted{window:0}
+    ✓ 'count>=0' count=1499
+
+    autoscale_accepted{window:1}
+    ✓ 'count>=0' count=1500
+
+    autoscale_accepted{window:10}
+    ✓ 'count>=0' count=1500
+
+    autoscale_accepted{window:11}
+    ✓ 'count>=0' count=1500
+
+    autoscale_accepted{window:12}
+    ✓ 'count>=0' count=1500
+
+    autoscale_accepted{window:13}
+    ✓ 'count>=0' count=5849
+
+    autoscale_accepted{window:14}
+    ✓ 'count>=0' count=6000
+
+    autoscale_accepted{window:15}
+    ✓ 'count>=0' count=6001
+
+    autoscale_accepted{window:16}
+    ✓ 'count>=0' count=6000
+
+    autoscale_accepted{window:17}
+    ✓ 'count>=0' count=6000
+
+    autoscale_accepted{window:18}
+    ✓ 'count>=0' count=5999
+
+    autoscale_accepted{window:19}
+    ✓ 'count>=0' count=6000
+
+    autoscale_accepted{window:2}
+    ✓ 'count>=0' count=1500
+
+    autoscale_accepted{window:20}
+    ✓ 'count>=0' count=6001
+
+    autoscale_accepted{window:21}
+    ✓ 'count>=0' count=5999
+
+    autoscale_accepted{window:22}
+    ✓ 'count>=0' count=6001
+
+    autoscale_accepted{window:23}
+    ✓ 'count>=0' count=6000
+
+    autoscale_accepted{window:24}
+    ✓ 'count>=0' count=6000
+
+    autoscale_accepted{window:25}
+    ✓ 'count>=0' count=6000
+
+    autoscale_accepted{window:26}
+    ✓ 'count>=0' count=6000
+
+    autoscale_accepted{window:27}
+    ✓ 'count>=0' count=5999
+
+    autoscale_accepted{window:28}
+    ✓ 'count>=0' count=6000
+
+    autoscale_accepted{window:29}
+    ✓ 'count>=0' count=6000
+
+    autoscale_accepted{window:3}
+    ✓ 'count>=0' count=1500
+
+    autoscale_accepted{window:30}
+    ✓ 'count>=0' count=6001
+
+    autoscale_accepted{window:31}
+    ✓ 'count>=0' count=6000
+
+    autoscale_accepted{window:32}
+    ✓ 'count>=0' count=6000
+
+    autoscale_accepted{window:33}
+    ✓ 'count>=0' count=1950
+
+    autoscale_accepted{window:34}
+    ✓ 'count>=0' count=1500
+
+    autoscale_accepted{window:35}
+    ✓ 'count>=0' count=1500
+
+    autoscale_accepted{window:36}
+    ✓ 'count>=0' count=1500
+
+    autoscale_accepted{window:37}
+    ✓ 'count>=0' count=1500
+
+    autoscale_accepted{window:38}
+    ✓ 'count>=0' count=1500
+
+    autoscale_accepted{window:39}
+    ✓ 'count>=0' count=1500
+
+    autoscale_accepted{window:4}
+    ✓ 'count>=0' count=1500
+
+    autoscale_accepted{window:40}
+    ✓ 'count>=0' count=1497
+
+    autoscale_accepted{window:41}
+    ✓ 'count>=0' count=1500
+
+    autoscale_accepted{window:42}
+    ✓ 'count>=0' count=1500
+
+    autoscale_accepted{window:43}
+    ✓ 'count>=0' count=1500
+
+    autoscale_accepted{window:44}
+    ✓ 'count>=0' count=1500
+
+    autoscale_accepted{window:45}
+    ✓ 'count>=0' count=1500
+
+    autoscale_accepted{window:46}
+    ✓ 'count>=0' count=1500
+
+    autoscale_accepted{window:47}
+    ✓ 'count>=0' count=1500
+
+    autoscale_accepted{window:48}
+    ✓ 'count>=0' count=1500
+
+    autoscale_accepted{window:49}
+    ✓ 'count>=0' count=1500
+
+    autoscale_accepted{window:5}
+    ✓ 'count>=0' count=1500
+
+    autoscale_accepted{window:50}
+    ✓ 'count>=0' count=1500
+
+    autoscale_accepted{window:51}
+    ✓ 'count>=0' count=1500
+
+    autoscale_accepted{window:52}
+    ✓ 'count>=0' count=1500
+
+    autoscale_accepted{window:53}
+    ✓ 'count>=0' count=200
+
+    autoscale_accepted{window:54}
+    ✓ 'count>=0' count=0
+
+    autoscale_accepted{window:55}
+    ✓ 'count>=0' count=0
+
+    autoscale_accepted{window:6}
+    ✓ 'count>=0' count=1500
+
+    autoscale_accepted{window:7}
+    ✓ 'count>=0' count=1500
+
+    autoscale_accepted{window:8}
+    ✓ 'count>=0' count=1500
+
+    autoscale_accepted{window:9}
+    ✓ 'count>=0' count=1500
+
+    autoscale_completed{window:0}
+    ✓ 'count>=0' count=1499
+
+    autoscale_completed{window:1}
+    ✓ 'count>=0' count=1500
+
+    autoscale_completed{window:10}
+    ✓ 'count>=0' count=1500
+
+    autoscale_completed{window:11}
+    ✓ 'count>=0' count=1500
+
+    autoscale_completed{window:12}
+    ✓ 'count>=0' count=1500
+
+    autoscale_completed{window:13}
+    ✓ 'count>=0' count=5849
+
+    autoscale_completed{window:14}
+    ✓ 'count>=0' count=6000
+
+    autoscale_completed{window:15}
+    ✓ 'count>=0' count=6001
+
+    autoscale_completed{window:16}
+    ✓ 'count>=0' count=6000
+
+    autoscale_completed{window:17}
+    ✓ 'count>=0' count=6000
+
+    autoscale_completed{window:18}
+    ✓ 'count>=0' count=5999
+
+    autoscale_completed{window:19}
+    ✓ 'count>=0' count=6000
+
+    autoscale_completed{window:2}
+    ✓ 'count>=0' count=1500
+
+    autoscale_completed{window:20}
+    ✓ 'count>=0' count=6001
+
+    autoscale_completed{window:21}
+    ✓ 'count>=0' count=5999
+
+    autoscale_completed{window:22}
+    ✓ 'count>=0' count=6001
+
+    autoscale_completed{window:23}
+    ✓ 'count>=0' count=6000
+
+    autoscale_completed{window:24}
+    ✓ 'count>=0' count=6000
+
+    autoscale_completed{window:25}
+    ✓ 'count>=0' count=6000
+
+    autoscale_completed{window:26}
+    ✓ 'count>=0' count=6000
+
+    autoscale_completed{window:27}
+    ✓ 'count>=0' count=5999
+
+    autoscale_completed{window:28}
+    ✓ 'count>=0' count=6000
+
+    autoscale_completed{window:29}
+    ✓ 'count>=0' count=6000
+
+    autoscale_completed{window:3}
+    ✓ 'count>=0' count=1500
+
+    autoscale_completed{window:30}
+    ✓ 'count>=0' count=6001
+
+    autoscale_completed{window:31}
+    ✓ 'count>=0' count=6000
+
+    autoscale_completed{window:32}
+    ✓ 'count>=0' count=6000
+
+    autoscale_completed{window:33}
+    ✓ 'count>=0' count=1950
+
+    autoscale_completed{window:34}
+    ✓ 'count>=0' count=1500
+
+    autoscale_completed{window:35}
+    ✓ 'count>=0' count=1500
+
+    autoscale_completed{window:36}
+    ✓ 'count>=0' count=1500
+
+    autoscale_completed{window:37}
+    ✓ 'count>=0' count=1500
+
+    autoscale_completed{window:38}
+    ✓ 'count>=0' count=1500
+
+    autoscale_completed{window:39}
+    ✓ 'count>=0' count=1500
+
+    autoscale_completed{window:4}
+    ✓ 'count>=0' count=1500
+
+    autoscale_completed{window:40}
+    ✓ 'count>=0' count=1500
+
+    autoscale_completed{window:41}
+    ✓ 'count>=0' count=1500
+
+    autoscale_completed{window:42}
+    ✓ 'count>=0' count=1500
+
+    autoscale_completed{window:43}
+    ✓ 'count>=0' count=1500
+
+    autoscale_completed{window:44}
+    ✓ 'count>=0' count=1500
+
+    autoscale_completed{window:45}
+    ✓ 'count>=0' count=1500
+
+    autoscale_completed{window:46}
+    ✓ 'count>=0' count=1500
+
+    autoscale_completed{window:47}
+    ✓ 'count>=0' count=1500
+
+    autoscale_completed{window:48}
+    ✓ 'count>=0' count=1500
+
+    autoscale_completed{window:49}
+    ✓ 'count>=0' count=1500
+
+    autoscale_completed{window:5}
+    ✓ 'count>=0' count=1500
+
+    autoscale_completed{window:50}
+    ✓ 'count>=0' count=1500
+
+    autoscale_completed{window:51}
+    ✓ 'count>=0' count=1500
+
+    autoscale_completed{window:52}
+    ✓ 'count>=0' count=1500
+
+    autoscale_completed{window:53}
+    ✓ 'count>=0' count=200
+
+    autoscale_completed{window:54}
+    ✓ 'count>=0' count=0
+
+    autoscale_completed{window:55}
+    ✓ 'count>=0' count=0
+
+    autoscale_completed{window:6}
+    ✓ 'count>=0' count=1500
+
+    autoscale_completed{window:7}
+    ✓ 'count>=0' count=1500
+
+    autoscale_completed{window:8}
+    ✓ 'count>=0' count=1500
+
+    autoscale_completed{window:9}
+    ✓ 'count>=0' count=1500
+
+    autoscale_failures{window:0}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:1}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:10}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:11}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:12}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:13}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:14}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:15}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:16}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:17}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:18}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:19}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:2}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:20}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:21}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:22}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:23}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:24}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:25}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:26}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:27}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:28}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:29}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:3}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:30}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:31}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:32}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:33}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:34}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:35}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:36}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:37}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:38}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:39}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:4}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:40}
+    ✓ 'count>=0' count=3
+
+    autoscale_failures{window:41}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:42}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:43}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:44}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:45}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:46}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:47}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:48}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:49}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:5}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:50}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:51}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:52}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:53}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:54}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:55}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:6}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:7}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:8}
+    ✓ 'count>=0' count=0
+
+    autoscale_failures{window:9}
+    ✓ 'count>=0' count=0
+
+    autoscale_latency_ms{window:0}
+    ✓ 'p(95)<1000000000' p(95)=11.591
+
+    autoscale_latency_ms{window:1}
+    ✓ 'p(95)<1000000000' p(95)=16.8297
+
+    autoscale_latency_ms{window:10}
+    ✓ 'p(95)<1000000000' p(95)=9.4985
+
+    autoscale_latency_ms{window:11}
+    ✓ 'p(95)<1000000000' p(95)=9.4137
+
+    autoscale_latency_ms{window:12}
+    ✓ 'p(95)<1000000000' p(95)=11.05455
+
+    autoscale_latency_ms{window:13}
+    ✓ 'p(95)<1000000000' p(95)=9.021
+
+    autoscale_latency_ms{window:14}
+    ✓ 'p(95)<1000000000' p(95)=7.91285
+
+    autoscale_latency_ms{window:15}
+    ✓ 'p(95)<1000000000' p(95)=13.66
+
+    autoscale_latency_ms{window:16}
+    ✓ 'p(95)<1000000000' p(95)=22.02345
+
+    autoscale_latency_ms{window:17}
+    ✓ 'p(95)<1000000000' p(95)=10.97915
+
+    autoscale_latency_ms{window:18}
+    ✓ 'p(95)<1000000000' p(95)=9.4273
+
+    autoscale_latency_ms{window:19}
+    ✓ 'p(95)<1000000000' p(95)=9.6323
+
+    autoscale_latency_ms{window:2}
+    ✓ 'p(95)<1000000000' p(95)=9.4807
+
+    autoscale_latency_ms{window:20}
+    ✓ 'p(95)<1000000000' p(95)=9.913
+
+    autoscale_latency_ms{window:21}
+    ✓ 'p(95)<1000000000' p(95)=8.6607
+
+    autoscale_latency_ms{window:22}
+    ✓ 'p(95)<1000000000' p(95)=8.992
+
+    autoscale_latency_ms{window:23}
+    ✓ 'p(95)<1000000000' p(95)=8.5746
+
+    autoscale_latency_ms{window:24}
+    ✓ 'p(95)<1000000000' p(95)=8.6366
+
+    autoscale_latency_ms{window:25}
+    ✓ 'p(95)<1000000000' p(95)=9.08625
+
+    autoscale_latency_ms{window:26}
+    ✓ 'p(95)<1000000000' p(95)=7.35205
+
+    autoscale_latency_ms{window:27}
+    ✓ 'p(95)<1000000000' p(95)=9.2475
+
+    autoscale_latency_ms{window:28}
+    ✓ 'p(95)<1000000000' p(95)=10.40855
+
+    autoscale_latency_ms{window:29}
+    ✓ 'p(95)<1000000000' p(95)=8.9525
+
+    autoscale_latency_ms{window:3}
+    ✓ 'p(95)<1000000000' p(95)=10.0272
+
+    autoscale_latency_ms{window:30}
+    ✓ 'p(95)<1000000000' p(95)=7.307
+
+    autoscale_latency_ms{window:31}
+    ✓ 'p(95)<1000000000' p(95)=7.8382
+
+    autoscale_latency_ms{window:32}
+    ✓ 'p(95)<1000000000' p(95)=9.3566
+
+    autoscale_latency_ms{window:33}
+    ✓ 'p(95)<1000000000' p(95)=9.149
+
+    autoscale_latency_ms{window:34}
+    ✓ 'p(95)<1000000000' p(95)=11.49365
+
+    autoscale_latency_ms{window:35}
+    ✓ 'p(95)<1000000000' p(95)=10.0911
+
+    autoscale_latency_ms{window:36}
+    ✓ 'p(95)<1000000000' p(95)=9.5601
+
+    autoscale_latency_ms{window:37}
+    ✓ 'p(95)<1000000000' p(95)=13.7545
+
+    autoscale_latency_ms{window:38}
+    ✓ 'p(95)<1000000000' p(95)=13.4238
+
+    autoscale_latency_ms{window:39}
+    ✓ 'p(95)<1000000000' p(95)=10.918
+
+    autoscale_latency_ms{window:4}
+    ✓ 'p(95)<1000000000' p(95)=9.7014
+
+    autoscale_latency_ms{window:40}
+    ✓ 'p(95)<1000000000' p(95)=11.4246
+
+    autoscale_latency_ms{window:41}
+    ✓ 'p(95)<1000000000' p(95)=9.5678
+
+    autoscale_latency_ms{window:42}
+    ✓ 'p(95)<1000000000' p(95)=9.46465
+
+    autoscale_latency_ms{window:43}
+    ✓ 'p(95)<1000000000' p(95)=9.8531
+
+    autoscale_latency_ms{window:44}
+    ✓ 'p(95)<1000000000' p(95)=10.47315
+
+    autoscale_latency_ms{window:45}
+    ✓ 'p(95)<1000000000' p(95)=9.21145
+
+    autoscale_latency_ms{window:46}
+    ✓ 'p(95)<1000000000' p(95)=9.1681
+
+    autoscale_latency_ms{window:47}
+    ✓ 'p(95)<1000000000' p(95)=9.88465
+
+    autoscale_latency_ms{window:48}
+    ✓ 'p(95)<1000000000' p(95)=10.6766
+
+    autoscale_latency_ms{window:49}
+    ✓ 'p(95)<1000000000' p(95)=9.5676
+
+    autoscale_latency_ms{window:5}
+    ✓ 'p(95)<1000000000' p(95)=9.41465
+
+    autoscale_latency_ms{window:50}
+    ✓ 'p(95)<1000000000' p(95)=9.82115
+
+    autoscale_latency_ms{window:51}
+    ✓ 'p(95)<1000000000' p(95)=9.4898
+
+    autoscale_latency_ms{window:52}
+    ✓ 'p(95)<1000000000' p(95)=9.7335
+
+    autoscale_latency_ms{window:53}
+    ✓ 'p(95)<1000000000' p(95)=8.4258
+
+    autoscale_latency_ms{window:54}
+    ✓ 'p(95)<1000000000' p(95)=0
+
+    autoscale_latency_ms{window:55}
+    ✓ 'p(95)<1000000000' p(95)=0
+
+    autoscale_latency_ms{window:6}
+    ✓ 'p(95)<1000000000' p(95)=9.42375
+
+    autoscale_latency_ms{window:7}
+    ✓ 'p(95)<1000000000' p(95)=10.1845
+
+    autoscale_latency_ms{window:8}
+    ✓ 'p(95)<1000000000' p(95)=10.2112
+
+    autoscale_latency_ms{window:9}
+    ✓ 'p(95)<1000000000' p(95)=10.4153
+
+
+  █ TOTAL RESULTS 
+
+    CUSTOM
+    autoscale_accepted...............: 169996   213.091849/s
+      { window:0 }...................: 1499     1.879013/s
+      { window:1 }...................: 1500     1.880266/s
+      { window:10 }..................: 1500     1.880266/s
+      { window:11 }..................: 1500     1.880266/s
+      { window:12 }..................: 1500     1.880266/s
+      { window:13 }..................: 5849     7.331786/s
+      { window:14 }..................: 6000     7.521066/s
+      { window:15 }..................: 6001     7.522319/s
+      { window:16 }..................: 6000     7.521066/s
+      { window:17 }..................: 6000     7.521066/s
+      { window:18 }..................: 5999     7.519812/s
+      { window:19 }..................: 6000     7.521066/s
+      { window:2 }...................: 1500     1.880266/s
+      { window:20 }..................: 6001     7.522319/s
+      { window:21 }..................: 5999     7.519812/s
+      { window:22 }..................: 6001     7.522319/s
+      { window:23 }..................: 6000     7.521066/s
+      { window:24 }..................: 6000     7.521066/s
+      { window:25 }..................: 6000     7.521066/s
+      { window:26 }..................: 6000     7.521066/s
+      { window:27 }..................: 5999     7.519812/s
+      { window:28 }..................: 6000     7.521066/s
+      { window:29 }..................: 6000     7.521066/s
+      { window:3 }...................: 1500     1.880266/s
+      { window:30 }..................: 6001     7.522319/s
+      { window:31 }..................: 6000     7.521066/s
+      { window:32 }..................: 6000     7.521066/s
+      { window:33 }..................: 1950     2.444346/s
+      { window:34 }..................: 1500     1.880266/s
+      { window:35 }..................: 1500     1.880266/s
+      { window:36 }..................: 1500     1.880266/s
+      { window:37 }..................: 1500     1.880266/s
+      { window:38 }..................: 1500     1.880266/s
+      { window:39 }..................: 1500     1.880266/s
+      { window:4 }...................: 1500     1.880266/s
+      { window:40 }..................: 1497     1.876506/s
+      { window:41 }..................: 1500     1.880266/s
+      { window:42 }..................: 1500     1.880266/s
+      { window:43 }..................: 1500     1.880266/s
+      { window:44 }..................: 1500     1.880266/s
+      { window:45 }..................: 1500     1.880266/s
+      { window:46 }..................: 1500     1.880266/s
+      { window:47 }..................: 1500     1.880266/s
+      { window:48 }..................: 1500     1.880266/s
+      { window:49 }..................: 1500     1.880266/s
+      { window:5 }...................: 1500     1.880266/s
+      { window:50 }..................: 1500     1.880266/s
+      { window:51 }..................: 1500     1.880266/s
+      { window:52 }..................: 1500     1.880266/s
+      { window:53 }..................: 200      0.250702/s
+      { window:54 }..................: 0        0/s
+      { window:55 }..................: 0        0/s
+      { window:6 }...................: 1500     1.880266/s
+      { window:7 }...................: 1500     1.880266/s
+      { window:8 }...................: 1500     1.880266/s
+      { window:9 }...................: 1500     1.880266/s
+    autoscale_completed..............: 169999   213.09561/s
+      { window:0 }...................: 1499     1.879013/s
+      { window:1 }...................: 1500     1.880266/s
+      { window:10 }..................: 1500     1.880266/s
+      { window:11 }..................: 1500     1.880266/s
+      { window:12 }..................: 1500     1.880266/s
+      { window:13 }..................: 5849     7.331786/s
+      { window:14 }..................: 6000     7.521066/s
+      { window:15 }..................: 6001     7.522319/s
+      { window:16 }..................: 6000     7.521066/s
+      { window:17 }..................: 6000     7.521066/s
+      { window:18 }..................: 5999     7.519812/s
+      { window:19 }..................: 6000     7.521066/s
+      { window:2 }...................: 1500     1.880266/s
+      { window:20 }..................: 6001     7.522319/s
+      { window:21 }..................: 5999     7.519812/s
+      { window:22 }..................: 6001     7.522319/s
+      { window:23 }..................: 6000     7.521066/s
+      { window:24 }..................: 6000     7.521066/s
+      { window:25 }..................: 6000     7.521066/s
+      { window:26 }..................: 6000     7.521066/s
+      { window:27 }..................: 5999     7.519812/s
+      { window:28 }..................: 6000     7.521066/s
+      { window:29 }..................: 6000     7.521066/s
+      { window:3 }...................: 1500     1.880266/s
+      { window:30 }..................: 6001     7.522319/s
+      { window:31 }..................: 6000     7.521066/s
+      { window:32 }..................: 6000     7.521066/s
+      { window:33 }..................: 1950     2.444346/s
+      { window:34 }..................: 1500     1.880266/s
+      { window:35 }..................: 1500     1.880266/s
+      { window:36 }..................: 1500     1.880266/s
+      { window:37 }..................: 1500     1.880266/s
+      { window:38 }..................: 1500     1.880266/s
+      { window:39 }..................: 1500     1.880266/s
+      { window:4 }...................: 1500     1.880266/s
+      { window:40 }..................: 1500     1.880266/s
+      { window:41 }..................: 1500     1.880266/s
+      { window:42 }..................: 1500     1.880266/s
+      { window:43 }..................: 1500     1.880266/s
+      { window:44 }..................: 1500     1.880266/s
+      { window:45 }..................: 1500     1.880266/s
+      { window:46 }..................: 1500     1.880266/s
+      { window:47 }..................: 1500     1.880266/s
+      { window:48 }..................: 1500     1.880266/s
+      { window:49 }..................: 1500     1.880266/s
+      { window:5 }...................: 1500     1.880266/s
+      { window:50 }..................: 1500     1.880266/s
+      { window:51 }..................: 1500     1.880266/s
+      { window:52 }..................: 1500     1.880266/s
+      { window:53 }..................: 200      0.250702/s
+      { window:54 }..................: 0        0/s
+      { window:55 }..................: 0        0/s
+      { window:6 }...................: 1500     1.880266/s
+      { window:7 }...................: 1500     1.880266/s
+      { window:8 }...................: 1500     1.880266/s
+      { window:9 }...................: 1500     1.880266/s
+    autoscale_controller_state.......: 2        min=0           max=2       
+    autoscale_cpu_cores..............: 0.141906 min=0.001894    max=1.350212
+    autoscale_desired_capacity.......: 1        min=1           max=2       
+    autoscale_failures...............: 3        0.003761/s
+      { window:0 }...................: 0        0/s
+      { window:1 }...................: 0        0/s
+      { window:10 }..................: 0        0/s
+      { window:11 }..................: 0        0/s
+      { window:12 }..................: 0        0/s
+      { window:13 }..................: 0        0/s
+      { window:14 }..................: 0        0/s
+      { window:15 }..................: 0        0/s
+      { window:16 }..................: 0        0/s
+      { window:17 }..................: 0        0/s
+      { window:18 }..................: 0        0/s
+      { window:19 }..................: 0        0/s
+      { window:2 }...................: 0        0/s
+      { window:20 }..................: 0        0/s
+      { window:21 }..................: 0        0/s
+      { window:22 }..................: 0        0/s
+      { window:23 }..................: 0        0/s
+      { window:24 }..................: 0        0/s
+      { window:25 }..................: 0        0/s
+      { window:26 }..................: 0        0/s
+      { window:27 }..................: 0        0/s
+      { window:28 }..................: 0        0/s
+      { window:29 }..................: 0        0/s
+      { window:3 }...................: 0        0/s
+      { window:30 }..................: 0        0/s
+      { window:31 }..................: 0        0/s
+      { window:32 }..................: 0        0/s
+      { window:33 }..................: 0        0/s
+      { window:34 }..................: 0        0/s
+      { window:35 }..................: 0        0/s
+      { window:36 }..................: 0        0/s
+      { window:37 }..................: 0        0/s
+      { window:38 }..................: 0        0/s
+      { window:39 }..................: 0        0/s
+      { window:4 }...................: 0        0/s
+      { window:40 }..................: 3        0.003761/s
+      { window:41 }..................: 0        0/s
+      { window:42 }..................: 0        0/s
+      { window:43 }..................: 0        0/s
+      { window:44 }..................: 0        0/s
+      { window:45 }..................: 0        0/s
+      { window:46 }..................: 0        0/s
+      { window:47 }..................: 0        0/s
+      { window:48 }..................: 0        0/s
+      { window:49 }..................: 0        0/s
+      { window:5 }...................: 0        0/s
+      { window:50 }..................: 0        0/s
+      { window:51 }..................: 0        0/s
+      { window:52 }..................: 0        0/s
+      { window:53 }..................: 0        0/s
+      { window:54 }..................: 0        0/s
+      { window:55 }..................: 0        0/s
+      { window:6 }...................: 0        0/s
+      { window:7 }...................: 0        0/s
+      { window:8 }...................: 0        0/s
+      { window:9 }...................: 0        0/s
+    autoscale_latency_ms.............: avg=5.647021  min=1.369 med=4.31   max=599.397  p(90)=7.669   p(95)=10.1681 
+      { window:0 }...................: avg=6.294612  min=3.428 med=5.4    max=55.791   p(90)=8.4816  p(95)=11.591  
+      { window:1 }...................: avg=8.459425  min=3.235 med=5.2025 max=190.583  p(90)=10.4472 p(95)=16.8297 
+      { window:10 }..................: avg=5.851208  min=3.374 med=5.314  max=23.982   p(90)=7.8472  p(95)=9.4985  
+      { window:11 }..................: avg=6.042745  min=3.113 med=5.337  max=47.285   p(90)=7.7135  p(95)=9.4137  
+      { window:12 }..................: avg=6.370245  min=3.323 med=5.445  max=54.88    p(90)=8.5606  p(95)=11.05455
+      { window:13 }..................: avg=4.523186  min=2.486 med=3.532  max=70.284   p(90)=6.128   p(95)=9.021   
+      { window:14 }..................: avg=4.269283  min=2.454 med=3.307  max=77.12    p(90)=5.1995  p(95)=7.91285 
+      { window:15 }..................: avg=5.373057  min=2.485 med=3.964  max=122.952  p(90)=8.818   p(95)=13.66   
+      { window:16 }..................: avg=16.759496 min=2.339 med=5.712  max=599.397  p(90)=13.9685 p(95)=22.02345
+      { window:17 }..................: avg=5.791371  min=2.923 med=4.943  max=30.011   p(90)=8.5191  p(95)=10.97915
+      { window:18 }..................: avg=5.198961  min=2.844 med=4.322  max=70.187   p(90)=7.0566  p(95)=9.4273  
+      { window:19 }..................: avg=4.965592  min=2.64  med=4.008  max=88.022   p(90)=6.5241  p(95)=9.6323  
+      { window:2 }...................: avg=6.093058  min=3.182 med=5.3185 max=61.606   p(90)=7.983   p(95)=9.4807  
+      { window:20 }..................: avg=5.08297   min=2.81  med=4.13   max=50.182   p(90)=7.244   p(95)=9.913   
+      { window:21 }..................: avg=4.781823  min=2.621 med=3.906  max=67.729   p(90)=6.2312  p(95)=8.6607  
+      { window:22 }..................: avg=4.990723  min=2.689 med=3.992  max=83.616   p(90)=6.572   p(95)=8.992   
+      { window:23 }..................: avg=4.896613  min=2.69  med=3.7395 max=108.678  p(90)=5.8852  p(95)=8.5746  
+      { window:24 }..................: avg=4.630043  min=2.675 med=3.7785 max=60.941   p(90)=6.1652  p(95)=8.6366  
+      { window:25 }..................: avg=4.527699  min=2.722 med=3.75   max=33.833   p(90)=6.1925  p(95)=9.08625 
+      { window:26 }..................: avg=4.333569  min=2.779 med=3.728  max=33.53    p(90)=5.3193  p(95)=7.35205 
+      { window:27 }..................: avg=4.7576    min=2.793 med=3.742  max=90.454   p(90)=6.09    p(95)=9.2475  
+      { window:28 }..................: avg=5.132687  min=2.689 med=3.88   max=82.603   p(90)=7.0399  p(95)=10.40855
+      { window:29 }..................: avg=4.825531  min=2.737 med=3.77   max=95.362   p(90)=6.2385  p(95)=8.9525  
+      { window:3 }...................: avg=5.967241  min=3.312 med=5.222  max=48.306   p(90)=8.0346  p(95)=10.0272 
+      { window:30 }..................: avg=4.24502   min=2.668 med=3.694  max=29.036   p(90)=5.429   p(95)=7.307   
+      { window:31 }..................: avg=4.583896  min=2.574 med=3.7195 max=122.124  p(90)=5.7434  p(95)=7.8382  
+      { window:32 }..................: avg=4.88937   min=2.655 med=3.839  max=90.431   p(90)=6.4943  p(95)=9.3566  
+      { window:33 }..................: avg=5.46038   min=2.811 med=4.857  max=52.395   p(90)=7.7253  p(95)=9.149   
+      { window:34 }..................: avg=6.258752  min=3.578 med=5.255  max=46.075   p(90)=8.3947  p(95)=11.49365
+      { window:35 }..................: avg=6.335033  min=3.241 med=5.0885 max=80.29    p(90)=8.2789  p(95)=10.0911 
+      { window:36 }..................: avg=5.804134  min=3.131 med=5.1665 max=23.027   p(90)=8.3564  p(95)=9.5601  
+      { window:37 }..................: avg=6.839837  min=3.779 med=5.6255 max=45.472   p(90)=9.6932  p(95)=13.7545 
+      { window:38 }..................: avg=7.083033  min=3.794 med=5.8895 max=54.747   p(90)=10.1734 p(95)=13.4238 
+      { window:39 }..................: avg=6.473309  min=3.544 med=5.488  max=59.797   p(90)=8.7877  p(95)=10.918  
+      { window:4 }...................: avg=5.937365  min=3.106 med=5.358  max=34.255   p(90)=8.0621  p(95)=9.7014  
+      { window:40 }..................: avg=6.301179  min=1.369 med=5.2395 max=73.985   p(90)=8.3393  p(95)=11.4246 
+      { window:41 }..................: avg=5.912341  min=3.167 med=5.37   max=28.109   p(90)=7.969   p(95)=9.5678  
+      { window:42 }..................: avg=6.091485  min=3.196 med=5.4855 max=48.109   p(90)=8.1467  p(95)=9.46465 
+      { window:43 }..................: avg=5.813883  min=3.152 med=5.1635 max=29.827   p(90)=8.1972  p(95)=9.8531  
+      { window:44 }..................: avg=6.026053  min=3.221 med=5.295  max=31.46    p(90)=8.2977  p(95)=10.47315
+      { window:45 }..................: avg=5.874282  min=3.146 med=5.37   max=38.686   p(90)=7.7392  p(95)=9.21145 
+      { window:46 }..................: avg=5.829191  min=3.435 med=5.3585 max=27.513   p(90)=7.8854  p(95)=9.1681  
+      { window:47 }..................: avg=6.076073  min=3.083 med=5.3445 max=27.433   p(90)=8.1861  p(95)=9.88465 
+      { window:48 }..................: avg=6.260093  min=3.263 med=5.4565 max=57.721   p(90)=8.3137  p(95)=10.6766 
+      { window:49 }..................: avg=5.939041  min=3.363 med=5.3185 max=29.072   p(90)=7.9843  p(95)=9.5676  
+      { window:5 }...................: avg=5.775457  min=3.047 med=5.1565 max=27.708   p(90)=7.8071  p(95)=9.41465 
+      { window:50 }..................: avg=6.151901  min=3.344 med=5.567  max=50.386   p(90)=8.1411  p(95)=9.82115 
+      { window:51 }..................: avg=5.958489  min=3.245 med=5.3805 max=41.871   p(90)=7.9033  p(95)=9.4898  
+      { window:52 }..................: avg=5.988127  min=3.116 med=5.4335 max=29.78    p(90)=8.0804  p(95)=9.7335  
+      { window:53 }..................: avg=5.598055  min=3.651 med=5.29   max=13.942   p(90)=7.174   p(95)=8.4258  
+      { window:54 }..................: avg=0         min=0     med=0      max=0        p(90)=0       p(95)=0       
+      { window:55 }..................: avg=0         min=0     med=0      max=0        p(90)=0       p(95)=0       
+      { window:6 }...................: avg=5.975906  min=3.131 med=5.3805 max=28.967   p(90)=8.0356  p(95)=9.42375 
+      { window:7 }...................: avg=6.268882  min=3.199 med=5.6175 max=93.446   p(90)=8.0616  p(95)=10.1845 
+      { window:8 }...................: avg=6.017771  min=3.168 med=5.3545 max=26.9     p(90)=8.4248  p(95)=10.2112 
+      { window:9 }...................: avg=6.299123  min=3.321 med=5.497  max=69.969   p(90)=8.1804  p(95)=10.4153 
+    autoscale_latency_signal_valid...: 0        min=0           max=0       
+    autoscale_observed_capacity......: 1        min=0           max=2       
+    autoscale_offered_rps............: 100      min=100         max=400     
+    autoscale_phase..................: 3        min=0           max=3       
+    autoscale_signal_valid...........: 1        min=0           max=1       
+    autoscale_target_cpu_cores.......: 0.179531 min=0.179531    max=0.179531
+    autoscale_target_latency_ms......: 500      min=500         max=500     
+    autoscale_trigger_latency........: 0        min=0           max=0       
+
+    HTTP
+    http_req_duration................: avg=5.62ms    min=329µs med=4.3ms  max=599.39ms p(90)=7.65ms  p(95)=10.15ms 
+      { expected_response:true }.....: avg=5.62ms    min=329µs med=4.3ms  max=599.39ms p(90)=7.65ms  p(95)=10.15ms 
+    http_req_failed..................: 0.00%    3 out of 170795
+    http_reqs........................: 170795   214.093404/s
+
+    EXECUTION
+    iteration_duration...............: avg=10.47ms   min=1.5ms med=4.47ms max=1s       p(90)=8.08ms  p(95)=10.87ms 
+    iterations.......................: 170795   214.093404/s
+    vus..............................: 2        min=1           max=20      
+    vus_max..........................: 251      min=251         max=251     
+
+    NETWORK
+    data_received....................: 33 MB    41 kB/s
+    data_sent........................: 35 MB    44 kB/s
+
+
+

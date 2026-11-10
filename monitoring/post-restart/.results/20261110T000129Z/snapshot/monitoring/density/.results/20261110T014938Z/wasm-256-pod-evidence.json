@@ -1,0 +1,398 @@
+{
+  "wasmcloud-host": [
+    {
+      "apiVersion": "v1",
+      "kind": "Pod",
+      "metadata": {
+        "annotations": {
+          "kubectl.kubernetes.io/restartedAt": "2026-10-08T13:10:22+01:00"
+        },
+        "creationTimestamp": "2026-11-10T02:19:04Z",
+        "generateName": "wasmcloud-host-79b696dc46-",
+        "generation": 1,
+        "labels": {
+          "app.kubernetes.io/instance": "wasmcloud-host",
+          "app.kubernetes.io/managed-by": "wasmcloud-operator",
+          "app.kubernetes.io/name": "wasmcloud",
+          "pod-template-hash": "79b696dc46"
+        },
+        "name": "wasmcloud-host-79b696dc46-wwpfv",
+        "namespace": "wasm",
+        "ownerReferences": [
+          {
+            "apiVersion": "apps/v1",
+            "blockOwnerDeletion": true,
+            "controller": true,
+            "kind": "ReplicaSet",
+            "name": "wasmcloud-host-79b696dc46",
+            "uid": "8ad379e2-02c2-44c0-aa40-cef437e4018c"
+          }
+        ],
+        "resourceVersion": "406994",
+        "uid": "4917821e-95eb-49e0-b273-eb379c6ac057"
+      },
+      "spec": {
+        "containers": [
+          {
+            "args": [
+              "-js",
+              "--config",
+              "/nats/nats.conf"
+            ],
+            "image": "nats:2.10-alpine",
+            "imagePullPolicy": "IfNotPresent",
+            "lifecycle": {
+              "preStop": {
+                "exec": {
+                  "command": [
+                    "sleep",
+                    "10"
+                  ]
+                }
+              }
+            },
+            "name": "nats-leaf",
+            "ports": [
+              {
+                "containerPort": 4222,
+                "protocol": "TCP"
+              }
+            ],
+            "resources": {},
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "volumeMounts": [
+              {
+                "mountPath": "/nats/nats.conf",
+                "name": "nats-config",
+                "readOnly": true,
+                "subPath": "nats.conf"
+              },
+              {
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "name": "kube-api-access-z6zd7",
+                "readOnly": true
+              }
+            ]
+          },
+          {
+            "command": [
+              "wasmcloud"
+            ],
+            "env": [
+              {
+                "name": "WASMCLOUD_STRUCTURED_LOGGING_ENABLED",
+                "value": "true"
+              },
+              {
+                "name": "WASMCLOUD_LOG_LEVEL",
+                "value": "INFO"
+              },
+              {
+                "name": "WASMCLOUD_JS_DOMAIN",
+                "value": "default"
+              },
+              {
+                "name": "WASMCLOUD_LATTICE",
+                "value": "default"
+              },
+              {
+                "name": "WASMCLOUD_LATTICE_PREFIX",
+                "value": "default"
+              },
+              {
+                "name": "WASMCLOUD_NATS_HOST",
+                "value": "127.0.0.1"
+              },
+              {
+                "name": "WASMCLOUD_NATS_PORT",
+                "value": "4222"
+              },
+              {
+                "name": "WASMCLOUD_RPC_TIMEOUT_MS",
+                "value": "4000"
+              },
+              {
+                "name": "WASMCLOUD_LABEL_kubernetes",
+                "value": "true"
+              },
+              {
+                "name": "WASMCLOUD_OCI_ALLOWED_INSECURE",
+                "value": "host.docker.internal:5001"
+              },
+              {
+                "name": "WASMCLOUD_MAX_EXECUTION_TIME_MS",
+                "value": "5000"
+              }
+            ],
+            "image": "platform-poc/wasmcloud:1.9.2-regack.1",
+            "imagePullPolicy": "IfNotPresent",
+            "name": "wasmcloud-host",
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "400m",
+                "memory": "256Mi"
+              }
+            },
+            "terminationMessagePath": "/dev/termination-log",
+            "terminationMessagePolicy": "File",
+            "volumeMounts": [
+              {
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "name": "kube-api-access-z6zd7",
+                "readOnly": true
+              }
+            ]
+          }
+        ],
+        "dnsPolicy": "ClusterFirst",
+        "enableServiceLinks": true,
+        "nodeName": "k3d-platform-poc-agent-1",
+        "preemptionPolicy": "PreemptLowerPriority",
+        "priority": 0,
+        "restartPolicy": "Always",
+        "schedulerName": "default-scheduler",
+        "securityContext": {},
+        "serviceAccount": "wasmcloud-host",
+        "serviceAccountName": "wasmcloud-host",
+        "terminationGracePeriodSeconds": 30,
+        "tolerations": [
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/not-ready",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          },
+          {
+            "effect": "NoExecute",
+            "key": "node.kubernetes.io/unreachable",
+            "operator": "Exists",
+            "tolerationSeconds": 300
+          }
+        ],
+        "volumes": [
+          {
+            "configMap": {
+              "defaultMode": 420,
+              "name": "wasmcloud-host"
+            },
+            "name": "nats-config"
+          },
+          {
+            "name": "kube-api-access-z6zd7",
+            "projected": {
+              "defaultMode": 420,
+              "sources": [
+                {
+                  "serviceAccountToken": {
+                    "expirationSeconds": 3607,
+                    "path": "token"
+                  }
+                },
+                {
+                  "configMap": {
+                    "items": [
+                      {
+                        "key": "ca.crt",
+                        "path": "ca.crt"
+                      }
+                    ],
+                    "name": "kube-root-ca.crt"
+                  }
+                },
+                {
+                  "downwardAPI": {
+                    "items": [
+                      {
+                        "fieldRef": {
+                          "apiVersion": "v1",
+                          "fieldPath": "metadata.namespace"
+                        },
+                        "path": "namespace"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "status": {
+        "allocatedResources": {
+          "cpu": "400m",
+          "memory": "256Mi"
+        },
+        "conditions": [
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-10T02:19:05Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "PodReadyToStartContainers"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-10T02:19:04Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "Initialized"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-10T02:19:13Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "Ready"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-10T02:19:13Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "ContainersReady"
+          },
+          {
+            "lastProbeTime": null,
+            "lastTransitionTime": "2026-11-10T02:19:04Z",
+            "observedGeneration": 1,
+            "status": "True",
+            "type": "PodScheduled"
+          }
+        ],
+        "containerStatuses": [
+          {
+            "containerID": "containerd://684fb4decf4b537fb0febb540be3886eaaecdee0f2d7a0fffc1d64c0a34332ed",
+            "image": "docker.io/library/nats:2.10-alpine",
+            "imageID": "docker.io/library/nats@sha256:b83efabe3e7def1e0a4a31ec6e078999bb17c80363f881df35edc70fcb6bb927",
+            "lastState": {},
+            "name": "nats-leaf",
+            "ready": true,
+            "resources": {},
+            "restartCount": 0,
+            "started": true,
+            "state": {
+              "running": {
+                "startedAt": "2026-11-10T02:19:05Z"
+              }
+            },
+            "user": {
+              "linux": {
+                "gid": 0,
+                "supplementalGroups": [
+                  0,
+                  1,
+                  2,
+                  3,
+                  4,
+                  6,
+                  10,
+                  11,
+                  20,
+                  26,
+                  27
+                ],
+                "uid": 0
+              }
+            },
+            "volumeMounts": [
+              {
+                "mountPath": "/nats/nats.conf",
+                "name": "nats-config",
+                "readOnly": true,
+                "recursiveReadOnly": "Disabled"
+              },
+              {
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "name": "kube-api-access-z6zd7",
+                "readOnly": true,
+                "recursiveReadOnly": "Disabled"
+              }
+            ]
+          },
+          {
+            "allocatedResources": {
+              "cpu": "400m",
+              "memory": "256Mi"
+            },
+            "containerID": "containerd://ad3994a822a81893e44778cfc5b86cb5388428c41ba2d42c40472d52b76a7a92",
+            "image": "docker.io/platform-poc/wasmcloud:1.9.2-regack.1",
+            "imageID": "sha256:a22906face539085647ef862bed734e95c05ba6882d870528b92ea4af1b79ea6",
+            "lastState": {
+              "terminated": {
+                "containerID": "containerd://1e6c27ec6c6b7b5d766e00d7ec37aac2795a9cd3ebdb305b96e542052d713a58",
+                "exitCode": 137,
+                "finishedAt": "2026-11-10T02:19:12Z",
+                "reason": "OOMKilled",
+                "startedAt": "2026-11-10T02:19:05Z"
+              }
+            },
+            "name": "wasmcloud-host",
+            "ready": true,
+            "resources": {
+              "limits": {
+                "memory": "256Mi"
+              },
+              "requests": {
+                "cpu": "400m",
+                "memory": "256Mi"
+              }
+            },
+            "restartCount": 1,
+            "started": true,
+            "state": {
+              "running": {
+                "startedAt": "2026-11-10T02:19:13Z"
+              }
+            },
+            "user": {
+              "linux": {
+                "gid": 0,
+                "supplementalGroups": [
+                  0
+                ],
+                "uid": 0
+              }
+            },
+            "volumeMounts": [
+              {
+                "mountPath": "/var/run/secrets/kubernetes.io/serviceaccount",
+                "name": "kube-api-access-z6zd7",
+                "readOnly": true,
+                "recursiveReadOnly": "Disabled"
+              }
+            ]
+          }
+        ],
+        "hostIP": "192.168.117.4",
+        "hostIPs": [
+          {
+            "ip": "192.168.117.4"
+          }
+        ],
+        "observedGeneration": 1,
+        "phase": "Running",
+        "podIP": "10.42.1.234",
+        "podIPs": [
+          {
+            "ip": "10.42.1.234"
+          }
+        ],
+        "qosClass": "Burstable",
+        "resources": {
+          "limits": {
+            "memory": "256Mi"
+          },
+          "requests": {
+            "cpu": "386m",
+            "memory": "256Mi"
+          }
+        },
+        "startTime": "2026-11-10T02:19:04Z"
+      }
+    }
+  ]
+}

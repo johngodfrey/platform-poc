@@ -1,0 +1,162 @@
+<!doctype html><meta charset="utf-8"><title>PostgreSQL provider profile</title><style>body{font:17px system-ui;max-width:1280px;margin:40px auto;padding:20px;color:#eaf1fa;background:#101c2b}table{border-collapse:collapse;width:100%;margin:20px 0}th,td{text-align:left;padding:10px;border-bottom:1px solid #456}code{white-space:pre-wrap;overflow-wrap:anywhere;font-size:13px}p,li{line-height:1.5}a{color:#69aeff}h1,h2{color:#55dfc1}</style><h1>PostgreSQL provider profile</h1><p>100 orders/s · 60s warmup then90s measured per platform · unchanged application images. PostgreSQL logging settings restored. This is a separate diagnostic study.</p><table><tr><th>Metric</th><th>Java</th><th>Wasm</th></tr><tr><td>Requests</td><td>9,001</td><td>9,001</td></tr><tr><td>Failed checks</td><td>0</td><td>0</td></tr><tr><td>Data statements/order</td><td>4.000</td><td>2.000</td></tr><tr><td>Explicit transaction commands/order</td><td>4.000</td><td>0.000</td></tr><tr><td>Logged data SQL execution/order</td><td>0.499 ms</td><td>0.411 ms</td></tr><tr><td>Logged explicit transaction execution/order</td><td>0.406 ms</td><td>0.000 ms</td></tr></table><h2>Findings</h2><p>Wasm issued two data statements per order versus Java’s four. The inventory SELECT execution means were both about0.05ms. PostgreSQL logged18002 Wasm Parse events—one for each data statement—versus170 Java Parse events, whose recorded SQL text was empty (connection/protocol housekeeping). The warmed Java business statements did not require repeated Parse events in this capture.</p><p>The native PostgreSQL provider consumed 0.081 CPU cores, 15.7% of the observed Wasm host/provider CPU total. Prepared-statement reuse is a concrete optimisation candidate; the amount it would save has not been measured. Stock Wasm pool queue times remain unavailable.</p><h2>Java</h2><h3>Executed SQL</h3><table><tr><th>Database</th><th>SQL</th><th>Calls</th><th>Mean ms</th><th>p95 ms</th></tr><tr><td>inventory-service</td><td><code>select i1_0.id,i1_0.quantity,i1_0.sku_code from t_inventory i1_0 where i1_0.sku_code in ($?)</code></td><td>9001</td><td>0.0495</td><td>0.0720</td></tr><tr><td>order-service</td><td><code>insert into t_orders (order_number) values ($?) RETURNING *</code></td><td>9001</td><td>0.1670</td><td>0.2530</td></tr><tr><td>order-service</td><td><code>insert into t_order_line_items (price,quantity,sku_code) values ($?,$?,$?) RETURNING *</code></td><td>9001</td><td>0.0863</td><td>0.1480</td></tr><tr><td>order-service</td><td><code>insert into t_orders_order_line_items_list (order_id,order_line_items_list_id) values ($?,$?)</code></td><td>9001</td><td>0.1967</td><td>0.4360</td></tr><tr><td>inventory-service</td><td><code>BEGIN READ ONLY</code></td><td>9001</td><td>0.0370</td><td>0.0390</td></tr><tr><td>inventory-service</td><td><code>COMMIT</code></td><td>9001</td><td>0.0467</td><td>0.0540</td></tr><tr><td>order-service</td><td><code>BEGIN</code></td><td>9001</td><td>0.0081</td><td>0.0070</td></tr><tr><td>order-service</td><td><code>COMMIT</code></td><td>9001</td><td>0.3139</td><td>0.6070</td></tr></table><h3>Protocol phases and waits</h3><pre>{
+  &quot;phases&quot;: {
+    &quot;parse&quot;: {
+      &quot;events&quot;: 170,
+      &quot;server_elapsed_ms&quot;: 68.244
+    },
+    &quot;bind&quot;: {
+      &quot;events&quot;: 72178,
+      &quot;server_elapsed_ms&quot;: 2345.676000000008
+    },
+    &quot;execute&quot;: {
+      &quot;events&quot;: 72008,
+      &quot;server_elapsed_ms&quot;: 8147.578000000015
+    },
+    &quot;statement&quot;: {
+      &quot;events&quot;: 0,
+      &quot;server_elapsed_ms&quot;: 0
+    }
+  },
+  &quot;pools&quot;: {
+    &quot;order-service&quot;: {
+      &quot;acquisitions&quot;: 9019.0,
+      &quot;mean_acquire_ms&quot;: 0.268176267102783,
+      &quot;pending_sample_max&quot;: 0.0,
+      &quot;active_sample_max&quot;: 9.0
+    },
+    &quot;inventory-service&quot;: {
+      &quot;acquisitions&quot;: null,
+      &quot;mean_acquire_ms&quot;: null,
+      &quot;pending_sample_max&quot;: null,
+      &quot;active_sample_max&quot;: null
+    }
+  },
+  &quot;activity&quot;: {
+    &quot;samples&quot;: 830,
+    &quot;states&quot;: {
+      &quot;idle&quot;: 16140,
+      &quot;idle in transaction&quot;: 236,
+      &quot;active&quot;: 224
+    },
+    &quot;active_connection_observations&quot;: 224,
+    &quot;active_wait_events&quot;: [
+      {
+        &quot;type&quot;: &quot;none&quot;,
+        &quot;event&quot;: &quot;none&quot;,
+        &quot;observations&quot;: 183
+      },
+      {
+        &quot;type&quot;: &quot;Client&quot;,
+        &quot;event&quot;: &quot;ClientRead&quot;,
+        &quot;observations&quot;: 24
+      },
+      {
+        &quot;type&quot;: &quot;IO&quot;,
+        &quot;event&quot;: &quot;WALWrite&quot;,
+        &quot;observations&quot;: 15
+      },
+      {
+        &quot;type&quot;: &quot;LWLock&quot;,
+        &quot;event&quot;: &quot;WALWrite&quot;,
+        &quot;observations&quot;: 2
+      }
+    ],
+    &quot;distinct_backend_pids&quot;: {
+      &quot;inventory-service&quot;: 10,
+      &quot;order-service&quot;: 10
+    },
+    &quot;max_sampled_connections&quot;: {
+      &quot;inventory-service&quot;: 10,
+      &quot;order-service&quot;: 10
+    }
+  }
+}</pre><h3>Native Wasm process CPU during this stage</h3><table><tr><th>Process</th><th>CPU seconds</th><th>Mean cores</th></tr><tr><td>wasmcloud</td><td>0.080</td><td>0.0009</td></tr><tr><td>host_docker_internal_5001_v2_platform_poc_http_server_0_25_0_regack_1</td><td>0.010</td><td>0.0001</td></tr><tr><td>ghcr_io_wasmcloud_keyvalue_redis_0_28_2</td><td>0.000</td><td>0.0000</td></tr><tr><td>ghcr_io_wasmcloud_sqldb_postgres_0_7_2</td><td>0.020</td><td>0.0002</td></tr><tr><td>ghcr_io_wasmcloud_messaging_nats_0_24_0</td><td>0.010</td><td>0.0001</td></tr></table><h2>Wasm</h2><h3>Executed SQL</h3><table><tr><th>Database</th><th>SQL</th><th>Calls</th><th>Mean ms</th><th>p95 ms</th></tr><tr><td>platform-poc-wasm</td><td><code>SELECT sku, quantity FROM inventory.t_inventory WHERE sku = $?</code></td><td>9001</td><td>0.0500</td><td>0.0820</td></tr><tr><td>platform-poc-wasm</td><td><code>WITH order_id AS ( INSERT INTO orders.t_orders (order_number, total) VALUES ($?, $?) RETURNING id ), item_ids AS ( INSERT INTO orders.t_order_line_items (price, quantity, sku) VALUES (?,?,?) RETURNING id ), joins AS ( SELECT order_id.id as order_id, item_ids.id as item_id FROM order_id, item_ids ) INSERT INTO orders.t_orders_order_line_items_list (order_id, order_line_items_list_id) (SELECT order_id, item_id FROM joins);</code></td><td>9001</td><td>0.3613</td><td>0.9640</td></tr></table><h3>Protocol phases and waits</h3><pre>{
+  &quot;phases&quot;: {
+    &quot;parse&quot;: {
+      &quot;events&quot;: 18002,
+      &quot;server_elapsed_ms&quot;: 5064.482000000007
+    },
+    &quot;bind&quot;: {
+      &quot;events&quot;: 18002,
+      &quot;server_elapsed_ms&quot;: 3755.1499999999896
+    },
+    &quot;execute&quot;: {
+      &quot;events&quot;: 18002,
+      &quot;server_elapsed_ms&quot;: 3702.5269999999946
+    },
+    &quot;statement&quot;: {
+      &quot;events&quot;: 0,
+      &quot;server_elapsed_ms&quot;: 0
+    }
+  },
+  &quot;pools&quot;: {
+    &quot;order-service&quot;: {
+      &quot;acquisitions&quot;: 18.0,
+      &quot;mean_acquire_ms&quot;: 2.698586944444445,
+      &quot;pending_sample_max&quot;: 0.0,
+      &quot;active_sample_max&quot;: 0.0
+    },
+    &quot;inventory-service&quot;: {
+      &quot;acquisitions&quot;: null,
+      &quot;mean_acquire_ms&quot;: null,
+      &quot;pending_sample_max&quot;: null,
+      &quot;active_sample_max&quot;: null
+    }
+  },
+  &quot;activity&quot;: {
+    &quot;samples&quot;: 830,
+    &quot;states&quot;: {
+      &quot;idle&quot;: 15559,
+      &quot;active&quot;: 211
+    },
+    &quot;active_connection_observations&quot;: 211,
+    &quot;active_wait_events&quot;: [
+      {
+        &quot;type&quot;: &quot;none&quot;,
+        &quot;event&quot;: &quot;none&quot;,
+        &quot;observations&quot;: 106
+      },
+      {
+        &quot;type&quot;: &quot;Client&quot;,
+        &quot;event&quot;: &quot;ClientRead&quot;,
+        &quot;observations&quot;: 77
+      },
+      {
+        &quot;type&quot;: &quot;IO&quot;,
+        &quot;event&quot;: &quot;WALWrite&quot;,
+        &quot;observations&quot;: 20
+      },
+      {
+        &quot;type&quot;: &quot;IPC&quot;,
+        &quot;event&quot;: &quot;ProcArrayGroupUpdate&quot;,
+        &quot;observations&quot;: 3
+      },
+      {
+        &quot;type&quot;: &quot;LWLock&quot;,
+        &quot;event&quot;: &quot;WALWrite&quot;,
+        &quot;observations&quot;: 2
+      },
+      {
+        &quot;type&quot;: &quot;LWLock&quot;,
+        &quot;event&quot;: &quot;ProcArray&quot;,
+        &quot;observations&quot;: 1
+      },
+      {
+        &quot;type&quot;: &quot;IO&quot;,
+        &quot;event&quot;: &quot;DataFileExtend&quot;,
+        &quot;observations&quot;: 1
+      },
+      {
+        &quot;type&quot;: &quot;Lock&quot;,
+        &quot;event&quot;: &quot;extend&quot;,
+        &quot;observations&quot;: 1
+      }
+    ],
+    &quot;distinct_backend_pids&quot;: {
+      &quot;platform-poc-wasm&quot;: 19
+    },
+    &quot;max_sampled_connections&quot;: {
+      &quot;platform-poc-wasm&quot;: 19
+    }
+  }
+}</pre><h3>Native Wasm process CPU during this stage</h3><table><tr><th>Process</th><th>CPU seconds</th><th>Mean cores</th></tr><tr><td>wasmcloud</td><td>29.260</td><td>0.3231</td></tr><tr><td>host_docker_internal_5001_v2_platform_poc_http_server_0_25_0_regack_1</td><td>6.620</td><td>0.0731</td></tr><tr><td>ghcr_io_wasmcloud_keyvalue_redis_0_28_2</td><td>0.000</td><td>0.0000</td></tr><tr><td>ghcr_io_wasmcloud_sqldb_postgres_0_7_2</td><td>7.340</td><td>0.0811</td></tr><tr><td>ghcr_io_wasmcloud_messaging_nats_0_24_0</td><td>3.610</td><td>0.0399</td></tr></table><h2>Interpretation limits</h2><ul><li>Inventory Actuator pool metrics are not exposed; no inventory pool-wait duration can be inferred. Its PostgreSQL sessions and waits are still sampled.</li><li>These are diagnostic runs with statement logging; different log volumes can affect overhead. Do not treat their HTTP timings as an uninstrumented runtime benchmark.</li><li>Statement-duration observations are server elapsed timings, not server CPU timings or complete provider-call durations.</li><li>Wasm still uses implicit PostgreSQL transactions. No explicit BEGIN/COMMIT messages does not mean zero transaction or commit cost. Logged extended-protocol phases are not guaranteed to account for implicit transaction completion; do not compare their sums as complete database-path latency.</li><li>PostgreSQL wait events are sampled. Idle ClientRead is not pool contention; a missed short wait is not proof of no waiting.</li><li>Wasm deadpool acquisition latency is not exported by the stock provider. Backend samples cannot measure requests queued before obtaining a database connection.</li><li>Native process CPU includes host and its direct provider processes, not NATS sidecars/brokers or PostgreSQL server processes. This is a process-cost profile, not a function-level CPU flamegraph.</li></ul><p><a href="analysis.json">Derived metrics and source hashes</a> · <a href="report.json">Raw execution journal</a></p>

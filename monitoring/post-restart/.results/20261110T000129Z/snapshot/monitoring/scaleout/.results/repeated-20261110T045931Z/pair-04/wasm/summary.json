@@ -1,0 +1,1016 @@
+{
+    "root_group": {
+        "name": "",
+        "path": "",
+        "id": "d41d8cd98f00b204e9800998ecf8427e",
+        "groups": {},
+        "checks": {}
+    },
+    "metrics": {
+        "scaleout_completed{window:7}": {
+            "rate": 17.261875710968294,
+            "count": 6001,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_latency_ms{window:13}": {
+            "avg": 15.746651666666665,
+            "min": 7.395,
+            "med": 14.0805,
+            "max": 92.862,
+            "p(90)": 20.903800000000004,
+            "p(95)": 26.8082,
+            "thresholds": {
+                "p(95)<1000000000": false
+            }
+        },
+        "scaleout_completed": {
+            "count": 102499,
+            "rate": 294.838360023086
+        },
+        "scaleout_latency_ms{window:10}": {
+            "max": 201.505,
+            "p(90)": 32.81570000000001,
+            "p(95)": 62.47429999999996,
+            "avg": 24.748339333333348,
+            "min": 8.575,
+            "med": 17.3545,
+            "thresholds": {
+                "p(95)<1000000000": false
+            }
+        },
+        "scaleout_failures{window:24}": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_latency_ms{window:6}": {
+            "p(95)": 24.187799999999992,
+            "avg": 14.341973328774156,
+            "min": 5.754,
+            "med": 12.905,
+            "max": 82.831,
+            "p(90)": 19.2912,
+            "thresholds": {
+                "p(95)<1000000000": false
+            }
+        },
+        "scaleout_completed{window:22}": {
+            "count": 1500,
+            "rate": 4.314749802774944,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_completed{window:14}": {
+            "count": 6000,
+            "rate": 17.258999211099777,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_completed{window:1}": {
+            "count": 1500,
+            "rate": 4.314749802774944,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_completed{window:11}": {
+            "count": 6000,
+            "rate": 17.258999211099777,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_latency_ms{window:19}": {
+            "p(95)": 28.45399999999997,
+            "avg": 15.73741656942828,
+            "min": 7.449,
+            "med": 13.793,
+            "max": 89.823,
+            "p(90)": 21.773600000000002,
+            "thresholds": {
+                "p(95)<1000000000": false
+            }
+        },
+        "iterations": {
+            "rate": 295.83650547746123,
+            "count": 102846
+        },
+        "scaleout_failures{window:19}": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "http_req_sending": {
+            "avg": 0.0187736032514541,
+            "min": 0.003,
+            "med": 0.015,
+            "max": 4.962,
+            "p(90)": 0.03,
+            "p(95)": 0.033
+        },
+        "scaleout_phase": {
+            "value": 4,
+            "min": 0,
+            "max": 4
+        },
+        "scaleout_accepted{window:11}": {
+            "count": 6000,
+            "rate": 17.258999211099777,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "data_received": {
+            "rate": 74910.86237486194,
+            "count": 26042366
+        },
+        "vus": {
+            "value": 2,
+            "min": 2,
+            "max": 48
+        },
+        "scaleout_accepted{window:21}": {
+            "count": 1950,
+            "rate": 5.6091747436074275,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_latency_ms{window:23}": {
+            "avg": 8.975705000000003,
+            "min": 6.347,
+            "med": 8.2335,
+            "max": 20.48,
+            "p(90)": 12.0219,
+            "p(95)": 13.496849999999998,
+            "thresholds": {
+                "p(95)<1000000000": false
+            }
+        },
+        "scaleout_completed{window:8}": {
+            "count": 6000,
+            "rate": 17.258999211099777,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_latency_ms{window:17}": {
+            "p(95)": 24.798149999999996,
+            "avg": 14.769082500000014,
+            "min": 7.224,
+            "med": 13.049,
+            "max": 90.488,
+            "p(90)": 19.653299999999998,
+            "thresholds": {
+                "p(95)<1000000000": false
+            }
+        },
+        "scaleout_failures{window:5}": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_completed{window:3}": {
+            "count": 1500,
+            "rate": 4.314749802774944,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "http_req_connecting": {
+            "p(90)": 0,
+            "p(95)": 0,
+            "avg": 0.0020675281488827936,
+            "min": 0,
+            "med": 0,
+            "max": 4.261
+        },
+        "scaleout_latency_ms{window:2}": {
+            "p(95)": 12.905999999999988,
+            "avg": 8.590693333333332,
+            "min": 5.26,
+            "med": 7.057,
+            "max": 145.924,
+            "p(90)": 10.15,
+            "thresholds": {
+                "p(95)<1000000000": false
+            }
+        },
+        "scaleout_failures{window:9}": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_failures{window:25}": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_accepted{window:9}": {
+            "count": 6000,
+            "rate": 17.258999211099777,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_completed{window:17}": {
+            "count": 6000,
+            "rate": 17.258999211099777,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_accepted{window:23}": {
+            "count": 200,
+            "rate": 0.5752999737033259,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_completed{window:25}": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_failures{window:12}": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_desired_capacity": {
+            "min": 1,
+            "max": 2,
+            "value": 2
+        },
+        "scaleout_failures{window:23}": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_accepted{window:16}": {
+            "count": 6000,
+            "rate": 17.258999211099777,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_offered_rps": {
+            "value": 100,
+            "min": 100,
+            "max": 400
+        },
+        "scaleout_latency_ms{window:22}": {
+            "avg": 8.129086000000003,
+            "min": 6.088,
+            "med": 7.581,
+            "max": 31.186,
+            "p(90)": 9.5099,
+            "p(95)": 11.136399999999998,
+            "thresholds": {
+                "p(95)<1000000000": false
+            }
+        },
+        "scaleout_completed{window:12}": {
+            "count": 6000,
+            "rate": 17.258999211099777,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_accepted{window:0}": {
+            "count": 1499,
+            "rate": 4.311873302906427,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_accepted{window:18}": {
+            "rate": 17.258999211099777,
+            "count": 6000,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_latency_ms{window:14}": {
+            "p(90)": 21.2531,
+            "p(95)": 28.520149999999997,
+            "avg": 15.948294333333319,
+            "min": 7.58,
+            "med": 13.656,
+            "max": 110.308,
+            "thresholds": {
+                "p(95)<1000000000": false
+            }
+        },
+        "scaleout_latency_ms": {
+            "min": 5.26,
+            "med": 13.18,
+            "max": 201.505,
+            "p(90)": 21.103200000000005,
+            "p(95)": 27.239,
+            "avg": 15.187850330246942
+        },
+        "scaleout_accepted{window:8}": {
+            "count": 6000,
+            "rate": 17.258999211099777,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_latency_ms{window:20}": {
+            "avg": 15.32770288285288,
+            "min": 7.945,
+            "med": 13.985,
+            "max": 55.868,
+            "p(90)": 21.373,
+            "p(95)": 26.114,
+            "thresholds": {
+                "p(95)<1000000000": false
+            }
+        },
+        "scaleout_accepted{window:1}": {
+            "count": 1500,
+            "rate": 4.314749802774944,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_accepted{window:25}": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "http_req_waiting": {
+            "avg": 14.80842973961064,
+            "min": 0.286,
+            "med": 12.792,
+            "max": 201.464,
+            "p(90)": 20.666500000000003,
+            "p(95)": 26.672
+        },
+        "scaleout_completed{window:4}": {
+            "count": 1500,
+            "rate": 4.314749802774944,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_failures{window:20}": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_new_pod_ready_seconds": {
+            "value": 5.57072929199785,
+            "min": 5.57072929199785,
+            "max": 5.57072929199785
+        },
+        "scaleout_failures{window:11}": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_failures{window:22}": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_failures{window:15}": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_accepted{window:6}": {
+            "count": 5849,
+            "rate": 16.824647730953764,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_latency_ms{window:21}": {
+            "p(95)": 17.057499999999994,
+            "avg": 10.004126666666668,
+            "min": 5.998,
+            "med": 8.361,
+            "max": 47.337,
+            "p(90)": 14.7715,
+            "thresholds": {
+                "p(95)<1000000000": false
+            }
+        },
+        "scaleout_latency_ms{window:8}": {
+            "avg": 13.728424333333338,
+            "min": 7.09,
+            "med": 12.3675,
+            "max": 77.844,
+            "p(90)": 18.4308,
+            "p(95)": 22.100299999999994,
+            "thresholds": {
+                "p(95)<1000000000": false
+            }
+        },
+        "scaleout_latency_ms{window:12}": {
+            "avg": 17.29165783333337,
+            "min": 8.163,
+            "med": 14.654499999999999,
+            "max": 128.501,
+            "p(90)": 24.784700000000004,
+            "p(95)": 32.397099999999995,
+            "thresholds": {
+                "p(95)<1000000000": false
+            }
+        },
+        "scaleout_latency_ms{window:4}": {
+            "p(95)": 12.013899999999998,
+            "avg": 8.019259999999974,
+            "min": 5.355,
+            "med": 7.267,
+            "max": 64.337,
+            "p(90)": 10.019400000000001,
+            "thresholds": {
+                "p(95)<1000000000": false
+            }
+        },
+        "scaleout_latency_ms{window:7}": {
+            "avg": 14.4086445592401,
+            "min": 7.167,
+            "med": 12.499,
+            "max": 96.934,
+            "p(90)": 18.601,
+            "p(95)": 23.429,
+            "thresholds": {
+                "p(95)<1000000000": false
+            }
+        },
+        "data_sent": {
+            "count": 18166960,
+            "rate": 52257.258051346864
+        },
+        "scaleout_accepted{window:3}": {
+            "rate": 4.314749802774944,
+            "count": 1500,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_completed{window:24}": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_failures{window:2}": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_failures{window:8}": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_latency_ms{window:5}": {
+            "avg": 7.813385333333333,
+            "min": 5.595,
+            "med": 7.156,
+            "max": 61.436,
+            "p(90)": 9.54,
+            "p(95)": 11.501749999999989,
+            "thresholds": {
+                "p(95)<1000000000": false
+            }
+        },
+        "scaleout_accepted{window:12}": {
+            "count": 6000,
+            "rate": 17.258999211099777,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_accepted{window:2}": {
+            "count": 1500,
+            "rate": 4.314749802774944,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_failures{window:17}": {
+            "rate": 0,
+            "count": 0,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_accepted{window:20}": {
+            "rate": 17.261875710968294,
+            "count": 6001,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_completed{window:15}": {
+            "count": 6000,
+            "rate": 17.258999211099777,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_failures{window:6}": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_completed{window:20}": {
+            "count": 6001,
+            "rate": 17.261875710968294,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_latency_ms{window:3}": {
+            "med": 7.1925,
+            "max": 56.823,
+            "p(90)": 9.4323,
+            "p(95)": 11.572949999999999,
+            "avg": 7.952756000000012,
+            "min": 5.49,
+            "thresholds": {
+                "p(95)<1000000000": false
+            }
+        },
+        "scaleout_host_ready_pods": {
+            "min": 1,
+            "max": 2,
+            "value": 2
+        },
+        "scaleout_observed_capacity": {
+            "min": 1,
+            "max": 2,
+            "value": 2
+        },
+        "scaleout_failures{window:0}": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_failures{window:4}": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_failures{window:18}": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_accepted{window:22}": {
+            "count": 1500,
+            "rate": 4.314749802774944,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "vus_max": {
+            "value": 251,
+            "min": 251,
+            "max": 251
+        },
+        "scaleout_accepted{window:10}": {
+            "count": 6000,
+            "rate": 17.258999211099777,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_accepted{window:15}": {
+            "rate": 17.258999211099777,
+            "count": 6000,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "http_req_blocked": {
+            "p(95)": 0.008,
+            "avg": 0.007063949983468111,
+            "min": 0.001,
+            "med": 0.004,
+            "max": 5.127,
+            "p(90)": 0.007
+        },
+        "http_req_failed": {
+            "passes": 0,
+            "fails": 102846,
+            "value": 0
+        },
+        "scaleout_accepted{window:24}": {
+            "rate": 0,
+            "count": 0,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "http_req_receiving": {
+            "avg": 0.31224442370144606,
+            "min": 0.006,
+            "med": 0.198,
+            "max": 15.822,
+            "p(90)": 0.692,
+            "p(95)": 0.972
+        },
+        "scaleout_failures": {
+            "count": 0,
+            "rate": 0
+        },
+        "scaleout_accepted{window:5}": {
+            "count": 1500,
+            "rate": 4.314749802774944,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_failures{window:14}": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_accepted{window:14}": {
+            "count": 6000,
+            "rate": 17.258999211099777,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_accepted{window:19}": {
+            "count": 5999,
+            "rate": 17.25612271123126,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_accepted{window:7}": {
+            "rate": 17.261875710968294,
+            "count": 6001,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_completed{window:6}": {
+            "count": 5849,
+            "rate": 16.824647730953764,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_latency_ms{window:18}": {
+            "p(95)": 30.113799999999994,
+            "avg": 16.48022216666668,
+            "min": 7.572,
+            "med": 13.631,
+            "max": 135.515,
+            "p(90)": 21.5411,
+            "thresholds": {
+                "p(95)<1000000000": false
+            }
+        },
+        "scaleout_failures{window:7}": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_new_pod_order_seconds": {
+            "value": 5.624634374999005,
+            "min": 5.624634374999005,
+            "max": 5.624634374999005
+        },
+        "scaleout_failures{window:13}": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_orders_concurrency": {
+            "min": 10,
+            "max": 20,
+            "value": 20
+        },
+        "scaleout_observation_valid": {
+            "min": 1,
+            "max": 1,
+            "value": 1
+        },
+        "scaleout_latency_ms{window:9}": {
+            "avg": 15.92791783333334,
+            "min": 6.929,
+            "med": 12.102,
+            "max": 191.96,
+            "p(90)": 20.872000000000003,
+            "p(95)": 29.92274999999999,
+            "thresholds": {
+                "p(95)<1000000000": false
+            }
+        },
+        "http_req_tls_handshaking": {
+            "min": 0,
+            "med": 0,
+            "max": 0,
+            "p(90)": 0,
+            "p(95)": 0,
+            "avg": 0
+        },
+        "scaleout_completed{window:2}": {
+            "rate": 4.314749802774944,
+            "count": 1500,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_completed{window:21}": {
+            "count": 1950,
+            "rate": 5.6091747436074275,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_accepted{window:13}": {
+            "count": 6000,
+            "rate": 17.258999211099777,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_completed{window:23}": {
+            "count": 200,
+            "rate": 0.5752999737033259,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_latency_ms{window:24}": {
+            "p(90)": 0,
+            "p(95)": 0,
+            "avg": 0,
+            "min": 0,
+            "med": 0,
+            "max": 0,
+            "thresholds": {
+                "p(95)<1000000000": false
+            }
+        },
+        "scaleout_completed{window:10}": {
+            "count": 6000,
+            "rate": 17.258999211099777,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "http_req_duration": {
+            "min": 0.352,
+            "med": 13.163,
+            "max": 201.505,
+            "p(90)": 21.079,
+            "p(95)": 27.193249999999985,
+            "avg": 15.13944776656343
+        },
+        "scaleout_failures{window:16}": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_completed{window:9}": {
+            "count": 6000,
+            "rate": 17.258999211099777,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_failures{window:1}": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_latency_ms{window:25}": {
+            "avg": 0,
+            "min": 0,
+            "med": 0,
+            "max": 0,
+            "p(90)": 0,
+            "p(95)": 0,
+            "thresholds": {
+                "p(95)<1000000000": false
+            }
+        },
+        "scaleout_latency_ms{window:0}": {
+            "avg": 8.53170580386924,
+            "min": 5.761,
+            "med": 7.466,
+            "max": 78.534,
+            "p(90)": 10.6434,
+            "p(95)": 12.93419999999999,
+            "thresholds": {
+                "p(95)<1000000000": false
+            }
+        },
+        "scaleout_accepted": {
+            "count": 102499,
+            "rate": 294.838360023086
+        },
+        "scaleout_failures{window:10}": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_completed{window:18}": {
+            "count": 6000,
+            "rate": 17.258999211099777,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_latency_ms{window:11}": {
+            "max": 100.242,
+            "p(90)": 25.9845,
+            "p(95)": 35.07329999999998,
+            "avg": 17.988474333333347,
+            "min": 7.14,
+            "med": 15.273499999999999,
+            "thresholds": {
+                "p(95)<1000000000": false
+            }
+        },
+        "scaleout_completed{window:0}": {
+            "count": 1499,
+            "rate": 4.311873302906427,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_completed{window:5}": {
+            "count": 1500,
+            "rate": 4.314749802774944,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_failures{window:3}": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "http_req_duration{expected_response:true}": {
+            "avg": 15.13944776656343,
+            "min": 0.352,
+            "med": 13.163,
+            "max": 201.505,
+            "p(90)": 21.079,
+            "p(95)": 27.193249999999985
+        },
+        "scaleout_completed{window:13}": {
+            "count": 6000,
+            "rate": 17.258999211099777,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_completed{window:19}": {
+            "count": 5999,
+            "rate": 17.25612271123126,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_accepted{window:17}": {
+            "count": 6000,
+            "rate": 17.258999211099777,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_latency_ms{window:1}": {
+            "med": 7.2445,
+            "max": 43.454,
+            "p(90)": 9.2721,
+            "p(95)": 10.572699999999998,
+            "avg": 7.741150000000007,
+            "min": 5.625,
+            "thresholds": {
+                "p(95)<1000000000": false
+            }
+        },
+        "scaleout_completed{window:16}": {
+            "count": 6000,
+            "rate": 17.258999211099777,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "http_reqs": {
+            "rate": 295.83650547746123,
+            "count": 102846
+        },
+        "scaleout_failures{window:21}": {
+            "rate": 0,
+            "count": 0,
+            "thresholds": {
+                "count>=0": false
+            }
+        },
+        "scaleout_latency_ms{window:16}": {
+            "p(95)": 23.251099999999987,
+            "avg": 14.460952500000014,
+            "min": 7.173,
+            "med": 13.4155,
+            "max": 54.132,
+            "p(90)": 19.1481,
+            "thresholds": {
+                "p(95)<1000000000": false
+            }
+        },
+        "scaleout_command_accepted": {
+            "value": 1,
+            "min": 0,
+            "max": 1
+        },
+        "scaleout_latency_ms{window:15}": {
+            "avg": 15.165812333333376,
+            "min": 6.883,
+            "med": 13.7035,
+            "max": 98.983,
+            "p(90)": 20.6963,
+            "p(95)": 25.037549999999996,
+            "thresholds": {
+                "p(95)<1000000000": false
+            }
+        },
+        "iteration_duration": {
+            "avg": 18.692769172821574,
+            "min": 5.437084,
+            "med": 13.362167,
+            "max": 1008.977,
+            "p(90)": 21.480791500000002,
+            "p(95)": 28.23869774999997
+        },
+        "scaleout_accepted{window:4}": {
+            "count": 1500,
+            "rate": 4.314749802774944,
+            "thresholds": {
+                "count>=0": false
+            }
+        }
+    }
+}

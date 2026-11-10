@@ -1,0 +1,320 @@
+{
+  "windows": [
+    {
+      "start_s": 105,
+      "end_s": 120,
+      "accepted": 6000,
+      "completed": 6000,
+      "failures": 0,
+      "p95_ms": 250.34574999999995,
+      "passed": true
+    },
+    {
+      "start_s": 120,
+      "end_s": 135,
+      "accepted": 6000,
+      "completed": 6000,
+      "failures": 0,
+      "p95_ms": 32.275649999999956,
+      "passed": true
+    },
+    {
+      "start_s": 135,
+      "end_s": 150,
+      "accepted": 6000,
+      "completed": 6000,
+      "failures": 0,
+      "p95_ms": 35.37854999999998,
+      "passed": true
+    },
+    {
+      "start_s": 150,
+      "end_s": 165,
+      "accepted": 5964,
+      "completed": 5964,
+      "failures": 0,
+      "p95_ms": 561.3072499999995,
+      "passed": false
+    },
+    {
+      "start_s": 165,
+      "end_s": 180,
+      "accepted": 6000,
+      "completed": 6000,
+      "failures": 0,
+      "p95_ms": 33.06319999999999,
+      "passed": true
+    },
+    {
+      "start_s": 180,
+      "end_s": 195,
+      "accepted": 6000,
+      "completed": 6000,
+      "failures": 0,
+      "p95_ms": 31.31564999999999,
+      "passed": true
+    },
+    {
+      "start_s": 195,
+      "end_s": 210,
+      "accepted": 6000,
+      "completed": 6000,
+      "failures": 0,
+      "p95_ms": 26.142049999999994,
+      "passed": true
+    },
+    {
+      "start_s": 210,
+      "end_s": 225,
+      "accepted": 6000,
+      "completed": 6000,
+      "failures": 0,
+      "p95_ms": 33.198499999999996,
+      "passed": true
+    },
+    {
+      "start_s": 225,
+      "end_s": 240,
+      "accepted": 6000,
+      "completed": 6000,
+      "failures": 0,
+      "p95_ms": 29.87179999999999,
+      "passed": true
+    },
+    {
+      "start_s": 240,
+      "end_s": 255,
+      "accepted": 6000,
+      "completed": 6000,
+      "failures": 0,
+      "p95_ms": 28.290149999999997,
+      "passed": true
+    },
+    {
+      "start_s": 255,
+      "end_s": 270,
+      "accepted": 6000,
+      "completed": 6000,
+      "failures": 0,
+      "p95_ms": 31.264349999999997,
+      "passed": true
+    },
+    {
+      "start_s": 270,
+      "end_s": 285,
+      "accepted": 6000,
+      "completed": 6000,
+      "failures": 0,
+      "p95_ms": 31.913549999999997,
+      "passed": true
+    },
+    {
+      "start_s": 285,
+      "end_s": 300,
+      "accepted": 6000,
+      "completed": 6000,
+      "failures": 0,
+      "p95_ms": 27.786099999999994,
+      "passed": true
+    },
+    {
+      "start_s": 300,
+      "end_s": 315,
+      "accepted": 6000,
+      "completed": 6000,
+      "failures": 0,
+      "p95_ms": 367.78964999999994,
+      "passed": true
+    }
+  ],
+  "already_healthy_before_scale": true,
+  "recovery_seconds": null,
+  "post_scale_slo_observed": true,
+  "original_capacity": 1,
+  "target_capacity": 2,
+  "scale_accepted_s": 148.5216190814972,
+  "scale_command_seconds": 0.4433460235595703,
+  "capacity_ready_seconds": 22.85458517074585,
+  "dropped_iterations": 36,
+  "new_pod_ready_seconds": 6.1209722090025025,
+  "new_pod_order_accepted_seconds": 6.205752249999932,
+  "readiness_protocol": "new-pod-direct-order-v1",
+  "readiness": {
+    "protocol": "new-pod-direct-order-v1",
+    "poll_seconds": 2,
+    "order_timeout_seconds": 10,
+    "pods": {
+      "d61d43b5-3ed8-44b7-91b2-24cdee68e44e": {
+        "name": "wasmcloud-scaleout-3a974d84bbec-85644676bb-kl9tn",
+        "baseline": false,
+        "created_observed_seconds": 1.9755501250001544,
+        "currently_ready": true,
+        "pod_ready_seconds": 6.1209722090025025,
+        "probe_attempts": [
+          {
+            "start_seconds": 6.1209810840009595,
+            "duration_seconds": 0.0847706249987823,
+            "status": 201,
+            "accepted": true
+          }
+        ],
+        "order_accepted_seconds": 6.205752249999932,
+        "images": {
+          "nats-leaf": "docker.io/library/nats@sha256:b83efabe3e7def1e0a4a31ec6e078999bb17c80363f881df35edc70fcb6bb927",
+          "wasmcloud-host": "sha256:a22906face539085647ef862bed734e95c05ba6882d870528b92ea4af1b79ea6"
+        }
+      }
+    },
+    "errors": [],
+    "baseline_changed": false,
+    "request_started_at": 1794288950.438278
+  },
+  "scale_request_s": 148.07827305793762,
+  "readiness_comparison_valid": true,
+  "traffic_window_kind": "request_start",
+  "target_capacity_observed": true,
+  "observation_errors": [],
+  "target_capacity_stable_after_ready": true,
+  "capacity_unit": "verified routable runtime hosts",
+  "host_startup": {
+    "nonce": "3a974d84bbec",
+    "deployment_name": "wasmcloud-scaleout-3a974d84bbec",
+    "pending_instance": "scaleout-pending-3a974d84bbec",
+    "label_key": "scaleout_3a974d84bbec",
+    "events": [
+      {
+        "name": "baseline_label_prepared",
+        "time": 1794288791.80737
+      },
+      {
+        "name": "deployment_created",
+        "time": 1794288950.8806489
+      },
+      {
+        "name": "extra_pod_created",
+        "time": 1794288961.119626,
+        "pod_uid": "d61d43b5-3ed8-44b7-91b2-24cdee68e44e",
+        "pod_name": "wasmcloud-scaleout-3a974d84bbec-85644676bb-kl9tn"
+      },
+      {
+        "name": "extra_pod_ready",
+        "time": 1794288961.1205912,
+        "pod_uid": "d61d43b5-3ed8-44b7-91b2-24cdee68e44e"
+      },
+      {
+        "name": "extra_runtime_registered",
+        "time": 1794288973.363283,
+        "host_id": "ND7PGQHNG4KOALI3UQLRYK224HPQPYG2PYY7V6D6HDJALGX6CDEJLBEA"
+      },
+      {
+        "name": "extra_components_ready",
+        "time": 1794288973.3643441,
+        "images": {
+          "nats-leaf": "docker.io/library/nats@sha256:b83efabe3e7def1e0a4a31ec6e078999bb17c80363f881df35edc70fcb6bb927",
+          "wasmcloud-host": "sha256:a22906face539085647ef862bed734e95c05ba6882d870528b92ea4af1b79ea6"
+        }
+      },
+      {
+        "name": "extra_pod_order_accepted",
+        "time": 1794288973.364943
+      },
+      {
+        "name": "extra_http_endpoint_ready",
+        "time": 1794288973.735202,
+        "pod_uid": "d61d43b5-3ed8-44b7-91b2-24cdee68e44e",
+        "host_id": "ND7PGQHNG4KOALI3UQLRYK224HPQPYG2PYY7V6D6HDJALGX6CDEJLBEA"
+      }
+    ],
+    "source_deployment_uid": "8f943c2b-4316-4495-8dc9-a05981d6dabf",
+    "source_template_hash": "d13c27faf0bb0d38c32858e0d362dd3342f1ce8c91de1bb601d08a70b9e95306",
+    "baseline_pod_uid": "2ac125f2-2b82-461c-a213-67f7f8a30928",
+    "baseline_pod_name": "wasmcloud-host-f65d47bc8-x879t",
+    "images": {
+      "nats-leaf": "docker.io/library/nats@sha256:b83efabe3e7def1e0a4a31ec6e078999bb17c80363f881df35edc70fcb6bb927",
+      "wasmcloud-host": "sha256:a22906face539085647ef862bed734e95c05ba6882d870528b92ea4af1b79ea6"
+    },
+    "service_uid": "0e1e48a0-2ecc-4c89-b6d4-a11877b7aa45",
+    "service_selector": {
+      "app.kubernetes.io/instance": "wasmcloud-host",
+      "app.kubernetes.io/name": "wasmcloud"
+    },
+    "components": {
+      "data-init": {
+        "id": "data-init",
+        "count": 1,
+        "image_ref": "host.docker.internal:5001/v2/platform-poc/data_init:0.1.0",
+        "annotations": {
+          "wasmcloud.dev/appspec": "platform-poc",
+          "wasmcloud.dev/managed-by": "wadm",
+          "wasmcloud.dev/scaler": "51b4422039bf1620c06be7e7257fc6548da9707a7578c472c185eb4200f94378",
+          "wasmcloud.dev/spread_name": "default"
+        }
+      },
+      "http-controller": {
+        "id": "http-controller",
+        "count": 10,
+        "image_ref": "host.docker.internal:5001/v2/platform-poc/http_controller:0.1.3",
+        "annotations": {
+          "wasmcloud.dev/appspec": "platform-poc",
+          "wasmcloud.dev/managed-by": "wadm",
+          "wasmcloud.dev/scaler": "0f85a66f29f095906a7b51e22c32724b7113dd5551bbdc939b7279c57618a713",
+          "wasmcloud.dev/spread_name": "default"
+        }
+      },
+      "products-service": {
+        "id": "products-service",
+        "count": 1,
+        "image_ref": "host.docker.internal:5001/v2/platform-poc/products_service:0.1.0",
+        "annotations": {
+          "wasmcloud.dev/appspec": "platform-poc",
+          "wasmcloud.dev/managed-by": "wadm",
+          "wasmcloud.dev/scaler": "3848580d53d95c68a35e27792df182d1307900793b47dc7812c373d1aa02d139",
+          "wasmcloud.dev/spread_name": "default"
+        }
+      },
+      "inventory-service": {
+        "id": "inventory-service",
+        "count": 10,
+        "image_ref": "host.docker.internal:5001/v2/platform-poc/inventory_service:0.1.0",
+        "annotations": {
+          "wasmcloud.dev/appspec": "platform-poc",
+          "wasmcloud.dev/managed-by": "wadm",
+          "wasmcloud.dev/scaler": "8bbc60b17877178e5f1b6575196d13d1856268957e88c261c8eb86bbfc45a391",
+          "wasmcloud.dev/spread_name": "default"
+        }
+      },
+      "notification-service": {
+        "id": "notification-service",
+        "count": 1,
+        "image_ref": "host.docker.internal:5001/v2/platform-poc/notification_service:0.1.0",
+        "annotations": {
+          "wasmcloud.dev/appspec": "platform-poc",
+          "wasmcloud.dev/managed-by": "wadm",
+          "wasmcloud.dev/scaler": "6af60a8677a8f7962eed95f449ba8b1a6afb5658d742ad35cd518e331988c5a6",
+          "wasmcloud.dev/spread_name": "default"
+        }
+      },
+      "orders-service": {
+        "id": "orders-service",
+        "count": 10,
+        "image_ref": "host.docker.internal:5001/v2/platform-poc/orders_service:0.1.0",
+        "annotations": {
+          "wasmcloud.dev/appspec": "platform-poc",
+          "wasmcloud.dev/managed-by": "wadm",
+          "wasmcloud.dev/scaler": "ba2a94faf0e76eef4abb7acd7c4e6923882a3f0b4d208187c79717ded88b8ac9",
+          "wasmcloud.dev/spread_name": "default"
+        }
+      }
+    },
+    "providers": [
+      "kv-redis",
+      "nats",
+      "sqldb-postgres",
+      "http-server"
+    ],
+    "request_started_at": 1794288950.439183,
+    "deployment_uid": "4b24c84a-e68b-49c9-9e84-093151d312ff",
+    "deployment_spec_hash": "b58d3b997b854d1ccd48fc6dd0cb80b633fe70fc8061c2fdf13eace2a9ee9629",
+    "probed_pod_uid": "d61d43b5-3ed8-44b7-91b2-24cdee68e44e"
+  }
+}

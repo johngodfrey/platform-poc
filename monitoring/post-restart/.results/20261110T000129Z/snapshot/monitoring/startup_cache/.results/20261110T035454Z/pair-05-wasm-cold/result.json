@@ -1,0 +1,262 @@
+{
+  "implementation": "wasm",
+  "pair": 5,
+  "start_time": 1794283954.201887,
+  "scale_ack_seconds": 0.18878379099987797,
+  "first_order_seconds": 14.282420208000985,
+  "all_pods_ready_seconds": 8.084026125001401,
+  "stable_serving_seconds": 24.332759916000214,
+  "probe_attempts": [
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.002744249999523163,
+      "start_seconds": 0.1887858750014857,
+      "end_seconds": 0.19155791600132943
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.0027921250002691522,
+      "start_seconds": 1.1962540410022484,
+      "end_seconds": 1.1990887909996673
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.002960624999104766,
+      "start_seconds": 2.200358750000305,
+      "end_seconds": 2.2033516250012326
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.00526950000130455,
+      "start_seconds": 3.2033303749994957,
+      "end_seconds": 3.2087437080008385
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.004736709001008421,
+      "start_seconds": 4.212119375002658,
+      "end_seconds": 4.216892874999758
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.01679070799946203,
+      "start_seconds": 5.222189250001975,
+      "end_seconds": 5.239125374999276
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.0037856659982935525,
+      "start_seconds": 6.231078875000094,
+      "end_seconds": 6.23489737500131
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.006042332999641076,
+      "start_seconds": 7.236448916002701,
+      "end_seconds": 7.242566541000997
+    },
+    {
+      "status": 500,
+      "accepted": false,
+      "duration_seconds": 0.00984562499797903,
+      "start_seconds": 8.236977958000352,
+      "end_seconds": 8.246903040999314
+    },
+    {
+      "status": 500,
+      "accepted": false,
+      "duration_seconds": 0.01354587500100024,
+      "start_seconds": 9.237486791000265,
+      "end_seconds": 9.251078458000848
+    },
+    {
+      "status": 500,
+      "accepted": false,
+      "duration_seconds": 0.010037667001597583,
+      "start_seconds": 10.239016083000024,
+      "end_seconds": 10.24908729100207
+    },
+    {
+      "status": 500,
+      "accepted": false,
+      "duration_seconds": 0.03837004099841579,
+      "start_seconds": 11.240010208002786,
+      "end_seconds": 11.278477416002715
+    },
+    {
+      "status": 500,
+      "accepted": false,
+      "duration_seconds": 0.013501290999556659,
+      "start_seconds": 12.244738500001404,
+      "end_seconds": 12.258283666000352
+    },
+    {
+      "status": 500,
+      "accepted": false,
+      "duration_seconds": 0.03289045799829182,
+      "start_seconds": 13.247634708000987,
+      "end_seconds": 13.28062758300075
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.03075695799998357,
+      "start_seconds": 14.251642999999603,
+      "end_seconds": 14.282420208000985
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.027550415998121025,
+      "start_seconds": 15.261679375002132,
+      "end_seconds": 15.28923795800074
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.012662416000239318,
+      "start_seconds": 16.271702125002776,
+      "end_seconds": 16.284372041001916
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.027258707999862963,
+      "start_seconds": 17.280201749999833,
+      "end_seconds": 17.30749724999987
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.02765391699722386,
+      "start_seconds": 18.28734704100134,
+      "end_seconds": 18.3150080000014
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.03346845800115261,
+      "start_seconds": 19.29664116600179,
+      "end_seconds": 19.330133791001572
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.02859600000010687,
+      "start_seconds": 20.297550375002174,
+      "end_seconds": 20.326159500000358
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.036777666999114444,
+      "start_seconds": 21.304028582999308,
+      "end_seconds": 21.34107112499987
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.026341374999901745,
+      "start_seconds": 22.313819041002716,
+      "end_seconds": 22.34016791600152
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.03556762500011246,
+      "start_seconds": 23.315358541000023,
+      "end_seconds": 23.350960957999632
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.013085667000268586,
+      "start_seconds": 24.319667833002313,
+      "end_seconds": 24.332759916000214
+    }
+  ],
+  "pods": {
+    "pods": {
+      "6c9dcf56-3f2f-47d3-8556-ad14a1bf9d82": {
+        "name": "wasmcloud-host-54d9b8f4dd-b7w78",
+        "deployment": "wasmcloud-host",
+        "created_seconds": 1.012304915999266,
+        "currently_ready": true,
+        "ready_seconds": 8.083990916002222
+      }
+    },
+    "errors": [],
+    "all_ready_seconds": 8.084026125001401,
+    "currently_all_ready": true
+  },
+  "valid": true,
+  "verified_zero": true,
+  "runtime_verified": {
+    "seconds": 34.80449779099945,
+    "host_id": "NBSSHFB2XO2H3HLODXLXFFDH3ZGPYILBHSD5YG4UINMHXIB2EW427OP7",
+    "components": {
+      "http-controller": 10,
+      "orders-service": 10,
+      "products-service": 1,
+      "data-init": 1,
+      "notification-service": 1,
+      "inventory-service": 10
+    },
+    "providers": [
+      "http-server",
+      "kv-redis",
+      "nats",
+      "sqldb-postgres"
+    ]
+  },
+  "cache_mode": "cold",
+  "node": "k3d-startup-1110035454-wasm-5-0",
+  "cache_before": {
+    "node": "k3d-startup-1110035454-wasm-5-0",
+    "cold": true,
+    "images": [],
+    "required_images": [
+      "docker.io/library/nats@sha256:b83efabe3e7def1e0a4a31ec6e078999bb17c80363f881df35edc70fcb6bb927",
+      "k3d-platform-poc.localhost:5001/platform-poc/wasmcloud@sha256:05a8cd8299bd74ef8527a786324900f8a092a23e6482d9c8c6be5702d7cd6ac1"
+    ],
+    "time": 1794283949.923125
+  },
+  "image_events": [
+    {
+      "reason": "Pulling",
+      "message": "Pulling image \"docker.io/library/nats@sha256:b83efabe3e7def1e0a4a31ec6e078999bb17c80363f881df35edc70fcb6bb927\"",
+      "first_timestamp": "2026-11-10T04:12:37Z",
+      "last_timestamp": "2026-11-10T04:12:37Z",
+      "pod": "wasmcloud-host-54d9b8f4dd-b7w78"
+    },
+    {
+      "reason": "Pulled",
+      "message": "Successfully pulled image \"docker.io/library/nats@sha256:b83efabe3e7def1e0a4a31ec6e078999bb17c80363f881df35edc70fcb6bb927\" in 3.118s (3.118s including waiting). Image size: 10296399 bytes.",
+      "first_timestamp": "2026-11-10T04:12:40Z",
+      "last_timestamp": "2026-11-10T04:12:40Z",
+      "pod": "wasmcloud-host-54d9b8f4dd-b7w78"
+    },
+    {
+      "reason": "Pulling",
+      "message": "Pulling image \"k3d-platform-poc.localhost:5001/platform-poc/wasmcloud@sha256:05a8cd8299bd74ef8527a786324900f8a092a23e6482d9c8c6be5702d7cd6ac1\"",
+      "first_timestamp": "2026-11-10T04:12:40Z",
+      "last_timestamp": "2026-11-10T04:12:40Z",
+      "pod": "wasmcloud-host-54d9b8f4dd-b7w78"
+    },
+    {
+      "reason": "Pulled",
+      "message": "Successfully pulled image \"k3d-platform-poc.localhost:5001/platform-poc/wasmcloud@sha256:05a8cd8299bd74ef8527a786324900f8a092a23e6482d9c8c6be5702d7cd6ac1\" in 997ms (997ms including waiting). Image size: 46836513 bytes.",
+      "first_timestamp": "2026-11-10T04:12:41Z",
+      "last_timestamp": "2026-11-10T04:12:41Z",
+      "pod": "wasmcloud-host-54d9b8f4dd-b7w78"
+    }
+  ]
+}

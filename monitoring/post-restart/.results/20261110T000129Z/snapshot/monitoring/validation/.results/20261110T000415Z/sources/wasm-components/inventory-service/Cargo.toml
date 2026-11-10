@@ -1,0 +1,10 @@
+[package]
+name = "inventory-service"
+edition.workspace = true
+version = "0.1.0"
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+wit-bindgen.workspace = true

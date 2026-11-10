@@ -1,0 +1,221 @@
+{
+  "implementation": "wasm",
+  "pair": 3,
+  "start_time": 1794283546.551664,
+  "scale_ack_seconds": 0.17721104200245463,
+  "first_order_seconds": 5.514194209001289,
+  "all_pods_ready_seconds": 2.182505459000822,
+  "stable_serving_seconds": 15.28813912500118,
+  "probe_attempts": [
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.002540749999752734,
+      "start_seconds": 0.17721208399962052,
+      "end_seconds": 0.1797865840017039
+    },
+    {
+      "status": 503,
+      "accepted": false,
+      "duration_seconds": 0.0046863329989719205,
+      "start_seconds": 1.1820152920008695,
+      "end_seconds": 1.1867255420002039
+    },
+    {
+      "status": 500,
+      "accepted": false,
+      "duration_seconds": 0.015131874999497086,
+      "start_seconds": 2.1920515000019805,
+      "end_seconds": 2.2072806670003047
+    },
+    {
+      "status": 500,
+      "accepted": false,
+      "duration_seconds": 0.015696291000494966,
+      "start_seconds": 3.1966730839994852,
+      "end_seconds": 3.213460083999962
+    },
+    {
+      "status": 500,
+      "accepted": false,
+      "duration_seconds": 0.008939708000980318,
+      "start_seconds": 4.199244834002457,
+      "end_seconds": 4.208242625001731
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.310015499999281,
+      "start_seconds": 5.20416516700061,
+      "end_seconds": 5.514194209001289
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.04368333300226368,
+      "start_seconds": 6.214200583999627,
+      "end_seconds": 6.257911459000752
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.029479542001354275,
+      "start_seconds": 7.2181882090008,
+      "end_seconds": 7.247709041999769
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.010886249998293351,
+      "start_seconds": 8.218278042000748,
+      "end_seconds": 8.229171834002045
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.025805625002249144,
+      "start_seconds": 9.22149795900259,
+      "end_seconds": 9.247344375002285
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.014141167001071153,
+      "start_seconds": 10.229202750000695,
+      "end_seconds": 10.24335875000179
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.04900537499997881,
+      "start_seconds": 11.233886500001972,
+      "end_seconds": 11.282912167000177
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.029485958999430295,
+      "start_seconds": 12.242341000001034,
+      "end_seconds": 12.271860209002625
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.028998165998928016,
+      "start_seconds": 13.247142792002705,
+      "end_seconds": 13.27618000000075
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.02362412499860511,
+      "start_seconds": 14.257082874999469,
+      "end_seconds": 14.280719917001989
+    },
+    {
+      "status": 201,
+      "accepted": true,
+      "duration_seconds": 0.020908125003188616,
+      "start_seconds": 15.267217542001163,
+      "end_seconds": 15.28813912500118
+    }
+  ],
+  "pods": {
+    "pods": {
+      "98239d92-8adb-49f5-b1a7-59f888f9312b": {
+        "name": "wasmcloud-host-748f5d6c46-kh6kq",
+        "deployment": "wasmcloud-host",
+        "created_seconds": 1.183449500000279,
+        "currently_ready": true,
+        "ready_seconds": 2.182473625001876
+      }
+    },
+    "errors": [],
+    "all_ready_seconds": 2.182505459000822,
+    "currently_all_ready": true
+  },
+  "valid": true,
+  "verified_zero": true,
+  "runtime_verified": {
+    "seconds": 25.811335792001046,
+    "host_id": "NBPTMITGFA5PBWFKA6GLEYCYOMMBKXDYFM7RZUVBPCNY6SIT2N33LMPV",
+    "components": {
+      "inventory-service": 10,
+      "http-controller": 10,
+      "products-service": 1,
+      "notification-service": 1,
+      "orders-service": 10,
+      "data-init": 1
+    },
+    "providers": [
+      "kv-redis",
+      "sqldb-postgres",
+      "http-server",
+      "nats"
+    ]
+  },
+  "cache_mode": "cached",
+  "node": "k3d-startup-1110035454-wasm-3-0",
+  "cache_before": {
+    "node": "k3d-startup-1110035454-wasm-3-0",
+    "cold": false,
+    "images": [
+      {
+        "id": "sha256:dcadf8f23b60edaaafbe901db7773e2c07947f269c475d8d33d3b46a18b0a7f9",
+        "repoTags": [],
+        "repoDigests": [
+          "docker.io/library/nats@sha256:b83efabe3e7def1e0a4a31ec6e078999bb17c80363f881df35edc70fcb6bb927"
+        ],
+        "size": "10296399",
+        "username": "",
+        "pinned": false
+      },
+      {
+        "id": "sha256:3884a337192318652b28de0de1aeb07f446a14f220feb5066f03e93f23ea3b60",
+        "repoTags": [
+          "docker.io/rancher/mirrored-pause:3.10.2"
+        ],
+        "repoDigests": [
+          "docker.io/rancher/mirrored-pause@sha256:f548e0e8e3dc1896ca956272154dde3314e8cc4fde0a57577ee9fa1c63f5baf4"
+        ],
+        "size": "268296",
+        "uid": {
+          "value": "65535"
+        },
+        "username": "",
+        "pinned": false
+      },
+      {
+        "id": "sha256:a22906face539085647ef862bed734e95c05ba6882d870528b92ea4af1b79ea6",
+        "repoTags": [],
+        "repoDigests": [
+          "k3d-platform-poc.localhost:5001/platform-poc/wasmcloud@sha256:05a8cd8299bd74ef8527a786324900f8a092a23e6482d9c8c6be5702d7cd6ac1"
+        ],
+        "size": "46836513",
+        "username": "",
+        "pinned": false
+      }
+    ],
+    "required_images": [
+      "docker.io/library/nats@sha256:b83efabe3e7def1e0a4a31ec6e078999bb17c80363f881df35edc70fcb6bb927",
+      "k3d-platform-poc.localhost:5001/platform-poc/wasmcloud@sha256:05a8cd8299bd74ef8527a786324900f8a092a23e6482d9c8c6be5702d7cd6ac1"
+    ],
+    "time": 1794283532.089178
+  },
+  "image_events": [
+    {
+      "reason": "Pulled",
+      "message": "Container image \"docker.io/library/nats@sha256:b83efabe3e7def1e0a4a31ec6e078999bb17c80363f881df35edc70fcb6bb927\" already present on machine and can be accessed by the pod",
+      "first_timestamp": "2026-11-10T04:05:47Z",
+      "last_timestamp": "2026-11-10T04:05:47Z",
+      "pod": "wasmcloud-host-748f5d6c46-kh6kq"
+    },
+    {
+      "reason": "Pulled",
+      "message": "Container image \"k3d-platform-poc.localhost:5001/platform-poc/wasmcloud@sha256:05a8cd8299bd74ef8527a786324900f8a092a23e6482d9c8c6be5702d7cd6ac1\" already present on machine and can be accessed by the pod",
+      "first_timestamp": "2026-11-10T04:05:47Z",
+      "last_timestamp": "2026-11-10T04:05:47Z",
+      "pod": "wasmcloud-host-748f5d6c46-kh6kq"
+    }
+  ]
+}

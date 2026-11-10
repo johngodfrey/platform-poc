@@ -1,0 +1,20 @@
+Validation directory: /Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/capacity/.results/validation-20261110T080306Z
+Starting allocation-original
+Completed allocation-original /Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/capacity/.results/20261110T080307Z/report.json
+Starting allocation-tuned
+Completed allocation-tuned /Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/capacity/.results/20261110T082949Z/report.json
+Starting pair-1-java
+Completed pair-1-java /Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/capacity/.results/20261110T091241Z/report.json
+Starting pair-1-wasm
+Completed pair-1-wasm /Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/capacity/.results/20261110T093926Z/report.json
+Starting pair-2-wasm
+Validation report: /Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/capacity/.results/validation-20261110T080306Z/report.html
+Traceback (most recent call last):
+  File "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/capacity/validate.py", line 237, in <module>
+    run_suite(parser.parse_args().resume)
+  File "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/capacity/validate.py", line 210, in run_suite
+    report=run(f'pair-{pair}-{impl}',impl,budget,java_rates if impl=='java' else protocol['wasm_rates'])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/capacity/validate.py", line 170, in run
+    time.sleep(1)
+KeyboardInterrupt

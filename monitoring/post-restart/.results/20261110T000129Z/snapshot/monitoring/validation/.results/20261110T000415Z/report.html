@@ -1,0 +1,288 @@
+<!doctype html><meta charset="utf-8"><meta http-equiv="refresh" content="20"><title>Frozen validation</title><style>body{font:17px system-ui;background:#101827;color:#eef;max-width:1200px;margin:35px auto;padding:15px}td,th{padding:10px;border-bottom:1px solid #456}a{color:#8bd}</style><h1>Frozen validation campaign</h1><p>completed · startup_cache: both, sweep/pair series 1</p><p><a href="history.html">Retained history</a> · <a href="freeze.json">Frozen setup</a> · <a href="protocol.json">Protocol and exclusion rules</a></p><table><tr><th>Suite</th><th>Pair/sweep</th><th>Implementation</th><th>Outcome</th><th>Evidence</th><th>Reason</th></tr><tr><td>footprint</td><td>1</td><td>java</td><td>pass</td><td><a href="footprint-01-java/">raw files</a></td><td></td></tr><tr><td>footprint</td><td>1</td><td>wasm</td><td>pass</td><td><a href="footprint-01-wasm/">raw files</a></td><td></td></tr><tr><td>footprint</td><td>2</td><td>wasm</td><td>pass</td><td><a href="footprint-02-wasm/">raw files</a></td><td></td></tr><tr><td>footprint</td><td>2</td><td>java</td><td>pass</td><td><a href="footprint-02-java/">raw files</a></td><td></td></tr><tr><td>footprint</td><td>3</td><td>java</td><td>pass</td><td><a href="footprint-03-java/">raw files</a></td><td></td></tr><tr><td>footprint</td><td>3</td><td>wasm</td><td>pass</td><td><a href="footprint-03-wasm/">raw files</a></td><td></td></tr><tr><td>footprint</td><td>4</td><td>wasm</td><td>pass</td><td><a href="footprint-04-wasm/">raw files</a></td><td></td></tr><tr><td>footprint</td><td>4</td><td>java</td><td>pass</td><td><a href="footprint-04-java/">raw files</a></td><td></td></tr><tr><td>footprint</td><td>5</td><td>java</td><td>pass</td><td><a href="footprint-05-java/">raw files</a></td><td></td></tr><tr><td>footprint</td><td>5</td><td>wasm</td><td>pass</td><td><a href="footprint-05-wasm/">raw files</a></td><td></td></tr><tr><td>density</td><td>1</td><td>java</td><td>completed</td><td><a href="density-01-java/">raw files</a></td><td></td></tr><tr><td>density</td><td>1</td><td>wasm</td><td>completed</td><td><a href="density-01-wasm/">raw files</a></td><td></td></tr><tr><td>density</td><td>2</td><td>wasm</td><td>completed</td><td><a href="density-02-wasm/">raw files</a></td><td></td></tr><tr><td>density</td><td>2</td><td>java</td><td>completed</td><td><a href="density-02-java/">raw files</a></td><td></td></tr><tr><td>density</td><td>3</td><td>java</td><td>completed</td><td><a href="density-03-java/">raw files</a></td><td></td></tr><tr><td>density</td><td>3</td><td>wasm</td><td>completed</td><td><a href="density-03-wasm/">raw files</a></td><td></td></tr><tr><td>startup_cache</td><td>1</td><td>both</td><td>completed</td><td><a href="startup_cache-01-both/">raw files</a></td><td></td></tr></table><h2>Aggregate results</h2><pre>{
+  &quot;java&quot;: {
+    &quot;footprint&quot;: {
+      &quot;measured&quot;: 5,
+      &quot;passing&quot;: 5,
+      &quot;scheduled&quot;: 5,
+      &quot;idle_cpu_cores&quot;: {
+        &quot;n&quot;: 5,
+        &quot;median&quot;: 0.018268425867088246,
+        &quot;minimum&quot;: 0.015736010264543798,
+        &quot;maximum&quot;: 0.018640690132716794
+      },
+      &quot;idle_memory_bytes&quot;: {
+        &quot;n&quot;: 5,
+        &quot;median&quot;: 1717645312.0,
+        &quot;minimum&quot;: 1698955264.0,
+        &quot;maximum&quot;: 1746796544.0
+      },
+      &quot;load_cpu_cores&quot;: {
+        &quot;n&quot;: 5,
+        &quot;median&quot;: 0.2477272614057001,
+        &quot;minimum&quot;: 0.23267300839585675,
+        &quot;maximum&quot;: 0.26943316284791224
+      },
+      &quot;load_memory_bytes&quot;: {
+        &quot;n&quot;: 5,
+        &quot;median&quot;: 1721724928.0,
+        &quot;minimum&quot;: 1701023744.0,
+        &quot;maximum&quot;: 1745756160.0
+      }
+    },
+    &quot;density&quot;: [
+      {
+        &quot;sweep&quot;: 1,
+        &quot;lowest_passing_mib&quot;: 2048,
+        &quot;stages&quot;: [
+          {
+            &quot;memory_mib&quot;: 4096,
+            &quot;status&quot;: &quot;pass&quot;,
+            &quot;reason&quot;: &quot;All measurement repeats passed&quot;
+          },
+          {
+            &quot;memory_mib&quot;: 2048,
+            &quot;status&quot;: &quot;pass&quot;,
+            &quot;reason&quot;: &quot;All measurement repeats passed&quot;
+          },
+          {
+            &quot;memory_mib&quot;: 1024,
+            &quot;status&quot;: &quot;inconclusive_runtime&quot;,
+            &quot;reason&quot;: &quot;Command &#x27;[&#x27;kubectl&#x27;, &#x27;--context&#x27;, &#x27;k3d-platform-poc&#x27;, &#x27;--request-timeout=20s&#x27;, &#x27;--request-timeout=260s&#x27;, &#x27;-n&#x27;, &#x27;java&#x27;, &#x27;rollout&#x27;, &#x27;status&#x27;, &#x27;deployment/order-service&#x27;, &#x27;--timeout=240s&#x27;]&#x27; returned non-zero exit status 1.&quot;
+          }
+        ]
+      },
+      {
+        &quot;sweep&quot;: 2,
+        &quot;lowest_passing_mib&quot;: 2048,
+        &quot;stages&quot;: [
+          {
+            &quot;memory_mib&quot;: 4096,
+            &quot;status&quot;: &quot;pass&quot;,
+            &quot;reason&quot;: &quot;All measurement repeats passed&quot;
+          },
+          {
+            &quot;memory_mib&quot;: 2048,
+            &quot;status&quot;: &quot;pass&quot;,
+            &quot;reason&quot;: &quot;All measurement repeats passed&quot;
+          },
+          {
+            &quot;memory_mib&quot;: 1024,
+            &quot;status&quot;: &quot;inconclusive_runtime&quot;,
+            &quot;reason&quot;: &quot;Command &#x27;[&#x27;kubectl&#x27;, &#x27;--context&#x27;, &#x27;k3d-platform-poc&#x27;, &#x27;--request-timeout=20s&#x27;, &#x27;--request-timeout=260s&#x27;, &#x27;-n&#x27;, &#x27;java&#x27;, &#x27;rollout&#x27;, &#x27;status&#x27;, &#x27;deployment/order-service&#x27;, &#x27;--timeout=240s&#x27;]&#x27; returned non-zero exit status 1.&quot;
+          }
+        ]
+      },
+      {
+        &quot;sweep&quot;: 3,
+        &quot;lowest_passing_mib&quot;: 2048,
+        &quot;stages&quot;: [
+          {
+            &quot;memory_mib&quot;: 4096,
+            &quot;status&quot;: &quot;pass&quot;,
+            &quot;reason&quot;: &quot;All measurement repeats passed&quot;
+          },
+          {
+            &quot;memory_mib&quot;: 2048,
+            &quot;status&quot;: &quot;pass&quot;,
+            &quot;reason&quot;: &quot;All measurement repeats passed&quot;
+          },
+          {
+            &quot;memory_mib&quot;: 1024,
+            &quot;status&quot;: &quot;inconclusive_runtime&quot;,
+            &quot;reason&quot;: &quot;Command &#x27;[&#x27;kubectl&#x27;, &#x27;--context&#x27;, &#x27;k3d-platform-poc&#x27;, &#x27;--request-timeout=20s&#x27;, &#x27;--request-timeout=260s&#x27;, &#x27;-n&#x27;, &#x27;java&#x27;, &#x27;rollout&#x27;, &#x27;status&#x27;, &#x27;deployment/order-service&#x27;, &#x27;--timeout=240s&#x27;]&#x27; returned non-zero exit status 1.&quot;
+          }
+        ]
+      }
+    ],
+    &quot;startup_cache&quot;: {
+      &quot;scheduled_pairs&quot;: 5,
+      &quot;valid_pairs&quot;: 5,
+      &quot;excluded_or_missing_pairs&quot;: 0,
+      &quot;cold&quot;: {
+        &quot;n&quot;: 5,
+        &quot;median&quot;: 20.96086991699849,
+        &quot;minimum&quot;: 20.136204958002054,
+        &quot;maximum&quot;: 21.99972208300096
+      },
+      &quot;cached&quot;: {
+        &quot;n&quot;: 5,
+        &quot;median&quot;: 15.024798374997772,
+        &quot;minimum&quot;: 13.618263832999219,
+        &quot;maximum&quot;: 17.063309959001344
+      }
+    }
+  },
+  &quot;wasm&quot;: {
+    &quot;footprint&quot;: {
+      &quot;measured&quot;: 5,
+      &quot;passing&quot;: 5,
+      &quot;scheduled&quot;: 5,
+      &quot;idle_cpu_cores&quot;: {
+        &quot;n&quot;: 5,
+        &quot;median&quot;: 0.0013157086696607204,
+        &quot;minimum&quot;: 0.0010196233987461343,
+        &quot;maximum&quot;: 0.0013673759774280134
+      },
+      &quot;idle_memory_bytes&quot;: {
+        &quot;n&quot;: 5,
+        &quot;median&quot;: 312512512.0,
+        &quot;minimum&quot;: 283746304.0,
+        &quot;maximum&quot;: 346476544.0
+      },
+      &quot;load_cpu_cores&quot;: {
+        &quot;n&quot;: 5,
+        &quot;median&quot;: 0.38636542810315133,
+        &quot;minimum&quot;: 0.36976783571444805,
+        &quot;maximum&quot;: 0.39936879327855224
+      },
+      &quot;load_memory_bytes&quot;: {
+        &quot;n&quot;: 5,
+        &quot;median&quot;: 318914560.0,
+        &quot;minimum&quot;: 284102656.0,
+        &quot;maximum&quot;: 351723520.0
+      }
+    },
+    &quot;density&quot;: [
+      {
+        &quot;sweep&quot;: 1,
+        &quot;lowest_passing_mib&quot;: 384,
+        &quot;stages&quot;: [
+          {
+            &quot;memory_mib&quot;: 4096,
+            &quot;status&quot;: &quot;pass&quot;,
+            &quot;reason&quot;: &quot;All measurement repeats passed&quot;
+          },
+          {
+            &quot;memory_mib&quot;: 2048,
+            &quot;status&quot;: &quot;pass&quot;,
+            &quot;reason&quot;: &quot;All measurement repeats passed&quot;
+          },
+          {
+            &quot;memory_mib&quot;: 1024,
+            &quot;status&quot;: &quot;pass&quot;,
+            &quot;reason&quot;: &quot;All measurement repeats passed&quot;
+          },
+          {
+            &quot;memory_mib&quot;: 768,
+            &quot;status&quot;: &quot;pass&quot;,
+            &quot;reason&quot;: &quot;All measurement repeats passed&quot;
+          },
+          {
+            &quot;memory_mib&quot;: 512,
+            &quot;status&quot;: &quot;pass&quot;,
+            &quot;reason&quot;: &quot;All measurement repeats passed&quot;
+          },
+          {
+            &quot;memory_mib&quot;: 384,
+            &quot;status&quot;: &quot;pass&quot;,
+            &quot;reason&quot;: &quot;All measurement repeats passed&quot;
+          },
+          {
+            &quot;memory_mib&quot;: 256,
+            &quot;status&quot;: &quot;inconclusive_runtime&quot;,
+            &quot;reason&quot;: &quot;wasm order preflight returned HTTP 500; inspect application logs before benchmarking&quot;
+          }
+        ]
+      },
+      {
+        &quot;sweep&quot;: 2,
+        &quot;lowest_passing_mib&quot;: 384,
+        &quot;stages&quot;: [
+          {
+            &quot;memory_mib&quot;: 4096,
+            &quot;status&quot;: &quot;pass&quot;,
+            &quot;reason&quot;: &quot;All measurement repeats passed&quot;
+          },
+          {
+            &quot;memory_mib&quot;: 2048,
+            &quot;status&quot;: &quot;pass&quot;,
+            &quot;reason&quot;: &quot;All measurement repeats passed&quot;
+          },
+          {
+            &quot;memory_mib&quot;: 1024,
+            &quot;status&quot;: &quot;pass&quot;,
+            &quot;reason&quot;: &quot;All measurement repeats passed&quot;
+          },
+          {
+            &quot;memory_mib&quot;: 768,
+            &quot;status&quot;: &quot;pass&quot;,
+            &quot;reason&quot;: &quot;All measurement repeats passed&quot;
+          },
+          {
+            &quot;memory_mib&quot;: 512,
+            &quot;status&quot;: &quot;pass&quot;,
+            &quot;reason&quot;: &quot;All measurement repeats passed&quot;
+          },
+          {
+            &quot;memory_mib&quot;: 384,
+            &quot;status&quot;: &quot;pass&quot;,
+            &quot;reason&quot;: &quot;All measurement repeats passed&quot;
+          },
+          {
+            &quot;memory_mib&quot;: 256,
+            &quot;status&quot;: &quot;inconclusive_runtime&quot;,
+            &quot;reason&quot;: &quot;wasm order preflight returned HTTP 500; inspect application logs before benchmarking&quot;
+          }
+        ]
+      },
+      {
+        &quot;sweep&quot;: 3,
+        &quot;lowest_passing_mib&quot;: 384,
+        &quot;stages&quot;: [
+          {
+            &quot;memory_mib&quot;: 4096,
+            &quot;status&quot;: &quot;pass&quot;,
+            &quot;reason&quot;: &quot;All measurement repeats passed&quot;
+          },
+          {
+            &quot;memory_mib&quot;: 2048,
+            &quot;status&quot;: &quot;pass&quot;,
+            &quot;reason&quot;: &quot;All measurement repeats passed&quot;
+          },
+          {
+            &quot;memory_mib&quot;: 1024,
+            &quot;status&quot;: &quot;pass&quot;,
+            &quot;reason&quot;: &quot;All measurement repeats passed&quot;
+          },
+          {
+            &quot;memory_mib&quot;: 768,
+            &quot;status&quot;: &quot;pass&quot;,
+            &quot;reason&quot;: &quot;All measurement repeats passed&quot;
+          },
+          {
+            &quot;memory_mib&quot;: 512,
+            &quot;status&quot;: &quot;pass&quot;,
+            &quot;reason&quot;: &quot;All measurement repeats passed&quot;
+          },
+          {
+            &quot;memory_mib&quot;: 384,
+            &quot;status&quot;: &quot;pass&quot;,
+            &quot;reason&quot;: &quot;All measurement repeats passed&quot;
+          },
+          {
+            &quot;memory_mib&quot;: 256,
+            &quot;status&quot;: &quot;inconclusive_runtime&quot;,
+            &quot;reason&quot;: &quot;wasm order preflight returned HTTP 500; inspect application logs before benchmarking&quot;
+          }
+        ]
+      }
+    ],
+    &quot;startup_cache&quot;: {
+      &quot;scheduled_pairs&quot;: 5,
+      &quot;valid_pairs&quot;: 5,
+      &quot;excluded_or_missing_pairs&quot;: 0,
+      &quot;cold&quot;: {
+        &quot;n&quot;: 5,
+        &quot;median&quot;: 14.282420208000985,
+        &quot;minimum&quot;: 12.27511258300001,
+        &quot;maximum&quot;: 15.33357158400031
+      },
+      &quot;cached&quot;: {
+        &quot;n&quot;: 5,
+        &quot;median&quot;: 6.652934749999986,
+        &quot;minimum&quot;: 5.24546887500037,
+        &quot;maximum&quot;: 13.29997424999965
+      }
+    }
+  }
+}</pre><p>All attempts are retained. Resource/latency failures are findings, not silently replaced. Sample sizes are independent runs; density slots are projections. Cold/cache refers to container images with warm dependencies.</p><p></p>

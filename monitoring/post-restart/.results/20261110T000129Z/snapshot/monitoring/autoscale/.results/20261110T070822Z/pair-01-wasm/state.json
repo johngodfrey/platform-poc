@@ -1,0 +1,131 @@
+{
+  "targets": [
+    "wasm"
+  ],
+  "factor": 2,
+  "wasm_mode": "host",
+  "wasm_actuator": "temporary additional host Deployment, pinned component spreads and verified HTTP routing",
+  "wasm": {
+    "uid": "4d1f740a-4d52-576e-a41d-743bfcfbd4fc",
+    "original": 10,
+    "target": 20,
+    "version": "v0.0.9-regack.1",
+    "scaled_version": "v0.0.9-regack.1-scaleout-20261110T072219Z",
+    "scaled_uid": "54dc410c-f69b-56fa-9fd4-cd99cfc5851d",
+    "host": {
+      "nonce": "609270e24c77",
+      "deployment_name": "wasmcloud-scaleout-609270e24c77",
+      "pending_instance": "scaleout-pending-609270e24c77",
+      "label_key": "scaleout_609270e24c77",
+      "events": [
+        {
+          "name": "baseline_label_prepared",
+          "time": 1794295344.88242
+        },
+        {
+          "name": "extra_host_removed",
+          "time": 1794296155.526134
+        }
+      ],
+      "source_deployment_uid": "8f943c2b-4316-4495-8dc9-a05981d6dabf",
+      "source_template_hash": "d13c27faf0bb0d38c32858e0d362dd3342f1ce8c91de1bb601d08a70b9e95306",
+      "baseline_pod_uid": "e546ec2f-1414-4b8e-81a0-e19a2aecb5f1",
+      "baseline_pod_name": "wasmcloud-host-f65d47bc8-mddfl",
+      "images": {
+        "nats-leaf": "docker.io/library/nats@sha256:b83efabe3e7def1e0a4a31ec6e078999bb17c80363f881df35edc70fcb6bb927",
+        "wasmcloud-host": "sha256:a22906face539085647ef862bed734e95c05ba6882d870528b92ea4af1b79ea6"
+      },
+      "service_uid": "0e1e48a0-2ecc-4c89-b6d4-a11877b7aa45",
+      "service_selector": {
+        "app.kubernetes.io/instance": "wasmcloud-host",
+        "app.kubernetes.io/name": "wasmcloud"
+      },
+      "components": {
+        "data-init": {
+          "id": "data-init",
+          "count": 1,
+          "image_ref": "host.docker.internal:5001/v2/platform-poc/data_init:0.1.0",
+          "annotations": {
+            "wasmcloud.dev/appspec": "platform-poc",
+            "wasmcloud.dev/managed-by": "wadm",
+            "wasmcloud.dev/scaler": "51b4422039bf1620c06be7e7257fc6548da9707a7578c472c185eb4200f94378",
+            "wasmcloud.dev/spread_name": "default"
+          }
+        },
+        "http-controller": {
+          "id": "http-controller",
+          "count": 10,
+          "image_ref": "host.docker.internal:5001/v2/platform-poc/http_controller:0.1.3",
+          "annotations": {
+            "wasmcloud.dev/appspec": "platform-poc",
+            "wasmcloud.dev/managed-by": "wadm",
+            "wasmcloud.dev/scaler": "0f85a66f29f095906a7b51e22c32724b7113dd5551bbdc939b7279c57618a713",
+            "wasmcloud.dev/spread_name": "default"
+          }
+        },
+        "products-service": {
+          "id": "products-service",
+          "count": 1,
+          "image_ref": "host.docker.internal:5001/v2/platform-poc/products_service:0.1.0",
+          "annotations": {
+            "wasmcloud.dev/appspec": "platform-poc",
+            "wasmcloud.dev/managed-by": "wadm",
+            "wasmcloud.dev/scaler": "3848580d53d95c68a35e27792df182d1307900793b47dc7812c373d1aa02d139",
+            "wasmcloud.dev/spread_name": "default"
+          }
+        },
+        "inventory-service": {
+          "id": "inventory-service",
+          "count": 10,
+          "image_ref": "host.docker.internal:5001/v2/platform-poc/inventory_service:0.1.0",
+          "annotations": {
+            "wasmcloud.dev/appspec": "platform-poc",
+            "wasmcloud.dev/managed-by": "wadm",
+            "wasmcloud.dev/scaler": "8bbc60b17877178e5f1b6575196d13d1856268957e88c261c8eb86bbfc45a391",
+            "wasmcloud.dev/spread_name": "default"
+          }
+        },
+        "notification-service": {
+          "id": "notification-service",
+          "count": 1,
+          "image_ref": "host.docker.internal:5001/v2/platform-poc/notification_service:0.1.0",
+          "annotations": {
+            "wasmcloud.dev/appspec": "platform-poc",
+            "wasmcloud.dev/managed-by": "wadm",
+            "wasmcloud.dev/scaler": "6af60a8677a8f7962eed95f449ba8b1a6afb5658d742ad35cd518e331988c5a6",
+            "wasmcloud.dev/spread_name": "default"
+          }
+        },
+        "orders-service": {
+          "id": "orders-service",
+          "count": 10,
+          "image_ref": "host.docker.internal:5001/v2/platform-poc/orders_service:0.1.0",
+          "annotations": {
+            "wasmcloud.dev/appspec": "platform-poc",
+            "wasmcloud.dev/managed-by": "wadm",
+            "wasmcloud.dev/scaler": "ba2a94faf0e76eef4abb7acd7c4e6923882a3f0b4d208187c79717ded88b8ac9",
+            "wasmcloud.dev/spread_name": "default"
+          }
+        }
+      },
+      "providers": [
+        "http-server",
+        "nats",
+        "sqldb-postgres",
+        "kv-redis"
+      ]
+    },
+    "runtime": {
+      "host_id": "NBXL42PZO522PZGLKJ47FBNEQDEXBZ3LITG6TZMA2SWZ725UC3LDUW5C",
+      "image_ref": "host.docker.internal:5001/v2/platform-poc/orders_service:0.1.0",
+      "annotations": {
+        "wasmcloud.dev/appspec": "platform-poc",
+        "wasmcloud.dev/managed-by": "wadm",
+        "wasmcloud.dev/scaler": "ba2a94faf0e76eef4abb7acd7c4e6923882a3f0b4d208187c79717ded88b8ac9",
+        "wasmcloud.dev/spread_name": "default"
+      }
+    }
+  },
+  "_state_path": "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/autoscale/.results/20261110T070822Z/state.json",
+  "run_token": "autoscale-latency-20261110T070822Z-1-wasm"
+}

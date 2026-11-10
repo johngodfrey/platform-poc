@@ -1,0 +1,264 @@
+{
+  "label": "post-restart",
+  "status": "interim; campaign interrupted during capacity repetitions",
+  "footprint": {
+    "java": {
+      "runs": 5,
+      "p95_median_ms": 10.6391,
+      "p95_range_ms": [
+        9.997,
+        14.751
+      ],
+      "idle_cpu_cores": 0.018268425867088246,
+      "idle_memory_mib": 1638.07421875,
+      "load_cpu_cores": 0.2477272614057001,
+      "load_memory_mib": 1641.96484375,
+      "load_memory_run_order_mib": [
+        1622.22265625,
+        1641.90625,
+        1641.96484375,
+        1664.8828125,
+        1661.58984375
+      ]
+    },
+    "wasm": {
+      "runs": 5,
+      "p95_median_ms": 12.481,
+      "p95_range_ms": [
+        10.891,
+        15.645
+      ],
+      "idle_cpu_cores": 0.0013157086696607204,
+      "idle_memory_mib": 298.03515625,
+      "load_cpu_cores": 0.38636542810315133,
+      "load_memory_mib": 304.140625,
+      "load_memory_run_order_mib": [
+        270.94140625,
+        286.7734375,
+        304.140625,
+        319.96875,
+        335.4296875
+      ]
+    }
+  },
+  "startup": {
+    "java-cold": {
+      "median_seconds": 20.96086991699849,
+      "range_seconds": [
+        20.136204958002054,
+        21.99972208300096
+      ],
+      "n": 5
+    },
+    "java-cached": {
+      "median_seconds": 15.024798374997772,
+      "range_seconds": [
+        13.618263832999219,
+        17.063309959001344
+      ],
+      "n": 5
+    },
+    "wasm-cold": {
+      "median_seconds": 14.282420208000985,
+      "range_seconds": [
+        12.27511258300001,
+        15.33357158400031
+      ],
+      "n": 5
+    },
+    "wasm-cached": {
+      "median_seconds": 6.652934749999986,
+      "range_seconds": [
+        5.24546887500037,
+        13.29997424999965
+      ],
+      "n": 5
+    },
+    "java-scalezero": {
+      "median_seconds": 14.918762000001152,
+      "range_seconds": [
+        14.634911083998304,
+        14.94973383300021
+      ],
+      "n": 5
+    },
+    "wasm-scalezero": {
+      "median_seconds": 8.259081374999369,
+      "range_seconds": [
+        6.264082624998991,
+        9.256392208000761
+      ],
+      "n": 5
+    }
+  },
+  "density": {
+    "java": [
+      {
+        "source": "monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/density/.results/20261110T013453Z/report.json",
+        "lowest_pass_mib": 2048,
+        "last_stage": "inconclusive_runtime",
+        "last_limit_mib": 1024
+      },
+      {
+        "source": "monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/density/.results/20261110T025248Z/report.json",
+        "lowest_pass_mib": 2048,
+        "last_stage": "inconclusive_runtime",
+        "last_limit_mib": 1024
+      },
+      {
+        "source": "monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/density/.results/20261110T030746Z/report.json",
+        "lowest_pass_mib": 2048,
+        "last_stage": "inconclusive_runtime",
+        "last_limit_mib": 1024
+      }
+    ],
+    "wasm": [
+      {
+        "source": "monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/density/.results/20261110T014938Z/report.json",
+        "lowest_pass_mib": 384,
+        "last_stage": "inconclusive_runtime",
+        "last_limit_mib": 256
+      },
+      {
+        "source": "monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/density/.results/20261110T022137Z/report.json",
+        "lowest_pass_mib": 384,
+        "last_stage": "inconclusive_runtime",
+        "last_limit_mib": 256
+      },
+      {
+        "source": "monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/density/.results/20261110T032236Z/report.json",
+        "lowest_pass_mib": 384,
+        "last_stage": "inconclusive_runtime",
+        "last_limit_mib": 256
+      }
+    ]
+  },
+  "scaleout": {
+    "java": {
+      "new_pod_order_accepted_seconds": 13.812854042000254,
+      "capacity_ready_seconds": 14.043766975402832,
+      "p95_ms": 10.602099999999997,
+      "failures": 0,
+      "dropped": 0,
+      "already_healthy_trials": 5
+    },
+    "wasm": {
+      "new_pod_order_accepted_seconds": 6.205752249999932,
+      "capacity_ready_seconds": 22.824050903320312,
+      "p95_ms": 27.239,
+      "failures": 0,
+      "dropped": 36,
+      "already_healthy_trials": 5
+    }
+  },
+  "autoscale": {
+    "latency": {
+      "java": {
+        "cycles": 0,
+        "failures": 0,
+        "dropped": 0
+      },
+      "wasm": {
+        "cycles": 0,
+        "failures": 0,
+        "dropped": 0
+      }
+    },
+    "cpu": {
+      "java": {
+        "cycles": 2,
+        "failures": 5,
+        "dropped": 0
+      },
+      "wasm": {
+        "cycles": 2,
+        "failures": 0,
+        "dropped": 0
+      }
+    }
+  },
+  "standalone": {
+    "java": {
+      "min": 2.977,
+      "med": 5.544,
+      "max": 93.126,
+      "p(90)": 8.842,
+      "p(95)": 11.078,
+      "avg": 6.407946001799977
+    },
+    "wasm": {
+      "avg": 7.587228899999954,
+      "min": 5.082,
+      "med": 7.038,
+      "max": 64.226,
+      "p(90)": 9.014,
+      "p(95)": 10.62
+    }
+  },
+  "notes": [
+    "Footprint medians across five runs per implementation. Application-only resources; infrastructure excluded.",
+    "Density next smaller allocations were inconclusive_runtime; do not call them demonstrated OOM minima.",
+    "All five scale-out trials per implementation were already healthy before scale. This is not proof of overload recovery.",
+    "The capacity matrix stopped on an environmental mains/lid guard. Its interrupted child reports restored=True and applications_healthy=True. No new 30-minute stability trials completed.",
+    "One completed bounded Wasm350/s step had0HTTP failures,872dropped arrivals,p95~296ms. This is not an exact capacity maximum.",
+    "All2638 pre-existing historical files verified unchanged at summary time."
+  ],
+  "sources": [
+    {
+      "path": "monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/validation/.results/20261110T000415Z/campaign.json",
+      "sha256": "b0c9132a4b4744dd02c6e7837922b1394088c022b6a67cce6f0af432d9220be8"
+    },
+    {
+      "path": "monitoring/post-restart/.results/20261110T000129Z/standalone/java-summary.json",
+      "sha256": "a5a51fecb7eeab458995f13ec9777f1b4124e59a4adc2d2dcccf9606f4623a35"
+    },
+    {
+      "path": "monitoring/post-restart/.results/20261110T000129Z/standalone/wasm-summary.json",
+      "sha256": "c96217bae99c9cea29679d1409dfc30b2e56a08e1cc2c4441eb73e8c7d3e71e9"
+    },
+    {
+      "path": "monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/startup_cache/.results/20261110T035454Z/report.json",
+      "sha256": "7b3c311b5a48a33406e6ed84c7f8424db6c72c5fb95c443bb57fafba785e24c9"
+    },
+    {
+      "path": "monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/scalezero/.results/20261110T060708Z/report.json",
+      "sha256": "46d2ddc5ad06389400e93ca488573cf43c2eaddae5a0a776fc44f40756b3ed3b"
+    },
+    {
+      "path": "monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/density/.results/20261110T013453Z/report.json",
+      "sha256": "ecb36687ee497f38bb297807491482ce4c2321c7a151a600ac055d341a817998"
+    },
+    {
+      "path": "monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/density/.results/20261110T014938Z/report.json",
+      "sha256": "4e8b0e802a7fa7a3b09e66aaacd27639c39147cfc6bb9a6ae794bd759f5982ed"
+    },
+    {
+      "path": "monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/density/.results/20261110T022137Z/report.json",
+      "sha256": "7af354dab48a56f8264ea61bffd541e992bc17eb871308f1f6d3f443f9d9b065"
+    },
+    {
+      "path": "monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/density/.results/20261110T025248Z/report.json",
+      "sha256": "df288497d0e71c33667d4176a19fd76d63d1d58e98a4cb5d43f3042310afa16a"
+    },
+    {
+      "path": "monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/density/.results/20261110T030746Z/report.json",
+      "sha256": "e4b96cee2cabda061b9484ded32ab6c4fee16e68baff6c4b91df930a949adb0f"
+    },
+    {
+      "path": "monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/density/.results/20261110T032236Z/report.json",
+      "sha256": "121374f874cd6f33e61f7cfbefeabfbce1adbb0a8618bcfbe12a69138e942d83"
+    },
+    {
+      "path": "monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/scaleout/.results/repeated-20261110T045931Z/series.json",
+      "sha256": "a15f7c06d7c3a6c35d98fc569e6ff76f7927099cd73f60bfe3e6a102ab4e97c5"
+    },
+    {
+      "path": "monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/autoscale/.results/20261110T070822Z/report.json",
+      "sha256": "bae7375847bc47eed3326190f20217d5a82d99e2b41b86342cd09a84cfc467c8"
+    },
+    {
+      "path": "monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/autoscale/.results/20261110T061338Z/report.json",
+      "sha256": "6f05559625868cd92c8f56a05fa1c6e0ef038a1629aaafc8addb62938224ff93"
+    }
+  ]
+}

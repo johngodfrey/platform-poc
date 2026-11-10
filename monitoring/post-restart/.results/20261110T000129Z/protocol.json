@@ -1,0 +1,112 @@
+{
+  "label": "post-restart",
+  "jobs": [
+    {
+      "name": "frozen-footprint-density-startup",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.11/bin/python3",
+        "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/validation/run.py"
+      ],
+      "bound_seconds": 21600
+    },
+    {
+      "name": "standalone-java-orders",
+      "argv": [
+        "k6",
+        "run",
+        "--quiet",
+        "--summary-export=/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/standalone/java-summary.json",
+        "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/standalone/orders_java.js"
+      ],
+      "bound_seconds": 900
+    },
+    {
+      "name": "standalone-wasm-orders",
+      "argv": [
+        "k6",
+        "run",
+        "--quiet",
+        "-e",
+        "TEST_DURATION=5m",
+        "--summary-export=/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/standalone/wasm-summary.json",
+        "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/standalone/orders_wasm.js"
+      ],
+      "bound_seconds": 900
+    },
+    {
+      "name": "fixed-budget",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.11/bin/python3",
+        "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/budget/run.py",
+        "run",
+        "both"
+      ],
+      "bound_seconds": 7200
+    },
+    {
+      "name": "burst-scale-out",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.11/bin/python3",
+        "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/scaleout/repeat.py",
+        "--pairs",
+        "5",
+        "--burst-rate",
+        "400",
+        "--after-scale",
+        "180"
+      ],
+      "bound_seconds": 10800
+    },
+    {
+      "name": "scale-from-zero",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.11/bin/python3",
+        "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/scalezero/run.py",
+        "run",
+        "--pairs",
+        "5"
+      ],
+      "bound_seconds": 7200
+    },
+    {
+      "name": "automatic-cpu-scaling",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.11/bin/python3",
+        "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/autoscale/run.py",
+        "run",
+        "--trigger",
+        "cpu",
+        "--pairs",
+        "2"
+      ],
+      "bound_seconds": 10800
+    },
+    {
+      "name": "automatic-latency-scaling",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.11/bin/python3",
+        "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/autoscale/run.py",
+        "run",
+        "--trigger",
+        "latency",
+        "--pairs",
+        "2"
+      ],
+      "bound_seconds": 10800
+    },
+    {
+      "name": "allocation-repeated-capacity-stability",
+      "argv": [
+        "/Library/Frameworks/Python.framework/Versions/3.11/bin/python3",
+        "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/capacity/validate.py"
+      ],
+      "bound_seconds": 25200
+    }
+  ],
+  "historical_policy": "Preserve every existing file unchanged; do not pool the new campaign with earlier runs.",
+  "failure_policy": "Retain failed attempts. Proceed to the next independent study only after templates/images/resources/config hashes and both functional paths verify restored. No silent retries or runtime upgrades.",
+  "inputs": "Frozen copies of existing drivers; measurement settings unchanged. Source/git inventory adapter is archived.",
+  "stability_fallback": "If the capacity matrix skips a long trial, run the existing declared common-step fallback once, capped at 400/s. No lower-rate retry.",
+  "baseline_orders": "Existing footprint suite sends the representative Java/Wasm order shapes; no concurrent load generators.",
+  "note": "All result files and source snapshots beneath this directory are labelled post-restart by campaign membership. Completed execution is separate from performance pass/fail."
+}

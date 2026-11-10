@@ -1,0 +1,11 @@
+{
+  "node": "k3d-platform-poc-agent-1",
+  "processes": {
+    "1799333": "/usr/local/bin/wasmcloud",
+    "1799452": "/tmp/wasmcloudcache/NAAKWU5ZXLN4QCE7JBCY3EC6EIH67ACTNJIJQNY24PAEMSWQISVHUX3Y/host_docker_internal_5001_v2_platform_poc_http_server_0_25_0_regack_1",
+    "1799471": "/tmp/wasmcloudcache/NAAKWU5ZXLN4QCE7JBCY3EC6EIH67ACTNJIJQNY24PAEMSWQISVHUX3Y/ghcr_io_wasmcloud_keyvalue_redis_0_28_2",
+    "1799484": "/tmp/wasmcloudcache/NAAKWU5ZXLN4QCE7JBCY3EC6EIH67ACTNJIJQNY24PAEMSWQISVHUX3Y/ghcr_io_wasmcloud_sqldb_postgres_0_7_2",
+    "1799511": "/tmp/wasmcloudcache/NAAKWU5ZXLN4QCE7JBCY3EC6EIH67ACTNJIJQNY24PAEMSWQISVHUX3Y/ghcr_io_wasmcloud_messaging_nats_0_24_0"
+  },
+  "clock_ticks": 100
+}

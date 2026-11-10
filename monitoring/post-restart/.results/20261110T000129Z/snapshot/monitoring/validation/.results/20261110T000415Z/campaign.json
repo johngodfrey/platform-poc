@@ -1,0 +1,1052 @@
+{
+  "status": "completed",
+  "directory": "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/validation/.results/20261110T000415Z",
+  "protocol": {
+    "version": 1,
+    "footprint": {
+      "pairs": 5,
+      "warmup_seconds": 180,
+      "idle_seconds": 90,
+      "load_seconds": 120,
+      "recovery_seconds": 90,
+      "rate": 100,
+      "vus": 250,
+      "p95_ms": 500,
+      "request_timeout": "10s",
+      "cpu_rate_seconds": 60,
+      "step_seconds": 5,
+      "minimum_coverage": 0.8
+    },
+    "density": {
+      "sweeps": 3,
+      "limits_mib": [
+        4096,
+        2048,
+        1024,
+        768,
+        512,
+        384,
+        256
+      ],
+      "rate": 25,
+      "warmup_seconds": 120,
+      "seconds": 60,
+      "repeats": 2,
+      "vus": 250,
+      "p95_ms": 100,
+      "max_node_cpu": 0.6,
+      "pool_mib": 8192,
+      "request_timeout": "10s"
+    },
+    "startup_cache": {
+      "pairs": 5,
+      "target": "both",
+      "definition": "Fresh owned worker container-image cache versus that worker after first startup; dependencies remain warm; Wasm component/provider caches are new on both starts."
+    },
+    "policy": [
+      "Keep every scheduled attempt, failure, partial run and recovery; never replace a bad result with a passing run.",
+      "Alternate Java-first and Wasm-first pairs/sweeps. Run only one implementation under load at a time.",
+      "Historical evidence is retained with hashes and explicit provenance; do not pool different protocols or count derived summaries twice.",
+      "Freeze source hashes, live application imageIDs, templates, application and secret/config hashes before any measurement. Changes require a new campaign.",
+      "Footprint baseline gate: 180-second warmup with zero failed/dropped requests, followed by a separate 30-second 100/s gate with p95 <500ms. Two failed baseline gates in a suite halt that suite; never silently restart the host.",
+      "Footprint requires no pod identity/restart/readiness changes and >=80% complete per-container telemetry coverage. Idle uses seconds 60-90; load uses seconds 150-210. CPU uses a 60-second rate wholly within each phase.",
+      "Density removes application CPU limits and requires all-node CPU coverage and sampled utilization <60%. An unready or replaced pod is inconclusive_runtime unless separate evidence proves memory exhaustion. Density slots are projections, not concurrent replica tests.",
+      "Startup uses the existing guarded fresh-worker driver. Exclude both cold and cached members if either member of a pair is invalid; retain both originals. No automatic replacement pairs.",
+      "Require mains and an open lid. An interruption is classified as environmental, not application capacity. Bound every load and startup; preserve recovery checkpoints.",
+      "Report median and observed range across independent runs, sample sizes, all failures and exclusions. These local application deployments do not establish a universal language/runtime ranking."
+    ]
+  },
+  "attempts": [
+    {
+      "suite": "footprint",
+      "pair": 1,
+      "implementation": "java",
+      "directory": "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/validation/.results/20261110T000415Z/footprint-01-java",
+      "status": "pass",
+      "warmup": {
+        "rate": 100,
+        "requests": 18001,
+        "accepted": 18001,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 20.473,
+        "achieved_orders_per_second": 100.00555555555556,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "start": 1794269072.962
+      },
+      "gate": {
+        "rate": 100,
+        "requests": 3001,
+        "accepted": 3001,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 18.06,
+        "achieved_orders_per_second": 100.03333333333333,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "start": 1794269270.937
+      },
+      "measured": true,
+      "result": {
+        "rate": 100,
+        "requests": 12000,
+        "accepted": 12000,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 10.569549999999994,
+        "achieved_orders_per_second": 100.0,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "start": 1794269314.834
+      },
+      "telemetry": {
+        "idle": {
+          "cpu_cores": {
+            "complete": true,
+            "required": 6,
+            "n": 7,
+            "median": 0.018640690132716794,
+            "minimum": 0.016648740357886504,
+            "maximum": 0.024181213558039625
+          },
+          "memory_bytes": {
+            "complete": true,
+            "required": 6,
+            "n": 7,
+            "median": 1698955264.0,
+            "minimum": 1688707072.0,
+            "maximum": 1700245504.0
+          }
+        },
+        "load": {
+          "cpu_cores": {
+            "complete": true,
+            "required": 11,
+            "n": 13,
+            "median": 0.23267300839585675,
+            "minimum": 0.20417379391071397,
+            "maximum": 0.23646260147511286
+          },
+          "memory_bytes": {
+            "complete": true,
+            "required": 11,
+            "n": 13,
+            "median": 1701023744.0,
+            "minimum": 1691394048.0,
+            "maximum": 1703211008.0
+          }
+        }
+      }
+    },
+    {
+      "suite": "footprint",
+      "pair": 1,
+      "implementation": "wasm",
+      "directory": "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/validation/.results/20261110T000415Z/footprint-01-wasm",
+      "status": "pass",
+      "warmup": {
+        "rate": 100,
+        "requests": 18001,
+        "accepted": 18001,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 14.129,
+        "achieved_orders_per_second": 100.00555555555556,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "start": 1794269623.844
+      },
+      "gate": {
+        "rate": 100,
+        "requests": 3001,
+        "accepted": 3001,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 16.02,
+        "achieved_orders_per_second": 100.03333333333333,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "start": 1794269812.997
+      },
+      "measured": true,
+      "result": {
+        "rate": 100,
+        "requests": 12001,
+        "accepted": 12001,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 15.645,
+        "achieved_orders_per_second": 100.00833333333334,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "start": 1794269855.122
+      },
+      "telemetry": {
+        "idle": {
+          "cpu_cores": {
+            "complete": true,
+            "required": 6,
+            "n": 7,
+            "median": 0.0012444122918781522,
+            "minimum": 0.0009549461951909791,
+            "maximum": 0.001388949423408844
+          },
+          "memory_bytes": {
+            "complete": true,
+            "required": 6,
+            "n": 7,
+            "median": 283746304.0,
+            "minimum": 278020096.0,
+            "maximum": 283746304.0
+          }
+        },
+        "load": {
+          "cpu_cores": {
+            "complete": true,
+            "required": 11,
+            "n": 13,
+            "median": 0.38636542810315133,
+            "minimum": 0.3790684837333442,
+            "maximum": 0.38920270742561597
+          },
+          "memory_bytes": {
+            "complete": true,
+            "required": 11,
+            "n": 13,
+            "median": 284102656.0,
+            "minimum": 282734592.0,
+            "maximum": 286982144.0
+          }
+        }
+      }
+    },
+    {
+      "suite": "footprint",
+      "pair": 2,
+      "implementation": "wasm",
+      "directory": "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/validation/.results/20261110T000415Z/footprint-02-wasm",
+      "status": "pass",
+      "warmup": {
+        "rate": 100,
+        "requests": 18001,
+        "accepted": 18001,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 10.519,
+        "achieved_orders_per_second": 100.00555555555556,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "start": 1794270161.848
+      },
+      "gate": {
+        "rate": 100,
+        "requests": 3001,
+        "accepted": 3001,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 11.163,
+        "achieved_orders_per_second": 100.03333333333333,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "start": 1794270350.705
+      },
+      "measured": true,
+      "result": {
+        "rate": 100,
+        "requests": 12000,
+        "accepted": 12000,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 11.810149999999998,
+        "achieved_orders_per_second": 100.0,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "start": 1794270392.894
+      },
+      "telemetry": {
+        "idle": {
+          "cpu_cores": {
+            "complete": true,
+            "required": 6,
+            "n": 7,
+            "median": 0.0013673759774280134,
+            "minimum": 0.0011656299393261998,
+            "maximum": 0.0014742101290393624
+          },
+          "memory_bytes": {
+            "complete": true,
+            "required": 6,
+            "n": 7,
+            "median": 299925504.0,
+            "minimum": 294449152.0,
+            "maximum": 299925504.0
+          }
+        },
+        "load": {
+          "cpu_cores": {
+            "complete": true,
+            "required": 11,
+            "n": 13,
+            "median": 0.36976783571444805,
+            "minimum": 0.3078241058154355,
+            "maximum": 0.3706023443571364
+          },
+          "memory_bytes": {
+            "complete": true,
+            "required": 11,
+            "n": 13,
+            "median": 300703744.0,
+            "minimum": 298991616.0,
+            "maximum": 304189440.0
+          }
+        }
+      }
+    },
+    {
+      "suite": "footprint",
+      "pair": 2,
+      "implementation": "java",
+      "directory": "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/validation/.results/20261110T000415Z/footprint-02-java",
+      "status": "pass",
+      "warmup": {
+        "rate": 100,
+        "requests": 18001,
+        "accepted": 18001,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 14.92,
+        "achieved_orders_per_second": 100.00555555555556,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "start": 1794270698.246
+      },
+      "gate": {
+        "rate": 100,
+        "requests": 3001,
+        "accepted": 3001,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 14.646,
+        "achieved_orders_per_second": 100.03333333333333,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "start": 1794270895.266
+      },
+      "measured": true,
+      "result": {
+        "rate": 100,
+        "requests": 12001,
+        "accepted": 12001,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 14.751,
+        "achieved_orders_per_second": 100.00833333333334,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "start": 1794270940.151
+      },
+      "telemetry": {
+        "idle": {
+          "cpu_cores": {
+            "complete": true,
+            "required": 6,
+            "n": 7,
+            "median": 0.018268425867088246,
+            "minimum": 0.01759073550043842,
+            "maximum": 0.020728231907154122
+          },
+          "memory_bytes": {
+            "complete": true,
+            "required": 6,
+            "n": 7,
+            "median": 1717645312.0,
+            "minimum": 1712414720.0,
+            "maximum": 1722523648.0
+          }
+        },
+        "load": {
+          "cpu_cores": {
+            "complete": true,
+            "required": 11,
+            "n": 13,
+            "median": 0.26943316284791224,
+            "minimum": 0.25541725411293303,
+            "maximum": 0.2724862300371622
+          },
+          "memory_bytes": {
+            "complete": true,
+            "required": 11,
+            "n": 13,
+            "median": 1721663488.0,
+            "minimum": 1707274240.0,
+            "maximum": 1723146240.0
+          }
+        }
+      }
+    },
+    {
+      "suite": "footprint",
+      "pair": 3,
+      "implementation": "java",
+      "directory": "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/validation/.results/20261110T000415Z/footprint-03-java",
+      "status": "pass",
+      "warmup": {
+        "rate": 100,
+        "requests": 18001,
+        "accepted": 18001,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 13.36,
+        "achieved_orders_per_second": 100.00555555555556,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "start": 1794271248.164
+      },
+      "gate": {
+        "rate": 100,
+        "requests": 3001,
+        "accepted": 3001,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 10.881,
+        "achieved_orders_per_second": 100.03333333333333,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "start": 1794271447.598
+      },
+      "measured": true,
+      "result": {
+        "rate": 100,
+        "requests": 12000,
+        "accepted": 12000,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 10.72105,
+        "achieved_orders_per_second": 100.0,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "start": 1794271493.55
+      },
+      "telemetry": {
+        "idle": {
+          "cpu_cores": {
+            "complete": true,
+            "required": 6,
+            "n": 7,
+            "median": 0.018419161409362034,
+            "minimum": 0.017034589910385627,
+            "maximum": 0.018781167289981054
+          },
+          "memory_bytes": {
+            "complete": true,
+            "required": 6,
+            "n": 7,
+            "median": 1717518336.0,
+            "minimum": 1717186560.0,
+            "maximum": 1719324672.0
+          }
+        },
+        "load": {
+          "cpu_cores": {
+            "complete": true,
+            "required": 11,
+            "n": 13,
+            "median": 0.2477272614057001,
+            "minimum": 0.20123768918998725,
+            "maximum": 0.25215092465903904
+          },
+          "memory_bytes": {
+            "complete": true,
+            "required": 11,
+            "n": 13,
+            "median": 1721724928.0,
+            "minimum": 1717370880.0,
+            "maximum": 1723990016.0
+          }
+        }
+      }
+    },
+    {
+      "suite": "footprint",
+      "pair": 3,
+      "implementation": "wasm",
+      "directory": "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/validation/.results/20261110T000415Z/footprint-03-wasm",
+      "status": "pass",
+      "warmup": {
+        "rate": 100,
+        "requests": 18001,
+        "accepted": 18001,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 19.53,
+        "achieved_orders_per_second": 100.00555555555556,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "start": 1794271799.476
+      },
+      "gate": {
+        "rate": 100,
+        "requests": 3001,
+        "accepted": 3001,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 15.99,
+        "achieved_orders_per_second": 100.03333333333333,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "start": 1794271989.02
+      },
+      "measured": true,
+      "result": {
+        "rate": 100,
+        "requests": 12001,
+        "accepted": 12001,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 13.041,
+        "achieved_orders_per_second": 100.00833333333334,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "start": 1794272032.086
+      },
+      "telemetry": {
+        "idle": {
+          "cpu_cores": {
+            "complete": true,
+            "required": 6,
+            "n": 7,
+            "median": 0.0013157086696607204,
+            "minimum": 0.0011263087519167553,
+            "maximum": 0.0016735318617238043
+          },
+          "memory_bytes": {
+            "complete": true,
+            "required": 6,
+            "n": 7,
+            "median": 312512512.0,
+            "minimum": 312512512.0,
+            "maximum": 318226432.0
+          }
+        },
+        "load": {
+          "cpu_cores": {
+            "complete": true,
+            "required": 11,
+            "n": 13,
+            "median": 0.39936879327855224,
+            "minimum": 0.3508906026960035,
+            "maximum": 0.4063532940461395
+          },
+          "memory_bytes": {
+            "complete": true,
+            "required": 11,
+            "n": 13,
+            "median": 318914560.0,
+            "minimum": 317255680.0,
+            "maximum": 325787648.0
+          }
+        }
+      }
+    },
+    {
+      "suite": "footprint",
+      "pair": 4,
+      "implementation": "wasm",
+      "directory": "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/validation/.results/20261110T000415Z/footprint-04-wasm",
+      "status": "pass",
+      "warmup": {
+        "rate": 100,
+        "requests": 18001,
+        "accepted": 18001,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 11.985,
+        "achieved_orders_per_second": 100.00555555555556,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "start": 1794272339.238
+      },
+      "gate": {
+        "rate": 100,
+        "requests": 3000,
+        "accepted": 3000,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 12.6512,
+        "achieved_orders_per_second": 100.0,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "start": 1794272526.475
+      },
+      "measured": true,
+      "result": {
+        "rate": 100,
+        "requests": 12001,
+        "accepted": 12001,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 12.481,
+        "achieved_orders_per_second": 100.00833333333334,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "start": 1794272568.169
+      },
+      "telemetry": {
+        "idle": {
+          "cpu_cores": {
+            "complete": true,
+            "required": 6,
+            "n": 7,
+            "median": 0.0013543164990303805,
+            "minimum": 0.0011423083910837577,
+            "maximum": 0.0013543164990303805
+          },
+          "memory_bytes": {
+            "complete": true,
+            "required": 6,
+            "n": 7,
+            "median": 329478144.0,
+            "minimum": 329478144.0,
+            "maximum": 335216640.0
+          }
+        },
+        "load": {
+          "cpu_cores": {
+            "complete": true,
+            "required": 11,
+            "n": 13,
+            "median": 0.38784506750218783,
+            "minimum": 0.31603437901370907,
+            "maximum": 0.39453890244905826
+          },
+          "memory_bytes": {
+            "complete": true,
+            "required": 11,
+            "n": 13,
+            "median": 335511552.0,
+            "minimum": 334815232.0,
+            "maximum": 342376448.0
+          }
+        }
+      }
+    },
+    {
+      "suite": "footprint",
+      "pair": 4,
+      "implementation": "java",
+      "directory": "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/validation/.results/20261110T000415Z/footprint-04-java",
+      "status": "pass",
+      "warmup": {
+        "rate": 100,
+        "requests": 18001,
+        "accepted": 18001,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 10.114,
+        "achieved_orders_per_second": 100.00555555555556,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "start": 1794272874.013
+      },
+      "gate": {
+        "rate": 100,
+        "requests": 3001,
+        "accepted": 3001,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 11.497,
+        "achieved_orders_per_second": 100.03333333333333,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "start": 1794273061.742
+      },
+      "measured": true,
+      "result": {
+        "rate": 100,
+        "requests": 12000,
+        "accepted": 12000,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 10.6391,
+        "achieved_orders_per_second": 100.0,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "start": 1794273107.446
+      },
+      "telemetry": {
+        "idle": {
+          "cpu_cores": {
+            "complete": true,
+            "required": 6,
+            "n": 7,
+            "median": 0.01577717663400565,
+            "minimum": 0.015280440982366392,
+            "maximum": 0.017105458497754307
+          },
+          "memory_bytes": {
+            "complete": true,
+            "required": 6,
+            "n": 7,
+            "median": 1737105408.0,
+            "minimum": 1735643136.0,
+            "maximum": 1741869056.0
+          }
+        },
+        "load": {
+          "cpu_cores": {
+            "complete": true,
+            "required": 11,
+            "n": 13,
+            "median": 0.24156383766876313,
+            "minimum": 0.22761791852379856,
+            "maximum": 0.24561880572051467
+          },
+          "memory_bytes": {
+            "complete": true,
+            "required": 11,
+            "n": 13,
+            "median": 1745756160.0,
+            "minimum": 1737719808.0,
+            "maximum": 1746735104.0
+          }
+        }
+      }
+    },
+    {
+      "suite": "footprint",
+      "pair": 5,
+      "implementation": "java",
+      "directory": "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/validation/.results/20261110T000415Z/footprint-05-java",
+      "status": "pass",
+      "warmup": {
+        "rate": 100,
+        "requests": 18001,
+        "accepted": 18001,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 10.046,
+        "achieved_orders_per_second": 100.00555555555556,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "start": 1794273416.152
+      },
+      "gate": {
+        "rate": 100,
+        "requests": 3001,
+        "accepted": 3001,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 10.516,
+        "achieved_orders_per_second": 100.03333333333333,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "start": 1794273603.715
+      },
+      "measured": true,
+      "result": {
+        "rate": 100,
+        "requests": 12001,
+        "accepted": 12001,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 9.997,
+        "achieved_orders_per_second": 100.00833333333334,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "start": 1794273648.55
+      },
+      "telemetry": {
+        "idle": {
+          "cpu_cores": {
+            "complete": true,
+            "required": 6,
+            "n": 7,
+            "median": 0.015736010264543798,
+            "minimum": 0.015150015629368534,
+            "maximum": 0.01624811749813291
+          },
+          "memory_bytes": {
+            "complete": true,
+            "required": 6,
+            "n": 7,
+            "median": 1746796544.0,
+            "minimum": 1739149312.0,
+            "maximum": 1749344256.0
+          }
+        },
+        "load": {
+          "cpu_cores": {
+            "complete": true,
+            "required": 11,
+            "n": 13,
+            "median": 0.25377535535452894,
+            "minimum": 0.23629171945406358,
+            "maximum": 0.25964771263625286
+          },
+          "memory_bytes": {
+            "complete": true,
+            "required": 11,
+            "n": 13,
+            "median": 1742303232.0,
+            "minimum": 1739358208.0,
+            "maximum": 1743003648.0
+          }
+        }
+      }
+    },
+    {
+      "suite": "footprint",
+      "pair": 5,
+      "implementation": "wasm",
+      "directory": "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/validation/.results/20261110T000415Z/footprint-05-wasm",
+      "status": "pass",
+      "warmup": {
+        "rate": 100,
+        "requests": 18001,
+        "accepted": 18001,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 11.907,
+        "achieved_orders_per_second": 100.00555555555556,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "start": 1794273955.848
+      },
+      "gate": {
+        "rate": 100,
+        "requests": 3001,
+        "accepted": 3001,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 11.037,
+        "achieved_orders_per_second": 100.03333333333333,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "start": 1794274145.811
+      },
+      "measured": true,
+      "result": {
+        "rate": 100,
+        "requests": 12001,
+        "accepted": 12001,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 10.891,
+        "achieved_orders_per_second": 100.00833333333334,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "start": 1794274187.809
+      },
+      "telemetry": {
+        "idle": {
+          "cpu_cores": {
+            "complete": true,
+            "required": 6,
+            "n": 7,
+            "median": 0.0010196233987461343,
+            "minimum": 0.000763225000000034,
+            "maximum": 0.0013715511112128876
+          },
+          "memory_bytes": {
+            "complete": true,
+            "required": 6,
+            "n": 7,
+            "median": 346476544.0,
+            "minimum": 346476544.0,
+            "maximum": 352366592.0
+          }
+        },
+        "load": {
+          "cpu_cores": {
+            "complete": true,
+            "required": 11,
+            "n": 13,
+            "median": 0.3812652731805001,
+            "minimum": 0.306454929741029,
+            "maximum": 0.385636248585837
+          },
+          "memory_bytes": {
+            "complete": true,
+            "required": 11,
+            "n": 13,
+            "median": 351723520.0,
+            "minimum": 350523392.0,
+            "maximum": 358932480.0
+          }
+        }
+      }
+    },
+    {
+      "suite": "density",
+      "pair": 1,
+      "implementation": "java",
+      "directory": "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/validation/.results/20261110T000415Z/density-01-java",
+      "status": "completed",
+      "exit_code": 0,
+      "reports": [
+        "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/density/.results/20261110T013453Z"
+      ]
+    },
+    {
+      "suite": "density",
+      "pair": 1,
+      "implementation": "wasm",
+      "directory": "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/validation/.results/20261110T000415Z/density-01-wasm",
+      "status": "completed",
+      "exit_code": 0,
+      "reports": [
+        "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/density/.results/20261110T014938Z"
+      ]
+    },
+    {
+      "suite": "density",
+      "pair": 2,
+      "implementation": "wasm",
+      "directory": "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/validation/.results/20261110T000415Z/density-02-wasm",
+      "status": "completed",
+      "exit_code": 0,
+      "reports": [
+        "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/density/.results/20261110T022137Z"
+      ]
+    },
+    {
+      "suite": "density",
+      "pair": 2,
+      "implementation": "java",
+      "directory": "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/validation/.results/20261110T000415Z/density-02-java",
+      "status": "completed",
+      "exit_code": 0,
+      "reports": [
+        "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/density/.results/20261110T025248Z"
+      ]
+    },
+    {
+      "suite": "density",
+      "pair": 3,
+      "implementation": "java",
+      "directory": "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/validation/.results/20261110T000415Z/density-03-java",
+      "status": "completed",
+      "exit_code": 0,
+      "reports": [
+        "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/density/.results/20261110T030746Z"
+      ]
+    },
+    {
+      "suite": "density",
+      "pair": 3,
+      "implementation": "wasm",
+      "directory": "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/validation/.results/20261110T000415Z/density-03-wasm",
+      "status": "completed",
+      "exit_code": 0,
+      "reports": [
+        "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/density/.results/20261110T032236Z"
+      ]
+    },
+    {
+      "suite": "startup_cache",
+      "pair": 1,
+      "implementation": "both",
+      "directory": "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/validation/.results/20261110T000415Z/startup_cache-01-both",
+      "status": "completed",
+      "exit_code": 0,
+      "reports": [
+        "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/startup_cache/.results/20261110T035454Z"
+      ]
+    }
+  ],
+  "started": 1794269055.486994,
+  "freeze_sha256": "7d5d2f175e7202a311d66376e412dc4d2065ae1b0a88a2ce261bbaa86df7cb57",
+  "current": "startup_cache: both, sweep/pair series 1",
+  "finished": 1794284068.258641
+}

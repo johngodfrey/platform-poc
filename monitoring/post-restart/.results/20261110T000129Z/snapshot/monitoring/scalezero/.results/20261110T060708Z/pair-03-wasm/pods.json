@@ -1,0 +1,14 @@
+{
+  "pods": {
+    "a70b1811-8c19-46a9-a03e-6a84aee14d5d": {
+      "name": "wasmcloud-host-f65d47bc8-jf4l7",
+      "deployment": "wasmcloud-host",
+      "created_seconds": 2.1839199579990236,
+      "currently_ready": true,
+      "ready_seconds": 2.1839222080016043
+    }
+  },
+  "errors": [],
+  "all_ready_seconds": 2.1839368750006543,
+  "currently_all_ready": true
+}

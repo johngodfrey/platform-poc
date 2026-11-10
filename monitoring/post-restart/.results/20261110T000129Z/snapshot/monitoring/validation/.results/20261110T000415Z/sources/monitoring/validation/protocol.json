@@ -1,0 +1,18 @@
+{
+  "version": 1,
+  "footprint": {"pairs": 5, "warmup_seconds": 180, "idle_seconds": 90, "load_seconds": 120, "recovery_seconds": 90, "rate": 100, "vus": 250, "p95_ms": 500, "request_timeout": "10s", "cpu_rate_seconds": 60, "step_seconds": 5, "minimum_coverage": 0.8},
+  "density": {"sweeps": 3, "limits_mib": [4096,2048,1024,768,512,384,256], "rate": 25, "warmup_seconds": 120, "seconds": 60, "repeats": 2, "vus": 250, "p95_ms": 100, "max_node_cpu": 0.6, "pool_mib": 8192, "request_timeout": "10s"},
+  "startup_cache": {"pairs": 5, "target": "both", "definition": "Fresh owned worker container-image cache versus that worker after first startup; dependencies remain warm; Wasm component/provider caches are new on both starts."},
+  "policy": [
+    "Keep every scheduled attempt, failure, partial run and recovery; never replace a bad result with a passing run.",
+    "Alternate Java-first and Wasm-first pairs/sweeps. Run only one implementation under load at a time.",
+    "Historical evidence is retained with hashes and explicit provenance; do not pool different protocols or count derived summaries twice.",
+    "Freeze source hashes, live application imageIDs, templates, application and secret/config hashes before any measurement. Changes require a new campaign.",
+    "Footprint baseline gate: 180-second warmup with zero failed/dropped requests, followed by a separate 30-second 100/s gate with p95 <500ms. Two failed baseline gates in a suite halt that suite; never silently restart the host.",
+    "Footprint requires no pod identity/restart/readiness changes and >=80% complete per-container telemetry coverage. Idle uses seconds 60-90; load uses seconds 150-210. CPU uses a 60-second rate wholly within each phase.",
+    "Density removes application CPU limits and requires all-node CPU coverage and sampled utilization <60%. An unready or replaced pod is inconclusive_runtime unless separate evidence proves memory exhaustion. Density slots are projections, not concurrent replica tests.",
+    "Startup uses the existing guarded fresh-worker driver. Exclude both cold and cached members if either member of a pair is invalid; retain both originals. No automatic replacement pairs.",
+    "Require mains and an open lid. An interruption is classified as environmental, not application capacity. Bound every load and startup; preserve recovery checkpoints.",
+    "Report median and observed range across independent runs, sample sizes, all failures and exclusions. These local application deployments do not establish a universal language/runtime ranking."
+  ]
+}

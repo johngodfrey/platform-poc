@@ -1,0 +1,22 @@
+[package]
+name = "product-service"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[dependencies]
+anyhow.workspace = true
+axum = { version = "0.8.1", features = ["json", "macros", "query"] }
+axum-extra = { version = "0.10.0", features = ["query"] }
+dotenv.workspace = true
+envy.workspace = true
+redis = { version = "0.28.2", features = ["tokio-comp"] }
+reqwest = { version = "0.12.12", features = ["json"] }
+serde = { version = "1.0.217", features = ["derive"] }
+serde_json = "1.0.138"
+thiserror = "2.0.11"
+tokio = { version = "1.43.0", features = ["full"] }
+tower-http = { version = "0.6.2", features = ["trace"] }
+tracing = "0.1.41"
+tracing-subscriber = { version = "0.3.19", features = ["env-filter"] }
+uuid = { version = "1.13.1", features = ["v4", "serde"] }

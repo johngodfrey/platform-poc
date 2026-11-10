@@ -1,0 +1,16 @@
+Report: /Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/capacity/.results/20261110T111734Z/report.html
+Dashboard: http://localhost:8080/grafana/d/java-wasm-capacity
+Waiting for deployment "wasmcloud-host" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "wasmcloud-host" rollout to finish: 1 old replicas are pending termination...
+deployment "wasmcloud-host" successfully rolled out
+wasm functional preflight: order accepted
+{"implementation": "wasm", "warmup": true, "rate": 25, "requests": 4501, "accepted": 4501, "failures": 0, "dropped": 0, "p95_ms": 24.184, "achieved_orders_per_second": 25.005555555555556, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "wasm", "warmup": true, "rate": 100, "requests": 18000, "accepted": 18000, "failures": 0, "dropped": 0, "p95_ms": 11.056299999999995, "achieved_orders_per_second": 100.0, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "wasm", "warmup": false, "rate": 350, "requests": 623807, "accepted": 623807, "failures": 0, "dropped": 6194, "p95_ms": 256.5957999999999, "achieved_orders_per_second": 346.55944444444447, "passed": false, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 99}
+wasm functional preflight: order accepted
+Waiting for deployment "wasmcloud-host" rollout to finish: 0 out of 1 new replicas have been updated...
+Waiting for deployment "wasmcloud-host" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "wasmcloud-host" rollout to finish: 1 old replicas are pending termination...
+deployment "wasmcloud-host" successfully rolled out
+wasm functional preflight: order accepted
+Report: /Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/capacity/.results/20261110T111734Z/report.html

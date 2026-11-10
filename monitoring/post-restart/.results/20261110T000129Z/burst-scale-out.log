@@ -1,0 +1,12 @@
+Series report: /Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/scaleout/.results/repeated-20261110T045931Z/report.html
+Pair 1/5, java-first
+Completed pair 1 valid: True restored: True
+Pair 2/5, wasm-first
+Completed pair 2 valid: True restored: True
+Pair 3/5, java-first
+Completed pair 3 valid: True restored: True
+Pair 4/5, wasm-first
+Completed pair 4 valid: True restored: True
+Pair 5/5, java-first
+Completed pair 5 valid: True restored: True
+Series report: /Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/scaleout/.results/repeated-20261110T045931Z/report.html

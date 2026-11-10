@@ -1,0 +1,2009 @@
+{
+  "status": "complete",
+  "settings": {
+    "action": "run",
+    "pairs": 5,
+    "target": "both",
+    "stable_seconds": 10,
+    "timeout": 240,
+    "state": null
+  },
+  "trials": [
+    {
+      "implementation": "java",
+      "pair": 1,
+      "start_time": 1794290837.00559,
+      "scale_ack_seconds": 0.3682215830012865,
+      "first_order_seconds": 14.918762000001152,
+      "all_pods_ready_seconds": 13.214140458003385,
+      "stable_serving_seconds": 24.563227333001123,
+      "probe_attempts": [
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.0026438330023665912,
+          "start_seconds": 0.36822708300314844,
+          "end_seconds": 0.3709043330018176
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.0028849160007666796,
+          "start_seconds": 1.373272666001867,
+          "end_seconds": 1.3762325830030022
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.007541750001109904,
+          "start_seconds": 2.381936041001609,
+          "end_seconds": 2.3896074580006825
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.009014415998535696,
+          "start_seconds": 3.390202500002488,
+          "end_seconds": 3.399321625001903
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.007904916001280071,
+          "start_seconds": 4.3920130410006095,
+          "end_seconds": 4.399977416000183
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.005764041998190805,
+          "start_seconds": 5.397301500001049,
+          "end_seconds": 5.403137750003225
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.00919308399898,
+          "start_seconds": 6.39867950000189,
+          "end_seconds": 6.407934333001322
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.010497958999621915,
+          "start_seconds": 7.40462033300355,
+          "end_seconds": 7.415163916000893
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.005044625002483372,
+          "start_seconds": 8.414678458000708,
+          "end_seconds": 8.419787166003516
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.007671291001315694,
+          "start_seconds": 9.42366020800182,
+          "end_seconds": 9.431535583000368
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.00789624999742955,
+          "start_seconds": 10.427018416001374,
+          "end_seconds": 10.43495837500086
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.01088049999816576,
+          "start_seconds": 11.437102000003506,
+          "end_seconds": 11.448106666000967
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.006407582997780992,
+          "start_seconds": 12.439935541002342,
+          "end_seconds": 12.446440750001784
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.003235625001252629,
+          "start_seconds": 13.44914512500327,
+          "end_seconds": 13.452423166003427
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.4669833749976533,
+          "start_seconds": 14.45176637500117,
+          "end_seconds": 14.918762000001152
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.03563620899876696,
+          "start_seconds": 15.457917000003363,
+          "end_seconds": 15.493572958002915
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.04595062500084168,
+          "start_seconds": 16.466597000002366,
+          "end_seconds": 16.512563541000418
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.05765533299927483,
+          "start_seconds": 17.468409416000213,
+          "end_seconds": 17.52608895800222
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.04218433399728383,
+          "start_seconds": 18.47814491600002,
+          "end_seconds": 18.520341791001556
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.07083437500114087,
+          "start_seconds": 19.488240500002576,
+          "end_seconds": 19.559142041001905
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.05110708299980615,
+          "start_seconds": 20.49072841600355,
+          "end_seconds": 20.541850125002384
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.05735975000061444,
+          "start_seconds": 21.4944722500004,
+          "end_seconds": 21.55186650000178
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.06601558300098986,
+          "start_seconds": 22.503733500001545,
+          "end_seconds": 22.569802875001187
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.046986666002339916,
+          "start_seconds": 23.51288941600069,
+          "end_seconds": 23.55989004100047
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.040276916999573587,
+          "start_seconds": 24.5229373330003,
+          "end_seconds": 24.563227333001123
+        }
+      ],
+      "pods": {
+        "pods": {
+          "6afe9755-9e71-40c8-8d5c-f003b6d3e27a": {
+            "name": "inventory-service-76587d759-wnnhq",
+            "deployment": "inventory-service",
+            "created_seconds": 1.0118267910002032,
+            "currently_ready": true,
+            "ready_seconds": 13.185971375001827
+          },
+          "48fb5ab7-e8ee-4a69-a883-f66db7f67be1": {
+            "name": "notification-service-55d4c787b4-r9kgf",
+            "deployment": "notification-service",
+            "created_seconds": 1.0156829160005145,
+            "currently_ready": true,
+            "ready_seconds": 12.17171020800015
+          },
+          "280cb9a1-3985-4b7b-b3fb-7ed0d7f465bf": {
+            "name": "order-service-59b7b5cb76-dncfw",
+            "deployment": "order-service",
+            "created_seconds": 1.0197933330018714,
+            "currently_ready": true,
+            "ready_seconds": 13.20571912500236
+          },
+          "38681d62-e5c2-407a-880f-b1b751d1d891": {
+            "name": "product-service-77b664576d-rvp49",
+            "deployment": "product-service",
+            "created_seconds": 1.034590000002936,
+            "currently_ready": true,
+            "ready_seconds": 13.214102291000017
+          }
+        },
+        "errors": [],
+        "all_ready_seconds": 13.214140458003385,
+        "currently_all_ready": true
+      },
+      "valid": true,
+      "verified_zero": true
+    },
+    {
+      "implementation": "wasm",
+      "pair": 1,
+      "start_time": 1794290876.895037,
+      "scale_ack_seconds": 0.17899345900150365,
+      "first_order_seconds": 6.264082624998991,
+      "all_pods_ready_seconds": 2.0227937919989927,
+      "stable_serving_seconds": 16.304764042000897,
+      "probe_attempts": [
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.002926542001659982,
+          "start_seconds": 0.17899587500141934,
+          "end_seconds": 0.18198212499919464
+        },
+        {
+          "status": 502,
+          "accepted": false,
+          "duration_seconds": 0.0037947080018057022,
+          "start_seconds": 1.180440959000407,
+          "end_seconds": 1.184265374999086
+        },
+        {
+          "status": 500,
+          "accepted": false,
+          "duration_seconds": 0.015104458001587773,
+          "start_seconds": 2.1898343339998974,
+          "end_seconds": 2.2051043749997916
+        },
+        {
+          "status": 500,
+          "accepted": false,
+          "duration_seconds": 0.011738042001525173,
+          "start_seconds": 3.194049334000738,
+          "end_seconds": 3.2059581670000625
+        },
+        {
+          "status": 500,
+          "accepted": false,
+          "duration_seconds": 0.01513412500207778,
+          "start_seconds": 4.197837416999391,
+          "end_seconds": 4.213111625002057
+        },
+        {
+          "status": 500,
+          "accepted": false,
+          "duration_seconds": 0.015781957998115104,
+          "start_seconds": 5.20559349999894,
+          "end_seconds": 5.221435792002012
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.048894042000029,
+          "start_seconds": 6.215168292001181,
+          "end_seconds": 6.264082624998991
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.06372037500113947,
+          "start_seconds": 7.218380083999364,
+          "end_seconds": 7.282138624999789
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.021726625000155764,
+          "start_seconds": 8.224682416999713,
+          "end_seconds": 8.246427250000124
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.01424691599822836,
+          "start_seconds": 9.234686542000418,
+          "end_seconds": 9.248952041998564
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.03593329199793516,
+          "start_seconds": 10.244409625000117,
+          "end_seconds": 10.28037412499907
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.023599625001224922,
+          "start_seconds": 11.252935959000752,
+          "end_seconds": 11.276554042000498
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.015770250000059605,
+          "start_seconds": 12.254827708999073,
+          "end_seconds": 12.270609625000361
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.032318624998879386,
+          "start_seconds": 13.26388075000068,
+          "end_seconds": 13.296223624998674
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.023467040999094024,
+          "start_seconds": 14.273798792000889,
+          "end_seconds": 14.297277792000386
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.034878166999988025,
+          "start_seconds": 15.283827833998657,
+          "end_seconds": 15.318713833999936
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.012325542000326095,
+          "start_seconds": 16.292431334000867,
+          "end_seconds": 16.304764042000897
+        }
+      ],
+      "pods": {
+        "pods": {
+          "352e91bb-c704-4435-abc2-2ecd6eed355b": {
+            "name": "wasmcloud-host-f65d47bc8-cgt9v",
+            "deployment": "wasmcloud-host",
+            "created_seconds": 1.0188245419994928,
+            "currently_ready": true,
+            "ready_seconds": 2.022762500000681
+          }
+        },
+        "errors": [],
+        "all_ready_seconds": 2.0227937919989927,
+        "currently_all_ready": true
+      },
+      "valid": true,
+      "verified_zero": true,
+      "runtime_verified": {
+        "seconds": 26.79943758399895,
+        "host_id": "NBHYY5FZCTNFNYB7O2IKJ5PWHHN7ZLRQ6PXSHIARKLSY6CVVZN7JSZIK",
+        "components": {
+          "http-controller": 10,
+          "products-service": 1,
+          "orders-service": 10,
+          "data-init": 1,
+          "inventory-service": 10,
+          "notification-service": 1
+        },
+        "providers": [
+          "kv-redis",
+          "nats",
+          "sqldb-postgres",
+          "http-server"
+        ]
+      }
+    },
+    {
+      "implementation": "wasm",
+      "pair": 2,
+      "start_time": 1794290918.7431018,
+      "scale_ack_seconds": 0.17358279100153595,
+      "first_order_seconds": 7.208171875001426,
+      "all_pods_ready_seconds": 3.111631291001686,
+      "stable_serving_seconds": 17.27840245799962,
+      "probe_attempts": [
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.0031317079992732033,
+          "start_seconds": 0.17358762500225566,
+          "end_seconds": 0.17675237500225194
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.0033448750000388827,
+          "start_seconds": 1.1827256659998966,
+          "end_seconds": 1.1861065000011877
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.0031235829992510844,
+          "start_seconds": 2.1847093750002387,
+          "end_seconds": 2.1878699160006363
+        },
+        {
+          "status": 500,
+          "accepted": false,
+          "duration_seconds": 0.007959791000757832,
+          "start_seconds": 3.1867325410021294,
+          "end_seconds": 3.1947290829994017
+        },
+        {
+          "status": 500,
+          "accepted": false,
+          "duration_seconds": 0.010734458999650087,
+          "start_seconds": 4.186994499999855,
+          "end_seconds": 4.197835833001591
+        },
+        {
+          "status": 500,
+          "accepted": false,
+          "duration_seconds": 0.018954875002236804,
+          "start_seconds": 5.190176750002138,
+          "end_seconds": 5.20947091600101
+        },
+        {
+          "status": 500,
+          "accepted": false,
+          "duration_seconds": 0.052880124996590894,
+          "start_seconds": 6.190337874999386,
+          "end_seconds": 6.2432537080021575
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.013546499998483341,
+          "start_seconds": 7.1946065000011,
+          "end_seconds": 7.208171875001426
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.03947620799954166,
+          "start_seconds": 8.204101833001914,
+          "end_seconds": 8.243618333002814
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.01605858300172258,
+          "start_seconds": 9.205472625002585,
+          "end_seconds": 9.22154216600029
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.015281792002497241,
+          "start_seconds": 10.208641708002688,
+          "end_seconds": 10.223939499999688
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.04045041700010188,
+          "start_seconds": 11.217581749999226,
+          "end_seconds": 11.258072000000539
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.015795084000274073,
+          "start_seconds": 12.218639833001362,
+          "end_seconds": 12.234453625002061
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.02717174999997951,
+          "start_seconds": 13.22507858300014,
+          "end_seconds": 13.25228050000078
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.037541375000728294,
+          "start_seconds": 14.235190750001493,
+          "end_seconds": 14.272765916000935
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.03456074999849079,
+          "start_seconds": 15.24524612499954,
+          "end_seconds": 15.279834416000085
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.040794582997477846,
+          "start_seconds": 16.25501029100269,
+          "end_seconds": 16.295842916002584
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.019585540998377837,
+          "start_seconds": 17.258795207999356,
+          "end_seconds": 17.27840245799962
+        }
+      ],
+      "pods": {
+        "pods": {
+          "128a3039-618a-4a6c-bcab-12b80fd77d6a": {
+            "name": "wasmcloud-host-f65d47bc8-tlck2",
+            "deployment": "wasmcloud-host",
+            "created_seconds": 1.0174435830012953,
+            "currently_ready": true,
+            "ready_seconds": 3.1116183750018536
+          }
+        },
+        "errors": [],
+        "all_ready_seconds": 3.111631291001686,
+        "currently_all_ready": true
+      },
+      "valid": true,
+      "verified_zero": true,
+      "runtime_verified": {
+        "seconds": 27.781394416000694,
+        "host_id": "NDUKPUZP5WMEEXJL2F5QGKUCJXC666HHTMG4HE4HXYZVQ4X4KNDXAT43",
+        "components": {
+          "notification-service": 1,
+          "orders-service": 10,
+          "http-controller": 10,
+          "products-service": 1,
+          "inventory-service": 10,
+          "data-init": 1
+        },
+        "providers": [
+          "http-server",
+          "kv-redis",
+          "nats",
+          "sqldb-postgres"
+        ]
+      }
+    },
+    {
+      "implementation": "java",
+      "pair": 2,
+      "start_time": 1794290954.409606,
+      "scale_ack_seconds": 0.40801320799801033,
+      "first_order_seconds": 14.65284170799714,
+      "all_pods_ready_seconds": 15.3411548749973,
+      "stable_serving_seconds": 24.585070582998014,
+      "probe_attempts": [
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.0030251669995777775,
+          "start_seconds": 0.4080160829980741,
+          "end_seconds": 0.4110783749965776
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.005151250003109453,
+          "start_seconds": 1.412214749998384,
+          "end_seconds": 1.4174582499981625
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.005875416001799749,
+          "start_seconds": 2.413926540997636,
+          "end_seconds": 2.4198564999969676
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.006612334000237752,
+          "start_seconds": 3.4150196659975336,
+          "end_seconds": 3.4216953329996613
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.006908167000801768,
+          "start_seconds": 4.422993165997468,
+          "end_seconds": 4.429949499997747
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.005046791000495432,
+          "start_seconds": 5.433023207999213,
+          "end_seconds": 5.43813712499832
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.006246707998798229,
+          "start_seconds": 6.4403369999999995,
+          "end_seconds": 6.4466621249994205
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.00673208299849648,
+          "start_seconds": 7.446855165999295,
+          "end_seconds": 7.4536523329988995
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.004276750001736218,
+          "start_seconds": 8.45623216599779,
+          "end_seconds": 8.460553124998114
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.008157167001627386,
+          "start_seconds": 9.457214624999324,
+          "end_seconds": 9.465493415998935
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.012676166999881389,
+          "start_seconds": 10.458303457999136,
+          "end_seconds": 10.47110516599787
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.006185207999806153,
+          "start_seconds": 11.460935166000127,
+          "end_seconds": 11.467207624998991
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.0232732920012495,
+          "start_seconds": 12.463816790997953,
+          "end_seconds": 12.487463374996878
+        },
+        {
+          "status": 500,
+          "accepted": false,
+          "duration_seconds": 0.3349222920005559,
+          "start_seconds": 13.47297449999678,
+          "end_seconds": 13.807972749997134
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.17775358299695654,
+          "start_seconds": 14.475070540996967,
+          "end_seconds": 14.65284170799714
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.06551583300097263,
+          "start_seconds": 15.479127165999671,
+          "end_seconds": 15.544688040998153
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.029225709000456845,
+          "start_seconds": 16.47972054099955,
+          "end_seconds": 16.50896129099783
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.047283624997362494,
+          "start_seconds": 17.483695707996958,
+          "end_seconds": 17.53102304099957
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.02664304199788603,
+          "start_seconds": 18.488200624997262,
+          "end_seconds": 18.514861374998873
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.027407290999690304,
+          "start_seconds": 19.49702516599791,
+          "end_seconds": 19.524454665999656
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.05800812499728636,
+          "start_seconds": 20.50617487499767,
+          "end_seconds": 20.564198749998468
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.025916833998053335,
+          "start_seconds": 21.514729457998328,
+          "end_seconds": 21.540653457999724
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.05697712500113994,
+          "start_seconds": 22.517907082998136,
+          "end_seconds": 22.574919749997207
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.056707875002757646,
+          "start_seconds": 23.52586912499828,
+          "end_seconds": 23.58262349999859
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.0559216670008027,
+          "start_seconds": 24.529110790997947,
+          "end_seconds": 24.585070582998014
+        }
+      ],
+      "pods": {
+        "pods": {
+          "03f23749-07f6-4c2b-bb0e-55ead562ed82": {
+            "name": "order-service-59b7b5cb76-wdtnk",
+            "deployment": "order-service",
+            "created_seconds": 1.3380880829972739,
+            "currently_ready": true,
+            "ready_seconds": 13.386551457999303
+          },
+          "55e703e1-7d7e-485d-8dc2-52a4fe7b0882": {
+            "name": "product-service-77b664576d-5cvnt",
+            "deployment": "product-service",
+            "created_seconds": 1.3487107079999987,
+            "currently_ready": true,
+            "ready_seconds": 14.378285249997134
+          },
+          "f57a41c0-c454-4c7f-8ab4-21f67c9d23a4": {
+            "name": "inventory-service-76587d759-2v2c8",
+            "deployment": "inventory-service",
+            "created_seconds": 2.089182082996558,
+            "currently_ready": true,
+            "ready_seconds": 15.326599707997957
+          },
+          "c269d801-f3d3-47b4-af52-15beffcdea16": {
+            "name": "notification-service-55d4c787b4-r8xtw",
+            "deployment": "notification-service",
+            "created_seconds": 2.091963290997228,
+            "currently_ready": true,
+            "ready_seconds": 14.330927290997352
+          }
+        },
+        "errors": [],
+        "all_ready_seconds": 15.3411548749973,
+        "currently_all_ready": true
+      },
+      "valid": true,
+      "verified_zero": true
+    },
+    {
+      "implementation": "java",
+      "pair": 3,
+      "start_time": 1794290988.033949,
+      "scale_ack_seconds": 0.3856707910017576,
+      "first_order_seconds": 14.94973383300021,
+      "all_pods_ready_seconds": 14.145132875000854,
+      "stable_serving_seconds": 24.560664625001664,
+      "probe_attempts": [
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.002976832998683676,
+          "start_seconds": 0.385674208002456,
+          "end_seconds": 0.3886888330016518
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.005562917001952883,
+          "start_seconds": 1.3860068329995556,
+          "end_seconds": 1.391630707999866
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.006332249999104533,
+          "start_seconds": 2.3884711250029795,
+          "end_seconds": 2.394909375001589
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.004710291999799665,
+          "start_seconds": 3.396131083001819,
+          "end_seconds": 3.4008939160012233
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.005206874997384148,
+          "start_seconds": 4.404956665999634,
+          "end_seconds": 4.410397583000304
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.007588417000079062,
+          "start_seconds": 5.4118687080008385,
+          "end_seconds": 5.419523333002871
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.0065531670006748755,
+          "start_seconds": 6.414135916002124,
+          "end_seconds": 6.420729708002909
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.005058250000729458,
+          "start_seconds": 7.417562416001601,
+          "end_seconds": 7.422678416001872
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.007700499998463783,
+          "start_seconds": 8.418003750000935,
+          "end_seconds": 8.42584587500096
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.016430125000624685,
+          "start_seconds": 9.427725749999809,
+          "end_seconds": 9.444290499999624
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.011162167000293266,
+          "start_seconds": 10.430970249999518,
+          "end_seconds": 10.442194082999777
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.003987166001024889,
+          "start_seconds": 11.441014583000651,
+          "end_seconds": 11.445038290999946
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.004146167000726564,
+          "start_seconds": 12.45397962500283,
+          "end_seconds": 12.458172000002378
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.0038475840010505635,
+          "start_seconds": 13.454126958000415,
+          "end_seconds": 13.458016166001471
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.48553595900011715,
+          "start_seconds": 14.464176290999603,
+          "end_seconds": 14.94973383300021
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.04029041600006167,
+          "start_seconds": 15.465565541002434,
+          "end_seconds": 15.505868958000065
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.05793370899846195,
+          "start_seconds": 16.47564012500152,
+          "end_seconds": 16.533598958001676
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.032927666001342004,
+          "start_seconds": 17.48028350000095,
+          "end_seconds": 17.51321941599963
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.04906504199971096,
+          "start_seconds": 18.490352125001664,
+          "end_seconds": 18.53944995799975
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.033090707998781,
+          "start_seconds": 19.492013291001058,
+          "end_seconds": 19.525115291002294
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.05827275000046939,
+          "start_seconds": 20.502056375000393,
+          "end_seconds": 20.560350250001648
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.050411334003001684,
+          "start_seconds": 21.511455040999863,
+          "end_seconds": 21.561883375001344
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.03044650000083493,
+          "start_seconds": 22.51231120800003,
+          "end_seconds": 22.542768041003
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.042383833999338094,
+          "start_seconds": 23.522629916002188,
+          "end_seconds": 23.565046291001636
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.03091195800152491,
+          "start_seconds": 24.529742124999757,
+          "end_seconds": 24.560664625001664
+        }
+      ],
+      "pods": {
+        "pods": {
+          "c3f99cf0-34c4-48d6-b2bb-fe8035504eca": {
+            "name": "inventory-service-76587d759-bz5wn",
+            "deployment": "inventory-service",
+            "created_seconds": 1.1569806660008908,
+            "currently_ready": true,
+            "ready_seconds": 12.705825291002839
+          },
+          "29c158eb-9278-4520-ae51-bfd950ae157e": {
+            "name": "notification-service-55d4c787b4-dhz2x",
+            "deployment": "notification-service",
+            "created_seconds": 1.1638862910003809,
+            "currently_ready": true,
+            "ready_seconds": 12.71123420799995
+          },
+          "2529b42d-b079-4d63-b3d2-1161375535cd": {
+            "name": "order-service-59b7b5cb76-prst2",
+            "deployment": "order-service",
+            "created_seconds": 1.172820291001699,
+            "currently_ready": true,
+            "ready_seconds": 14.140407083003083
+          },
+          "73421f2a-0757-45a3-a06f-0b2822998623": {
+            "name": "product-service-77b664576d-fkgmp",
+            "deployment": "product-service",
+            "created_seconds": 1.17541783300112,
+            "currently_ready": true,
+            "ready_seconds": 11.703401041002508
+          }
+        },
+        "errors": [],
+        "all_ready_seconds": 14.145132875000854,
+        "currently_all_ready": true
+      },
+      "valid": true,
+      "verified_zero": true
+    },
+    {
+      "implementation": "wasm",
+      "pair": 3,
+      "start_time": 1794291028.548224,
+      "scale_ack_seconds": 0.1814730830010376,
+      "first_order_seconds": 9.256392208000761,
+      "all_pods_ready_seconds": 2.1839368750006543,
+      "stable_serving_seconds": 19.309505790999538,
+      "probe_attempts": [
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.0024224160006269813,
+          "start_seconds": 0.18147433299964177,
+          "end_seconds": 0.18392737500107614
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.002734749999945052,
+          "start_seconds": 1.1856027499998163,
+          "end_seconds": 1.1883674579985382
+        },
+        {
+          "status": 500,
+          "accepted": false,
+          "duration_seconds": 0.004664875003072666,
+          "start_seconds": 2.1907465000003867,
+          "end_seconds": 2.19545350000044
+        },
+        {
+          "status": 500,
+          "accepted": false,
+          "duration_seconds": 0.015076499999850057,
+          "start_seconds": 3.1952132910009823,
+          "end_seconds": 3.2103705410008843
+        },
+        {
+          "status": 500,
+          "accepted": false,
+          "duration_seconds": 0.05449087500164751,
+          "start_seconds": 4.203656749999936,
+          "end_seconds": 4.258236083001975
+        },
+        {
+          "status": 500,
+          "accepted": false,
+          "duration_seconds": 0.030505499998980667,
+          "start_seconds": 5.204239165999752,
+          "end_seconds": 5.2351863750009215
+        },
+        {
+          "status": 500,
+          "accepted": false,
+          "duration_seconds": 0.03805129200191004,
+          "start_seconds": 6.205282957998861,
+          "end_seconds": 6.2435270409987425
+        },
+        {
+          "status": 500,
+          "accepted": false,
+          "duration_seconds": 0.025235707998945145,
+          "start_seconds": 7.206664332999935,
+          "end_seconds": 7.2320638749988575
+        },
+        {
+          "status": 500,
+          "accepted": false,
+          "duration_seconds": 0.016328875000908738,
+          "start_seconds": 8.215593541000999,
+          "end_seconds": 8.232026500001666
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.03235799999674782,
+          "start_seconds": 9.22401012499904,
+          "end_seconds": 9.256392208000761
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.028461624999181367,
+          "start_seconds": 10.230092791000061,
+          "end_seconds": 10.258600916000432
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.03025599999818951,
+          "start_seconds": 11.239191208002012,
+          "end_seconds": 11.269479916001728
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.022526290998939658,
+          "start_seconds": 12.239920291001908,
+          "end_seconds": 12.262455583000701
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.030165000000124564,
+          "start_seconds": 13.239986500000668,
+          "end_seconds": 13.270185165998555
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.02732299999843235,
+          "start_seconds": 14.246322040999075,
+          "end_seconds": 14.273660625000048
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.026832749997993233,
+          "start_seconds": 15.255108583001856,
+          "end_seconds": 15.281972500000848
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.0149707499986107,
+          "start_seconds": 16.258518957998604,
+          "end_seconds": 16.273497499998484
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.021515374999580672,
+          "start_seconds": 17.26578100000188,
+          "end_seconds": 17.287311374999263
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.013280416998895817,
+          "start_seconds": 18.266903083000216,
+          "end_seconds": 18.280195915998775
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.03248662500118371,
+          "start_seconds": 19.276966041001288,
+          "end_seconds": 19.309505790999538
+        }
+      ],
+      "pods": {
+        "pods": {
+          "a70b1811-8c19-46a9-a03e-6a84aee14d5d": {
+            "name": "wasmcloud-host-f65d47bc8-jf4l7",
+            "deployment": "wasmcloud-host",
+            "created_seconds": 2.1839199579990236,
+            "currently_ready": true,
+            "ready_seconds": 2.1839222080016043
+          }
+        },
+        "errors": [],
+        "all_ready_seconds": 2.1839368750006543,
+        "currently_all_ready": true
+      },
+      "valid": true,
+      "verified_zero": true,
+      "runtime_verified": {
+        "seconds": 29.833758458000375,
+        "host_id": "NBUZYMXY6DGV5GNWDX3CPWRKOSITE4LN4LOIM6FO6XY5AF4ANGLTKR2C",
+        "components": {
+          "inventory-service": 10,
+          "notification-service": 1,
+          "http-controller": 10,
+          "orders-service": 10,
+          "data-init": 1,
+          "products-service": 1
+        },
+        "providers": [
+          "kv-redis",
+          "http-server",
+          "nats",
+          "sqldb-postgres"
+        ]
+      }
+    },
+    {
+      "implementation": "wasm",
+      "pair": 4,
+      "start_time": 1794291074.097711,
+      "scale_ack_seconds": 0.1745279169990681,
+      "first_order_seconds": 8.259081374999369,
+      "all_pods_ready_seconds": 3.041055874997255,
+      "stable_serving_seconds": 18.33142074999705,
+      "probe_attempts": [
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.0028118749978602864,
+          "start_seconds": 0.17452974999832804,
+          "end_seconds": 0.17737366699657287
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.013653875001182314,
+          "start_seconds": 1.1845733749978535,
+          "end_seconds": 1.1982772089977516
+        },
+        {
+          "status": 502,
+          "accepted": false,
+          "duration_seconds": 0.003437708001001738,
+          "start_seconds": 2.189684874996601,
+          "end_seconds": 2.19317670899909
+        },
+        {
+          "status": 500,
+          "accepted": false,
+          "duration_seconds": 0.016934541999944486,
+          "start_seconds": 3.1902419589969213,
+          "end_seconds": 3.207257291996939
+        },
+        {
+          "status": 500,
+          "accepted": false,
+          "duration_seconds": 0.009111917002883274,
+          "start_seconds": 4.1908929999990505,
+          "end_seconds": 4.2003392499973415
+        },
+        {
+          "status": 500,
+          "accepted": false,
+          "duration_seconds": 0.01393087500036927,
+          "start_seconds": 5.1949326249996375,
+          "end_seconds": 5.209016499997233
+        },
+        {
+          "status": 500,
+          "accepted": false,
+          "duration_seconds": 0.010359459000028437,
+          "start_seconds": 6.198080833997665,
+          "end_seconds": 6.208476291998522
+        },
+        {
+          "status": 500,
+          "accepted": false,
+          "duration_seconds": 0.011113374999695225,
+          "start_seconds": 7.206043374997535,
+          "end_seconds": 7.2172204999988026
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.050104582998756086,
+          "start_seconds": 8.208959958999912,
+          "end_seconds": 8.259081374999369
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.04089679199751117,
+          "start_seconds": 9.219124791998183,
+          "end_seconds": 9.260061749999295
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.040435042003082344,
+          "start_seconds": 10.227384208999865,
+          "end_seconds": 10.26785362499868
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.03021683299812139,
+          "start_seconds": 11.233156374997634,
+          "end_seconds": 11.263387791997957
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.029368625000643078,
+          "start_seconds": 12.243235999998433,
+          "end_seconds": 12.272655708999082
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.04769066600056249,
+          "start_seconds": 13.243815458998142,
+          "end_seconds": 13.291549833997124
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.03510587500204565,
+          "start_seconds": 14.25359404199844,
+          "end_seconds": 14.288707208997948
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.03097841699855053,
+          "start_seconds": 15.263628791999508,
+          "end_seconds": 15.294619124997553
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.04157649999979185,
+          "start_seconds": 16.27369487499891,
+          "end_seconds": 16.31530304199987
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.02972866699929,
+          "start_seconds": 17.27995891699902,
+          "end_seconds": 17.30971099999806
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.04137579200323671,
+          "start_seconds": 18.29002220899929,
+          "end_seconds": 18.33142074999705
+        }
+      ],
+      "pods": {
+        "pods": {
+          "e5ebf7d7-4a80-4c38-8f60-c325c89611b3": {
+            "name": "wasmcloud-host-f65d47bc8-7drdn",
+            "deployment": "wasmcloud-host",
+            "created_seconds": 1.0107978339983674,
+            "currently_ready": true,
+            "ready_seconds": 3.041035791997274
+          }
+        },
+        "errors": [],
+        "all_ready_seconds": 3.041055874997255,
+        "currently_all_ready": true
+      },
+      "valid": true,
+      "verified_zero": true,
+      "runtime_verified": {
+        "seconds": 28.838943499999004,
+        "host_id": "NCRMYCENII2R2GO5BWY3METRMN5PNQJSK4XUMRZHRE6CGG7EF5TCZLYU",
+        "components": {
+          "notification-service": 1,
+          "orders-service": 10,
+          "http-controller": 10,
+          "products-service": 1,
+          "data-init": 1,
+          "inventory-service": 10
+        },
+        "providers": [
+          "nats",
+          "sqldb-postgres",
+          "http-server",
+          "kv-redis"
+        ]
+      }
+    },
+    {
+      "implementation": "java",
+      "pair": 4,
+      "start_time": 1794291110.5448692,
+      "scale_ack_seconds": 0.31836295899847755,
+      "first_order_seconds": 14.634911083998304,
+      "all_pods_ready_seconds": 14.209726834000321,
+      "stable_serving_seconds": 24.523826708998968,
+      "probe_attempts": [
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.003852750000078231,
+          "start_seconds": 0.31836420899708173,
+          "end_seconds": 0.32224787499944796
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.003667250002763467,
+          "start_seconds": 1.3220119999969029,
+          "end_seconds": 1.325736249997135
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.004489625000132946,
+          "start_seconds": 2.3269894999975804,
+          "end_seconds": 2.331517791997612
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.009253791999071836,
+          "start_seconds": 3.3371223340000142,
+          "end_seconds": 3.346494333996816
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.014058500000828644,
+          "start_seconds": 4.342180583997106,
+          "end_seconds": 4.356290166997496
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.00461179099875153,
+          "start_seconds": 5.3498475839987805,
+          "end_seconds": 5.354561041996931
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.0067148330017516855,
+          "start_seconds": 6.3511881249978615,
+          "end_seconds": 6.357973999998649
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.010223541998129804,
+          "start_seconds": 7.352650249998987,
+          "end_seconds": 7.362910416999512
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.01674545800051419,
+          "start_seconds": 8.36269666699809,
+          "end_seconds": 8.37951366699781
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.02236612499837065,
+          "start_seconds": 9.37224491699817,
+          "end_seconds": 9.394659208999656
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.009349709001980955,
+          "start_seconds": 10.375740333998692,
+          "end_seconds": 10.385167041997192
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.010381541000242578,
+          "start_seconds": 11.381800249997468,
+          "end_seconds": 11.392206249998708
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.0034214580009575,
+          "start_seconds": 12.390333249997639,
+          "end_seconds": 12.393808834000083
+        },
+        {
+          "status": 500,
+          "accepted": false,
+          "duration_seconds": 0.3725136670000211,
+          "start_seconds": 13.400364334000187,
+          "end_seconds": 13.7729322089981
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.2244851249997737,
+          "start_seconds": 14.410405374997936,
+          "end_seconds": 14.634911083998304
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.05035883399978047,
+          "start_seconds": 15.41132049999942,
+          "end_seconds": 15.461693792000005
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.05745833299806691,
+          "start_seconds": 16.421365541998966,
+          "end_seconds": 16.478839583996887
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.050987292001082096,
+          "start_seconds": 17.429804583996884,
+          "end_seconds": 17.480810666998877
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.06696870800078614,
+          "start_seconds": 18.439873708997766,
+          "end_seconds": 18.506874374998006
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.05906616699940059,
+          "start_seconds": 19.449649624999438,
+          "end_seconds": 19.508742499998334
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.03436491699903854,
+          "start_seconds": 20.459718458998395,
+          "end_seconds": 20.494115833997057
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.058748708997882204,
+          "start_seconds": 21.46207954199781,
+          "end_seconds": 21.520869166997727
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.058626124999136664,
+          "start_seconds": 22.47076549999838,
+          "end_seconds": 22.529403499996988
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.07172537500082399,
+          "start_seconds": 23.472396249999292,
+          "end_seconds": 23.54416924999896
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.04441370800122968,
+          "start_seconds": 24.479390917000273,
+          "end_seconds": 24.523826708998968
+        }
+      ],
+      "pods": {
+        "pods": {
+          "555869eb-3e07-48a5-b128-80a22dff59ce": {
+            "name": "inventory-service-76587d759-8jbd6",
+            "deployment": "inventory-service",
+            "created_seconds": 1.0065712919968064,
+            "currently_ready": true,
+            "ready_seconds": 14.193165249998856
+          },
+          "6bcaf599-bfd1-4b41-bc28-db40f7b0e03a": {
+            "name": "notification-service-55d4c787b4-wz75v",
+            "deployment": "notification-service",
+            "created_seconds": 1.0083904589992017,
+            "currently_ready": true,
+            "ready_seconds": 13.195228166998277
+          },
+          "387c30a5-5f03-4b80-bda7-5c645ac58eda": {
+            "name": "order-service-59b7b5cb76-srqwg",
+            "deployment": "order-service",
+            "created_seconds": 1.0100077919996693,
+            "currently_ready": true,
+            "ready_seconds": 13.198366833999899
+          },
+          "1332b5c1-d852-4ee1-937e-768b723e4e26": {
+            "name": "product-service-77b664576d-4xs4p",
+            "deployment": "product-service",
+            "created_seconds": 1.0116582919981738,
+            "currently_ready": true,
+            "ready_seconds": 13.200986249998095
+          }
+        },
+        "errors": [],
+        "all_ready_seconds": 14.209726834000321,
+        "currently_all_ready": true
+      },
+      "valid": true,
+      "verified_zero": true
+    },
+    {
+      "implementation": "java",
+      "pair": 5,
+      "start_time": 1794291143.074624,
+      "scale_ack_seconds": 0.35867412500010687,
+      "first_order_seconds": 14.931323042001168,
+      "all_pods_ready_seconds": 14.182522334001987,
+      "stable_serving_seconds": 24.55495479200181,
+      "probe_attempts": [
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.0028737499997077975,
+          "start_seconds": 0.3586771250011225,
+          "end_seconds": 0.361585250000644
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.0045659169991267845,
+          "start_seconds": 1.367316750001919,
+          "end_seconds": 1.3719185420013673
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.006853916002000915,
+          "start_seconds": 2.3773435420007445,
+          "end_seconds": 2.3842445420013973
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.004733792000479298,
+          "start_seconds": 3.3873730420018546,
+          "end_seconds": 3.3921617090018117
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.00567662500179722,
+          "start_seconds": 4.393155249999836,
+          "end_seconds": 4.398892000001069
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.0037127920004422776,
+          "start_seconds": 5.396153917001357,
+          "end_seconds": 5.399928042003012
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.010310458001185907,
+          "start_seconds": 6.405864667001879,
+          "end_seconds": 6.416241875002015
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.00792149999688263,
+          "start_seconds": 7.413642209001409,
+          "end_seconds": 7.421614334001788
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.006459249998442829,
+          "start_seconds": 8.423697917001846,
+          "end_seconds": 8.430226042000868
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.016478666999319103,
+          "start_seconds": 9.426160459002858,
+          "end_seconds": 9.44270670900005
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.006592207999347011,
+          "start_seconds": 10.436189709002065,
+          "end_seconds": 10.442820084001141
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.004311000000598142,
+          "start_seconds": 11.442012542000157,
+          "end_seconds": 11.446359749999829
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.0031810840009711683,
+          "start_seconds": 12.443100584001513,
+          "end_seconds": 12.44632783400084
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.0035377499989408534,
+          "start_seconds": 13.447283250003238,
+          "end_seconds": 13.450876667000557
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.4743190830013191,
+          "start_seconds": 14.456968084003165,
+          "end_seconds": 14.931323042001168
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.051653416998306056,
+          "start_seconds": 15.464861834003386,
+          "end_seconds": 15.516529167001863
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.05181475000063074,
+          "start_seconds": 16.47494616699987,
+          "end_seconds": 16.52679716700004
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.04647987499993178,
+          "start_seconds": 17.483921375001955,
+          "end_seconds": 17.53042466700208
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.033828915999038145,
+          "start_seconds": 18.492184709000867,
+          "end_seconds": 18.526023875001556
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.037051416002213955,
+          "start_seconds": 19.496156917000917,
+          "end_seconds": 19.53323279200049
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.033757708999473834,
+          "start_seconds": 20.501902875002997,
+          "end_seconds": 20.535671000001457
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.03945274999932735,
+          "start_seconds": 21.51192366699979,
+          "end_seconds": 21.55138687500221
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.0422128749996773,
+          "start_seconds": 22.521979125001963,
+          "end_seconds": 22.564215209000395
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.0285074169987638,
+          "start_seconds": 23.525468167001236,
+          "end_seconds": 23.553986292001355
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.025418167002499104,
+          "start_seconds": 24.529529375002312,
+          "end_seconds": 24.55495479200181
+        }
+      ],
+      "pods": {
+        "pods": {
+          "4a08e510-c19b-4cd8-bebd-ca9e27734daa": {
+            "name": "inventory-service-76587d759-745xk",
+            "deployment": "inventory-service",
+            "created_seconds": 1.1555736670015904,
+            "currently_ready": true,
+            "ready_seconds": 14.175771625003108
+          },
+          "32cd2ca2-ff75-4b3b-b99c-3ae19819fba0": {
+            "name": "notification-service-55d4c787b4-kz5h5",
+            "deployment": "notification-service",
+            "created_seconds": 1.1711351670019212,
+            "currently_ready": true,
+            "ready_seconds": 14.178297125003155
+          },
+          "3dfd2d64-de4e-42f8-a781-9e18fe6f283d": {
+            "name": "order-service-59b7b5cb76-flwjj",
+            "deployment": "order-service",
+            "created_seconds": 1.1746287500027393,
+            "currently_ready": true,
+            "ready_seconds": 14.180464875000325
+          },
+          "414e0844-ac73-4952-b75f-5b0bc4a1fc86": {
+            "name": "product-service-77b664576d-xd6m9",
+            "deployment": "product-service",
+            "created_seconds": 1.1787452919998032,
+            "currently_ready": true,
+            "ready_seconds": 12.685853834002046
+          }
+        },
+        "errors": [],
+        "all_ready_seconds": 14.182522334001987,
+        "currently_all_ready": true
+      },
+      "valid": true,
+      "verified_zero": true
+    },
+    {
+      "implementation": "wasm",
+      "pair": 5,
+      "start_time": 1794291183.749076,
+      "scale_ack_seconds": 0.1942490830006136,
+      "first_order_seconds": 8.283933624999918,
+      "all_pods_ready_seconds": 3.0662083749994054,
+      "stable_serving_seconds": 18.327979916000913,
+      "probe_attempts": [
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.0031875829990895,
+          "start_seconds": 0.19425274999957765,
+          "end_seconds": 0.19747383299909416
+        },
+        {
+          "status": 503,
+          "accepted": false,
+          "duration_seconds": 0.010077708000608254,
+          "start_seconds": 1.201188415998331,
+          "end_seconds": 1.2113021250006568
+        },
+        {
+          "status": 502,
+          "accepted": false,
+          "duration_seconds": 0.003032458000234328,
+          "start_seconds": 2.2082162910010084,
+          "end_seconds": 2.2112795829998504
+        },
+        {
+          "status": 500,
+          "accepted": false,
+          "duration_seconds": 0.015928542001347523,
+          "start_seconds": 3.2174149159982335,
+          "end_seconds": 3.2335675829999673
+        },
+        {
+          "status": 500,
+          "accepted": false,
+          "duration_seconds": 0.00838179200218292,
+          "start_seconds": 4.220009749999008,
+          "end_seconds": 4.228435958000773
+        },
+        {
+          "status": 500,
+          "accepted": false,
+          "duration_seconds": 0.08311966700057383,
+          "start_seconds": 5.224087915998098,
+          "end_seconds": 5.307408083001064
+        },
+        {
+          "status": 500,
+          "accepted": false,
+          "duration_seconds": 0.028103625001676846,
+          "start_seconds": 6.230979832998855,
+          "end_seconds": 6.259189249998599
+        },
+        {
+          "status": 500,
+          "accepted": false,
+          "duration_seconds": 0.017217500000697328,
+          "start_seconds": 7.236548207998567,
+          "end_seconds": 7.254040540999995
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.044492375000118045,
+          "start_seconds": 8.239409290999902,
+          "end_seconds": 8.283933624999918
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.02535145800356986,
+          "start_seconds": 9.242748415999813,
+          "end_seconds": 9.268111375000444
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.032165958000405226,
+          "start_seconds": 10.252892874999816,
+          "end_seconds": 10.285089290999167
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.0132872079993831,
+          "start_seconds": 11.255610874999547,
+          "end_seconds": 11.268914332998975
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.01535150000199792,
+          "start_seconds": 12.256869249999,
+          "end_seconds": 12.27223366600083
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.026896333998593036,
+          "start_seconds": 13.265482666000025,
+          "end_seconds": 13.292386916000396
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.03704400000060559,
+          "start_seconds": 14.275533874999383,
+          "end_seconds": 14.31259258299906
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.032759750003606314,
+          "start_seconds": 15.285607124998933,
+          "end_seconds": 15.318407124999794
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.02545174999977462,
+          "start_seconds": 16.28611066599842,
+          "end_seconds": 16.31158141600099
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.03101829099978204,
+          "start_seconds": 17.296170582998457,
+          "end_seconds": 17.32721441600006
+        },
+        {
+          "status": 201,
+          "accepted": true,
+          "duration_seconds": 0.028361417000269284,
+          "start_seconds": 18.29960629099878,
+          "end_seconds": 18.327979916000913
+        }
+      ],
+      "pods": {
+        "pods": {
+          "e546ec2f-1414-4b8e-81a0-e19a2aecb5f1": {
+            "name": "wasmcloud-host-f65d47bc8-mddfl",
+            "deployment": "wasmcloud-host",
+            "created_seconds": 1.012300915997912,
+            "currently_ready": true,
+            "ready_seconds": 3.066172208000353
+          }
+        },
+        "errors": [],
+        "all_ready_seconds": 3.0662083749994054,
+        "currently_all_ready": true
+      },
+      "valid": true,
+      "verified_zero": true,
+      "runtime_verified": {
+        "seconds": 28.810509291000926,
+        "host_id": "NBXL42PZO522PZGLKJ47FBNEQDEXBZ3LITG6TZMA2SWZ725UC3LDUW5C",
+        "components": {
+          "data-init": 1,
+          "notification-service": 1,
+          "http-controller": 10,
+          "orders-service": 10,
+          "products-service": 1,
+          "inventory-service": 10
+        },
+        "providers": [
+          "http-server",
+          "nats",
+          "sqldb-postgres",
+          "kv-redis"
+        ]
+      }
+    }
+  ],
+  "restored": true,
+  "driver_sha256": "86937d6260adbfe718fc6b1332e189f626d20db5bdb034e4bc70559fa4056a2c",
+  "power_before": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=38797411)\t100%; charged; 0:00 remaining present: true\n",
+  "current": "Pair 5: wasm",
+  "power_after": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=38797411)\t100%; charged; 0:00 remaining present: true\n"
+}

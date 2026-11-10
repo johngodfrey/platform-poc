@@ -1,0 +1,30 @@
+{
+  "protocol": "new-pod-direct-order-v1",
+  "poll_seconds": 2,
+  "order_timeout_seconds": 10,
+  "pods": {
+    "d61d43b5-3ed8-44b7-91b2-24cdee68e44e": {
+      "name": "wasmcloud-scaleout-3a974d84bbec-85644676bb-kl9tn",
+      "baseline": false,
+      "created_observed_seconds": 1.9755501250001544,
+      "currently_ready": true,
+      "pod_ready_seconds": 6.1209722090025025,
+      "probe_attempts": [
+        {
+          "start_seconds": 6.1209810840009595,
+          "duration_seconds": 0.0847706249987823,
+          "status": 201,
+          "accepted": true
+        }
+      ],
+      "order_accepted_seconds": 6.205752249999932,
+      "images": {
+        "nats-leaf": "docker.io/library/nats@sha256:b83efabe3e7def1e0a4a31ec6e078999bb17c80363f881df35edc70fcb6bb927",
+        "wasmcloud-host": "sha256:a22906face539085647ef862bed734e95c05ba6882d870528b92ea4af1b79ea6"
+      }
+    }
+  },
+  "errors": [],
+  "baseline_changed": false,
+  "request_started_at": 1794288950.438278
+}

@@ -1,0 +1,114 @@
+[
+  {
+    "status": 503,
+    "accepted": false,
+    "duration_seconds": 0.002540749999752734,
+    "start_seconds": 0.17721208399962052,
+    "end_seconds": 0.1797865840017039
+  },
+  {
+    "status": 503,
+    "accepted": false,
+    "duration_seconds": 0.0046863329989719205,
+    "start_seconds": 1.1820152920008695,
+    "end_seconds": 1.1867255420002039
+  },
+  {
+    "status": 500,
+    "accepted": false,
+    "duration_seconds": 0.015131874999497086,
+    "start_seconds": 2.1920515000019805,
+    "end_seconds": 2.2072806670003047
+  },
+  {
+    "status": 500,
+    "accepted": false,
+    "duration_seconds": 0.015696291000494966,
+    "start_seconds": 3.1966730839994852,
+    "end_seconds": 3.213460083999962
+  },
+  {
+    "status": 500,
+    "accepted": false,
+    "duration_seconds": 0.008939708000980318,
+    "start_seconds": 4.199244834002457,
+    "end_seconds": 4.208242625001731
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.310015499999281,
+    "start_seconds": 5.20416516700061,
+    "end_seconds": 5.514194209001289
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.04368333300226368,
+    "start_seconds": 6.214200583999627,
+    "end_seconds": 6.257911459000752
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.029479542001354275,
+    "start_seconds": 7.2181882090008,
+    "end_seconds": 7.247709041999769
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.010886249998293351,
+    "start_seconds": 8.218278042000748,
+    "end_seconds": 8.229171834002045
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.025805625002249144,
+    "start_seconds": 9.22149795900259,
+    "end_seconds": 9.247344375002285
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.014141167001071153,
+    "start_seconds": 10.229202750000695,
+    "end_seconds": 10.24335875000179
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.04900537499997881,
+    "start_seconds": 11.233886500001972,
+    "end_seconds": 11.282912167000177
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.029485958999430295,
+    "start_seconds": 12.242341000001034,
+    "end_seconds": 12.271860209002625
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.028998165998928016,
+    "start_seconds": 13.247142792002705,
+    "end_seconds": 13.27618000000075
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.02362412499860511,
+    "start_seconds": 14.257082874999469,
+    "end_seconds": 14.280719917001989
+  },
+  {
+    "status": 201,
+    "accepted": true,
+    "duration_seconds": 0.020908125003188616,
+    "start_seconds": 15.267217542001163,
+    "end_seconds": 15.28813912500118
+  }
+]

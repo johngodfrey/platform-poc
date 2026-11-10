@@ -1,0 +1,47 @@
+java functional preflight: order accepted
+wasm functional preflight: order accepted
+Report: /Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/scalezero/.results/20261110T060708Z/report.html
+Pair 1: stopping java
+Pair 1: starting java from zero
+java first order after 14.92 seconds
+java functional preflight: order accepted
+Pair 1: stopping wasm
+Pair 1: starting wasm from zero
+wasm first order after 6.26 seconds
+wasm functional preflight: order accepted
+Pair 2: stopping wasm
+Pair 2: starting wasm from zero
+wasm first order after 7.21 seconds
+wasm functional preflight: order accepted
+Pair 2: stopping java
+Pair 2: starting java from zero
+java first order after 14.65 seconds
+java functional preflight: order accepted
+Pair 3: stopping java
+Pair 3: starting java from zero
+java first order after 14.95 seconds
+java functional preflight: order accepted
+Pair 3: stopping wasm
+Pair 3: starting wasm from zero
+wasm first order after 9.26 seconds
+wasm functional preflight: order accepted
+Pair 4: stopping wasm
+Pair 4: starting wasm from zero
+wasm first order after 8.26 seconds
+wasm functional preflight: order accepted
+Pair 4: stopping java
+Pair 4: starting java from zero
+java first order after 14.63 seconds
+java functional preflight: order accepted
+Pair 5: stopping java
+Pair 5: starting java from zero
+java first order after 14.93 seconds
+java functional preflight: order accepted
+Pair 5: stopping wasm
+Pair 5: starting wasm from zero
+wasm first order after 8.28 seconds
+wasm functional preflight: order accepted
+java functional preflight: order accepted
+wasm functional preflight: order accepted
+Report: /Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/scalezero/.results/20261110T060708Z/report.html
+Recovery: python3 monitoring/scalezero/run.py restore --state /Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/scalezero/.results/20261110T060708Z/state.json

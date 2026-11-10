@@ -1,0 +1,52 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: platform-poc
+  namespace: wasm
+spec:
+  ingressClassName: traefik
+  rules:
+    - http:
+        paths:
+          - path: /constant-response
+            pathType: Exact
+            backend:
+              service:
+                name: platform-poc-http
+                port:
+                  number: 8080
+          - path: /body-check
+            pathType: Exact
+            backend:
+              service:
+                name: platform-poc-http
+                port:
+                  number: 8080
+          - path: /products
+            pathType: Prefix
+            backend:
+              service:
+                name: platform-poc-http
+                port:
+                  number: 8080
+          - path: /inventory
+            pathType: Prefix
+            backend:
+              service:
+                name: platform-poc-http
+                port:
+                  number: 8080
+          - path: /orders
+            pathType: Prefix
+            backend:
+              service:
+                name: platform-poc-http
+                port:
+                  number: 8080
+          - path: /data-init
+            pathType: Prefix
+            backend:
+              service:
+                name: platform-poc-http
+                port:
+                  number: 8080

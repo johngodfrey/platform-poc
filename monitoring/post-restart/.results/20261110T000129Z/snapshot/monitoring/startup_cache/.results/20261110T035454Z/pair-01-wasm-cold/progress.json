@@ -1,0 +1,9 @@
+{
+  "implementation": "wasm",
+  "pair": 1,
+  "elapsed": 25.360627084002772,
+  "first_order_seconds": 15.33357158400031,
+  "all_pods_ready_seconds": 9.2750857500032,
+  "consecutive_successes": 11,
+  "last_status": 201
+}

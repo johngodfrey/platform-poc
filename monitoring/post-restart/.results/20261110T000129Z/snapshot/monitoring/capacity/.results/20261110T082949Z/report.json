@@ -1,0 +1,259 @@
+{
+  "settings": {
+    "target": "java",
+    "rates": "100,200,250,300,350,400,450,500,600",
+    "seconds": 120,
+    "warmup": 180,
+    "warmup_rate": 100,
+    "p95_ms": 100.0,
+    "vus": 250,
+    "budget": "/Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/capacity/.results/validation-20261110T080306Z/tuned-budget.json",
+    "confirm_seconds": 300
+  },
+  "budget": {
+    "description": "Allocation sensitivity: unchanged total CPU/RAM; Java order 1200m, inventory 600m, notification 150m, product 50m.",
+    "cpu_millicores": 2000,
+    "memory_mib": 4096,
+    "java": [
+      {
+        "deployment": "inventory-service",
+        "container": "inventory-service",
+        "cpu_millicores": 600,
+        "memory_mib": 1024
+      },
+      {
+        "deployment": "notification-service",
+        "container": "notification-service",
+        "cpu_millicores": 150,
+        "memory_mib": 1024
+      },
+      {
+        "deployment": "order-service",
+        "container": "order-service",
+        "cpu_millicores": 1200,
+        "memory_mib": 1024
+      },
+      {
+        "deployment": "product-service",
+        "container": "product-service",
+        "cpu_millicores": 50,
+        "memory_mib": 1024
+      }
+    ],
+    "wasm": [
+      {
+        "deployment": "wasmcloud-host",
+        "container": "wasmcloud-host",
+        "cpu_millicores": 2000,
+        "memory_mib": 4096
+      }
+    ]
+  },
+  "implementations": {
+    "java": {
+      "stages": [
+        {
+          "rate": 100,
+          "requests": 12001,
+          "accepted": 12001,
+          "failures": 0,
+          "dropped": 0,
+          "p95_ms": 9.934,
+          "achieved_orders_per_second": 100.00833333333334,
+          "passed": true,
+          "budget_and_pods_unchanged": true,
+          "readiness_lost": false,
+          "http_failure_rate": 0,
+          "exit_code": 0,
+          "status": "pass",
+          "median_ms": 5.322,
+          "max_ms": 79.93
+        },
+        {
+          "rate": 200,
+          "requests": 24000,
+          "accepted": 24000,
+          "failures": 0,
+          "dropped": 0,
+          "p95_ms": 9.778,
+          "achieved_orders_per_second": 200.0,
+          "passed": true,
+          "budget_and_pods_unchanged": true,
+          "readiness_lost": false,
+          "http_failure_rate": 0,
+          "exit_code": 0,
+          "status": "pass",
+          "median_ms": 4.205,
+          "max_ms": 112.89
+        },
+        {
+          "rate": 250,
+          "requests": 30000,
+          "accepted": 30000,
+          "failures": 0,
+          "dropped": 0,
+          "p95_ms": 10.554049999999998,
+          "achieved_orders_per_second": 250.0,
+          "passed": true,
+          "budget_and_pods_unchanged": true,
+          "readiness_lost": false,
+          "http_failure_rate": 0,
+          "exit_code": 0,
+          "status": "pass",
+          "median_ms": 4.221,
+          "max_ms": 105.516
+        },
+        {
+          "rate": 300,
+          "requests": 36001,
+          "accepted": 36001,
+          "failures": 0,
+          "dropped": 0,
+          "p95_ms": 8.892,
+          "achieved_orders_per_second": 300.0083333333333,
+          "passed": true,
+          "budget_and_pods_unchanged": true,
+          "readiness_lost": false,
+          "http_failure_rate": 0,
+          "exit_code": 0,
+          "status": "pass",
+          "median_ms": 4.258,
+          "max_ms": 67.673
+        },
+        {
+          "rate": 350,
+          "requests": 42001,
+          "accepted": 42001,
+          "failures": 0,
+          "dropped": 0,
+          "p95_ms": 9.038,
+          "achieved_orders_per_second": 350.0083333333333,
+          "passed": true,
+          "budget_and_pods_unchanged": true,
+          "readiness_lost": false,
+          "http_failure_rate": 0,
+          "exit_code": 0,
+          "status": "pass",
+          "median_ms": 3.89,
+          "max_ms": 96.525
+        },
+        {
+          "rate": 400,
+          "requests": 48001,
+          "accepted": 48001,
+          "failures": 0,
+          "dropped": 0,
+          "p95_ms": 8.843,
+          "achieved_orders_per_second": 400.0083333333333,
+          "passed": true,
+          "budget_and_pods_unchanged": true,
+          "readiness_lost": false,
+          "http_failure_rate": 0,
+          "exit_code": 0,
+          "status": "pass",
+          "median_ms": 3.598,
+          "max_ms": 103.032
+        },
+        {
+          "rate": 450,
+          "requests": 54001,
+          "accepted": 54001,
+          "failures": 0,
+          "dropped": 0,
+          "p95_ms": 8.631,
+          "achieved_orders_per_second": 450.0083333333333,
+          "passed": true,
+          "budget_and_pods_unchanged": true,
+          "readiness_lost": false,
+          "http_failure_rate": 0,
+          "exit_code": 0,
+          "status": "pass",
+          "median_ms": 3.628,
+          "max_ms": 124.654
+        },
+        {
+          "rate": 500,
+          "requests": 60000,
+          "accepted": 60000,
+          "failures": 0,
+          "dropped": 0,
+          "p95_ms": 9.722099999999994,
+          "achieved_orders_per_second": 500.0,
+          "passed": true,
+          "budget_and_pods_unchanged": true,
+          "readiness_lost": false,
+          "http_failure_rate": 0,
+          "exit_code": 0,
+          "status": "pass",
+          "median_ms": 3.668,
+          "max_ms": 110.039
+        },
+        {
+          "rate": 600,
+          "requests": 72001,
+          "accepted": 72001,
+          "failures": 0,
+          "dropped": 0,
+          "p95_ms": 10.546,
+          "achieved_orders_per_second": 600.0083333333333,
+          "passed": true,
+          "budget_and_pods_unchanged": true,
+          "readiness_lost": false,
+          "http_failure_rate": 0,
+          "exit_code": 0,
+          "status": "pass",
+          "median_ms": 3.922,
+          "max_ms": 295.771
+        }
+      ],
+      "warmup": {
+        "rate": 100,
+        "requests": 18001,
+        "accepted": 18001,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 10.706,
+        "achieved_orders_per_second": 100.00555555555556,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "priming": {
+          "rate": 25,
+          "requests": 4501,
+          "accepted": 4501,
+          "failures": 0,
+          "dropped": 0,
+          "p95_ms": 20.027,
+          "achieved_orders_per_second": 25.005555555555556,
+          "passed": true,
+          "budget_and_pods_unchanged": true,
+          "readiness_lost": false,
+          "http_failure_rate": 0,
+          "exit_code": 0
+        }
+      },
+      "confirmation": {
+        "rate": 600,
+        "requests": 180000,
+        "accepted": 180000,
+        "failures": 0,
+        "dropped": 0,
+        "p95_ms": 9.966,
+        "achieved_orders_per_second": 600.0,
+        "passed": true,
+        "budget_and_pods_unchanged": true,
+        "readiness_lost": false,
+        "http_failure_rate": 0,
+        "exit_code": 0,
+        "status": "pass",
+        "confirmation": true,
+        "seconds": 300
+      }
+    }
+  },
+  "completed": true,
+  "restored": true,
+  "applications_healthy": true
+}

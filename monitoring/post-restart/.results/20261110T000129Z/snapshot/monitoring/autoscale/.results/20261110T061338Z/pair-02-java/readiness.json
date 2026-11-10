@@ -1,0 +1,36 @@
+{
+  "protocol": "new-pod-direct-order-v1",
+  "poll_seconds": 2,
+  "order_timeout_seconds": 10,
+  "pods": {
+    "3dfd2d64-de4e-42f8-a781-9e18fe6f283d": {
+      "name": "order-service-59b7b5cb76-flwjj",
+      "baseline": true,
+      "created_observed_seconds": 2.3325816670003405,
+      "currently_ready": true,
+      "pod_ready_seconds": 2.3325825840001926
+    },
+    "f820062e-cce9-484e-87e3-681bc726da56": {
+      "name": "order-service-59b7b5cb76-gtk9x",
+      "baseline": false,
+      "created_observed_seconds": 2.3325837920019694,
+      "currently_ready": false,
+      "pod_ready_seconds": 13.739896458999283,
+      "probe_attempts": [
+        {
+          "start_seconds": 13.739912084001844,
+          "duration_seconds": 0.46488004099956015,
+          "status": 201,
+          "accepted": true
+        }
+      ],
+      "order_accepted_seconds": 14.204810792001808,
+      "images": {
+        "order-service": "k3d-platform-poc.localhost:5001/platform-poc-java/order-service@sha256:8b559e640cef3aecaf69920404617394ee573c50ece3f4ca943b8baa88f74110"
+      }
+    }
+  },
+  "errors": [],
+  "baseline_changed": false,
+  "request_started_at": 1794293929.402294
+}

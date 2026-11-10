@@ -1,0 +1,9 @@
+{
+  "implementation": "java",
+  "pair": 4,
+  "elapsed": 24.523826708998968,
+  "first_order_seconds": 14.634911083998304,
+  "all_pods_ready_seconds": 14.209726834000321,
+  "consecutive_successes": 11,
+  "last_status": 201
+}

@@ -1,0 +1,110 @@
+{
+  "label": "post-restart",
+  "identity": {
+    "records": [
+      {
+        "namespace": "java",
+        "name": "inventory-service",
+        "uid": "67d70f45-7618-4d59-8bf8-e894ba1f8cae",
+        "template_hash": "69308c02de3f6917de96e5e0f6143ed49363b7222f2dd65899675630f38686f1",
+        "original_replicas": 1,
+        "images": {
+          "inventory-service": "k3d-platform-poc.localhost:5001/platform-poc-java/inventory-service@sha256:5d5881d87dfa7f0b30cc66bfedf448561b5606ced23076f82ee75fddc31414e8"
+        }
+      },
+      {
+        "namespace": "java",
+        "name": "notification-service",
+        "uid": "d421d6ea-a8a0-4108-ba28-6a7043e769d8",
+        "template_hash": "cd9f84cd8ae2c5829815ff19e8ebb6164b77c3329bb4fb7ae49c5c0405b6fa4f",
+        "original_replicas": 1,
+        "images": {
+          "notification-service": "k3d-platform-poc.localhost:5001/platform-poc-java/notification-service@sha256:ea762fcbfd7551ef8b2d0f8d2c387c56d6e300e2eb1123c1a6864c9cdf10eb30"
+        }
+      },
+      {
+        "namespace": "java",
+        "name": "order-service",
+        "uid": "2371863a-c026-4023-8b73-542b37d2beb5",
+        "template_hash": "5cae0bc8af71b26fa5af1546f3791cc5ce8612a12f6c5d56e900762d77352ce7",
+        "original_replicas": 1,
+        "images": {
+          "order-service": "k3d-platform-poc.localhost:5001/platform-poc-java/order-service@sha256:8b559e640cef3aecaf69920404617394ee573c50ece3f4ca943b8baa88f74110"
+        }
+      },
+      {
+        "namespace": "java",
+        "name": "product-service",
+        "uid": "ea963967-6311-4eb6-a38c-d6ee8a2cd708",
+        "template_hash": "4ea1864cc60e85f9a36636481cb77aafb2b2d074fd517919d1ee1cca819a186d",
+        "original_replicas": 1,
+        "images": {
+          "product-service": "k3d-platform-poc.localhost:5001/platform-poc-java/product-service@sha256:c5302fa0aef01bfe70614d5e373ac848e564f60bdbf1d8e8b6dfcb617a89bbae"
+        }
+      },
+      {
+        "namespace": "wasm",
+        "name": "wasmcloud-host",
+        "uid": "8f943c2b-4316-4495-8dc9-a05981d6dabf",
+        "template_hash": "d13c27faf0bb0d38c32858e0d362dd3342f1ce8c91de1bb601d08a70b9e95306",
+        "original_replicas": 1,
+        "images": {
+          "nats-leaf": "docker.io/library/nats@sha256:b83efabe3e7def1e0a4a31ec6e078999bb17c80363f881df35edc70fcb6bb927",
+          "wasmcloud-host": "sha256:a22906face539085647ef862bed734e95c05ba6882d870528b92ea4af1b79ea6"
+        }
+      }
+    ],
+    "hostconfig": {
+      "uid": "283bd98d-012a-481d-af0c-6acc194ab476",
+      "spec": {
+        "allowLatest": false,
+        "allowedInsecure": [
+          "host.docker.internal:5001"
+        ],
+        "configServiceEnabled": false,
+        "hostReplicas": 1,
+        "image": "platform-poc/wasmcloud:1.9.2-regack.1",
+        "jetstreamDomain": "default",
+        "lattice": "default",
+        "leafNodeDomain": "leaf",
+        "logLevel": "INFO",
+        "natsAddress": "nats://nats-headless.wasm.svc.cluster.local",
+        "natsClientPort": 4222,
+        "natsLeafnodePort": 7422,
+        "version": "1.9.2"
+      }
+    },
+    "application_version": "v0.0.9-regack.1",
+    "inventory_fixture": [
+      {
+        "id": 1,
+        "sku_code": "iphone_13",
+        "quantity": 100
+      },
+      {
+        "id": 2,
+        "sku_code": "iphone_13_red",
+        "quantity": 0
+      }
+    ]
+  },
+  "controls": {
+    "java/secrets": "4a61ffa087d23aa497d92dc25335ae847bcb66701d8949f7b6f21609f125ba9e",
+    "java/configmaps": "57effd9d2a84e79ad201f02536afd9fb40ff969dda23151e8e2cd5927c14a7aa",
+    "wasm/secrets": "633ce834bf85a0fa09656429fdab3bfb8cfe10ec717d01157d805d28d61ce3e3",
+    "wasm/configmaps": "240f09edb43c422804d8175e2a95776352fe69bec6237c8779f6135797f7aa2f",
+    "application_spec": "1c90bda904dc0d369cc2734690cc8ce3e02f4cae01015b75201e07904e079215",
+    "wasm/deployments": "21f1858d6966f1e0c15a22cf05c651348d1c8f8844b8ea941a5946e153b414e2",
+    "wasm/statefulsets": "1b45fd416fb2aa1e8db053b19bde36be06585eeb7f1eac219953c3bb0c2458a5",
+    "monitoring/deployments": "7af64ca8518279d2082a4a8231cea94dacbf55535637984ac3b7aef75416d877",
+    "monitoring/configmaps": "4f037f79de20165dfda0fa9fcb9b410687b192a2894543aa840dc2b5e2e2c904",
+    "java/services": "e21a54fe31f87c40d8754844b00d27b92568a9a0f5b9c7ec3de633e4fee8d28b",
+    "java/ingresses": "d48dcbf38d43102ca7a413371e85cf7431c681b58b292b71646dee33b02434e3",
+    "wasm/services": "6fb5903062552cc1263fcb367e96df21e623475c75d14ace47d499de03497140",
+    "wasm/ingresses": "e40aa9a05037259659caf4cd1277168261aa4220a70122afb7d3853431a27413"
+  },
+  "power": {
+    "power": "Now drawing from 'AC Power'\n -InternalBattery-0 (id=38797411)\t100%; charged; 0:00 remaining present: true\n",
+    "lid_open": true
+  }
+}

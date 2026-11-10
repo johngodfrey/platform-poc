@@ -1,0 +1,52 @@
+--- a/crates/provider-sqldb-postgres/src/lib.rs
++++ b/crates/provider-sqldb-postgres/src/lib.rs
+@@ -30,6 +30,7 @@
+ };
+ 
+ mod config;
++mod cached_statement;
+ use config::{extract_prefixed_conn_config, ConnectionCreateOptions};
+ 
+ use wasmcloud_provider_sdk::Context;
+@@ -115,17 +116,26 @@
+             QueryError::Unexpected(format!("failed to build client from pool: {e}"))
+         })?;
+ 
++        let statement = cached_statement::prepare(&client, query)
++            .await
++            .map_err(|e| QueryError::Unexpected(format!("failed to prepare query: {e}")))?;
+         let rows = client
+-            .query_raw(query, params)
+-            .await
+-            .map_err(|e| QueryError::Unexpected(format!("failed to perform query: {e}")))?;
++            .query_raw(&statement, params)
++            .await
++            .map_err(|e| {
++                cached_statement::invalidate_on_error(&client, &e);
++                QueryError::Unexpected(format!("failed to perform query: {e}"))
++            })?;
+ 
+         // todo(fix): once async stream support is available & in contract
+         // replace this with a mapped stream
+         rows.map_ok(into_result_row)
+             .try_collect::<Vec<_>>()
+             .await
+-            .map_err(|e| QueryError::Unexpected(format!("failed to evaluate full row: {e}")))
++            .map_err(|e| {
++                cached_statement::invalidate_on_error(&client, &e);
++                QueryError::Unexpected(format!("failed to evaluate full row: {e}"))
++            })
+     }
+ 
+     /// Perform a raw query
+--- a/crates/provider-sqldb-postgres/Cargo.toml
++++ b/crates/provider-sqldb-postgres/Cargo.toml
+@@ -30,7 +30,7 @@
+ tokio-postgres = { workspace = true, features = [ "runtime", "with-serde_json-1", "with-chrono-0_4", "with-uuid-0_8", "with-geo-types-0_7", "array-impls", "with-bit-vec-0_6", "with-uuid-1" ]  }
+ tokio-postgres-rustls = { workspace = true }
+ tracing = { workspace = true }
+-ulid = { workspace = true }
++ulid = { workspace = true, features = ["std"] }
+ uuid = { workspace = true }
+ wasmcloud-provider-sdk = { workspace = true, features = ["otel"] }
+ wit-bindgen-wrpc = { workspace = true }

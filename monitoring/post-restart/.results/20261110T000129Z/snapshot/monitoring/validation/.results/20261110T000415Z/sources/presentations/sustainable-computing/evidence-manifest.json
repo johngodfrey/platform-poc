@@ -1,0 +1,25 @@
+{
+  "benchmark_cutoff": "2026-11-08",
+  "sources": [
+    {
+      "path": "monitoring/validation/RESULTS.md",
+      "sha256": "cc62a2a10981030de69323213a79098773f9b73520367197e411fdf5ffa3d993"
+    },
+    {
+      "path": "monitoring/capacity/VALIDATION_RESULTS.md",
+      "sha256": "8a1ef09c8bdc08195f2d04c7f22a16f92511395bdaef5902bffea00fe61a2e2e"
+    },
+    {
+      "path": "monitoring/scaleout/.results/repeated-20261103T234859Z/series.json",
+      "sha256": "ffb80b8bd50029301f13039f4c51c9e69cbdea86b6b7a99943c32d23f0d60253"
+    },
+    {
+      "path": "monitoring/validation/.results/20261106T204859Z/analysis.json",
+      "sha256": "bd35008e4346a47765189f86dba92b35b7fe0d4ae844e8c985a45cdeb7a41761"
+    },
+    {
+      "path": "monitoring/capacity/.results/validation-20261107T233519Z/analysis.json",
+      "sha256": "92c6a7f47aaab975dc626deacca202c44cee4501db7f5ea640e537d983b08916"
+    }
+  ]
+}

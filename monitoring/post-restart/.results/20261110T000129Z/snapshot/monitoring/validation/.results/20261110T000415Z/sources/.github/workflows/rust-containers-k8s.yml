@@ -1,0 +1,37 @@
+name: Build and Deploy Rust Microservices
+run-name: ${{ github.actor }} building and deploying Rust microservices 🚀
+on:
+  push:
+    branches:
+      - "main"
+    paths:
+      - "rust-containers-k8s/**"
+
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+    branches:
+      - "main"
+    paths:
+      - "rust-containers-k8s/**"
+
+jobs:
+  build:
+    if: github.event.pull_request.draft == false
+    name: Build
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: rust-containers-k8s
+
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Install fish
+        run: |
+          sudo apt-add-repository ppa:fish-shell/release-3
+          sudo apt update
+          sudo apt install fish
+
+      - name: Build images
+        run: ./docker-build.fish

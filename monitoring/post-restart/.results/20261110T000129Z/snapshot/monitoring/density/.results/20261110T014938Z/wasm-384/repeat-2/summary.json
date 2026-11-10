@@ -1,0 +1,181 @@
+{
+    "metrics": {
+        "http_req_connecting": {
+            "p(90)": 0.441,
+            "p(95)": 0.719,
+            "avg": 0.09948900732844773,
+            "min": 0,
+            "med": 0,
+            "max": 3.819
+        },
+        "demo_order_failures": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count==0": false
+            }
+        },
+        "vus": {
+            "value": 1,
+            "min": 1,
+            "max": 2
+        },
+        "data_sent": {
+            "rate": 3790.8684612719994,
+            "count": 265677
+        },
+        "http_req_tls_handshaking": {
+            "avg": 0,
+            "min": 0,
+            "med": 0,
+            "max": 0,
+            "p(90)": 0,
+            "p(95)": 0
+        },
+        "checks": {
+            "passes": 1501,
+            "fails": 0,
+            "value": 1
+        },
+        "demo_orders_accepted": {
+            "count": 1501,
+            "rate": 21.417335939389826
+        },
+        "data_received": {
+            "count": 379753,
+            "rate": 5418.585992665626
+        },
+        "http_req_waiting": {
+            "med": 12.879,
+            "max": 38.621,
+            "p(90)": 18.379,
+            "p(95)": 20.197,
+            "avg": 13.219359093937395,
+            "min": 6.528
+        },
+        "http_req_failed": {
+            "passes": 0,
+            "fails": 1501,
+            "value": 0
+        },
+        "vus_max": {
+            "min": 251,
+            "max": 251,
+            "value": 251
+        },
+        "density_projected_slots": {
+            "value": 21,
+            "min": 21,
+            "max": 21
+        },
+        "http_req_blocked": {
+            "med": 0.011,
+            "max": 3.964,
+            "p(90)": 0.536,
+            "p(95)": 0.843,
+            "avg": 0.12661292471685195,
+            "min": 0.002
+        },
+        "http_req_duration": {
+            "p(90)": 18.793,
+            "p(95)": 20.555,
+            "avg": 13.493994003997333,
+            "min": 6.612,
+            "med": 13.158,
+            "max": 38.884
+        },
+        "http_req_duration{expected_response:true}": {
+            "avg": 13.493994003997333,
+            "min": 6.612,
+            "med": 13.158,
+            "max": 38.884,
+            "p(90)": 18.793,
+            "p(95)": 20.555
+        },
+        "iterations": {
+            "count": 1571,
+            "rate": 22.416145743358705
+        },
+        "http_req_receiving": {
+            "avg": 0.2254077281812126,
+            "min": 0.03,
+            "med": 0.186,
+            "max": 2.83,
+            "p(90)": 0.427,
+            "p(95)": 0.537
+        },
+        "dropped_iterations": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count==0": false
+            }
+        },
+        "density_max_node_cpu_fraction": {
+            "value": 0.6,
+            "min": 0.6,
+            "max": 0.6
+        },
+        "density_memory_limit_bytes": {
+            "value": 402653184,
+            "min": 402653184,
+            "max": 402653184
+        },
+        "http_req_sending": {
+            "med": 0.039,
+            "max": 1.911,
+            "p(90)": 0.087,
+            "p(95)": 0.105,
+            "avg": 0.049227181878747625,
+            "min": 0.011
+        },
+        "http_req_duration{scenario:orders}": {
+            "avg": 13.493994003997333,
+            "min": 6.612,
+            "med": 13.158,
+            "max": 38.884,
+            "p(90)": 18.793,
+            "p(95)": 20.555,
+            "thresholds": {
+                "p(95)<100": false
+            }
+        },
+        "iteration_duration": {
+            "avg": 58.01211125015905,
+            "min": 6.877542,
+            "med": 14.020375,
+            "max": 1002.883333,
+            "p(90)": 21.172167,
+            "p(95)": 27.149604499999928
+        },
+        "demo_phase": {
+            "min": 0,
+            "max": 2,
+            "value": 2
+        },
+        "demo_target_rps": {
+            "value": 0,
+            "min": 0,
+            "max": 25
+        },
+        "http_reqs": {
+            "count": 1501,
+            "rate": 21.417335939389826
+        }
+    },
+    "root_group": {
+        "name": "",
+        "path": "",
+        "id": "d41d8cd98f00b204e9800998ecf8427e",
+        "groups": {},
+        "checks": {
+                "order accepted": {
+                    "name": "order accepted",
+                    "path": "::order accepted",
+                    "id": "a3c0c8ef382a0ed3b6bc3a5742f40e3c",
+                    "passes": 1501,
+                    "fails": 0
+                }
+            }
+    }
+}

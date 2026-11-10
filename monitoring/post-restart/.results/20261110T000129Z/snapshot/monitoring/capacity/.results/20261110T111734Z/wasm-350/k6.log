@@ -1,0 +1,51 @@
+time="2026-11-10T11:24:28Z" level=info msg="{\"event\":\"demo_started\",\"start_ms\":1794309868635}" source=console
+time="2026-11-10T11:40:45Z" level=warning msg="Insufficient VUs, reached 250 active VUs and cannot initialize more" executor=constant-arrival-rate scenario=orders
+
+
+  █ THRESHOLDS 
+
+    demo_order_failures
+    ✓ 'count==0' count=0
+
+    dropped_iterations
+    ✗ 'count==0' count=6194
+
+    http_req_duration{scenario:orders}
+    ✗ 'p(95)<100' p(95)=256.59ms
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 623807  343.523253/s
+    checks_succeeded...: 100.00% 623807 out of 623807
+    checks_failed......: 0.00%   0 out of 623807
+
+    ✓ order accepted
+
+    CUSTOM
+    demo_order_failures............: 0      0/s
+    demo_orders_accepted...........: 623807 343.523253/s
+    demo_phase.....................: 2      min=0           max=2  
+    demo_target_rps................: 0      min=0           max=350
+
+    HTTP
+    http_req_duration..............: avg=52.02ms min=4.95ms med=10.01ms max=3.48s p(90)=63.31ms p(95)=256.59ms
+      { expected_response:true }...: avg=52.02ms min=4.95ms med=10.01ms max=3.48s p(90)=63.31ms p(95)=256.59ms
+      { scenario:orders }..........: avg=52.02ms min=4.95ms med=10.01ms max=3.48s p(90)=63.31ms p(95)=256.59ms
+    http_req_failed................: 0.00%  0 out of 623807
+    http_reqs......................: 623807 343.523253/s
+
+    EXECUTION
+    dropped_iterations.............: 6194   3.410964/s
+    iteration_duration.............: avg=54.96ms min=5.06ms med=10.2ms  max=3.48s p(90)=66.97ms p(95)=280.64ms
+    iterations.....................: 625622 344.522753/s
+    vus............................: 1      min=1           max=251
+    vus_max........................: 251    min=251         max=251
+
+    NETWORK
+    data_received..................: 158 MB 87 kB/s
+    data_sent......................: 110 MB 61 kB/s
+
+
+
+time="2026-11-10T11:54:44Z" level=error msg="thresholds on metrics 'dropped_iterations, http_req_duration{scenario:orders}' have been crossed"

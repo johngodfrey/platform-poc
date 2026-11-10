@@ -1,0 +1,19 @@
+Report: /Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/capacity/.results/20261110T095600Z/report.html
+Dashboard: http://localhost:8080/grafana/d/java-wasm-capacity
+Waiting for deployment "wasmcloud-host" rollout to finish: 0 out of 1 new replicas have been updated...
+Waiting for deployment "wasmcloud-host" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "wasmcloud-host" rollout to finish: 1 old replicas are pending termination...
+deployment "wasmcloud-host" successfully rolled out
+wasm functional preflight: order accepted
+{"implementation": "wasm", "warmup": true, "rate": 25, "requests": 4501, "accepted": 4501, "failures": 0, "dropped": 0, "p95_ms": 19.919, "achieved_orders_per_second": 25.005555555555556, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "wasm", "warmup": true, "rate": 100, "requests": 18001, "accepted": 18001, "failures": 0, "dropped": 0, "p95_ms": 17.822, "achieved_orders_per_second": 100.00555555555556, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "wasm", "warmup": false, "rate": 350, "requests": 42001, "accepted": 42001, "failures": 0, "dropped": 0, "p95_ms": 23.43, "achieved_orders_per_second": 350.0083333333333, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "wasm", "warmup": false, "rate": 400, "requests": 48000, "accepted": 48000, "failures": 0, "dropped": 0, "p95_ms": 45.60954999999998, "achieved_orders_per_second": 400.0, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "wasm", "warmup": false, "rate": 450, "requests": 54000, "accepted": 54000, "failures": 0, "dropped": 0, "p95_ms": 24.711049999999997, "achieved_orders_per_second": 450.0, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+{"implementation": "wasm", "warmup": false, "rate": 450, "requests": 135001, "accepted": 135001, "failures": 0, "dropped": 0, "p95_ms": 21.211, "achieved_orders_per_second": 450.00333333333333, "passed": true, "budget_and_pods_unchanged": true, "readiness_lost": false, "http_failure_rate": 0, "exit_code": 0}
+wasm functional preflight: order accepted
+Waiting for deployment "wasmcloud-host" rollout to finish: 1 old replicas are pending termination...
+Waiting for deployment "wasmcloud-host" rollout to finish: 1 old replicas are pending termination...
+deployment "wasmcloud-host" successfully rolled out
+wasm functional preflight: order accepted
+Report: /Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/capacity/.results/20261110T095600Z/report.html

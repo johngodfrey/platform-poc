@@ -1,0 +1,33 @@
+java functional preflight: order accepted
+Pair 1: java
+java CPU target 0.2173 cores per unit; baseline 0.1738
+java CPU-triggered up at 217.6 seconds
+java automatic extra capacity serving
+java CPU-triggered down at 595.2 seconds
+java functional preflight: order accepted
+java functional preflight: order accepted
+wasm functional preflight: order accepted
+Pair 1: wasm
+wasm CPU target 0.4824 cores per unit; baseline 0.3859
+wasm CPU-triggered up at 217.5 seconds
+wasm automatic extra capacity serving
+wasm CPU-triggered down at 595.0 seconds
+wasm functional preflight: order accepted
+wasm functional preflight: order accepted
+wasm functional preflight: order accepted
+Pair 2: wasm
+wasm CPU target 0.4831 cores per unit; baseline 0.3865
+wasm CPU-triggered up at 217.4 seconds
+wasm automatic extra capacity serving
+wasm CPU-triggered down at 610.0 seconds
+wasm functional preflight: order accepted
+wasm functional preflight: order accepted
+java functional preflight: order accepted
+Pair 2: java
+java CPU target 0.1795 cores per unit; baseline 0.1436
+java CPU-triggered up at 232.7 seconds
+java automatic extra capacity serving
+java CPU-triggered down at 610.2 seconds
+java functional preflight: order accepted
+java functional preflight: order accepted
+Report: /Users/johngodfrey/Repos/platform-poc/monitoring/post-restart/.results/20261110T000129Z/snapshot/monitoring/autoscale/.results/20261110T061338Z/report.html

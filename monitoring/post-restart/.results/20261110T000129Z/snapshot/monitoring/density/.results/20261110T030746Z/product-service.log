@@ -1,0 +1,24 @@
+  ___                  _               _       ___                     _
+ | _ \  _ _   ___   __| |  _  _   __  | |_    / __|  ___   _ _  __ __ (_)  __   ___
+ |  _/ | '_| / _ \ / _` | | || | / _| |  _|   \__ \ / -_) | '_| \ V / | | / _| / -_)
+ |_|   |_|   \___/ \__,_|  \_,_| \__|  \__|   |___/ \___| |_|    \_/  |_| \__| \___|
+
+ 
+Powered by Spring Boot 3.4.2
+
+2026-11-10T03:17:53.280Z  INFO 1 --- [product-service] [           main] c.r.p.ProductServiceApplication          : Starting ProductServiceApplication using Java 17.0.20.1 with PID 1 (/app/classes started by root in /)
+2026-11-10T03:17:53.285Z  INFO 1 --- [product-service] [           main] c.r.p.ProductServiceApplication          : No active profile set, falling back to 1 default profile: "default"
+2026-11-10T03:17:54.258Z  INFO 1 --- [product-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2026-11-10T03:17:54.260Z  INFO 1 --- [product-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2026-11-10T03:17:54.372Z  INFO 1 --- [product-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 94 ms. Found 1 Redis repository interface.
+2026-11-10T03:17:54.705Z  INFO 1 --- [product-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 80 (http)
+2026-11-10T03:17:54.715Z  INFO 1 --- [product-service] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-11-10T03:17:54.715Z  INFO 1 --- [product-service] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.34]
+2026-11-10T03:17:54.779Z  INFO 1 --- [product-service] [           main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2026-11-10T03:17:54.782Z  INFO 1 --- [product-service] [           main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1434 ms
+2026-11-10T03:17:55.604Z  INFO 1 --- [product-service] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
+2026-11-10T03:17:55.681Z  INFO 1 --- [product-service] [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 80 (http) with context path '/'
+2026-11-10T03:17:55.699Z  INFO 1 --- [product-service] [           main] c.r.p.ProductServiceApplication          : Started ProductServiceApplication in 3.015 seconds (process running for 3.448)
+2026-11-10T03:18:02.846Z  INFO 1 --- [product-service] [p-nio-80-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-10T03:18:02.847Z  INFO 1 --- [product-service] [p-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-11-10T03:18:02.849Z  INFO 1 --- [product-service] [p-nio-80-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms

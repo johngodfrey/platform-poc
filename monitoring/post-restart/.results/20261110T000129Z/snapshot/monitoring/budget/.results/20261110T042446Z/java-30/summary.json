@@ -1,0 +1,166 @@
+{
+    "metrics": {
+        "http_req_receiving": {
+            "avg": 0.09425208217656865,
+            "min": 0.013,
+            "med": 0.076,
+            "max": 3.795,
+            "p(90)": 0.17,
+            "p(95)": 0.212
+        },
+        "http_req_duration": {
+            "p(90)": 16.408,
+            "p(95)": 20.586,
+            "avg": 11.380413659078258,
+            "min": 5.159,
+            "med": 9.281,
+            "max": 74.838
+        },
+        "demo_phase": {
+            "value": 2,
+            "min": 0,
+            "max": 2
+        },
+        "data_received": {
+            "count": 342190,
+            "rate": 4557.518665162597
+        },
+        "http_req_duration{expected_response:true}": {
+            "avg": 11.380413659078258,
+            "min": 5.159,
+            "med": 9.281,
+            "max": 74.838,
+            "p(90)": 16.408,
+            "p(95)": 20.586
+        },
+        "demo_orders_accepted": {
+            "count": 1801,
+            "rate": 23.986940342961038
+        },
+        "vus_max": {
+            "max": 251,
+            "value": 251,
+            "min": 251
+        },
+        "data_sent": {
+            "count": 374608,
+            "rate": 4989.283591335896
+        },
+        "http_req_tls_handshaking": {
+            "min": 0,
+            "med": 0,
+            "max": 0,
+            "p(90)": 0,
+            "p(95)": 0,
+            "avg": 0
+        },
+        "http_req_sending": {
+            "max": 3.247,
+            "p(90)": 0.079,
+            "p(95)": 0.096,
+            "avg": 0.04670016657412561,
+            "min": 0.009,
+            "med": 0.036
+        },
+        "checks": {
+            "passes": 1801,
+            "fails": 0,
+            "value": 1
+        },
+        "http_req_duration{scenario:orders}": {
+            "p(95)": 20.586,
+            "avg": 11.380413659078258,
+            "min": 5.159,
+            "med": 9.281,
+            "max": 74.838,
+            "p(90)": 16.408,
+            "thresholds": {
+                "p(95)<100": false
+            }
+        },
+        "http_req_failed": {
+            "passes": 0,
+            "fails": 1801,
+            "value": 0
+        },
+        "vus": {
+            "max": 2,
+            "value": 1,
+            "min": 1
+        },
+        "iterations": {
+            "count": 1876,
+            "rate": 24.985841245638483
+        },
+        "http_req_blocked": {
+            "avg": 0.10219489172681481,
+            "min": 0.002,
+            "med": 0.009,
+            "max": 5.643,
+            "p(90)": 0.427,
+            "p(95)": 0.685
+        },
+        "http_req_waiting": {
+            "med": 9.151,
+            "max": 74.791,
+            "p(90)": 16.107,
+            "p(95)": 20.435,
+            "avg": 11.23946141032759,
+            "min": 5.095
+        },
+        "iteration_duration": {
+            "p(90)": 19.815250000000002,
+            "p(95)": 41.65403074999983,
+            "avg": 51.42049999200421,
+            "min": 5.305333,
+            "med": 9.909062500000001,
+            "max": 1002.5345
+        },
+        "http_reqs": {
+            "rate": 23.986940342961038,
+            "count": 1801
+        },
+        "dropped_iterations": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count==0": false
+            }
+        },
+        "demo_order_failures": {
+            "count": 0,
+            "rate": 0,
+            "thresholds": {
+                "count==0": false
+            }
+        },
+        "http_req_connecting": {
+            "max": 5.427,
+            "p(90)": 0.373,
+            "p(95)": 0.552,
+            "avg": 0.07642309827873399,
+            "min": 0,
+            "med": 0
+        },
+        "demo_target_rps": {
+            "value": 0,
+            "min": 0,
+            "max": 30
+        }
+    },
+    "root_group": {
+        "name": "",
+        "path": "",
+        "id": "d41d8cd98f00b204e9800998ecf8427e",
+        "groups": {},
+        "checks": {
+                "order accepted": {
+                    "id": "a3c0c8ef382a0ed3b6bc3a5742f40e3c",
+                    "passes": 1801,
+                    "fails": 0,
+                    "name": "order accepted",
+                    "path": "::order accepted"
+                }
+            }
+    }
+}
